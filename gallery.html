@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,300' rel='stylesheet' type='text/css'>
+
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/gallery.css">
+</head>
+
+<body>
+
+<div class="m-p-g">
+    <div class="container">
+        <a href="index.html">
+            <h1 style="padding-top: 10px;">Kolkata Photo-Tours and Workshops</h1>
+        </a>
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li class="active"><a href="gallery.html">Gallery</a></li>
+              <li><a href="#">Tours and Workshops</a></li>
+              <li><a href="#">Reviews</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
+    </div>
+  <div class="m-p-g__thumbs" data-google-image-layout data-max-height="350">
+    <img src="images/gallery/photo-2.jpg" data-full="images/gallery/photo-2.jpg" class="m-p-g__thumbs-img"/>
+    <img src="images/gallery/photo-3.jpg" data-full="images/gallery/photo-3.jpg" class="m-p-g__thumbs-img"/>
+    <img src="images/gallery/photo-1.jpg" data-full="images/gallery/photo-1.jpg" class="m-p-g__thumbs-img"/>
+    <img src="images/gallery/photo-4.jpg" data-full="images/gallery/photo-4.jpg" class="m-p-g__thumbs-img"/>
+    <img src="images/gallery/photo-5.jpg" data-full="images/gallery/photo-5.jpg" class="m-p-g__thumbs-img"/>
+    <img src="images/gallery/photo-6.jpg" data-full="images/gallery/photo-6.jpg" class="m-p-g__thumbs-img"/>
+    <img src="images/gallery/photo-8.jpg" data-full="images/gallery/photo-8.jpg" class="m-p-g__thumbs-img"/>
+    <img src="images/gallery/photo-7.jpg" data-full="images/gallery/photo-7.jpg" class="m-p-g__thumbs-img"/>
+    <img src="images/gallery/photo-9.jpg" data-full="images/gallery/photo-9.jpg" class="m-p-g__thumbs-img"/>
+    <img src="images/gallery/photo-10.jpg" data-full="images/gallery/photo-10.jpg" class="m-p-g__thumbs-img"/>
+    <img src="images/gallery/photo-11.jpg" data-full="images/gallery/photo-11.jpg" class="m-p-g__thumbs-img"/>
+    <img src="images/gallery/photo-12.jpg" data-full="images/gallery/photo-12.jpg" class="m-p-g__thumbs-img"/>
+    <img src="images/gallery/photo-13.jpg" data-full="images/gallery/photo-13.jpg" class="m-p-g__thumbs-img"/>
+    <img src="images/gallery/photo-14.jpg" data-full="images/gallery/photo-14.jpg" class="m-p-g__thumbs-img"/>
+    <img src="images/gallery/photo-15.jpg" data-full="images/gallery/photo-15.jpg" class="m-p-g__thumbs-img"/>
+    <img src="images/gallery/photo-16.jpg" data-full="images/gallery/photo-16.jpg" class="m-p-g__thumbs-img"/>
+    <img src="images/gallery/photo-17.jpg" data-full="images/gallery/photo-17.jpg" class="m-p-g__thumbs-img"/>
+    <img src="images/gallery/photo-18.jpg" data-full="images/gallery/photo-18.jpg" class="m-p-g__thumbs-img"/>
+    <img src="images/gallery/photo-19.jpg" data-full="images/gallery/photo-19.jpg" class="m-p-g__thumbs-img"/>
+    <img src="images/gallery/photo-20.jpg" data-full="images/gallery/photo-20.jpg" class="m-p-g__thumbs-img"/>
+    <img src="images/gallery/photo-21.jpg" data-full="images/gallery/photo-21.jpg" class="m-p-g__thumbs-img"/>
+    <img src="images/gallery/photo-22.jpg" data-full="images/gallery/photo-22.jpg" class="m-p-g__thumbs-img"/>
+    <img src="images/gallery/photo-23.jpg" data-full="images/gallery/photo-23.jpg" class="m-p-g__thumbs-img"/>
+  </div>
+
+  <div class="m-p-g__fullscreen"></div>
+</div>
+  <br/>
+  <hr>
+  <script>
+  var elem = document.querySelector('.m-p-g');
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var gallery = new MaterialPhotoGallery(elem);
+  });
+  </script>
+  <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/45226/material-photo-gallery.min.js'></script>
+
+</body>
+</html>

@@ -15,15 +15,15 @@
 
     <script>
       $(function(){
-        $("#contact").load("contact.html");
-        $('#navbar').load("navbar.html");
+        $("#contactph").load("contact.html");
+        $('#navbarph').load("navbar.html");
       });
     </script>
   </head>
     <body>
 
       <!--Navbar-->
-      <div id="navbar"></div>
+      <div id="navbarph"></div>
 
 
       <!--Header-->
@@ -48,21 +48,21 @@
 
           <div id="image-card1" class="col-md-3">
             <img src="images/victoria.jpg" class="victoria">
-            <p class="image-text1">Victoria Memorial</p>
+            <p class="image-text" style="left: 30px;">Victoria Memorial</p>
           </div>
 
           <div class="col-md-1"></div>
 
           <div id="image-card3" class="col-md-3">
             <img src="images/flower-market.jpg" class="victoria">
-            <p class="image-text3">Flower Market</p>
+            <p class="image-text" style="left: 20px;">Flower Market</p>
           </div>
 
           <div class="col-md-1"></div>
 
           <div id="image-card2" class="col-md-3">
             <img src="images/kali-temple.jpg" class="victoria">
-            <p class="image-text2">Kali Temple</p>
+            <p class="image-text" style="width: 220px;">Kali Temple</p>
           </div>
 
 
@@ -70,18 +70,23 @@
 
         <div class="row" style="margin-left: 30px;">
 
+          <div id="image-card4" class="col-md-3">
+            <img src="images/kumartolli.jpg" class="victoria">
+            <p class="image-text" style="width: 200px; left: 50px;">Kumartolli</p>
+          </div>
+
           <div class="col-md-1"></div>
 
           <div id="image-card4" class="col-md-3">
             <img src="images/new-market.jpg" class="victoria">
-            <p class="image-text4">New Market</p>
+            <p class="image-text" style="width: 230px;">New Market</p>
           </div>
 
-          <div class="col-md-2"></div>
+          <div class="col-md-1"></div>
 
           <div id="image-card3" class="col-md-3">
             <img src="images/babu-ghat.jpg" class="victoria">
-            <p class="image-text3">Babu Ghat</p>
+            <p class="image-text" style="width: 200px; left: 50px;">Babu Ghat</p>
           </div>
 
         </div>
@@ -172,12 +177,12 @@
 
       <br>
       <hr style="width: 100%;" />
-      <a href="#navbar">
+      <a href="#navbarph">
         <img src="images/upward.png" style="height: 35px; left:49%; position: relative; margin-top: -5%;">
       </a>
       <br>
 
-      <div id="contact"></div>
+      <div id="contactph"></div>
       <script>
         $(document).on('click', 'a[href^="#"]', function (event) {
           event.preventDefault();

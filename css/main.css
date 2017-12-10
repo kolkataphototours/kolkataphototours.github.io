@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=PT+Sans|Titillium+Web');
+
 
 .navbar{
     height: 70px;
@@ -7,28 +7,31 @@
 }
 
 
-
 .header{
     height: 600px;
     width: 100%;
-    background-image: url('../images/wall2.jpeg');
+    background-image: url('../images/wall2.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     padding: 100px;
     margin-top: -2%;
 }
 .header h1{
-    margin-left: 10px;
-    margin-top: 170px;
     text-align: center;
+    position: relative;
+    top: 170px;
+    height: 100px;
+    width: 80%;
+    left: 120px;
     color: white;
+    width:;
     font-size: 50px;
-    background: ;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+    padding: 20px;
+    background:rgba(0, 0, 0, 0.3);
 }
 
 #description {
-    font-family: 'Titillium Web', sans-serif;
+    font-family: ubuntu;
     text-align: center;
     margin-top: 30px;
     width: 80%;
@@ -64,8 +67,10 @@ hr{
         height: 350px;
     }
     .header h1{
-        margin-top: 10%;
-        margin-left: 7%;
+        position: relative;
+        top: 10%;
+        left: 9%;
+        height: auto;
         font-size: 35px;
         text-align: center;
 
@@ -74,20 +79,16 @@ hr{
         background-color: #E6E6E6;
     }
     #description {
-        font-size: 25px;
+        font-size: 23px;
     }
 
     #video {
         height: 350px;
     }
 
-    .row {
-        margin-left: 10px;
+    #about {
+        font-size: 22px;
     }
-    .victoria {
-        margin-left: -20px;
-    }
-
 }
 
 

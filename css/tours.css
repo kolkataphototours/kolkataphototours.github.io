@@ -1,0 +1,106 @@
+#header{
+    background-image: url('../images/gallery2/photo-15.jpg');
+    height: 600px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 100px;
+    margin-top: -2%;
+}
+
+#header h1 {
+    text-align: center;
+    position: relative;
+    top: 170px;
+    height: 100px;
+    width: 70%;
+    left: 170px;
+    color: white;
+    width:;
+    font-size: 50px;
+    padding: 20px;
+    background:rgba(0, 0, 0, 0.3);
+}
+
+.tour-text {
+    text-align: center;
+    font-size: 15px;
+    color: white;
+    width: 350px;
+    position: relative;
+    margin-top: -50px;
+    top: -150px;
+    left: 50px;
+    z-index: 1;
+    padding-top: 1px;
+    padding-bottom: 5px;
+    background:rgba(0, 0, 0, 0.5);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.tour-cards {
+
+}
+
+.tour-images {
+    width: 450px;
+    height: 300px;
+}
+
+.mini-intro {
+    border-top:solid 1px white;
+    border-bottom: solid 1px white;
+}
+
+.image-holder {
+    margin-top: 50px;
+}
+
+.contact-nav {
+    background-color: rgb(139,195,163, 0.5);
+    border-radius: 0 4px 4px 0;
+}
+
+.contact-nav:hover {
+    background-color: rgb(139,195,163, 0.9);
+}
+
+@media only screen and (max-width: 500px) {
+    #header{
+        padding: 100px 10px 10px 10px;
+        height: 350px;
+    }
+
+    #header h1 {
+        font-size: 30px;
+        text-align: center;
+        position: relative;
+        top: 10%;
+        left: 9%;
+        width: 85%;
+        height: auto;
+    }
+
+    .tour-images {
+        width: 95%;
+        height: auto;
+    }
+
+    tour-cards {
+        margin-top: -10px;
+        margin-left: 2.5%;
+    }
+
+    .tour-text {
+        font-size: 14px;
+        width: 90%;
+        margin-top: -50px;
+        top: -100px;
+        left: 2.5%;
+    }
+
+    .tour-text h2 {
+        font-size: 20px;
+    }
+}

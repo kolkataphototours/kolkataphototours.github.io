@@ -10,7 +10,7 @@
 .header{
     height: 600px;
     width: 100%;
-    background-image: url('../images/wall2.jpg');
+    background-image: url('../images/wall2.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
     padding: 100px;
@@ -31,7 +31,7 @@
 }
 
 #description {
-    font-family: ubuntu;
+    font-family: Arial, sans-serif;
     text-align: center;
     margin-top: 30px;
     width: 80%;
@@ -41,16 +41,12 @@
     padding: 10px;
 }
 
-hr{
-    width: 80%;
-}
-
 #about{
     width: 80%;
     margin-left: 10%;
     margin-top: 40px;
     font-size: 25px;
-    font-family: 'Titillium Web', sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 
@@ -60,6 +56,17 @@ hr{
     margin-bottom: 30px;
 }
 
+@media only screen and (max-width: 350px){
+    .navbar {
+        padding: 0;
+        font-size: 12px;
+        height: auto;
+    }
+    .navbar-brand{
+        padding-left: 0px;
+        font-size: 10px;
+    }
+}
 
 @media only screen and (max-width: 500px) {
     .header{
@@ -90,7 +97,6 @@ hr{
         font-size: 22px;
     }
 }
-
 
 
 /* Reviews */

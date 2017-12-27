@@ -56,47 +56,6 @@
     margin-bottom: 30px;
 }
 
-@media only screen and (max-width: 350px){
-    .navbar {
-        padding: 0;
-        font-size: 12px;
-        height: auto;
-    }
-    .navbar-brand{
-        padding-left: 0px;
-        font-size: 10px;
-    }
-}
-
-@media only screen and (max-width: 500px) {
-    .header{
-        padding: 100px 10px 10px 10px;
-        height: 350px;
-    }
-    .header h1{
-        position: relative;
-        top: 10%;
-        left: 9%;
-        height: auto;
-        font-size: 35px;
-        text-align: center;
-
-    }
-    .collapse {
-        background-color: #E6E6E6;
-    }
-    #description {
-        font-size: 23px;
-    }
-
-    #video {
-        height: 350px;
-    }
-
-    #about {
-        font-size: 22px;
-    }
-}
 
 
 /* Reviews */
@@ -107,21 +66,21 @@
 }
 #review1{
   text-decoration: none;
-  overflow: hidden;
   background-color: #F5F5F5;
   border-top: solid;
   margin-right: 20px;
   margin-left: 30px;
-  height: 350px;
+  height: 3px;
   margin-top: 10px;
 }
 
 .reviews1{
-  margin-top: 28%;
+  margin-top: 40%;
   text-align: center;
   padding: 3px;
   text-decoration: none;
   color: grey;
+  font-size: 20px;
 }
 
 #reviewer1{
@@ -130,13 +89,13 @@
 }
 
 #name1{
-  font-size: 20px;
+  font-size: 30px;
   text-decoration: none;
   color: #484848;
 }
 
 .divider{
-  margin-top: -25%;
+  margin-top: -40%;
   width: 100%;
 }
 
@@ -282,4 +241,82 @@ center{
 input {
     position: relative;
     z-index: 2;
+}
+/*
+ social
+*/
+
+.fb {
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+}
+
+.insta {
+    height: 50px;
+    width: 50px;
+}
+
+@media only screen and (max-width: 350px){
+    .navbar {
+        padding: 0;
+        font-size: 12px;
+        height: auto;
+    }
+    .navbar-brand{
+        padding-left: 0px;
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .header{
+        padding: 100px 10px 10px 10px;
+        height: 350px;
+    }
+    .header h1{
+        position: relative;
+        top: 10%;
+        left: 9%;
+        height: auto;
+        font-size: 35px;
+        text-align: center;
+
+    }
+    .collapse {
+        background-color: #E6E6E6;
+    }
+    #description {
+        font-size: 23px;
+    }
+
+    #video {
+        height: 350px;
+    }
+
+    #about {
+        font-size: 22px;
+    }
+
+    .orelse{
+        font-size: 20px;
+    }
+
+    .fb {
+        height: 30px;
+        width: 30px;
+    }
+
+    .insta {
+        height: 30px;
+        width: 30px;
+    }
+
+    .nav{
+        font-size: 1.2rem;
+    }
+
+    .contact-header {
+        font-size: 2.6rem;
+    }
 }

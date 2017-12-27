@@ -13,6 +13,11 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script>
+      $(function(){
+        $("#contactph").load("contact.html");
+      });
+    </script>
   </head>
   <body>
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="padding-top:10px;">
@@ -47,9 +52,9 @@
 
     <div id="box">
       <div id="first-row">
-        <img src="images/photo-walk/image-8.jpeg" style="margin-top: 10px;">
-        <img src="images/photo-walk/image-2.jpg" style="margin-top: 10px;">
-        <img src="images/photo-walk/image-9.jpg" style="margin-top: 10px;">
+        <img src="images/photo-walk/image-8.jpeg" class="image-first">
+        <img src="images/photo-walk/image-2.jpg" class="image-first">
+        <img src="images/photo-walk/image-9.jpg" class="image-first">
       </div>
 
       <div id="second-row">
@@ -58,46 +63,16 @@
       </div>
 
       <div id="third-row">
-        <img class="image" src="images/photo-walk/image-3.jpg" style="margin-top: 20px;">
-        <img class="image" src="images/photo-walk/image-4.jpg" style="margin-top: 20px;">
+        <img class="image image-second" src="images/photo-walk/image-3.jpg">
+        <img class="image image-second" src="images/photo-walk/image-4.jpg">
       </div>
     </div>
 
-    <blockquote style="margin-left: 50px; margin-bottom: 20px;">
+    <blockquote id="blockquote">
       <p id="quote"><em>At the end of the photo-walk, it's my promise that you will be having images that you can cherish for the rest of your life.</em></p>
     </blockquote>
 
-    <div id="contact">
-      <div class="inner contact container">
-        <h1 style="text-align: center;">Drop me a message</h1>
-        <br>
-        <div class="contact-form">
-          <form id="contact-us" method="post" action="https://formspree.io/sid97jin@gmail.com">
-            <div class="col-md-6 wow animated slideInLeft" data-wow-delay=".5s">
-              <input type="text" name="name" id="name" required="required" class="form" placeholder="Name" />
-              <!-- Email -->
-              <input type="email" name="mail" id="mail" required="required" class="form" placeholder="Email" />
-              <!-- Subject -->
-              <input type="text" name="subject" id="subject" required="required" class="form" placeholder="Subject" />
-            </div>
-            <div class="col-md-6 wow animated slideInRight" data-wow-delay=".5s">
-              <!-- Message -->
-              <textarea name="message" id="message" class="form textarea"  placeholder="Message"></textarea>
-              <button type="submit" id="submit" name="submit" class="form-btn semibold">Send Message</button>
-            </div><!-- End Right Inputs -->
-          </form>
-        </div>
-      </div>
-      <br>
-      <h2 style="text-align: center;">Or else I'm quite active on</h2>
-      <br>
-      <div id="social" style="display: flex; justify-content: center;">
-      <a href="https://www.instagram.com/shivam9_7/"><img src="images/insta-icon.png" style="height: 50px; width: 50px; margin-right: 10px;"></a>
-      <a href="https://www.facebook.com/shivam.pandey.75286/"><img src="images/fb-icon.jpg" style="height: 50px; width: 50px;"></a>
-      <br/>
-    </div>
-      <hr>
-      </div>
+    <div id="contactph"></div>
 
 
   </body>

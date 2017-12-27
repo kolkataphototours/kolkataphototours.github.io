@@ -14,6 +14,13 @@
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
+    <script>
+      $(function(){
+        $("#contactph").load("contact.html");
+        $('#navbarph').load("navbar.html");
+      });
+    </script>
+
   </head>
   <body>
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="padding-top:10px;">
@@ -25,13 +32,13 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Kolkata Photo-Tours and Photo-Walks</a>
+        <a class="navbar-brand" href="#">Photo Tours and Photo Walks</a>
       </div>
       <div class="navbar-collapse collapse navbar-menubuilder">
         <ul class="nav navbar-nav navbar-right">
           <li><a href="index.html">Home</a></li>
           <li class="active"><a href="tours.html">Tours and Walks</a></li>
-          <li><a href="#">Reviews</a></li>
+          <li><a href="review.html">Reviews</a></li>
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="#">About Me</a></li>
           <li class="contact-nav"><a href="#contact">Contact</a></li>
@@ -41,7 +48,7 @@
     </nav>
 
     <div id="header">
-      <h1>Photo-Tours and Photo-Walks</h1>
+      <h1>Photo Tours and Photo Walks</h1>
     </div>
 
 
@@ -51,7 +58,7 @@
             <div class="col-md-5 tour-cards">
                 <img src="images/tours/photo-tour-photo.jpg" class="tour-images">
                 <div class="tour-text">
-                    <h2>Photo-Tours</h2>
+                    <h2>Photo Tours</h2>
                     <div class="mini-intro" style="padding: 2px;">
                         If you are planning to visit...(<a href="photo-tour.html">Read More</a>)
                     </div>
@@ -61,7 +68,7 @@
             <div class="col-md-5 tour-cards">
                 <img src="images/tours/assistant-photo.jpg" class="tour-images">
                 <div class="tour-text">
-                    <h2>Assistant</h2>
+                    <h2>Photography Assistance</h2>
                     <div class="mini-intro" style="padding: 2px;">
                         If you're in Kolkata for your ...(<a href="assistant.html">Read More</a>)
                     </div>
@@ -75,7 +82,7 @@
             <div class="col-md-5 tour-cards">
                 <img src="images/tours/photo-walk-1.jpg" class="tour-images">
                 <div class="tour-text">
-                    <h2>Photo-Walks</h2>
+                    <h2>Photo Walks</h2>
                     <div class="mini-intro" style="padding: 2px;">
                         Visiting a new location for photo...(<a href="photo-walk.html">Read More</a>)
                     </div>
@@ -95,39 +102,10 @@
         </div>
     </div>
 
-
     <hr>
-    <div id="contact">
-      <div class="inner contact container">
-        <h1 style="color: black; text-align: center;">Drop me a message</h1>
-        <br>
-        <div class="contact-form">
-          <form id="contact-us" method="post" action="https://formspree.io/sid97jin@gmail.com">
-            <div class="col-md-6 wow animated slideInLeft" data-wow-delay=".5s">
-              <input type="text" name="name" id="name" required="required" class="form" placeholder="Name" />
-              <!-- Email -->
-              <input type="email" name="mail" id="mail" required="required" class="form" placeholder="Email" />
-              <!-- Subject -->
-              <input type="text" name="subject" id="subject" required="required" class="form" placeholder="Subject" />
-            </div>
-            <div class="col-md-6 wow animated slideInRight" data-wow-delay=".5s">
-              <!-- Message -->
-              <textarea name="message" id="message" class="form textarea"  placeholder="Message"></textarea>
-              <button type="submit" id="submit" name="submit" class="form-btn semibold">Send Message</button>
-            </div><!-- End Right Inputs -->
-          </form>
-        </div>
-      </div>
-      <br>
-      <h2 style="text-align: center;">Or else I'm quite active on</h2>
-      <br>
-      <div id="social" style="display: flex; justify-content: center;">
-      <a href="https://www.instagram.com/shivam9_7/"><img src="images/insta-icon.png" style="height: 50px; width: 50px; margin-right: 10px;"></a>
-      <a href="https://www.facebook.com/shivam9_7/"><img src="images/fb-icon.jpg" style="height: 50px; width: 50px;"></a>
-      <br/>
+
+    <div id="contactph">
     </div>
-      <hr>
-      </div>
 
   </body>
 </html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Kolkata Photo Tours and Photo Walks</title>
+
+    <link href="css/review.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script>
+      $(function(){
+        $("#contactph").load("contact.html");
+        $('#navbarph').load("navbar.html");
+      });
+    </script>
+  </head>
+  <body>
+    <!--Navbar-->
+    <div id="navbarph"></div>
+
+    <div id="review-header">
+      <h1>Reviews</h1>
+    </div>
+
+    <br>
+
+    <div  class="box">
+      <div class="first row">
+        <div id="review1">
+          <div id="reviewer1">
+            <a href="#">
+              <img src="images/reviews/paulsomers.jpg" class="profile1">
+            </a>
+            <br/>
+            <span id="name1">Paul Somers</span>
+            <br/>
+            <a href="https://www.instagram.com/paulsomersphotography/" style="font-size: 20px;">@paulsomersphotography</a>
+          </div>
+          <hr class="divider"/>
+          <div class="reviews1">
+            Shivam has an amazing knowledge of Kolkata and what a photographer is uniquely looking for.  I not only use Shivam...(Read More)
+          </div>
+        </div>
+
+      </div>
+      <!--new row
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div id="review1" class="col-md-3">
+          <div id="reviewer1">
+            <a href="#">
+              <img src="images/reviews/paulsomers.jpg" class="profile1">
+            </a>
+            <br/>
+            <span id="name1">Paul Somers</span>
+            <br/>
+            <a href="https://www.instagram.com/paulsomersphotography/" style="font-size: 20px;">@paulsomersphotography</a>
+          </div>
+          <hr class="divider"/>
+          <div class="reviews1">
+            Shivam has an amazing knowledge of Kolkata and what a photographer is uniquely looking for.  I not only use Shivam...(Read More)
+          </div>
+        </div>
+
+        <div id="review1" class="col-md-3">
+          <div id="reviewer1">
+            <a href="#">
+              <img src="images/reviews/paulsomers.jpg" class="profile1">
+            </a>
+            <br/>
+            <span id="name1">Paul Somers</span>
+            <br/>
+            <a href="https://www.instagram.com/paulsomersphotography/" style="font-size: 20px;">@paulsomersphotography</a>
+          </div>
+          <hr class="divider"/>
+          <div class="reviews1">
+            Shivam has an amazing knowledge of Kolkata and what a photographer is uniquely looking for.  I not only use Shivam...(Read More)
+          </div>
+        </div>
+
+        <div id="review1" class="col-md-3">
+          <div id="reviewer1">
+            <a href="#">
+              <img src="images/reviews/paulsomers.jpg" class="profile1">
+            </a>
+            <br/>
+            <span id="name1">Paul Somers</span>
+            <br/>
+            <a href="https://www.instagram.com/paulsomersphotography/" style="font-size: 20px;">@paulsomersphotography</a>
+          </div>
+          <hr class="divider"/>
+          <div class="reviews1">
+            Shivam has an amazing knowledge of Kolkata and what a photographer is uniquely looking for.  I not only use Shivam...(Read More)
+          </div>
+        </div>
+      </div>-->
+
+
+    </div>
+    <br>
+    <div id="contactph"></div>
+
+    <script>
+        $(document).on('click', 'a[href^="#"]', function (event) {
+          event.preventDefault();
+          $('html, body').animate({
+          scrollTop: $($.attr(this, 'href')).offset().top
+        }, 500);
+        });
+    </script>
+  </body>
+  </html>

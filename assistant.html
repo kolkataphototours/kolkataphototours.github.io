@@ -12,6 +12,11 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script>
+      $(function(){
+        $("#contactph").load("contact.html");
+      });
+    </script>
   </head>
   <body>
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="padding-top:10px;">
@@ -23,13 +28,13 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Kolkata Photo-Tours and Photo-Walks</a>
+        <a class="navbar-brand" href="#">Photo Tours and Photo Walks</a>
       </div>
       <div class="navbar-collapse collapse navbar-menubuilder">
         <ul class="nav navbar-nav navbar-right">
           <li><a href="index.html">Home</a></li>
           <li class="active"><a href="tours.html">Tours and Walks</a></li>
-          <li><a href="#">Reviews</a></li>
+          <li><a href="review.html">Reviews</a></li>
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="#">About Me</a></li>
           <li class="contact-nav"><a href="#contact">Contact</a></li>
@@ -40,64 +45,31 @@
 
     <div id="assist-header">
       <a href="tours.html"><h2>Back</h2></a>
-      <h1>Assistant Photography</h1>
+      <h1>Photography Assistance</h1>
     </div>
 
     <div id="box">
       <div id="first-row">
-        <img src="images/assistant/image-1.jpg" style="margin-top: 10px;">
-        <img src="images/assistant/image-2.jpeg" style="margin-top: 10px;">
-        <img src="images/assistant/image-5.jpeg" style="margin-top: 10px;">
+        <img class="image-first" src="images/assistant/image-1.jpg" >
+        <img class="image-first" src="images/assistant/image-2.jpeg">
+        <img class="image-first" src="images/assistant/image-5.jpeg">
       </div>
 
       <div id="second-row">
-        <h1>Assisant Photography</h1>
-        <p>If you're in Kolkata for your photography or film-making project, I would love to assist you. I am also a part of photography world so I have understandings of how things work with photographers and having me in your back-pack during your project-shoot can reduce a lot of work. Being local, I'll be approching and handling people to make sure that your shoot went as per your your wish. It will be awesome to carry your bucket of Gears and KFC Chicken during the shoot.</p>
+        <h1>Photography Assistance</h1>
+        <p>If you're in Kolkata for your photography or film-making project, I would love to assist you. I am also a part of photography world so I have understandings of how things work with photographers and having me in your back-pack during your project-shoot can reduce a lot of work. Being local, I'll be approching and handling people to make sure that your shoot went as per your your wish. It will be awesome to carry your bag of Gears and bucket of KFC Chicken during the shoot.</p>
       </div>
 
       <div id="third-row">
-        <img class="image" src="images/assistant/image-3.jpeg" style="margin-top: 20px;">
-        <img class="image" src="images/assistant/image-4.jpg" style="margin-top: 20px;">
+        <img class="image image-second" src="images/assistant/image-3.jpeg">
+        <img class="image image-second" src="images/assistant/image-4.jpg" >
       </div>
     </div>
 
     <blockquote style="margin-left: 50px; margin-bottom: 20px;">
       <p id="quote"><em>I can assure you that you'll have an awesome experience to work in the city of Joy that you can share with the whole world.</em></p>
     </blockquote>
-
-     <div id="contact">
-      <div class="inner contact container">
-        <h1 style="text-align: center;">Drop me a message</h1>
-        <br>
-        <div class="contact-form">
-          <form id="contact-us" method="post" action="https://formspree.io/sid97jin@gmail.com">
-            <div class="col-md-6 wow animated slideInLeft" data-wow-delay=".5s">
-              <input type="text" name="name" id="name" required="required" class="form" placeholder="Name" />
-              <!-- Email -->
-              <input type="email" name="mail" id="mail" required="required" class="form" placeholder="Email" />
-              <!-- Subject -->
-              <input type="text" name="subject" id="subject" required="required" class="form" placeholder="Subject" />
-            </div>
-            <div class="col-md-6 wow animated slideInRight" data-wow-delay=".5s">
-              <!-- Message -->
-              <textarea name="message" id="message" class="form textarea"  placeholder="Message"></textarea>
-              <button type="submit" id="submit" name="submit" class="form-btn semibold">Send Message</button>
-            </div><!-- End Right Inputs -->
-          </form>
-        </div>
-      </div>
-      <br>
-      <h2 style="text-align: center;">Or else I'm quite active on</h2>
-      <br>
-      <div id="social" style="display: flex; justify-content: center;">
-      <a href="https://www.instagram.com/shivam9_7/"><img src="images/insta-icon.png" style="height: 50px; width: 50px; margin-right: 10px;"></a>
-      <a href="https://www.facebook.com/shivam.pandey.75286/"><img src="images/fb-icon.jpg" style="height: 50px; width: 50px;"></a>
-      <br/>
-    </div>
-    <hr>
-  </div>
-
-
+    <div id="contactph"></div>
 
   </body>
 </html>

@@ -1,11 +1,11 @@
 #header{
-    background-image: url('../images/gallery2/photo-15.jpg');
+    background-image: url('../images/tours/cover_3.jpeg');
     height: 600px;
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     padding: 100px;
-    margin-top: -2%;
+    margin-top: 0%;
 }
 
 #header h1 {
@@ -19,7 +19,7 @@
     width:;
     font-size: 50px;
     padding: 20px;
-    background:rgba(0, 0, 0, 0.3);
+    background:rgba(0, 0, 0, 0.5);
 }
 
 .tour-text {
@@ -66,10 +66,15 @@
     background-color: rgb(139,195,163, 0.9);
 }
 
+/**
+Mobile
+*/
+
 @media only screen and (max-width: 500px) {
     #header{
         padding: 100px 10px 10px 10px;
         height: 350px;
+        background-position: center center;
     }
 
     #header h1 {

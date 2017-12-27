@@ -1,9 +1,10 @@
-
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Josefin+Sans|Vollkorn');
 
 .navbar{
     height: 70px;
     font-size: 18px;
     padding: 5px;
+    font-family: 'Vollkorn', serif;
 }
 
 
@@ -17,11 +18,12 @@
     margin-top: -2%;
 }
 .header h1{
+    font-family: 'Vollkorn', serif;
     text-align: center;
     position: relative;
     top: 170px;
     height: 100px;
-    width: 80%;
+    width: 83%;
     left: 120px;
     color: white;
     width:;
@@ -31,7 +33,7 @@
 }
 
 #description {
-    font-family: Arial, sans-serif;
+    font-family: 'Vollkorn', serif;
     text-align: center;
     margin-top: 30px;
     width: 80%;
@@ -43,10 +45,10 @@
 
 #about{
     width: 80%;
+    font-family: 'Vollkorn', serif;
     margin-left: 10%;
     margin-top: 40px;
     font-size: 25px;
-    font-family: Arial, sans-serif;
 }
 
 
@@ -65,8 +67,9 @@
   border-radius: 50%;
 }
 #review1{
+  font-family: 'Vollkorn', serif;
   text-decoration: none;
-  background-color: #F5F5F5;
+  background-color: #EEE6C2;
   border-top: solid;
   margin-right: 20px;
   margin-left: 30px;
@@ -97,6 +100,20 @@
 .divider{
   margin-top: -40%;
   width: 100%;
+}
+
+.divider2{
+  margin-top: -57%;
+  width: 100%;
+}
+
+.reviews2 {
+    margin-top: 57%;
+    text-align: center;
+    padding: 3px;
+    text-decoration: none;
+    color: grey;
+    font-size: 20px;
 }
 
 /*
@@ -255,6 +272,26 @@ input {
 .insta {
     height: 50px;
     width: 50px;
+}
+
+#about-header{
+    background-image: url(../images/shivam-image.jpeg);
+    height: 600px;
+    width: 100%;
+    background-position: center center;
+}
+
+#about-para h1 {
+    font-family: 'Vollkorn', serif;
+    font-size: 4rem;
+}
+
+#about-para {
+    font-family: 'Josefin Sans', sans-serif;
+    width: 80%;
+    text-align: center;
+    margin-left: 10%;
+    line-height: 1.5rem;
 }
 
 @media only screen and (max-width: 350px){

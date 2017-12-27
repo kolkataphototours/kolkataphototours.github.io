@@ -28,54 +28,51 @@
 }
 
 /* Paul Somers*/
-
-.profile1{
-    height: 80px;
-    width: 80px;
-    border-radius: 50%;
-}
-#review1{
-    width: 30%;
-    height: 350px;
-    position: relative;
-    text-decoration: none;
-    background-color: #F5F5F5;
-    border-top: solid;
+#review-paul {
+    font-family: 'Vollkorn', serif;
+    width: 32rem;
+    height: 35rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
     margin-right: 20px;
     margin-left: 30px;
-    height: 3px;
-    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10%;
 }
 
-.reviews1{
-    margin-top: 40%;
+.profile-paul {
+    height: 80px;
+    width: 80px;
+    z-index: 1000;
+    border-radius: 50%;
+}
+
+#name-paul {
+    font-size: 2.4rem;
+}
+
+.reviews-paul {
+    padding:0px 7px;
+    font-size: 2rem;
+}
+
+.review-jake {
+    font-family: 'Vollkorn', serif;
+    width: 32rem;
+    height: 35rem;
     text-align: center;
-    padding: 3px;
-    text-decoration: none;
-    color: grey;
-    font-size: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 10%;
+    margin-right: 20px;
+    margin-left: 30px;
+    padding: 10px;
 }
 
-#reviewer1{
-    padding-top: 20px;
-    text-align: center;
-}
-
-#name1{
-    font-size: 30px;
-    text-decoration: none;
-    color: #484848;
-}
-
-.divider{
-    z-index: 0;
-    position: relative;
-    margin-top: -40%;
-    width: 100%;
-}
-
-#firstrow {
+.box {
     display: flex;
+    margin-left: 10%;
 }
 
 

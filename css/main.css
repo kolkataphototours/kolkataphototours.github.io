@@ -18,7 +18,7 @@
     margin-top: -2%;
 }
 .header h1{
-    font-family: 'Vollkorn', serif;
+    /*font-family: 'Vollkorn', serif;*/
     text-align: center;
     position: relative;
     top: 170px;
@@ -52,70 +52,67 @@
 }
 
 
-#reviews h1{
-    margin-left: 30px;
-    margin-top: 40px;
-    margin-bottom: 30px;
-}
-
-
-
-/* Reviews */
-.profile1{
-  height: 80px;
-  width: 80px;
-  border-radius: 50%;
-}
-#review1{
-  font-family: 'Vollkorn', serif;
-  text-decoration: none;
-  background-color: #EEE6C2;
-  border-top: solid;
-  margin-right: 20px;
-  margin-left: 30px;
-  height: 3px;
-  margin-top: 10px;
-}
-
-.reviews1{
-  margin-top: 40%;
-  text-align: center;
-  padding: 3px;
-  text-decoration: none;
-  color: grey;
-  font-size: 20px;
-}
-
-#reviewer1{
-  padding-top: 20px;
-  text-align: center;
-}
-
-#name1{
-  font-size: 30px;
-  text-decoration: none;
-  color: #484848;
-}
-
-.divider{
-  margin-top: -40%;
-  width: 100%;
-}
-
-.divider2{
-  margin-top: -57%;
-  width: 100%;
-}
-
-.reviews2 {
-    margin-top: 57%;
+.review-outsidebox {
+    font-size: 40px;
+    font-family: 'Vollkorn', serif;
     text-align: center;
-    padding: 3px;
-    text-decoration: none;
-    color: grey;
-    font-size: 20px;
+    margin-bottom:35px;
 }
 
+.contact-nav {
+    background-color: rgb(139,195,163, 0.5);
+    border-radius: 0 4px 4px 0;
+}
+
+.contact-nav:hover {
+    background-color: rgb(139,195,163, 0.9);
+}
+
+
+#review-paul {
+    font-family: 'Vollkorn', serif;
+    width: 32rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    margin-right: 20px;
+    margin-left: 30px;
+    padding: 10px;
+    border-radius: 10%;
+}
+
+.profile-paul {
+    height: 80px;
+    width: 80px;
+    z-index: 1000;
+    border-radius: 50%;
+}
+
+#name-paul {
+    font-size: 2.4rem;
+}
+
+.reviews-paul {
+    padding:0px 7px;
+    font-size: 2rem;
+}
+
+.review-jake {
+    font-family: 'Vollkorn', serif;
+    width: 32rem;
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 10%;
+    margin-right: 20px;
+    margin-left: 30px;
+    padding: 10px;
+}
+
+.box {
+    display: flex;
+    margin-left: 10%;
+}
 /*
  Image cards
 */
@@ -325,6 +322,23 @@ input {
     }
     #description {
         font-size: 23px;
+    }
+    .box {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+
+    .review-jake {
+        width: 28.75rem;
+        margin-left:-1.2rem;
+    }
+
+    #review-paul {
+        width: 28.75rem;
+        margin-left: -1.2rem;
+        margin-top: 20px;
     }
 
     #video {

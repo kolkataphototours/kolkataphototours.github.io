@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Kolkata Photo-Tours and Workshops</title>
+    <title>Kolkata Photo Tours and Photo Walks</title>
 
     <link href="css/main.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="css/mini-intro.css" type="text/css">
@@ -74,6 +74,14 @@
       <p id="quote"><em>I can assure you that you will have an awesome experience to work in the city of Joy that you can share with whole world.</em></p>
     </blockquote>
     <div id="contactph"></div>
+    <script>
+        $(document).on('click', 'a[href^="#"]', function (event) {
+          event.preventDefault();
+          $('html, body').animate({
+          scrollTop: $($.attr(this, 'href')).offset().top
+        }, 500);
+        });
+    </script>
 
   </body>
 </html

@@ -1,118 +1,288 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Gallery</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <script type="text/javascript" src="js/jquery.js"></script>
-  <link rel="stylesheet" type="text/css" href="css/normalize.css">
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/font-awesome.min.css">
+    <title>Kolkata Photo Tours and Photo Walks</title>
 
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  <script src='js/mpg.js'></script>
-  <link rel="stylesheet" href="css/gallery.css">
+    <link href="css/main.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="css/gallery.css" type="text/css">
+    <link rel="stylesheet" href="css/lightbox.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/lightbox.js"></script>
+    <!--<script type="text/javascript" src="js/gallery.js"></script>-->
+    <script>
+      $(function(){
+        $("#contactph").load("contact.html");
+      });
+    </script>
   </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="padding-top:10px;">
+      <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" role="button">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Photo Tours and Photo Walks</a>
+      </div>
+      <div class="navbar-collapse collapse navbar-menubuilder">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="tours.html">Tours and Walks</a></li>
+          <li><a href="review.html">Reviews</a></li>
+          <li class="active"><a href="gallery.html">Gallery</a></li>
+          <li><a href="aboutme.html">About Me</a></li>
+          <li class="contact-nav"><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      </div>
+    </nav>
 
-<body>
+    <!--Slideshow-->
 
-<div class="m-p-g">
-    <div class="container">
-        <a href="index.html">
-            <h1 style="padding-top: 10px;">Kolkata Photo-Tours and Workshops</h1>
+    <div class="diy-slideshow">
+       <figure class="show">
+        <img src="images/gallery/slideshow/i1.jpg" class="image-slide" />
+      </figure>
+
+      <figure>
+        <img src="images/gallery/slideshow/i2.jpg" class="image-slide" />
+      </figure>
+
+      <figure>
+        <img src="images/gallery/slideshow/i3.jpg" class="image-slide"/>
+      </figure>
+
+      <figure>
+        <img src="images/gallery/slideshow/i4.jpg" class="image-slide"/>
+      </figure>
+
+      <figure>
+        <img src="images/gallery/slideshow/i5.jpg" class="image-slide"/>
+      </figure>
+
+      <figure>
+        <img src="images/gallery/slideshow/i6.jpg" class="image-slide"/>
+      </figure>
+
+      <figure>
+        <img src="images/gallery/slideshow/i7.jpg" class="image-slide"/>
+      </figure>
+
+      <figure>
+        <img src="images/gallery/slideshow/i8.jpg" class="image-slide" />
+      </figure>
+
+      <span class="prev">&laquo;</span>
+      <span class="next">&raquo;</span>
+    </div>
+
+    <br>
+    <br>
+
+    <!--Gallery-->
+    <div id="lightboxgallery">
+
+      <!--First row -->
+      <div class="row1 rows">
+        <a href="images/gallery/i1.jpeg" data-lightbox="images">
+          <img src="images/gallery/thumbs/i1.jpg" alt=""/>
         </a>
-        <nav class="navbar navbar-default">
-          <div class="container-fluid">
-            <ul class="nav navbar-nav">
-              <li><a href="index.html">Home</a></li>
-              <li class="active"><a href="gallery.html">Gallery</a></li>
-              <li><a href="#">Tours and Workshops</a></li>
-              <li><a href="#">Reviews</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div>
-        </nav>
-    </div>
-  <div class="m-p-g__thumbs" data-google-image-layout data-max-height="350" id="images">
-    <img src="images/gallery3/photo-2.jpg" data-full="images/gallery3/photo-2.jpg" class="m-p-g__thumbs-img"/>
-    <img src="images/gallery3/photo-3.jpg" data-full="images/gallery3/photo-3_2.jpg" class="m-p-g__thumbs-img"/>
-    <img src="images/gallery3/photo-1.jpg" data-full="images/gallery3/photo-1.jpg" class="m-p-g__thumbs-img"/>
-    <img src="images/gallery3/photo-4.jpg" data-full="images/gallery3/photo-4.jpg" class="m-p-g__thumbs-img"/>
-    <img src="images/gallery3/photo-5.jpg" data-full="images/gallery3/photo-5.jpg" class="m-p-g__thumbs-img"/>
-    <img src="images/gallery3/photo-6.jpg" data-full="images/gallery3/photo-6.jpg" class="m-p-g__thumbs-img"/>
-    <img src="images/gallery3/photo-8.jpg" data-full="images/gallery3/photo-8.jpg" class="m-p-g__thumbs-img"/>
-    <img src="images/gallery3/photo-7_2.jpg" data-full="images/gallery3/photo-7.jpg" class="m-p-g__thumbs-img"/>
-    <img src="images/gallery3/photo-9.jpg" data-full="images/gallery3/photo-9.jpg" class="m-p-g__thumbs-img"/>
-    <img src="images/gallery3/photo-10.jpg" data-full="images/gallery3/photo-10.jpg" class="m-p-g__thumbs-img"/>
-    <img src="images/gallery3/photo-11.jpg" data-full="images/gallery3/photo-11.jpg" class="m-p-g__thumbs-img"/>
-    <img src="images/gallery3/photo-12.jpg" data-full="images/gallery3/photo-12.jpg" class="m-p-g__thumbs-img"/>
-    <img src="images/gallery/photo-13.jpg" data-full="images/gallery3/photo-13.jpg" class="m-p-g__thumbs-img"/>
-    <img src="images/gallery3/photo-14.jpg" data-full="images/gallery3/photo-14.jpg" class="m-p-g__thumbs-img"/>
-    <img src="images/gallery3/photo-15.jpg" data-full="images/gallery3/photo-15.jpg" class="m-p-g__thumbs-img"/>
-    <img src="images/gallery3/photo-16.jpg" data-full="images/gallery3/photo-16.jpg" class="m-p-g__thumbs-img"/>
-    <img src="images/gallery3/photo-17.jpg" data-full="images/gallery3/photo-17.jpg" class="m-p-g__thumbs-img"/>
-    <img src="images/gallery3/photo-18.jpg" data-full="images/gallery3/photo-18.jpg" class="m-p-g__thumbs-img"/>
-    <img src="images/gallery3/photo-19.jpg" data-full="images/gallery3/photo-19.jpg" class="m-p-g__thumbs-img"/>
-    <img src="images/gallery3/photo-20.jpg" data-full="images/gallery3/photo-20.jpg" class="m-p-g__thumbs-img"/>
-    <img src="images/gallery3/photo-21.jpg" data-full="images/gallery3/photo-21.jpg" class="m-p-g__thumbs-img"/>
 
-    <div class="container" >
-      <ul class="pagination pagination-lg">
-        <li><a href="#images" class="active">1</a></li>
-        <li><a href="gallery2.html">2</a></li>
-        <li><a href="gallery3.html">3</a></li>
-        <li><a href="gallery2.html">Next</a></li>
-      </ul>
+        <a href="images/gallery/i2.jpg" data-lightbox="images">
+          <img src="images/gallery/thumbs/i2.jpg" alt="">
+        </a>
+
+        <a href="images/gallery/i3.jpg" data-lightbox="images">
+          <img src="images/gallery/thumbs/i3.jpg" alt="">
+        </a>
+      </div>
+
+      <!--Second row -->
+
+      <div class="row2 rows">
+        <a href="images/gallery/i4.jpg" data-lightbox="image">
+          <img src="images/gallery/thumbs/i4.jpg" alt="">
+        </a>
+
+        <a href="images/gallery/i5.jpg" data-lightbox="images">
+          <img src="images/gallery/thumbs/i5.jpg" alt="">
+        </a>
+
+        <a href="images/gallery/i6.jpeg" data-lightbox="images">
+          <img src="images/gallery/thumbs/i6.jpeg" alt="" >
+        </a>
+
+        <a href="images/gallery/i7.jpg" data-lightbox="images">
+          <img src="images/gallery/thumbs/i7.jpg" alt="">
+        </a>
+
+      </div>
+
+      <!--Third row -->
+
+      <div class="row3 rows">
+        <a href="images/gallery/i8.jpg" data-lightbox="images">
+          <img src="images/gallery/thumbs/i8.jpg" alt="">
+        </a>
+
+        <a href="images/gallery/i9.jpg" data-lightbox="images">
+          <img src="images/gallery/thumbs/i9.jpg" alt="">
+        </a>
+
+        <a href="images/gallery/i10.jpg" data-lightbox="images">
+          <img src="images/gallery/thumbs/i10.jpg" alt="">
+        </a>
+      </div>
+
+      <div class="row4 rows">
+        <a href="images/gallery/i11.jpg" data-lightbox="images">
+          <img src="images/gallery/thumbs/i11.jpg" alt="">
+        </a>
+
+        <a href="images/gallery/i12.jpg" data-lightbox="images">
+          <img src="images/gallery/thumbs/i12.jpg" alt="">
+        </a>
+
+        <a href="images/gallery/i13.jpg" data-lightbox="images">
+          <img src="images/gallery/thumbs/i13.jpg" alt="">
+        </a>
+
+        <a href="images/gallery/i14.jpg" data-lightbox="images">
+          <img src="images/gallery/thumbs/i14.jpg" alt="">
+        </a>
+      </div>
+
+      <div class="row5 rows">
+        <a href="images/gallery/i15.jpg" data-lightbox="images">
+          <img src="images/gallery/thumbs/i15.jpg" alt="">
+        </a>
+
+        <a href="images/gallery/i16.jpg" data-lightbox="images">
+          <img src="images/gallery/thumbs/i16.jpg" alt="" style="">
+        </a>
+
+        <a href="images/gallery/i18.jpg" data-lightbox="images">
+          <img src="images/gallery/thumbs/i18.jpg" alt="" >
+        </a>
+      </div>
+
+      <div class="row6 rows">
+        <a href="images/gallery/i25.jpg" data-lightbox="images">
+          <img src="images/gallery/thumbs/i25.jpg" alt="">
+        </a>
+
+        <a href="images/gallery/i26.jpg" data-lightbox="images">
+          <img src="images/gallery/thumbs/i26.jpg" alt="" >
+        </a>
+
+        <a href="images/gallery/i22.jpg" data-lightbox="images">
+          <img src="images/gallery/thumbs/i22.jpg" alt="">
+        </a>
+      </div>
+
+      <div class="row7 rows">
+        <a href="images/gallery/i21.jpg" data-lightbox="images">
+          <img src="images/gallery/thumbs/i21.jpg" alt="" >
+        </a>
+
+        <a href="images/gallery/i27.jpg" data-lightbox="images">
+          <img src="images/gallery/thumbs/i27.jpg" alt="" >
+        </a>
+
+        <a href="images/gallery/i28.jpg" data-lightbox="images">
+          <img src="images/gallery/thumbs/i28.jpg" alt="">
+        </a>
+      </div>
+
+
+      <!--Eight row -->
+
+      <div class="row8 rows">
+        <a href="images/gallery/i29.jpg" data-lightbox="images">
+          <img src="images/gallery/thumbs/i29.jpg" alt="" style="">
+        </a>
+
+        <a href="images/gallery/i30.jpg" data-lightbox="images">
+          <img src="images/gallery/thumbs/i30.jpg" alt="" style="">
+        </a>
+
+        <a href="images/gallery/i24.jpg" data-lightbox="images">
+          <img src="images/gallery/thumbs/i31.jpg" alt="" >
+        </a>
+      </div>
+
+
+      <div class="row9 rows">
+        <a href="images/gallery/i19.jpg" data-lightbox="images">
+          <img src="images/gallery/thumbs/i19.jpg" alt="" >
+        </a>
+
+        <a href="images/gallery/i31.jpg" data-lightbox="images">
+          <img src="images/gallery/thumbs/i32.jpg" alt="" style="">
+        </a>
+
+        <a href="images/gallery/i33.jpg" data-lightbox="images">
+          <img src="images/gallery/thumbs/i33.jpg" alt="" style="">
+        </a>
+      </div>
+
     </div>
+    <br/>
     <hr>
-    <div id="contact">
-      <div class="inner contact container">
-        <h1 style="color: black;">Drop me a message</h1>
-        <br>
-        <div class="contact-form">
-          <form id="contact-us" method="post" action="https://formspree.io/sid97jin@gmail.com">
-            <div class="col-md-6 wow animated slideInLeft" data-wow-delay=".5s">
-              <input type="text" name="name" id="name" required="required" class="form" placeholder="Name" />
-              <!-- Email -->
-              <input type="email" name="mail" id="mail" required="required" class="form" placeholder="Email" />
-              <!-- Subject -->
-              <input type="text" name="subject" id="subject" required="required" class="form" placeholder="Subject" />
-            </div>
-            <div class="col-md-6 wow animated slideInRight" data-wow-delay=".5s">
-              <!-- Message -->
-              <textarea name="message" id="message" class="form textarea"  placeholder="Message"></textarea>
-              <button type="submit" id="submit" name="submit" class="form-btn semibold">Send Message</button>
-            </div><!-- End Right Inputs -->
-          </form>
-        </div>
-      </div>
-      </div>
-
-  </div>
-
-  <div class="m-p-g__fullscreen"></div>
-  <br/>
-
-
+    <div id="contactph"></div>
 
 
   <script>
-  var elem = document.querySelector('.m-p-g');
+    (function(){
 
-  document.addEventListener('DOMContentLoaded', function() {
-    var gallery = new MaterialPhotoGallery(elem);
-  });
-  </script>
-  <script>
-    $(document).on('click', 'a[href^="#"]', function (event) {
+  var counter = 0, // to keep track of current slide
+      $items = document.querySelectorAll('.diy-slideshow figure'), // a collection of all of the slides, caching for performance
+      numItems = $items.length; // total number of slides
+
+  // this function is what cycles the slides, showing the next or previous slide and hiding all the others
+  var showCurrent = function(){
+    var itemToShow = Math.abs(counter%numItems);// uses remainder (aka modulo) operator to get the actual index of the element to show
+
+    // remove .show from whichever element currently has it
+    // http://stackoverflow.com/a/16053538/2006057
+    [].forEach.call( $items, function(el){
+      el.classList.remove('show');
+    });
+
+    // add .show to the one item that's supposed to have it
+    $items[itemToShow].classList.add('show');
+  };
+
+  // add click events to prev & next buttons
+  document.querySelector('.next').addEventListener('click', function() {
+       counter++;
+       showCurrent();
+    }, false);
+
+  document.querySelector('.prev').addEventListener('click', function() {
+       counter--;
+       showCurrent();
+    }, false);
+
+  })();
+
+  $(document).on('click', 'a[href^="#"]', function (event) {
       event.preventDefault();
       $('html, body').animate({
       scrollTop: $($.attr(this, 'href')).offset().top
     }, 500);
-    });
-  </script>
+  });
 
-</body>
+  </script>
+  </body>
 </html>

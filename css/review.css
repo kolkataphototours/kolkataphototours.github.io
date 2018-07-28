@@ -53,6 +53,19 @@
 
 }
 
+#review-lorenzo {
+    font-family: 'Vollkorn', serif;
+    width: 32rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    margin-right: 20px;
+    margin-left: 30px;
+    padding: 10px;
+    border-radius: 10%;
+
+}
+
 .profile-paul {
     height: 80px;
     width: 80px;
@@ -81,7 +94,7 @@
     padding: 10px;
 }
 
-.box, .box2 {
+.box, .box2, .box3 {
     display: flex;
     margin-left: 10%;
     margin-top: 30px;

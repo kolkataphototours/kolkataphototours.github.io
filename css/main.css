@@ -80,18 +80,6 @@
     border-radius: 10%;
 }
 
-#review-george {
-    font-family: 'Vollkorn', serif;
-    width: 32rem;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.9);
-    color: white;
-    margin-right: 20px;
-    margin-left: 30px;
-    padding: 10px;
-    border-radius: 10%;
-}
-
 .profile-paul {
     height: 80px;
     width: 80px;
@@ -147,12 +135,6 @@
     padding: 5px;
     background:rgba(0, 0, 0, 0.3);
 }
-
-#video-frame {
-    width: 80%;
-    margin-left: 10%;
-}
-
 
 /*
     Form
@@ -304,22 +286,44 @@ input {
     line-height: 1.5rem;
 }
 
-@media only screen and (max-width: 350px){
-    .navbar {
-        padding: 0;
-        font-size: 12px;
-        height: auto;
+@media only screen and (min-width: 1080px) {
+    .header {
+        height: 800px;
     }
-    .navbar-brand{
-        padding-left: 0px;
-        font-size: 10px;
+
+    .header h1 {
+        position: relative;
+        top: 40%;
     }
+
+    .box, .box2, .box3 {
+        margin-left: 20%;
+    }
+
 }
+
+@media only screen and (min-width: 720px) {
+    .header {
+        height: 800px;
+    }
+
+    .header h1 {
+        position: relative;
+        top: 40%;
+    }
+
+    .box, .box2, .box3 {
+        margin-left: 5%;
+    }
+
+}     
+
 
 @media only screen and (max-width: 500px) {
     .header{
         padding: 100px 10px 10px 10px;
         height: 350px;
+        background-position: center center;
     }
     .header h1{
         position: relative;
@@ -342,25 +346,10 @@ input {
         margin-top: 15px;
     }
 
-    .review-jake {
-        width: 28.75rem;
-        margin-left:3%;
-    }
-
     #review-paul {
-        width: 80%;
-        margin-left: 5%;
+        width: 90%;
+        margin-left: 2.5%;
         margin-top: 20px;
-    }
-
-    #review-george {
-        width: 28.75rem;
-        margin-left: -1.2rem;
-        margin-top: 20px;
-    }
-
-    #video {
-        height: 350px;
     }
 
     #about {
@@ -396,17 +385,14 @@ input {
     }
 }
 
-@media only screen and (max-width: 1080px) {
-    .header {
-        height: 800px;
+@media only screen and (max-width: 350px){
+    .navbar {
+        padding: 0;
+        font-size: 12px;
+        height: auto;
     }
-
-    .header h1 {
-        position: relative;
-        top: 40%;
+    .navbar-brand{
+        padding-left: 0px;
+        font-size: 10px;
     }
-
-    .box, .box2, .box3 {
-        margin-left: 20%;
-    }
-}   
+}

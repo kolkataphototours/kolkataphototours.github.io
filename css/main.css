@@ -26,7 +26,6 @@
     width: 83%;
     left: 120px;
     color: white;
-    width:;
     font-size: 50px;
     padding: 20px;
     background:rgba(0, 0, 0, 0.3);
@@ -51,11 +50,17 @@
     font-size: 25px;
 }
 
+.tour-cards {
+    margin-left: auto;
+    width: 95%;
+}
+
 
 .review-outsidebox {
     font-size: 40px;
     font-family: 'Vollkorn', serif;
     text-align: center;
+    margin-left: auto;
 }
 
 .contact-nav {
@@ -110,7 +115,7 @@
 
 .box, .box2 ,.box3 {
     display: flex;
-    margin-left: 5%;
+    margin-left: auto;
     margin-top: 30px;
 }
 
@@ -273,17 +278,22 @@ input {
     background-position: center center;
 }
 
-#about-para h1 {
-    font-family: 'Vollkorn', serif;
-    font-size: 4rem;
-}
-
 #about-para {
     font-family: 'Josefin Sans', sans-serif;
     width: 80%;
     text-align: center;
     margin-left: 10%;
     line-height: 1.5rem;
+}
+
+.header-h1 {
+    font-family: 'Vollkorn', serif;
+    font-size: 4rem;
+    text-align: center;
+}
+
+.orelse {
+    font-family: 'Vollkorn', serif;
 }
 
 @media only screen and (min-width: 1080px) {
@@ -297,7 +307,7 @@ input {
     }
 
     .box, .box2, .box3 {
-        margin-left: 20%;
+        margin-left: auto;
     }
 
 }
@@ -313,10 +323,10 @@ input {
     }
 
     .box, .box2, .box3 {
-        margin-left: 5%;
+        justify-content: center;
     }
 
-}     
+}
 
 
 @media only screen and (max-width: 500px) {
@@ -343,12 +353,13 @@ input {
     .box, .box2, .box3 {
         display: flex;
         flex-direction: column;
+        margin-left: auto;
         margin-top: 15px;
     }
 
     #review-paul {
         width: 90%;
-        margin-left: 2.5%;
+        margin-left: auto;
         margin-top: 20px;
     }
 
@@ -357,7 +368,8 @@ input {
     }
 
     .orelse{
-        font-size: 20px;
+        font-family: 'Vollkorn', serif;
+        font-size: 1.5rem;
     }
 
     .fb {

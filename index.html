@@ -8,11 +8,16 @@
     <meta name="google-site-verification" content="uEHXC-h6sBtzx1twswYGKZC4KDN2ySkcth18vCnK-Ng" />
 
     <title>Kolkata Photo Tours and Photo Walks</title>
-
+    <!--Local stylesheet-->
     <link href="css/main.css" rel="stylesheet" type="text/css"/>
     <link href="css/tours.css" rel="stylesheet" type="text/css"/>
 
+    <!--Compiled Stylesheet-->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/slick/slick-theme.css"/>
+
+
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111805303-1"></script>
@@ -64,10 +69,32 @@
       <div id="navbarph"></div>
 
 
+      <!--Slider-->
+      <div class="slider">
+        <div>
+          <img class="slider-images" data-lazy="images/slider/1_mob.JPG" data-srcset="images/slider/1_mob.JPG 640w, images/slider/12.JPG 960w" data-sizes="100vw">
+        </div>
+        <div>
+          <img class="slider-images" data-lazy="images/slider/5_mob.JPG" data-srcset="images/slider/5_mob.JPG 640w, images/slider/51.JPG 960w" data-sizes="100vw">
+        </div>
+        <div>
+          <img class="slider-images" data-lazy="images/slider/2_mobi.JPG" data-srcset="images/slider/2_mobi.JPG 640w, images/slider/21.JPG 960w" data-sizes="100vw">
+        </div>
+        <div>
+          <img class="slider-images" data-lazy="images/slider/3_mob.JPG" data-srcset="images/slider/3_mob.JPG 640w, images/slider/31.JPG 960w" data-sizes="100vw">
+        </div>
+        <div>
+          <img class="slider-images" data-lazy="images/slider/4_mob.JPG" data-srcset="images/slider/4_mob.JPG 640w, images/slider/41.JPG 960w" data-sizes="100vw">
+        </div>
+
+      </div>
+
       <!--Header-->
       <div class="header">
         <h1>Kolkata Photo Tours and Photo Walks</h1>
       </div>
+
+
 
       <!--description-->
       <div id="description">
@@ -410,6 +437,9 @@
       <br>
 
       <div id="contactph"></div>
+
+
+
       <script>
         $(document).on('click', 'a[href^="#"]', function (event) {
           event.preventDefault();
@@ -418,5 +448,22 @@
         }, 500);
         });
       </script>
+
+      <script type="text/javascript" src="lib/slick/slick.min.js"></script>
+      <script type="text/javascript">
+        $(document).ready(function(){
+          $('.slider').slick({
+            lazyLoad: 'ondemand', // ondemand progressive anticipated
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 4000,
+            dots: true,
+            arrows: false,
+
+          });
+        })
+    </script>
     </body>
 </html>

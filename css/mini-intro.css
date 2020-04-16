@@ -1,6 +1,7 @@
 #photo-header {
-    background-image: url('../images/photo-tours/photo-7.jpg');
+    background-image: url('../images/photo-tours/main image.jpg');
     background-size: cover;
+    background-position: center center;
     height: 600px;
 }
 
@@ -28,8 +29,9 @@
 }
 
 #assist-header {
-    background-image: url('../images/assistant/cover.jpg');
+    background-image: url('../images/fixer/fixer.JPG');
     background-size: cover;
+    background-position: center center;
     height: 600px;
 }
 
@@ -76,7 +78,6 @@
     width: 30%;
     left: 35%;
     color: white;
-    width:;
     font-size: 50px;
     padding: 20px;
     background:rgba(0, 0, 0, 0.2);
@@ -99,7 +100,7 @@
 #workshop-header {
     height: 600px;
     width: 100%;
-    background-image: url('../images/reviews/cover_2.jpg');
+    background-image: url('../images/workshop/main\ image.JPG');
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -204,10 +205,12 @@
 
 .image-first {
     margin-top: 10px;
+    height: 300px;
 }
 
 .image-second {
     margin-top: 20px;
+    height: 450px;
 }
 
 #blockquote {

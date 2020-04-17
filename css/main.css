@@ -71,6 +71,11 @@
     width: 95%;
 }
 
+.tour-images {
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, -6px 4px 15px 3px rgba(199,199,199,0);
+    box-shadow: 0px 10px 13px -7px #000000, -6px 4px 15px 3px rgba(199,199,199,0);
+}
+
 
 .review-outsidebox {
     font-size: 40px;
@@ -93,8 +98,9 @@
     font-family: 'Vollkorn', serif;
     width: 32rem;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.9);
-    color: white;
+    background-color: rgb(248, 248, 248);
+    -webkit-box-shadow: -6px 4px 15px 3px #C7C7C7;
+    box-shadow: -6px 4px 15px 3px #C7C7C7;
     margin-right: 20px;
     margin-left: 30px;
     padding: 10px;
@@ -132,8 +138,7 @@
 
 .box {
     display: flex;
-    margin-left: auto;
-    width: 82%;
+    justify-content: center;
     margin-top: 30px;
     flex-wrap: wrap;
 }
@@ -143,6 +148,8 @@
 */
 .victoria{
     height: 300px;
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, -6px 4px 15px 3px rgba(199,199,199,0);
+    box-shadow: 0px 10px 13px -7px #000000, -6px 4px 15px 3px rgba(199,199,199,0);
 }
 .image-text{
     text-align: center;
@@ -162,6 +169,7 @@
 .image-card-row {
     display: flex;
     justify-content: space-evenly;
+    margin-left: 10px;
     flex-wrap: wrap;
 }
 
@@ -169,6 +177,19 @@
     width: 90%;
     margin-left: 5%;
 }
+
+/* video-review */
+.meet-row {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.videos {
+    height: 300px;
+    width: 533px;
+}
+
 /*
     Form
 */
@@ -434,7 +455,11 @@ input {
         top: -120px;
         font-size: 3rem;
     }
-
+    .videos {
+        height: 200px;
+        width: 356px;
+        margin-top: 20px;
+    }
 
     .collapse {
         background-color: #E6E6E6;

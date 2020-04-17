@@ -1,9 +1,10 @@
 #header{
-    background-image: url('../images/tours/cover_3.jpeg');
-    height: 600px;
+    background-image: url('../images/main-tour-crop.jpg');
+    height: 700px;
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     padding: 100px;
     margin-top: 0%;
 }
@@ -75,6 +76,7 @@ Mobile
         padding: 100px 10px 10px 10px;
         height: 350px;
         background-position: center center;
+        background-image: url('../images/main-tour.jpg');
     }
 
     #header h1 {

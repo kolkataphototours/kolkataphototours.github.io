@@ -1,21 +1,23 @@
 #review-header{
     width: 100%;
-    height: 600px;
     margin-top: 50px;
-    background-image: url('../images/reviews/cover_1.jpeg');
+    background-image: url('../images/review-edit.jpg');
     background-size: cover;
-    background-repeat: no-repeat;
+    background-position: center center;
+    height: 600px;
 }
 
 #review-header h1{
+    font-family: 'bonvenocflight';
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 6px;
     text-align: center;
     position: relative;
     top: 60%;
-    height: 100px;
-    width: 35%;
-    left: 32.5%;
+    width: 50%;
+    left: 25%;
     color: white;
-    width:;
     font-size: 50px;
     padding: 20px;
     background:rgba(0, 0, 0, 0.5);
@@ -112,8 +114,8 @@
     #review-header h1{
         position: relative;
         top: 25%;
-        left: 25%;
-        width: 180px;
+        left: 17%;
+        width: fit-content;
         height: auto;
         font-size: 35px;
         text-align: center;

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Kolkata Photo Tours and Photo Walks</title>
+
+    <link href="../css/online-workshop.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/main.css" rel="stylesheet" type="text/css"/>
+
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111805303-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-111805303-1');
+    </script>
+    <script>
+      $(function(){
+        $("#contactph").load("contact.html");
+      });
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="padding-top:10px;">
+      <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" role="button">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../">Photo Tours & Workshops</a>
+      </div>
+      <div class="navbar-collapse collapse navbar-menubuilder">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="../">Home</a></li>
+          <li class="active"><a href="online-workshop">Online workshop</a></li>
+          <li><a href="../tours/">Tours and Workshops</a></li>
+          <li class="../reviews/"><a href="#">Reviews</a></li>
+          <li><a href="https://www.shivamphotofarm.com/" target="_blank">Gallery</a></li>
+          <li><a href="../about/">About Me</a></li>
+          <li class="contact-nav"><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      </div>
+    </nav>
+
+    <div id="header">
+      <h1>We're online & live!!</h1>
+    </div>
+
+    <div class="card-container">
+      <div class="card">
+        <img src="../images/slider/1_mob.jpg" class="img-card">
+        <div class="card-title">
+          INTRODUCTION TO CLUB AND COMPOSITION IN PHOTOGRAPHY
+        </div>
+        <div class="card-footer">
+          <img src="../images/shop.png" class="card-shop-image">
+          <a href="#">Select Options</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="../images/streets.jpg" class="img-card">
+        <div class="card-title">
+          THE ART OF VISUAL STORYTELLING
+        </div>
+        <div class="card-footer">
+          <img src="../images/shop.png" class="card-shop-image">
+          <a href="#">Select Options</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="../images/main-tour.jpg" class="img-card">
+        <div class="card-title">
+          GAME OF LIGHT IN PHOTOGRAPHY
+        </div>
+        <div class="card-footer">
+          <img src="../images/shop.png" class="card-shop-image">
+          <a href="#">Select Options</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="../images/workshop/2.jpg" class="img-card">
+        <div class="card-title">
+          PECHA KUCHA PRESENTATION FOR ARTISTS
+        </div>
+        <div class="card-footer">
+          <img src="../images/shop.png" class="card-shop-image">
+          <a href="#">Select Options</a>
+        </div>
+      </div>
+
+
+    </div>
+
+
+
+    <div id="contactph"></div>
+
+
+    <script>
+        $(document).on('click', 'a[href^="#"]', function (event) {
+          event.preventDefault();
+          $('html, body').animate({
+          scrollTop: $($.attr(this, 'href')).offset().top
+        }, 500);
+        });
+    </script>
+  </body>
+  </html>

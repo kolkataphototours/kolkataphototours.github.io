@@ -7,13 +7,12 @@
 
     <title>Kolkata Photo Tours and Photo Walks</title>
 
-    <link href="../../css/main.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="../../css/mini-intro.css" type="text/css">
-    <link rel="stylesheet" href="../../css/zoom.css">
-    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
-    <script type="text/javascript" src="../../js/jquery.js"></script>
-    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../js/zoom.js"></script>
+    <link href="../css/main.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="../css/tours.css" />
+
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111805303-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -40,13 +39,14 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../../">Photo Tours & Workshops</a>
+        <a class="navbar-brand" href="../">Photo Tours & Workshops</a>
       </div>
       <div class="navbar-collapse collapse navbar-menubuilder">
         <ul class="nav navbar-nav navbar-right">
           <li><a href="../../">Home</a></li>
-          <li class="active"><a href="../">Tours and Walks</a></li>
-          <li><a href="../../reviews/">Reviews</a></li>
+          <li><a href="../online-workshop">Online workshop</a></li>
+          <li class="active"><a href="../tours/">Tours and Workshops</a></li>
+          <li><a href="../../reviews">Reviews</a></li>
           <li><a href="https://www.shivamphotofarm.com/" target="_blank">Gallery</a></li>
           <li><a href="../../about/">About Me</a></li>
           <li class="contact-nav"><a href="#contact">Contact</a></li>
@@ -55,35 +55,66 @@
       </div>
     </nav>
 
-    <div id="workshop-header">
-      <a href="../"><h2>Back</h2></a>
-      <h1>Workshops</h1>
+    <div id="header">
+      <h1>Tours and Workshops</h1>
     </div>
 
-    <div id="box">
-      <div id="first-row">
-        <img src="../../images/workshop/2.jpg" class="image-first" data-action="zoom">
-        <img src="../../images/workshop/1.jpg" class="image-first" data-action="zoom">
-        <img src="../../images/workshop/3.jpg" class="image-first" data-action="zoom">
+
+    <div class="container image-holder">
+      <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-5 tour-cards">
+              <img src="../images/tours/photo tours.jpg" class="tour-images">
+              <div class="tour-text">
+                  <h2>Photo Tours</h2>
+                  <div class="mini-intro" style="padding: 2px;">
+                      If you are planning to visit...(<a href="photo-tour/">Read More</a>)
+                  </div>
+              </div>
+          </div>
+
+
+          <div class="col-md-5 tour-cards">
+            <img src="../images/tours/workshop.jpg" class="tour-images">
+            <div class="tour-text">
+                <h2>Workshops</h2>
+                <div class="mini-intro" style="padding: 2px;">
+                    After doing two years of constant...(<a href="workshop/">Read More</a>)
+                </div>
+            </div>
+        </div>
       </div>
 
-      <div id="second-row">
-        <h1>Workshops</h1>
-        <p>After doing two years of constant photography and eight years of regular walk in this city, I have realised that there is a lot to learn on and off the camera. This city is full of <strong>beautiful people, mesmerising culture and some amazing colorful streets</strong>. As a part of the Workshop, I'll be telling all about how to work in this city and how to approach and deal with the people before you take their photos. The basic composition of the street photography, lights in potraits, capturing emotions and much more are a part of this workshop.</p>
-      </div>
+      <div class="row">
+          <div class="col-md-1">
+          </div>
+          <div class="col-md-5 tour-cards">
+              <img src="../images/tours/photo walks.jpg" class="tour-images">
+              <div class="tour-text">
+                  <h2>Photo Walks</h2>
+                  <div class="mini-intro" style="padding: 2px;">
+                      Visiting a new location for photo...(<a href="photo-walk/">Read More</a>)
+                  </div>
+              </div>
+          </div>
 
-      <div id="third-row">
-        <img class="image image-second" src="../../images/workshop/4.jpg" data-action="zoom">
-        <img class="image image-second" src="../../images/workshop/5.jpg" data-action="zoom">
+          <div class="col-md-5 tour-cards">
+            <img src="../images/tours/fixer.jpg" class="tour-images">
+            <div class="tour-text">
+                <h2>Fixer</h2>
+                <div class="mini-intro" style="padding: 2px;">
+                    If you're in Kolkata for your ...(<a href="fixer/">Read More</a>)
+                </div>
+            </div>
+          </div>
+
       </div>
+  </div>
+
+    <hr>
+
+    <div id="contactph">
     </div>
-
-    <blockquote id="blockquote">
-      <p id="quote"><em>I'll assure you take amazing photos from your holiday and gain skills that will stay with you long back.</em></p>
-    </blockquote>
-
-     <div id="contactph"></div>
-
     <script>
         $(document).on('click', 'a[href^="#"]', function (event) {
           event.preventDefault();
@@ -92,7 +123,6 @@
         }, 500);
         });
     </script>
-
 
   </body>
 </html>

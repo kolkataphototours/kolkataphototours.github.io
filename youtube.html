@@ -52,6 +52,11 @@
 </li>
  <li><a href="../tours/">Tours and Workshops</a></li>
           <li><a href="../reviews/">Reviews</a></li>
+          <li>
+  <a href="youtube.html" target="_blank" rel="noopener noreferrer">
+    Youtube
+  </a>
+</li>
           <li><a href="https://www.shivamphotofarm.com/" target="_blank">Gallery</a></li>
           <li class="active"><a href="#">About Me</a></li>
           <li class="contact-nav"><a href="#contact">Contact</a></li>
@@ -67,7 +72,7 @@
 
     <div class="about-container">
       <div id="headline">
-        <h1><span class="headline">About</span></h1>
+        <h1><span class="headline">Youtube</span></h1>
         <br>
         <br>
         <br>
@@ -112,17 +117,53 @@
         </div>
       </div>
 
-      <div id="second-header">
-        <img class="second-image" src="../images/shivam3-edit.jpg" alt="">
-      </div>
+<div id="review-videos-container">
+    <div class="review-video-row">
 
-      <div id="final-desc">
-        My goal with photography is to show the beauty, grace, strength and enthusiasm of people.
-        I focus on non-models and place regular people in exaggerated situations that highlight an aspect of who they are.
-        I look for a sense of defiance and fortitude in my work. I provide assistance and tours of this lovely city to people
-        intrested in visiting Kolkata and where to hear it best rather than from one of its biggest lover.
-        So hoping to see you soon.
-      </div>
+        <div class="video-review">
+            <iframe src="https://www.youtube.com/embed/klLip2YXNak" allowfullscreen></iframe>
+            <div class="video-title">
+                Every Photographer Should Watch This
+            </div>
+        </div>
+
+        <div class="video-review">
+            <iframe src="https://www.youtube.com/embed/ultRvXbtGEE" allowfullscreen></iframe>
+            <div class="video-title">
+                William Eggleston Changed Photography
+            </div>
+        </div>
+
+        <div class="video-review">
+            <iframe src="https://www.youtube.com/embed/Y2PvHrvfbY4" allowfullscreen></iframe>
+            <div class="video-title">
+                How Alex Webb Sees the World
+            </div>
+        </div>
+
+        <div class="video-review">
+            <iframe src="https://www.youtube.com/embed/lJSjH2caWCU" allowfullscreen></iframe>
+            <div class="video-title">
+                Depth & Meaning in Photography
+            </div>
+        </div>
+
+        <div class="video-review">
+            <iframe src="https://www.youtube.com/embed/sjwWNsvDULI" allowfullscreen></iframe>
+            <div class="video-title">
+                Colour Photography Masterclass
+            </div>
+        </div>
+
+        <div class="video-review">
+            <iframe src="https://www.youtube.com/embed/RnemRvawgo8" allowfullscreen></iframe>
+            <div class="video-title">
+                Surrealism in Street Photography
+            </div>
+        </div>
+
+    </div>
+</div>
 
 
     </div>
@@ -133,3 +174,48 @@
     <div id="contactph"></div>
   </body>
   </html>
+
+  <style>
+#review-videos-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.review-video-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 30px;
+}
+
+.video-review {
+    text-align: center;
+}
+
+.video-review iframe {
+    width: 100%;
+    height: 220px;
+    border-radius: 6px;
+}
+
+.video-title {
+    font-size: 12px;
+    margin-top: 10px;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .review-video-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .review-video-row {
+        grid-template-columns: 1fr;
+    }
+}
+</style>

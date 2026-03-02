@@ -405,8 +405,10 @@
 </html>
 
 <style>
-  .slider {
-    width: 1494px;
+ /* Desktop */
+.slider {
+    width: 100%;
+    max-width: 1494px;
     height: 650px;
     margin: 0 auto;
     overflow: hidden;
@@ -415,6 +417,29 @@
 .slider-images {
     width: 100%;
     height: 650px;
-    object-fit: cover;   /* prevents stretching */
+    object-fit: cover;
+    display: block;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+    .slider {
+        height: 450px;
+    }
+
+    .slider-images {
+        height: 450px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    .slider {
+        height: 280px;
+    }
+
+    .slider-images {
+        height: 280px;
+    }
 }
 </style>

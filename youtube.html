@@ -1,249 +1,732 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kolkata Photo Tours and Workshops</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YouTube — Kolkata Photo Tour</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
-  <link href="../css/bootstrap.min.css" rel="stylesheet">
-  <link href="../css/main.css" rel="stylesheet">
-  <link href="../css/about.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <!-- JS -->
-  <script src="../js/jquery.js"></script>
-  <script src="../js/bootstrap.min.js"></script>
+  :root {
+    --ink: #1a1612;
+    --warm-white: #f5f0e8;
+    --paper: #ede8de;
+    --amber: #c47a2a;
+    --amber-light: #e8a84a;
+    --muted: #7a7060;
+    --border: rgba(26,22,18,0.12);
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --mono: 'DM Mono', monospace;
+    --sans: 'Barlow', sans-serif;
+  }
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111805303-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'UA-111805303-1');
-  </script>
+  body {
+    background: var(--warm-white);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.8;
+    min-height: 100vh;
+  }
 
-  <!-- Load Contact -->
-  <script>
-    $(function () {
-      $("#contactph").load("contact.html");
-    });
-  </script>
+  /* ── HEADER ── */
+  .site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: var(--warm-white);
+    z-index: 100;
+  }
 
-  <!-- Custom CSS -->
-  <style>
-    .youtube-description a {
-  color: #000;
-  text-decoration: underline;
-  font-weight: 600;
-}
+  .logo {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    flex-shrink: 0;
+  }
 
-.youtube-description a:hover {
-  color: #555;
-}
-    .youtube-description {
-      max-width: 900px;
-      margin: 30px auto 50px auto;   
-      text-align: center;
-      font-size: 15px;
-      line-height: 1.8;
-      color: #444;
+  /* ── NAV ── */
+  .site-nav {
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+
+  .site-nav a {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    margin-left: 2rem;
+    transition: color 0.2s;
+  }
+  .site-nav a:hover,
+  .site-nav a.active { color: var(--ink); }
+
+  /* Hamburger — hidden on desktop */
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+  }
+  .nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 1px;
+    background: var(--ink);
+    transition: transform 0.25s, opacity 0.25s;
+  }
+  .nav-toggle.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+  @media (max-width: 860px) {
+    .nav-toggle { display: flex; }
+
+    .site-nav {
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--warm-white);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 3rem 1.5rem;
     }
-
-    .youtube-description p {
-      margin-bottom: 15px;
-    }
-
-    #review-videos-container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    .review-video-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 40px 30px;
-    }
-
-    .video-review {
-      text-align: center;
-    }
-
-    .video-review iframe {
+    .site-nav.open { display: flex; }
+    .site-nav a {
+      margin-left: 0;
+      padding: 0.55rem 0;
+      border-bottom: 1px solid var(--border);
       width: 100%;
-      height: 220px;
-      border-radius: 6px;
     }
+    .site-nav a:last-child { border-bottom: none; }
+  }
 
-    .video-title {
-      font-size: 12px;
-      margin-top: 10px;
-      color: #555;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
+  @media (max-width: 640px) {
+    .site-header { padding: 1.2rem 1.5rem; }
+    .site-nav { padding: 1rem 1.5rem 1.5rem; }
+  }
 
-    @media (max-width: 992px) {
-      .review-video-row {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
+  /* ── HERO ── */
+  .page-hero {
+    padding: 6rem 3rem 4rem;
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
 
-    @media (max-width: 600px) {
-      .review-video-row {
-        grid-template-columns: 1fr;
-      }
-    }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1.5rem;
+  }
 
-    .headline {
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 400;
-      font-size: 48px;
-      letter-spacing: 1px;
-      text-align: center;
-    }
-  </style>
+  .page-title {
+    font-family: var(--serif);
+    font-size: clamp(3rem, 5vw, 4.8rem);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.5rem;
+  }
+  .page-title em { font-style: italic; color: var(--amber); }
 
+  .hero-desc {
+    font-size: 1rem;
+    line-height: 1.9;
+    color: #3a3530;
+    max-width: 48ch;
+  }
+
+  .hero-desc a {
+    color: var(--amber);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(196,122,42,0.3);
+    transition: border-color 0.2s;
+  }
+  .hero-desc a:hover { border-color: var(--amber); }
+
+  .hero-channel-card {
+    background: #fff;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .channel-label {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .channel-stat-row {
+    display: flex;
+    gap: 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .channel-stat {
+    flex: 1;
+    padding: 1.2rem 0;
+    border-right: 1px solid var(--border);
+    text-align: center;
+  }
+  .channel-stat:last-child { border-right: none; }
+
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--amber);
+    line-height: 1;
+    display: block;
+  }
+  .stat-label {
+    font-family: var(--mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 0.3rem;
+    display: block;
+  }
+
+  .channel-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--amber);
+    color: var(--warm-white);
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.9rem 1.8rem;
+    transition: background 0.2s;
+    align-self: flex-start;
+  }
+  .channel-cta:hover { background: var(--amber-light); }
+  .channel-cta svg { flex-shrink: 0; }
+
+  /* ── SECTION LAYOUTS ── */
+  .section { padding: 6rem 3rem; border-bottom: 1px solid var(--border); }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    max-width: 60px;
+    height: 1px;
+    background: var(--amber);
+    opacity: 0.4;
+  }
+
+  .section-heading {
+    font-family: var(--serif);
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1.15;
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.01em;
+  }
+  .section-heading em { font-style: italic; color: var(--amber); }
+
+  .section-sub {
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.75;
+    max-width: 60ch;
+    margin-bottom: 3.5rem;
+  }
+
+  /* ── VIDEO GRID ── */
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem 2rem;
+  }
+
+  .video-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .video-embed-wrap {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    background: var(--paper);
+    overflow: hidden;
+  }
+
+  .video-embed-wrap iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+  }
+
+  .video-meta {
+    padding: 1rem 0 0;
+    border-top: 1px solid var(--border);
+    margin-top: 0;
+  }
+
+  .video-number {
+    font-family: var(--mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.15em;
+    color: var(--amber);
+    margin-bottom: 0.3rem;
+  }
+
+  .video-title {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.3;
+    color: var(--ink);
+  }
+
+  /* ── MASTERCLASS — dark section ── */
+  .section-dark {
+    background: var(--ink);
+    padding: 6rem 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .section-dark .section-label { color: var(--amber-light); }
+  .section-dark .section-label::after { background: var(--amber-light); }
+  .section-dark .section-heading { color: var(--warm-white); }
+  .section-dark .section-heading em { color: var(--amber-light); }
+  .section-dark .section-sub { color: rgba(245,240,232,0.55); }
+  .section-dark .video-meta { border-top-color: rgba(255,255,255,0.08); }
+  .section-dark .video-number { color: var(--amber-light); }
+  .section-dark .video-title { color: var(--warm-white); }
+
+  /* ── PULL QUOTE / ABOUT STRIP ── */
+  .about-strip {
+    background: var(--paper);
+    padding: 5rem 3rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .about-strip-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .pull-quote {
+    padding: 3rem;
+    background: var(--warm-white);
+    border-left: 3px solid var(--amber);
+    font-family: var(--serif);
+    font-size: 1.45rem;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+
+  .pull-quote cite {
+    display: block;
+    margin-top: 1rem;
+    font-family: var(--mono);
+    font-size: 0.63rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-style: normal;
+    color: var(--muted);
+  }
+
+  .about-strip-text p {
+    font-size: 1rem;
+    line-height: 1.9;
+    color: #3a3530;
+    margin-bottom: 1.2rem;
+  }
+  .about-strip-text p:last-child { margin-bottom: 0; }
+
+  /* ── CTA ── */
+  .cta-section {
+    text-align: center;
+    padding: 8rem 3rem;
+    background: var(--paper);
+  }
+
+  .cta-heading {
+    font-family: var(--serif);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 300;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+  }
+  .cta-heading em { font-style: italic; color: var(--amber); }
+
+  .cta-sub {
+    font-size: 1rem;
+    color: var(--muted);
+    max-width: 50ch;
+    margin: 0 auto 3rem;
+    line-height: 1.7;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--warm-white);
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.9rem 2rem;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: var(--amber); }
+
+  .btn-ghost {
+    display: inline-block;
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--muted);
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .btn-ghost:hover { color: var(--ink); border-color: var(--ink); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    color: rgba(245,240,232,0.5);
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  footer a { color: inherit; text-decoration: none; }
+  footer a:hover { color: var(--amber-light); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1000px) {
+    .page-hero { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 1.5rem 3rem; }
+    .video-grid { grid-template-columns: repeat(2, 1fr); }
+    .about-strip-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  }
+
+  @media (max-width: 640px) {
+    .section { padding: 4rem 1.5rem; }
+    .section-dark { padding: 4rem 1.5rem; }
+    .about-strip { padding: 4rem 1.5rem; }
+    .cta-section { padding: 5rem 1.5rem; }
+    .video-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
 </head>
-
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="padding-top:10px;">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-          data-target=".navbar-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="../">Photo Tours & Workshops</a>
-      </div>
+<!-- HEADER -->
+<header class="site-header">
+  <a href="../" class="logo">Kolkata Photo Tour</a>
 
-      <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="../">Home</a></li>
-          
-          <li><a href="../tours/">Tours and Workshops</a></li>
-          <li><a href="../reviews/">Reviews</a></li>
-          <li> <a href="/youtube.html" target="_blank" rel="noopener noreferrer"> Youtube </a> </li>
-          <li>
-    <a href="https://kolkataphototours.substack.com/" 
-       target="_blank" 
-       rel="noopener noreferrer">
-       Substack
-    </a>
-</li>
-          <li><a href="https://www.shivamphotofarm.com/" target="_blank">Gallery</a></li>
-          <li><a href="#">About Me</a></li>
-          <li class="contact-nav"><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav class="site-nav">
+    <a href="../">Home</a>
+    <a href="../tours/">Tours &amp; Workshops</a>
+    <a href="../reviews/">Reviews</a>
+    <a href="/youtube.html" class="active">YouTube</a>
+    <a href="https://kolkataphototours.substack.com/" target="_blank" rel="noopener noreferrer">Substack</a>
+    <a href="https://www.shivamphotofarm.com/" target="_blank" rel="noopener noreferrer">Gallery</a>
+    <a href="#">About Me</a>
+    <a href="#contact">Contact</a>
   </nav>
+</header>
 
-  <br><br><br><br>
+<!-- HERO -->
+<div style="border-bottom: 1px solid var(--border);">
+  <div class="page-hero">
+    <div>
+      <p class="eyebrow">YouTube Channel</p>
+      <h1 class="page-title">Photographing<br>Kolkata with<br><em>Shivam</em></h1>
+      <p class="hero-desc">
+        My YouTube channel is an extension of the tours and workshops I personally lead in Kolkata. Each episode explores the exact locations where I host workshops — from bustling markets to quiet lanes filled with everyday life. I share real-time shooting decisions, practical street photography techniques, and insights into approaching strangers, working with natural light, and finding strong compositions in unpredictable environments.
+      </p>
+    </div>
 
-  <!-- HEADER -->
-  <h1 class="headline">Photographing Kolkata with Shivam</h1>
-
-<div class="youtube-description">
-  <p>
-   My YouTube channel is dedicated to street photography in Kolkata and is an extension of the tours and workshops I personally lead in the city. My YouTube playlist of Photographing Kolkata with Shivam explores the exact locations where I host workshops, from bustling markets to quiet lanes filled with everyday life. In each episode, I share practical street photography techniques, real-time shooting decisions, and insights into approaching strangers, working with natural light, and finding strong compositions in unpredictable environments. If you’re interested in learning street photography in Kolkata, this series offers both inspiration and hands-on guidance from the field.
-    
-  </p>
+    <div class="hero-channel-card">
+      <p class="channel-label">Featured video</p>
+      <div style="position:relative; width:100%; padding-bottom:56.25%; background:#000;">
+        <iframe
+          src="https://www.youtube.com/embed/Ckbhz6mp4bY"
+          style="position:absolute; inset:0; width:100%; height:100%; border:none; display:block;"
+          loading="lazy"
+          allowfullscreen
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+        </iframe>
+      </div>
+      <div class="channel-stat-row"></div>
+      <a href="https://www.youtube.com/watch?v=Ckbhz6mp4bY" target="_blank" rel="noopener noreferrer" class="channel-cta">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-2.75 12.83 12.83 0 00-2.45-.24C7.27 3.7 3.5 7.47 3.5 12s3.77 8.3 9.87 8.3c3.73 0 7.06-1.9 8.9-4.94.19-.34.35-.69.48-1.05a4.83 4.83 0 01-3.16-7.62z"/><path d="M10 15.5V8.5l6 3.5-6 3.5z" fill="var(--ink)"/></svg>
+        Visit Channel
+      </a>
+    </div>
+  </div>
 </div>
 
-  <!-- VIDEO SECTION 1 -->
-  <div id="review-videos-container">
-    <div class="review-video-row">
+<!-- KOLKATA SERIES -->
+<section class="section">
+  <div class="section-inner">
+    <p class="section-label">Playlist one</p>
+    <h2 class="section-heading">Photographing Kolkata<br>with <em>Shivam</em></h2>
+    <p class="section-sub">On-location episodes shot at the exact spots where I run workshops. Real streets, real light, real decisions made in the moment.</p>
 
-      <div class="video-review">
-        <iframe src="https://www.youtube.com/embed/klLip2YXNak" loading="lazy" allowfullscreen></iframe>
-        <div class="video-title">Street Photography at Kumartuli</div>
+    <div class="video-grid">
+
+      <div class="video-card">
+        <div class="video-embed-wrap">
+          <iframe src="https://www.youtube.com/embed/klLip2YXNak" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="video-meta">
+          <p class="video-number">EP. 01</p>
+          <p class="video-title">Street Photography at Kumartuli</p>
+        </div>
       </div>
 
-      <div class="video-review">
-        <iframe src="https://www.youtube.com/embed/ultRvXbtGEE" loading="lazy" allowfullscreen></iframe>
-        <div class="video-title">Flower Market, Mullick Ghat</div>
+      <div class="video-card">
+        <div class="video-embed-wrap">
+          <iframe src="https://www.youtube.com/embed/ultRvXbtGEE" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="video-meta">
+          <p class="video-number">EP. 02</p>
+          <p class="video-title">Flower Market, Mullick Ghat</p>
+        </div>
       </div>
 
-      <div class="video-review">
-        <iframe src="https://www.youtube.com/embed/Y2PvHrvfbY4" loading="lazy" allowfullscreen></iframe>
-        <div class="video-title">Kolkata Local Train Ride</div>
+      <div class="video-card">
+        <div class="video-embed-wrap">
+          <iframe src="https://www.youtube.com/embed/Y2PvHrvfbY4" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="video-meta">
+          <p class="video-number">EP. 03</p>
+          <p class="video-title">Kolkata Local Train Ride</p>
+        </div>
       </div>
 
-      <div class="video-review">
-        <iframe src="https://www.youtube.com/embed/lJSjH2caWCU" loading="lazy" allowfullscreen></iframe>
-        <div class="video-title">Koley Vegetable Market</div>
+      <div class="video-card">
+        <div class="video-embed-wrap">
+          <iframe src="https://www.youtube.com/embed/lJSjH2caWCU" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="video-meta">
+          <p class="video-number">EP. 04</p>
+          <p class="video-title">Koley Vegetable Market</p>
+        </div>
       </div>
 
-      <div class="video-review">
-        <iframe src="https://www.youtube.com/embed/sjwWNsvDULI" loading="lazy" allowfullscreen></iframe>
-        <div class="video-title">Meat & New Market Area</div>
+      <div class="video-card">
+        <div class="video-embed-wrap">
+          <iframe src="https://www.youtube.com/embed/sjwWNsvDULI" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="video-meta">
+          <p class="video-number">EP. 05</p>
+          <p class="video-title">Meat &amp; New Market Area</p>
+        </div>
       </div>
 
-      <div class="video-review">
-        <iframe src="https://www.youtube.com/embed/RnemRvawgo8" loading="lazy" allowfullscreen></iframe>
-        <div class="video-title">Howrah Bridge</div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- MASTERCLASS SECTION -->
-  <h1 class="headline" style="margin-top:60px;">Street Photography Masterclass Videos</h1>
-
-  <div class="youtube-description">
-    <p>
-      Explore in-depth street photography videos focused on composition, light, timing, and storytelling.
-      Designed to build confidence and sharpen observation skills.
-    </p>
-  </div>
-
-  <div id="review-videos-container">
-    <div class="review-video-row">
-
-      <div class="video-review">
-        <iframe src="https://www.youtube.com/embed/jsdAbhTukLA" loading="lazy" allowfullscreen></iframe>
-        <div class="video-title">Natural Light</div>
-      </div>
-
-      <div class="video-review">
-        <iframe src="https://www.youtube.com/embed/Ygfwp8V5Hz8" loading="lazy" allowfullscreen></iframe>
-        <div class="video-title">28mm Lens</div>
-      </div>
-
-      <div class="video-review">
-        <iframe src="https://www.youtube.com/embed/njhliq5LjPM" loading="lazy" allowfullscreen></iframe>
-        <div class="video-title">Overcoming Fear</div>
-      </div>
-
-      <div class="video-review">
-        <iframe src="https://www.youtube.com/embed/7wpyupeqRLE" loading="lazy" allowfullscreen></iframe>
-        <div class="video-title">People & Perspective</div>
-      </div>
-
-      <div class="video-review">
-        <iframe src="https://www.youtube.com/embed/NbWA5tv_e7c" loading="lazy" allowfullscreen></iframe>
-        <div class="video-title">Colour & Chaos</div>
-      </div>
-
-      <div class="video-review">
-        <iframe src="https://www.youtube.com/embed/l7q0jfuP8uc" loading="lazy" allowfullscreen></iframe>
-        <div class="video-title">Storytelling</div>
+      <div class="video-card">
+        <div class="video-embed-wrap">
+          <iframe src="https://www.youtube.com/embed/RnemRvawgo8" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="video-meta">
+          <p class="video-number">EP. 06</p>
+          <p class="video-title">Howrah Bridge</p>
+        </div>
       </div>
 
     </div>
   </div>
+</section>
 
-  <hr>
-  <div id="contactph"></div>
+<!-- ABOUT STRIP -->
+<div class="about-strip">
+  <div class="about-strip-inner">
+    <blockquote class="pull-quote">
+      "The streets don't wait. Neither does the light. Every episode is shot in real time — no retakes, no setups."
+      <cite>— Shivam Pandey</cite>
+    </blockquote>
+    <div class="about-strip-text">
+      <p>
+        Each video in this series is an honest document of how I actually work on the street. I don't script the moments, I don't reset the scene. You see exactly how I read a location, how I approach people, how I manage light that isn't cooperating, and how I make decisions under pressure.
+      </p>
+      <p>
+        That transparency is deliberate. It's the same philosophy I bring to every tour and workshop — there's no formula, there's no trick. There's just presence, patience, and a willingness to keep looking until something true appears.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- MASTERCLASS SERIES -->
+<section class="section-dark">
+  <div class="section-inner">
+    <p class="section-label">Playlist two</p>
+    <h2 class="section-heading">Street Photography<br><em>Masterclass</em></h2>
+    <p class="section-sub">In-depth videos focused on composition, light, timing, and storytelling. Designed to build confidence and sharpen observation skills — wherever you shoot.</p>
+
+    <div class="video-grid">
+
+      <div class="video-card">
+        <div class="video-embed-wrap">
+          <iframe src="https://www.youtube.com/embed/jsdAbhTukLA" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="video-meta">
+          <p class="video-number">MC. 01</p>
+          <p class="video-title">Working with Natural Light</p>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-embed-wrap">
+          <iframe src="https://www.youtube.com/embed/Ygfwp8V5Hz8" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="video-meta">
+          <p class="video-number">MC. 02</p>
+          <p class="video-title">Shooting with a 28mm Lens</p>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-embed-wrap">
+          <iframe src="https://www.youtube.com/embed/njhliq5LjPM" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="video-meta">
+          <p class="video-number">MC. 03</p>
+          <p class="video-title">Overcoming Fear on the Street</p>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-embed-wrap">
+          <iframe src="https://www.youtube.com/embed/7wpyupeqRLE" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="video-meta">
+          <p class="video-number">MC. 04</p>
+          <p class="video-title">People &amp; Perspective</p>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-embed-wrap">
+          <iframe src="https://www.youtube.com/embed/NbWA5tv_e7c" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="video-meta">
+          <p class="video-number">MC. 05</p>
+          <p class="video-title">Colour &amp; Chaos</p>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-embed-wrap">
+          <iframe src="https://www.youtube.com/embed/l7q0jfuP8uc" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="video-meta">
+          <p class="video-number">MC. 06</p>
+          <p class="video-title">Visual Storytelling</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2 class="cta-heading">Ready to shoot<br>Kolkata <em>in person?</em></h2>
+  <p class="cta-sub">The videos show you the streets. The tours put you on them. Join a workshop and experience Kolkata through the lens with Shivam.</p>
+  <div style="display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap;">
+    <a href="../tours/" class="btn-primary">View upcoming tours</a>
+    <a href="#contact" class="btn-ghost">Get in touch</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2025 Kolkata Photo Tour</span>
+  <span>Shivam Pandey — Kolkata, India</span>
+  <a href="https://www.youtube.com/@kolkataphototours" target="_blank" rel="noopener noreferrer">YouTube</a>
+</footer>
+
+<script>
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.site-nav');
+  toggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    toggle.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open);
+  });
+</script>
 
 </body>
 </html>

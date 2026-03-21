@@ -53,9 +53,17 @@
     text-transform: uppercase;
     color: var(--ink);
     text-decoration: none;
+    flex-shrink: 0;
   }
 
-  nav a {
+  /* ── NAV ── */
+  .site-nav {
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+
+  .site-nav a {
     font-family: var(--mono);
     font-size: 0.7rem;
     letter-spacing: 0.14em;
@@ -65,7 +73,60 @@
     margin-left: 2rem;
     transition: color 0.2s;
   }
-  nav a:hover, nav a.active { color: var(--ink); }
+  .site-nav a:hover,
+  .site-nav a.active { color: var(--ink); }
+
+  /* Hamburger — hidden on desktop */
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+  }
+  .nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 1px;
+    background: var(--ink);
+    transition: transform 0.25s, opacity 0.25s;
+  }
+  .nav-toggle.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+  @media (max-width: 860px) {
+    .nav-toggle { display: flex; }
+
+    .site-nav {
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--warm-white);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 3rem 1.5rem;
+    }
+    .site-nav.open { display: flex; }
+    .site-nav a {
+      margin-left: 0;
+      padding: 0.55rem 0;
+      border-bottom: 1px solid var(--border);
+      width: 100%;
+    }
+    .site-nav a:last-child { border-bottom: none; }
+  }
+
+  @media (max-width: 640px) {
+    .site-header { padding: 1.2rem 1.5rem; }
+    .site-nav { padding: 1rem 1.5rem 1.5rem; }
+  }
 
   /* ── HERO ── */
   .page-hero {
@@ -114,8 +175,7 @@
   .hero-desc a:hover { border-color: var(--amber); }
 
   .hero-channel-card {
-    background: #ffff;
-    color: var(--warm-white);
+    background: #fff;
     padding: 3rem;
     display: flex;
     flex-direction: column;
@@ -127,20 +187,20 @@
     font-size: 0.6rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: rgba(245,240,232,0.4);
+    color: var(--muted);
   }
 
   .channel-stat-row {
     display: flex;
     gap: 0;
-    border-top: 1px solid rgba(255,255,255,0.08);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
   }
 
   .channel-stat {
     flex: 1;
     padding: 1.2rem 0;
-    border-right: 1px solid rgba(255,255,255,0.08);
+    border-right: 1px solid var(--border);
     text-align: center;
   }
   .channel-stat:last-child { border-right: none; }
@@ -149,7 +209,7 @@
     font-family: var(--serif);
     font-size: 2rem;
     font-weight: 300;
-    color: var(--amber-light);
+    color: var(--amber);
     line-height: 1;
     display: block;
   }
@@ -158,7 +218,7 @@
     font-size: 0.58rem;
     letter-spacing: 0.13em;
     text-transform: uppercase;
-    color: rgba(245,240,232,0.45);
+    color: var(--muted);
     margin-top: 0.3rem;
     display: block;
   }
@@ -337,37 +397,6 @@
   }
   .about-strip-text p:last-child { margin-bottom: 0; }
 
-  /* ── TOPICS GRID ── */
-  .topics-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 0;
-    border: 1px solid var(--border);
-    margin-top: 3rem;
-  }
-
-  .topic-item {
-    padding: 1.8rem 1.2rem;
-    border-right: 1px solid var(--border);
-    text-align: center;
-  }
-  .topic-item:last-child { border-right: none; }
-
-  .topic-name {
-    font-family: var(--serif);
-    font-size: 1.05rem;
-    font-weight: 300;
-    margin-bottom: 0.35rem;
-  }
-
-  .topic-tag {
-    font-family: var(--mono);
-    font-size: 0.56rem;
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-
   /* ── CTA ── */
   .cta-section {
     text-align: center;
@@ -441,22 +470,15 @@
     .page-hero { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 1.5rem 3rem; }
     .video-grid { grid-template-columns: repeat(2, 1fr); }
     .about-strip-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-    .topics-grid { grid-template-columns: repeat(3, 1fr); }
-    .topic-item:nth-child(3) { border-right: none; }
-    .topic-item:nth-child(4), .topic-item:nth-child(5), .topic-item:nth-child(6) { border-top: 1px solid var(--border); }
   }
 
   @media (max-width: 640px) {
-    .site-header { padding: 1.2rem 1.5rem; }
     .section { padding: 4rem 1.5rem; }
     .section-dark { padding: 4rem 1.5rem; }
     .about-strip { padding: 4rem 1.5rem; }
     .cta-section { padding: 5rem 1.5rem; }
     .video-grid { grid-template-columns: 1fr; }
-    .topics-grid { grid-template-columns: repeat(2, 1fr); }
-    .topic-item:nth-child(2) { border-right: none; }
-    .topic-item:nth-child(3) { border-right: 1px solid var(--border); border-top: 1px solid var(--border); }
-    nav a { margin-left: 1rem; font-size: 0.62rem; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
   }
 </style>
 </head>
@@ -465,39 +487,22 @@
 <!-- HEADER -->
 <header class="site-header">
   <a href="../" class="logo">Kolkata Photo Tour</a>
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="padding-top:10px;">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-          data-target=".navbar-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="../">Photo Tours & Workshops</a>
-      </div>
 
-      <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="../">Home</a></li>
-          
-          <li><a href="../tours/">Tours and Workshops</a></li>
-          <li><a href="../reviews/">Reviews</a></li>
-          <li> <a href="/youtube.html" target="_blank" rel="noopener noreferrer"> Youtube </a> </li>
-          <li>
-    <a href="https://kolkataphototours.substack.com/" 
-       target="_blank" 
-       rel="noopener noreferrer">
-       Substack
-    </a>
-</li>
-          <li><a href="https://www.shivamphotofarm.com/" target="_blank">Gallery</a></li>
-          <li><a href="#">About Me</a></li>
-          <li class="contact-nav"><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav class="site-nav">
+    <a href="../">Home</a>
+    <a href="../tours/">Tours &amp; Workshops</a>
+    <a href="../reviews/">Reviews</a>
+    <a href="/youtube.html" class="active">YouTube</a>
+    <a href="https://kolkataphototours.substack.com/" target="_blank" rel="noopener noreferrer">Substack</a>
+    <a href="https://www.shivamphotofarm.com/" target="_blank" rel="noopener noreferrer">Gallery</a>
+    <a href="#">About Me</a>
+    <a href="#contact">Contact</a>
   </nav>
 </header>
 
@@ -523,8 +528,7 @@
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
         </iframe>
       </div>
-      <div class="channel-stat-row">
-      </div>
+      <div class="channel-stat-row"></div>
       <a href="https://www.youtube.com/watch?v=Ckbhz6mp4bY" target="_blank" rel="noopener noreferrer" class="channel-cta">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-2.75 12.83 12.83 0 00-2.45-.24C7.27 3.7 3.5 7.47 3.5 12s3.77 8.3 9.87 8.3c3.73 0 7.06-1.9 8.9-4.94.19-.34.35-.69.48-1.05a4.83 4.83 0 01-3.16-7.62z"/><path d="M10 15.5V8.5l6 3.5-6 3.5z" fill="var(--ink)"/></svg>
         Visit Channel
@@ -532,8 +536,6 @@
     </div>
   </div>
 </div>
-
-
 
 <!-- KOLKATA SERIES -->
 <section class="section">
@@ -715,6 +717,16 @@
   <span>Shivam Pandey — Kolkata, India</span>
   <a href="https://www.youtube.com/@kolkataphototours" target="_blank" rel="noopener noreferrer">YouTube</a>
 </footer>
+
+<script>
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.site-nav');
+  toggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    toggle.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open);
+  });
+</script>
 
 </body>
 </html>

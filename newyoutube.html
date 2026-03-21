@@ -114,7 +114,7 @@
   .hero-desc a:hover { border-color: var(--amber); }
 
   .hero-channel-card {
-     background: #ffffff;
+    background: var(--ink);
     color: var(--warm-white);
     padding: 3rem;
     display: flex;
@@ -485,12 +485,31 @@
     </div>
 
     <div class="hero-channel-card">
-      <p class="channel-label">Channel overview</p>
-      
-      <p style="font-size:0.88rem; line-height:1.8; color:rgba(245,240,232,0.6);">
-        If you're interested in learning street photography in Kolkata, this series offers both inspiration and hands-on guidance directly from the field.
-      </p>
-      <a href="https://www.youtube.com/watch?v=Ckbhz6mp4bY" target="_blank" rel="noopener noreferrer" class="channel-cta">
+      <p class="channel-label">Featured video</p>
+      <div style="position:relative; width:100%; padding-bottom:56.25%; background:#000;">
+        <iframe
+          src="https://www.youtube.com/embed/Ckbhz6mp4bY"
+          style="position:absolute; inset:0; width:100%; height:100%; border:none; display:block;"
+          loading="lazy"
+          allowfullscreen
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+        </iframe>
+      </div>
+      <div class="channel-stat-row">
+        <div class="channel-stat">
+          <span class="stat-num">12+</span>
+          <span class="stat-label">Episodes</span>
+        </div>
+        <div class="channel-stat">
+          <span class="stat-num">6</span>
+          <span class="stat-label">Locations</span>
+        </div>
+        <div class="channel-stat">
+          <span class="stat-num">Free</span>
+          <span class="stat-label">Always</span>
+        </div>
+      </div>
+      <a href="https://www.youtube.com/@kolkataphototours?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="channel-cta">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-2.75 12.83 12.83 0 00-2.45-.24C7.27 3.7 3.5 7.47 3.5 12s3.77 8.3 9.87 8.3c3.73 0 7.06-1.9 8.9-4.94.19-.34.35-.69.48-1.05a4.83 4.83 0 01-3.16-7.62z"/><path d="M10 15.5V8.5l6 3.5-6 3.5z" fill="var(--ink)"/></svg>
         Visit Channel
       </a>

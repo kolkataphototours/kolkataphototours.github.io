@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Kolkata Photo Tour</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1612;
+    --warm-white: #f5f0e8;
+    --paper: #ede8de;
+    --amber: #c47a2a;
+    --amber-light: #e8a84a;
+    --muted: #7a7060;
+    --border: rgba(26,22,18,0.12);
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --mono: 'DM Mono', monospace;
+    --sans: 'Barlow', sans-serif;
+  }
+
+  body {
+    background: var(--warm-white);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.8;
+    min-height: 100vh;
+  }
+
+  .site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: var(--warm-white);
+    z-index: 100;
+  }
+
+  .logo {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  nav a {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    margin-left: 2rem;
+    transition: color 0.2s;
+  }
+  nav a:hover, nav a.active { color: var(--ink); }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 88vh;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-text {
+    padding: 6rem 4rem 6rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid var(--border);
+  }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-name {
+    font-family: var(--serif);
+    font-size: clamp(3.5rem, 6vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.4rem;
+  }
+  .hero-name em { font-style: italic; color: var(--amber); }
+
+  .hero-title {
+    font-family: var(--serif);
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--muted);
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-intro {
+    font-size: 1rem;
+    line-height: 1.9;
+    color: #3a3530;
+    max-width: 42ch;
+    margin-bottom: 3rem;
+  }
+
+  .cta-row { display: flex; gap: 1rem; align-items: center; }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--warm-white);
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.9rem 2rem;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: var(--amber); }
+
+  .btn-ghost {
+    display: inline-block;
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--muted);
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .btn-ghost:hover { color: var(--ink); border-color: var(--ink); }
+
+  .hero-visual {
+    background: var(--paper);
+    position: relative;
+    overflow: hidden;
+    min-height: 520px;
+  }
+
+  .hero-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+
+  .stat-strip {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: var(--ink);
+    color: var(--warm-white);
+    display: flex;
+  }
+
+  .stat-item {
+    flex: 1;
+    padding: 1.2rem 1.5rem;
+    border-right: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+  }
+  .stat-item:last-child { border-right: none; }
+
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--amber-light);
+    line-height: 1;
+    display: block;
+  }
+
+  .stat-label {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.55);
+    margin-top: 0.3rem;
+    display: block;
+  }
+
+  .section { padding: 6rem 3rem; border-bottom: 1px solid var(--border); }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    max-width: 60px;
+    height: 1px;
+    background: var(--amber);
+    opacity: 0.4;
+  }
+
+  .section-heading {
+    font-family: var(--serif);
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1.15;
+    margin-bottom: 3rem;
+    letter-spacing: -0.01em;
+  }
+  .section-heading em { font-style: italic; color: var(--amber); }
+
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .story-text p {
+    font-size: 1rem;
+    line-height: 1.95;
+    color: #3a3530;
+    margin-bottom: 1.5rem;
+  }
+  .story-text p:last-child { margin-bottom: 0; }
+
+  .pull-quote {
+    padding: 3rem;
+    background: var(--paper);
+    border-left: 3px solid var(--amber);
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-top: 1rem;
+  }
+
+  .pull-quote cite {
+    display: block;
+    margin-top: 1rem;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-style: normal;
+    color: var(--muted);
+  }
+
+  .story-photo-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4px;
+    height: 280px;
+    margin-top: 4rem;
+  }
+
+  .photo-block {
+    background: #ccc8be;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .photo-block img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.88);
+    transition: transform 0.5s ease;
+  }
+  .photo-block:hover img { transform: scale(1.04); }
+
+  .pb-caption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 8px 12px;
+    background: linear-gradient(transparent, rgba(26,22,18,0.6));
+    font-family: var(--mono);
+    font-size: 0.56rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.85);
+  }
+
+  .offer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 1px solid var(--border);
+  }
+
+  .offer-card { padding: 2.5rem 2rem; border-right: 1px solid var(--border); }
+  .offer-card:last-child { border-right: none; }
+
+  .offer-photo-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    height: 220px;
+    border: 1px solid var(--border);
+    border-top: none;
+  }
+
+  .offer-number {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--amber);
+    margin-bottom: 1.2rem;
+  }
+
+  .offer-title {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.25;
+    margin-bottom: 1rem;
+  }
+  .offer-title em { font-style: italic; color: var(--amber); }
+
+  .offer-desc {
+    font-size: 0.9rem;
+    line-height: 1.85;
+    color: var(--muted);
+  }
+
+  .destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    border: 1px solid var(--border);
+    margin-top: 3rem;
+  }
+
+  .destinations-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4px;
+    height: 200px;
+    margin-top: 4px;
+  }
+
+  .dest-item {
+    padding: 2rem 1.5rem;
+    border-right: 1px solid var(--border);
+    text-align: center;
+  }
+  .dest-item:last-child { border-right: none; }
+
+  .dest-name {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 300;
+    margin-bottom: 0.4rem;
+  }
+
+  .dest-tag {
+    font-family: var(--mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .collab-section { background: var(--ink); color: var(--warm-white); }
+  .collab-section .section-label { color: var(--amber-light); }
+  .collab-section .section-label::after { background: var(--amber-light); }
+  .collab-section .section-heading { color: var(--warm-white); }
+  .collab-section .section-heading em { color: var(--amber-light); }
+
+  .collab-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .collab-intro {
+    font-size: 1rem;
+    line-height: 1.9;
+    color: rgba(245,240,232,0.75);
+    margin-bottom: 2rem;
+  }
+
+  .collab-names { display: flex; flex-direction: column; gap: 0; }
+
+  .collab-name-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .collab-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--amber-light);
+    flex-shrink: 0;
+  }
+
+  .collab-name {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--warm-white);
+    font-weight: 300;
+  }
+
+  .collab-what {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.4);
+    margin-left: auto;
+  }
+
+  .personal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+  }
+
+  .gear-label {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .gear-value {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+  }
+
+  .personal-body { font-size: 1rem; line-height: 1.9; color: #3a3530; }
+
+  .gear-photo {
+    width: 100%;
+    aspect-ratio: 3/2;
+    background: #ccc8be;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+
+  .gear-photo img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.88);
+  }
+
+  .cta-section {
+    text-align: center;
+    padding: 8rem 3rem;
+    background: var(--paper);
+  }
+
+  .cta-heading {
+    font-family: var(--serif);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 300;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+  }
+  .cta-heading em { font-style: italic; color: var(--amber); }
+
+  .cta-sub {
+    font-size: 1rem;
+    color: var(--muted);
+    max-width: 50ch;
+    margin: 0 auto 3rem;
+    line-height: 1.7;
+  }
+
+  footer {
+    background: var(--ink);
+    color: rgba(245,240,232,0.5);
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  footer a { color: inherit; text-decoration: none; }
+  footer a:hover { color: var(--amber-light); }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-visual { height: 60vw; min-height: 320px; }
+    .hero-text { padding: 3rem 1.5rem; border-right: none; border-bottom: 1px solid var(--border); }
+    .story-grid, .collab-grid, .personal-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .offer-grid, .offer-photo-row { grid-template-columns: 1fr; }
+    .offer-card { border-right: none; border-bottom: 1px solid var(--border); }
+    .destinations-grid, .destinations-photo-grid { grid-template-columns: repeat(3, 1fr); }
+    .story-photo-strip { grid-template-columns: 1fr 1fr; height: 200px; }
+    .story-photo-strip .photo-block:last-child { display: none; }
+    .section { padding: 4rem 1.5rem; }
+    .site-header { padding: 1.2rem 1.5rem; }
+    nav a { margin-left: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <a href="#" class="logo">Kolkata Photo Tour</a>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="padding-top:10px;">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+          data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../">Photo Tours & Workshops</a>
+      </div>
+
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="../">Home</a></li>
+          
+          <li><a href="../tours/">Tours and Workshops</a></li>
+          <li><a href="../reviews/">Reviews</a></li>
+          <li> <a href="/youtube.html" target="_blank" rel="noopener noreferrer"> Youtube </a> </li>
+          <li>
+    <a href="https://kolkataphototours.substack.com/" 
+       target="_blank" 
+       rel="noopener noreferrer">
+       Substack
+    </a>
+</li>
+          <li><a href="https://www.shivamphotofarm.com/" target="_blank">Gallery</a></li>
+          <li><a href="#">About Me</a></li>
+          <li class="contact-nav"><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- ① HERO — Shivam portrait -->
+<section class="hero">
+  <div class="hero-text">
+    <p class="eyebrow">About your guide</p>
+    <h1 class="hero-name">Shivam<br><em>Pandey</em></h1>
+    <p class="hero-title">Street &amp; Documentary Photographer — Kolkata</p>
+    <p class="hero-intro">
+      Born in Varanasi, shaped by Kolkata — two cities that taught me how to read the streets before I ever held a camera. For over a decade, I've been photographing the pulse of India and helping others do the same.
+    </p>
+    <div class="cta-row">
+      <a href="#" class="btn-primary">Book a tour</a>
+      <a href="https://www.shivamphotofarm.com/" target="_blank" rel="noopener noreferrer" class="btn-ghost">View portfolio</a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <img src="https://shivamphotofarm.com/wp-content/uploads/2025/07/shivam.png" alt="Shivam Pandey — Street Photographer Kolkata">
+    <div class="stat-strip">
+      <div class="stat-item"><span class="stat-num">10+</span><span class="stat-label">Years shooting</span></div>
+      <div class="stat-item"><span class="stat-num">500+</span><span class="stat-label">Photographers mentored</span></div>
+      <div class="stat-item"><span class="stat-num">40+</span><span class="stat-label">Tours &amp; workshops</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="section">
+  <div class="section-inner">
+    <p class="section-label">My story</p>
+    <div class="story-grid">
+      <div class="story-text">
+        <p>
+          I grew up between two of India's most photogenic cities — Varanasi, where ritual and time blur along the ghats, and Kolkata, where every lane holds a century of stories. Those early years weren't spent in photography classes. They were spent watching, wandering, and learning to read the rhythm of a place.
+        </p>
+        <p>
+          When I picked up a camera, I already knew how to disappear into a crowd, how to anticipate the moment before it happens, and how to earn the kind of trust that lets a stranger forget you're there. That is still the foundation of everything I teach.
+        </p>
+        <p>
+          Over the past decade I've worked across India — from the rooftop dyes of Rajasthan to the monastery stillness of Ladakh, from the alleyways of Old Delhi to the tram-lined boulevards of North Kolkata. Every region has its own visual language, and learning to speak it is the real skill.
+        </p>
+      </div>
+      <div>
+        <blockquote class="pull-quote">
+          "I don't teach people to take better photos. I teach them to see more honestly — and the photos follow."
+          <cite>— Shivam Pandey</cite>
+        </blockquote>
+      </div>
+    </div>
+
+    <!-- ② STORY PHOTO STRIP -->
+    <div class="story-photo-strip">
+      <div class="photo-block">
+        <img src="https://shivamphotofarm.com/wp-content/uploads/2025/07/WhatsApp-Image-2025-06-14-at-6.03.08-PM-scaled.jpeg" alt="Varanasi ghats">
+        <div class="pb-caption">Varanasi</div>
+      </div>
+      <div class="photo-block">
+        <img src="https://www.kolkataphototours.com/images/streets.jpg" alt="Kolkata streets">
+        <div class="pb-caption">Kolkata</div>
+      </div>
+      <div class="photo-block">
+        <img src="https://shivamphotofarm.com/wp-content/uploads/2025/07/WhatsApp-Image-2025-06-14-at-6.03.24-PM-scaled.jpeg" alt="Shivam at work">
+        <div class="pb-caption">On Location</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT I OFFER -->
+<section class="section" style="padding-top:0;">
+  <div class="section-inner">
+    <p class="section-label">What I offer</p>
+    <h2 class="section-heading">Three ways to<br>work <em>together</em></h2>
+    <div class="offer-grid">
+      <div class="offer-card">
+        <p class="offer-number">01</p>
+        <h3 class="offer-title">Photo Tours<br><em>&amp; Workshops</em></h3>
+        <p class="offer-desc">Immersive, on-the-ground experiences in Kolkata and across India. We shoot in real time — I help you read the streets, anticipate moments, and build a body of work that actually says something. Suitable for all experience levels.</p>
+      </div>
+      <div class="offer-card">
+        <p class="offer-number">02</p>
+        <h3 class="offer-title">Group Tour<br><em>Design &amp; Support</em></h3>
+        <p class="offer-desc">Planning to bring a photography group to India? I design itineraries built around the best light, the most photographically alive locations, and the cultural access that only comes from local knowledge. I handle scouting, logistics, and on-ground support.</p>
+      </div>
+      <div class="offer-card">
+        <p class="offer-number">03</p>
+        <h3 class="offer-title">Mentorship &amp;<br><em>Portfolio Review</em></h3>
+        <p class="offer-desc">Whether you're refining your eye or preparing a body of work for publication, I offer one-on-one mentorship focused on honest, purposeful storytelling — not technical tricks. Real feedback, real growth.</p>
+      </div>
+    </div>
+
+    <!-- ③ OFFER PHOTO ROW -->
+    <div class="offer-photo-row">
+      <div class="photo-block" style="border-right: 1px solid var(--border);">
+        <img src="https://www.kolkataphototours.com/images/Kumartuli.jpeg" alt="Photo tour Kolkata">
+        <div class="pb-caption">Tours &amp; Workshops</div>
+      </div>
+      <div class="photo-block" style="border-right: 1px solid var(--border);">
+        <img src="https://www.kolkataphototours.com/images/Markets.jpeg" alt="Group photo tour India">
+        <div class="pb-caption">Group Tours</div>
+      </div>
+      <div class="photo-block">
+        <img src="https://shivamphotofarm.com/wp-content/uploads/2025/07/IMG_1567-scaled.jpeg" alt="Photography mentorship">
+        <div class="pb-caption">Mentorship</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESTINATIONS -->
+<section class="section" style="background: var(--paper);">
+  <div class="section-inner">
+    <p class="section-label">Where I work</p>
+    <h2 class="section-heading">Regions I know<br><em>intimately</em></h2>
+    <div class="destinations-grid">
+      <div class="dest-item"><p class="dest-name">Kolkata</p><p class="dest-tag">Home base</p></div>
+      <div class="dest-item"><p class="dest-name">Varanasi</p><p class="dest-tag">Spiritual core</p></div>
+      <div class="dest-item"><p class="dest-name">Rajasthan</p><p class="dest-tag">Colour &amp; light</p></div>
+      <div class="dest-item"><p class="dest-name">Ladakh</p><p class="dest-tag">High altitude</p></div>
+      <div class="dest-item"><p class="dest-name">Delhi</p><p class="dest-tag">Urban layers</p></div>
+    </div>
+
+    <!-- ④ DESTINATION PHOTO GRID -->
+    <div class="destinations-photo-grid">
+      <div class="photo-block">
+        <img src="https://www.kolkataphototours.com/images/ghat.jpg" alt="Kolkata Ganga Ghat">
+        <div class="pb-caption">Kolkata</div>
+      </div>
+      <div class="photo-block">
+        <img src="https://shivamphotofarm.com/wp-content/uploads/2025/07/IMG_9975-scaled.jpg" alt="Varanasi">
+        <div class="pb-caption">Varanasi</div>
+      </div>
+      <div class="photo-block">
+        <img src="https://www.kolkataphototours.com/images/Wrestlers.jpeg" alt="Rajasthan">
+        <div class="pb-caption">Rajasthan</div>
+      </div>
+      <div class="photo-block">
+        <img src="https://shivamphotofarm.com/wp-content/uploads/2025/07/IMG_1569-scaled.jpg" alt="Ladakh">
+        <div class="pb-caption">Ladakh</div>
+      </div>
+      <div class="photo-block">
+        <img src="https://www.kolkataphototours.com/images/Flower.jpeg" alt="Delhi">
+        <div class="pb-caption">Delhi</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COLLABORATIONS -->
+<section class="section collab-section">
+  <div class="section-inner">
+    <p class="section-label">Collaborations</p>
+    <div class="collab-grid">
+      <div>
+        <h2 class="section-heading">Who I've<br>worked <em>with</em></h2>
+        <p class="collab-intro">
+          I've been proud to support international photographers and organisations in bringing meaningful photo travel experiences to India. From full itinerary design to on-the-ground logistics and cultural facilitation — I'm the local knowledge behind successful tours.
+        </p>
+        <p class="collab-intro" style="font-size:0.85rem; margin-bottom:0;">
+          If you're a tour leader or photographer in search of a trusted ground partner in India, let's talk.
+        </p>
+      </div>
+      <div>
+        <div class="collab-names">
+          <div class="collab-name-item">
+            <div class="collab-dot"></div>
+            <span class="collab-name">The Raw Society</span>
+            <span class="collab-what">Tour partner</span>
+          </div>
+          <div class="collab-name-item">
+            <div class="collab-dot"></div>
+            <span class="collab-name">Venture Photography Tours</span>
+            <span class="collab-what">Ground support</span>
+          </div>
+          <div class="collab-name-item">
+            <div class="collab-dot"></div>
+            <span class="collab-name">Neal James — The Photowalk Podcast</span>
+            <span class="collab-what">Guide &amp; consultant</span>
+          </div>
+          <div class="collab-name-item" style="border-bottom:none;">
+            <div class="collab-dot"></div>
+            <span class="collab-name">&amp; many independent photographers</span>
+            <span class="collab-what">Ongoing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GEAR & APPROACH -->
+<section class="section">
+  <div class="section-inner">
+    <p class="section-label">Approach &amp; gear</p>
+    <h2 class="section-heading">Presence over<br><em>equipment</em></h2>
+    <div class="personal-grid">
+      <div>
+        <!-- ⑤ GEAR PHOTO -->
+        <div class="gear-photo">
+          <img src="https://shivamphotofarm.com/wp-content/uploads/2025/07/IMG_1567-scaled.jpeg" alt="Leica M11-P — Shivam Pandey">
+        </div>
+        <div style="margin-bottom: 2rem;">
+          <p class="gear-label">Current camera</p>
+          <p class="gear-value">Leica M11-P</p>
+          <p class="gear-label">Previously</p>
+          <p class="gear-value">Leica Q Series</p>
+        </div>
+        <p class="personal-body" style="font-size:0.9rem; color:var(--muted);">
+          The tools matter less than the intention. A rangefinder forces you to slow down, commit, and be in the moment — which is exactly the approach I try to pass on.
+        </p>
+      </div>
+      <div class="personal-body">
+        <p>
+          Street photography cannot be faked. The light doesn't wait, the moment doesn't repeat, and people always know when they're being observed rather than seen. Everything I teach comes back to this: how to be genuinely present on a street so that the camera becomes almost incidental.
+        </p>
+        <p style="margin-top:1.2rem;">
+          That presence — cultural, emotional, physical — is what makes the difference between a photograph that documents and one that actually moves someone. It's what I found in Varanasi and Kolkata, and it's what I want to help you find, wherever in India we're shooting together.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2 class="cta-heading">Let's explore,<br>shoot, and <em>grow</em><br>your photography.</h2>
+  <p class="cta-sub">Whether you're just starting out or have years behind the lens — get in touch and let's build something meaningful together.</p>
+  <div style="display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap;">
+    <a href="#" class="btn-primary">Get in touch</a>
+    <a href="#" class="btn-ghost">View upcoming tours</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2025 Kolkata Photo Tour</span>
+  <span>Shivam Pandey — Kolkata, India</span>
+  <a href="https://www.instagram.com/shivam_photofarm" target="_blank" rel="noopener noreferrer">Instagram</a>
+</footer>
+
+</body>
+</html>

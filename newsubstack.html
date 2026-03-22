@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shivam Photofarm — Newsletter by Shivam Pandey | Kolkata Photo Tour</title>
+<meta name="description" content="Shivam Photofarm is a newsletter by Shivam Pandey — stories, reflections, and lessons from a decade of photographing the streets of India. Subscribe on Substack.">
+<meta name="keywords" content="street photography newsletter, Kolkata photography blog, Shivam Pandey Substack, photography lessons India, street photography stories">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1612;
+    --warm-white: #f5f0e8;
+    --paper: #ede8de;
+    --amber: #c47a2a;
+    --amber-light: #e8a84a;
+    --muted: #7a7060;
+    --border: rgba(26,22,18,0.12);
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --mono: 'DM Mono', monospace;
+    --sans: 'Barlow', sans-serif;
+  }
+
+  body {
+    background: var(--warm-white);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.8;
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 3rem;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: var(--warm-white);
+    z-index: 100;
+  }
+  .logo {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  nav a {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    margin-left: 1.6rem;
+    transition: color 0.2s;
+    white-space: nowrap;
+  }
+  nav a:hover { color: var(--ink); }
+  nav a.active { color: var(--amber); }
+
+  /* ── HERO ── */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 80vh;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-text {
+    padding: 6rem 4rem 6rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid var(--border);
+  }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .eyebrow::after { content: ''; width: 40px; height: 1px; background: var(--amber); opacity: 0.5; }
+
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(3rem, 5vw, 4.8rem);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.5rem;
+  }
+  .hero h1 em { font-style: italic; color: var(--amber); }
+
+  .hero-subtitle {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--muted);
+    margin-bottom: 2rem;
+    letter-spacing: 0.01em;
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+    line-height: 1.95;
+    color: #3a3530;
+    max-width: 44ch;
+    margin-bottom: 2.5rem;
+  }
+  .hero-desc strong { font-weight: 400; color: var(--ink); }
+
+  .form-note {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+  .form-note a { color: var(--amber); text-decoration: none; }
+
+  /* ── HERO RIGHT — masthead visual ── */
+  .hero-visual {
+    background: var(--ink);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 3rem;
+  }
+
+  .masthead {
+    width: 100%;
+    max-width: 360px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.03);
+  }
+
+  /* ── MASTHEAD COVER PHOTO — using real site image ── */
+  .masthead-photo {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .masthead-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0.85;
+    transition: opacity 0.3s;
+  }
+  .masthead-photo img:not([src]), .masthead-photo img[src=""] {
+    display: none;
+  }
+  .masthead-photo-fallback {
+    display: none;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    background: rgba(255,255,255,0.03);
+  }
+  /* show fallback only when img fails */
+  .masthead-photo img.errored ~ .masthead-photo-fallback { display: flex; }
+
+  .masthead-top {
+    padding: 2rem 2rem 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    text-align: center;
+  }
+  .masthead-name {
+    font-family: var(--serif);
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--warm-white);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .masthead-name em { font-style: italic; color: var(--amber-light); }
+  .masthead-tagline {
+    font-family: var(--serif);
+    font-size: 0.9rem;
+    font-style: italic;
+    font-weight: 300;
+    color: rgba(245,240,232,0.55);
+    line-height: 1.5;
+  }
+
+  .masthead-meta {
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .meta-item { text-align: center; }
+  .meta-val { font-family: var(--serif); font-size: 1.3rem; font-weight: 300; color: var(--amber-light); line-height: 1; display: block; }
+  .meta-label { font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,240,232,0.35); margin-top: 3px; display: block; }
+
+  .masthead-preview { padding: 1.2rem 2rem; }
+  .preview-label { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245,240,232,0.3); margin-bottom: 0.8rem; }
+  .preview-item { padding: 0.7rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; gap: 0.8rem; align-items: baseline; }
+  .preview-item:last-child { border-bottom: none; }
+  .preview-dot { width: 4px; height: 4px; background: var(--amber); border-radius: 50%; flex-shrink: 0; margin-top: 7px; }
+  .preview-title { font-family: var(--serif); font-size: 0.95rem; font-style: italic; font-weight: 300; color: rgba(245,240,232,0.75); line-height: 1.35; }
+
+  /* ── SHOOTING SITES STRIP ── */
+  .shooting-sites {
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+  }
+  .sites-label {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 0.8rem 3rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .sites-strip {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .site-thumb {
+    position: relative;
+    height: 140px;
+    overflow: hidden;
+    border-right: 1px solid var(--border);
+  }
+  .site-thumb:last-child { border-right: none; }
+  .site-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(20%);
+    transition: filter 0.3s, transform 0.4s;
+  }
+  .site-thumb:hover img { filter: grayscale(0%); transform: scale(1.04); }
+  .site-label {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(transparent, rgba(26,22,18,0.75));
+    padding: 1rem 0.75rem 0.5rem;
+    font-family: var(--mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.85);
+  }
+
+  /* ── WHAT TO EXPECT ── */
+  .section { padding: 5rem 3rem; border-bottom: 1px solid var(--border); }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .section-label::after { content: ''; flex: 1; max-width: 60px; height: 1px; background: var(--amber); opacity: 0.4; }
+
+  .section-heading {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 3rem;
+    letter-spacing: -0.01em;
+  }
+  .section-heading em { font-style: italic; color: var(--amber); }
+
+  /* ── PILLARS ── */
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border: 1px solid var(--border);
+  }
+  .pillar-card { padding: 2.2rem 2rem; border-right: 1px solid var(--border); }
+  .pillar-card:last-child { border-right: none; }
+  .pillar-icon { width: 28px; height: 28px; margin-bottom: 1.2rem; opacity: 0.45; }
+  .pillar-title { font-family: var(--serif); font-size: 1.15rem; font-weight: 300; margin-bottom: 0.6rem; line-height: 1.25; }
+  .pillar-desc { font-size: 0.85rem; font-weight: 300; color: var(--muted); line-height: 1.75; }
+
+  /* ── RECENT ISSUES ── */
+  .issues-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 1px solid var(--border);
+  }
+  .issue-card { padding: 2.2rem 2rem; border-right: 1px solid var(--border); text-decoration: none; color: inherit; display: block; transition: background 0.18s; }
+  .issue-card:last-child { border-right: none; }
+  .issue-card:hover { background: var(--paper); }
+  .issue-tag { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--amber); margin-bottom: 0.8rem; }
+  .issue-title { font-family: var(--serif); font-size: 1.3rem; font-weight: 300; font-style: italic; line-height: 1.3; margin-bottom: 0.8rem; color: var(--ink); }
+  .issue-desc { font-size: 0.85rem; font-weight: 300; color: var(--muted); line-height: 1.75; margin-bottom: 1.4rem; }
+  .issue-read { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber); border-bottom: 1px solid rgba(196,122,42,0.3); padding-bottom: 2px; display: inline-block; transition: border-color 0.2s; }
+  .issue-card:hover .issue-read { border-color: var(--amber); }
+
+  /* ── SUBSTACK EMBEDS ── */
+  .substack-embed-wrap { max-width: 400px; margin-bottom: 0.8rem; }
+  .sub-band-form-label { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(245,240,232,0.4); margin-bottom: 0.6rem; }
+  .substack-embed-dark { border: 1px solid rgba(232,168,74,0.25); margin-bottom: 1rem; background: white; }
+
+  /* ── SUBSCRIBE BAND ── */
+  .subscribe-band { background: var(--ink); padding: 5rem 3rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .subscribe-band-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+  .sub-band-heading { font-family: var(--serif); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 300; line-height: 1.15; color: var(--warm-white); margin-bottom: 1rem; }
+  .sub-band-heading em { font-style: italic; color: var(--amber-light); }
+  .sub-band-desc { font-size: 0.95rem; font-weight: 300; color: rgba(245,240,232,0.65); line-height: 1.85; }
+  .sub-band-note { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,240,232,0.3); }
+  .sub-band-note a { color: rgba(232,168,74,0.6); text-decoration: none; }
+  .sub-link { display: inline-block; margin-top: 1.2rem; font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(245,240,232,0.4); text-decoration: none; border-bottom: 1px solid rgba(245,240,232,0.15); padding-bottom: 2px; transition: color 0.2s; }
+  .sub-link:hover { color: rgba(245,240,232,0.7); }
+
+  /* ── CTA ── */
+  .cta-section { text-align: center; padding: 7rem 3rem; background: var(--paper); }
+  .cta-heading { font-family: var(--serif); font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 300; line-height: 1.15; margin-bottom: 1.2rem; }
+  .cta-heading em { font-style: italic; color: var(--amber); }
+  .cta-sub { font-size: 1rem; color: var(--muted); max-width: 48ch; margin: 0 auto 2.5rem; line-height: 1.7; }
+  .cta-buttons { display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap; }
+  .btn-primary { display: inline-block; background: var(--ink); color: var(--warm-white); font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; padding: 0.9rem 2rem; transition: background 0.2s; }
+  .btn-primary:hover { background: var(--amber); }
+  .btn-ghost { display: inline-block; color: var(--muted); font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; padding: 0.9rem 0; border-bottom: 1px solid var(--muted); transition: color 0.2s, border-color 0.2s; }
+  .btn-ghost:hover { color: var(--ink); border-color: var(--ink); }
+
+  /* ── FOOTER ── */
+  footer { background: var(--ink); color: rgba(245,240,232,0.5); padding: 2rem 3rem; display: flex; justify-content: space-between; align-items: center; font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; }
+  footer a { color: inherit; text-decoration: none; }
+  footer a:hover { color: var(--amber-light); }
+
+  .rss-dot { display: inline-block; width: 6px; height: 6px; background: var(--amber); border-radius: 50%; margin: 0 3px; animation: rss-pulse 1.2s ease-in-out infinite; }
+  .rss-dot:nth-child(2) { animation-delay: 0.2s; }
+  .rss-dot:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes rss-pulse { 0%,100% { opacity: 0.2; } 50% { opacity: 1; } }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-text { padding: 3rem 1.5rem; border-right: none; border-bottom: 1px solid var(--border); }
+    .hero-visual { padding: 3rem 1.5rem; }
+    .pillars-grid { grid-template-columns: 1fr 1fr; }
+    .pillar-card:nth-child(2) { border-right: none; }
+    .pillar-card:nth-child(3), .pillar-card:nth-child(4) { border-top: 1px solid var(--border); }
+    .issues-grid { grid-template-columns: 1fr; }
+    .issue-card { border-right: none; border-bottom: 1px solid var(--border); }
+    .subscribe-band-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .section { padding: 3.5rem 1.5rem; }
+    .site-header { padding: 1rem 1.5rem; flex-wrap: wrap; gap: 0.8rem; }
+    .sites-strip { grid-template-columns: repeat(3, 1fr); }
+    .site-thumb:nth-child(3) { border-right: none; }
+    .site-thumb:nth-child(4), .site-thumb:nth-child(5), .site-thumb:nth-child(6) { border-top: 1px solid var(--border); }
+    nav a { margin-left: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <a href="https://www.kolkataphototours.com/" class="logo">Kolkata Photo Tour</a>
+  <nav>
+    <a href="https://www.kolkataphototours.com/">Home</a>
+    <a href="https://www.kolkataphototours.com/tours/">Tours & Workshops</a>
+    <a href="https://www.kolkataphototours.com/reviews/">Reviews</a>
+    <a href="https://www.kolkataphototours.com/youtube.html" target="_blank" rel="noopener">Youtube</a>
+    <a href="https://kolkataphototours.substack.com/" target="_blank" rel="noopener" class="active">Newsletter</a>
+    <a href="https://www.shivamphotofarm.com/" target="_blank" rel="noopener">Gallery</a>
+    <a href="#">About Me</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <p class="eyebrow">Shivam Photofarm · Newsletter</p>
+    <h1>Stories from<br>the <em>streets.</em></h1>
+    <p class="hero-subtitle">Writing by Shivam Pandey — delivered to your inbox.</p>
+    <p class="hero-desc">
+      <strong>Shivam Photofarm</strong> is where I write about the things photography teaches you that a camera never can — the people you meet, the places that stay with you, and the lessons that only reveal themselves after years of showing up with a camera and paying attention.
+      <br><br>
+      Stories, reflections, and hard-won lessons shaped by the people and places I photograph. No gear reviews. No algorithm tips. Just honest writing from the streets of India.
+    </p>
+    <div class="substack-embed-wrap">
+      <iframe src="https://kolkataphototours.substack.com/embed" width="100%" height="160" style="border:none; background:transparent;" frameborder="0" scrolling="no"></iframe>
+    </div>
+    <p class="form-note">Free to read · Hosted on <a href="https://kolkataphototours.substack.com" target="_blank">Substack</a> · Unsubscribe anytime</p>
+  </div>
+
+  <!-- HERO RIGHT — newsletter masthead card with real photo -->
+  <div class="hero-visual">
+    <div class="masthead">
+      <!-- Masthead cover — Flower Market image from the real site -->
+      <div class="masthead-photo">
+        <img 
+          src="https://www.kolkataphototours.com/images/Flower.jpeg" 
+          alt="Kolkata Flower Market — Shivam Photofarm"
+          onerror="this.onerror=null; this.src='https://www.kolkataphototours.com/images/streets.jpg';"
+        >
+      </div>
+
+      <div class="masthead-top">
+        <h2 class="masthead-name">Shivam <em>Photofarm</em></h2>
+        <p class="masthead-tagline">Stories, reflections, and lessons shaped<br>by the people and places I photograph.</p>
+      </div>
+
+      <div class="masthead-meta">
+        <div class="meta-item">
+          <span class="meta-val">10+</span>
+          <span class="meta-label">Years of stories</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-val">India</span>
+          <span class="meta-label">Written from</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-val">Free</span>
+          <span class="meta-label">To read</span>
+        </div>
+      </div>
+
+      <div class="masthead-preview">
+        <p class="preview-label">Recent writing</p>
+        <div class="preview-item">
+          <div class="preview-dot"></div>
+          <p class="preview-title" id="prev-0">What the flower market teaches you about patience</p>
+        </div>
+        <div class="preview-item">
+          <div class="preview-dot"></div>
+          <p class="preview-title" id="prev-1">On shooting strangers — and why most photographers get it wrong</p>
+        </div>
+        <div class="preview-item">
+          <div class="preview-dot"></div>
+          <p class="preview-title" id="prev-2">The street that changed how I see light</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOOTING SITES STRIP — real images from the site -->
+<div class="shooting-sites">
+  <p class="sites-label">Shooting sites — Kolkata</p>
+  <div class="sites-strip">
+    <div class="site-thumb">
+      <img src="https://www.kolkataphototours.com/images/streets.jpg" alt="Streets of Kolkata" loading="lazy">
+      <span class="site-label">Streets</span>
+    </div>
+    <div class="site-thumb">
+      <img src="https://www.kolkataphototours.com/images/ghat.jpg" alt="Ganga Ghats" loading="lazy">
+      <span class="site-label">Ganga Ghats</span>
+    </div>
+    <div class="site-thumb">
+      <img src="https://www.kolkataphototours.com/images/Flower.jpeg" alt="Flower Market" loading="lazy">
+      <span class="site-label">Flower Market</span>
+    </div>
+    <div class="site-thumb">
+      <img src="https://www.kolkataphototours.com/images/Kumartuli.jpeg" alt="Kumartuli" loading="lazy">
+      <span class="site-label">Kumartuli</span>
+    </div>
+    <div class="site-thumb">
+      <img src="https://www.kolkataphototours.com/images/Markets.jpeg" alt="Markets" loading="lazy">
+      <span class="site-label">Markets</span>
+    </div>
+    <div class="site-thumb">
+      <img src="https://www.kolkataphototours.com/images/Wrestlers.jpeg" alt="Wrestlers" loading="lazy">
+      <span class="site-label">Wrestlers</span>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT YOU'LL FIND -->
+<section class="section">
+  <div class="section-inner">
+    <p class="section-label">What I write about</p>
+    <h2 class="section-heading">Photography the way it<br>actually <em>feels.</em></h2>
+    <div class="pillars-grid">
+      <div class="pillar-card">
+        <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="#1a1612" stroke-width="1.3"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <p class="pillar-title">Stories about people</p>
+        <p class="pillar-desc">The encounters, the silences, the moments of connection that happen when you spend enough time on a street with a camera and an open mind.</p>
+      </div>
+      <div class="pillar-card">
+        <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="#1a1612" stroke-width="1.3"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <p class="pillar-title">Places & their rhythms</p>
+        <p class="pillar-desc">Kolkata, Varanasi, Rajasthan, Ladakh — each city has its own visual language. Writing about how to read a place before you photograph it.</p>
+      </div>
+      <div class="pillar-card">
+        <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="#1a1612" stroke-width="1.3"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        <p class="pillar-title">Lessons from the field</p>
+        <p class="pillar-desc">Hard-won insights from a decade of shooting — on seeing, on timing, on how to stop overthinking and just be present in front of a moment.</p>
+      </div>
+      <div class="pillar-card">
+        <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="#1a1612" stroke-width="1.3"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        <p class="pillar-title">Honest reflections</p>
+        <p class="pillar-desc">Photography is as much about who you are as what you see. Personal writing on doubt, growth, and what keeps me coming back to the same streets.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RECENT ISSUES — live from Substack RSS -->
+<section class="section" style="background: var(--paper);">
+  <div class="section-inner">
+    <p class="section-label">From the archive</p>
+    <h2 class="section-heading">A few things<br>I've <em>written.</em></h2>
+
+    <div class="issues-grid" id="rss-cards">
+      <div class="rss-loading" style="grid-column:1/-1; padding:3rem; text-align:center;">
+        <span class="rss-dot"></span>
+        <span class="rss-dot"></span>
+        <span class="rss-dot"></span>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top: 2.5rem;">
+      <a href="https://kolkataphototours.substack.com" target="_blank" class="btn-primary">Read all issues on Substack</a>
+    </div>
+  </div>
+</section>
+
+<script>
+(function() {
+  var RSS_URL = 'https://kolkataphototours.substack.com/feed';
+  var API_URL = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(RSS_URL) + '&count=3';
+
+  function stripHtml(html) {
+    var d = document.createElement('div');
+    d.innerHTML = html;
+    return (d.textContent || d.innerText || '').replace(/\s+/g, ' ').trim();
+  }
+
+  function truncate(str, max) {
+    var clean = stripHtml(str);
+    return clean.length > max ? clean.slice(0, max).trim() + '…' : clean;
+  }
+
+  function formatDate(dateStr) {
+    var d = new Date(dateStr);
+    return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+  }
+
+  function guessTag(title) {
+    var t = title.toLowerCase();
+    if (t.includes('light') || t.includes('morning') || t.includes('market') || t.includes('street')) return 'Streets & Light';
+    if (t.includes('lesson') || t.includes('learn') || t.includes('shoot') || t.includes('camera')) return 'Lessons from the field';
+    if (t.includes('people') || t.includes('stranger') || t.includes('portrait') || t.includes('face')) return 'People & Streets';
+    if (t.includes('kolkata') || t.includes('varanasi') || t.includes('india') || t.includes('city')) return 'Places';
+    return 'Reflection';
+  }
+
+  function renderCards(items) {
+    var grid = document.getElementById('rss-cards');
+    if (!items || items.length === 0) {
+      grid.innerHTML = '<div style="grid-column:1/-1;padding:2rem;text-align:center;font-family:var(--mono);font-size:0.7rem;color:var(--muted);letter-spacing:0.1em;">No posts found — visit <a href="https://kolkataphototours.substack.com" target="_blank" style="color:var(--amber);">Substack</a> directly.</div>';
+      return;
+    }
+    grid.innerHTML = items.slice(0, 3).map(function(item) {
+      return '<a href="' + item.link + '" target="_blank" class="issue-card">'
+        + '<p class="issue-tag">' + guessTag(item.title) + '</p>'
+        + '<h3 class="issue-title">' + item.title + '</h3>'
+        + '<p class="issue-desc">' + truncate(item.description || item.content || '', 140) + '</p>'
+        + '<p style="font-family:var(--mono);font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.4rem;">' + formatDate(item.pubDate) + '</p>'
+        + '<span class="issue-read">Read on Substack</span>'
+        + '</a>';
+    }).join('');
+
+    // Update masthead preview titles
+    items.slice(0, 3).forEach(function(item, i) {
+      var el = document.getElementById('prev-' + i);
+      if (el) el.textContent = item.title;
+    });
+  }
+
+  fetch(API_URL)
+    .then(function(r) { return r.json(); })
+    .then(function(data) { renderCards(data.items); })
+    .catch(function() {
+      var grid = document.getElementById('rss-cards');
+      grid.innerHTML = '<div style="grid-column:1/-1;padding:2rem;text-align:center;font-family:var(--mono);font-size:0.7rem;color:var(--muted);letter-spacing:0.1em;">Could not load posts right now — <a href="https://kolkataphototours.substack.com" target="_blank" style="color:var(--amber);">visit Substack directly.</a></div>';
+    });
+})();
+</script>
+
+<!-- SUBSCRIBE BAND -->
+<div class="subscribe-band">
+  <div class="subscribe-band-inner">
+    <div>
+      <h2 class="sub-band-heading">Writing worth<br>reading. <em>Free,<br>always.</em></h2>
+      <p class="sub-band-desc">No newsletters about cameras or algorithms. Just honest writing about photography, people, and what a decade on the streets of India actually teaches you.</p>
+    </div>
+    <div>
+      <p class="sub-band-form-label">Subscribe — it's free</p>
+      <div class="substack-embed-dark">
+        <iframe src="https://kolkataphototours.substack.com/embed" width="100%" height="160" style="border:none; background:transparent;" frameborder="0" scrolling="no"></iframe>
+      </div>
+      <p class="sub-band-note">Hosted on Substack · <a href="https://kolkataphototours.substack.com" target="_blank">Read online</a> · Unsubscribe anytime</p>
+      <a href="https://kolkataphototours.substack.com" target="_blank" class="sub-link">Browse the full archive on Substack →</a>
+    </div>
+  </div>
+</div>
+
+<!-- CTA — tour bridge -->
+<section class="cta-section">
+  <h2 class="cta-heading">Read the writing.<br>Then come <em>live it.</em></h2>
+  <p class="cta-sub">The newsletter is where I share what photography teaches me. The tours and workshops are where you experience it yourself — on the same streets, with the same approach.</p>
+  <div class="cta-buttons">
+    <a href="https://www.kolkataphototours.com/tours/" class="btn-primary">Book a tour or workshop</a>
+    <a href="https://www.shivamphotofarm.com/" target="_blank" class="btn-ghost">Visit the Gallery</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2025 Kolkata Photo Tour</span>
+  <span>Shivam Pandey — Kolkata, India</span>
+  <a href="https://www.kolkataphototours.com/" >kolkataphototours.com</a>
+</footer>
+
+</body>
+</html>

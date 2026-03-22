@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reviews — Kolkata Photo Tour with Shivam Pandey</title>
+<meta name="description" content="Read reviews and testimonials from photographers who have joined Shivam Pandey's photo tours and workshops in Kolkata and across India.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1612;
+    --warm-white: #f5f0e8;
+    --paper: #ede8de;
+    --amber: #c47a2a;
+    --amber-light: #e8a84a;
+    --muted: #7a7060;
+    --border: rgba(26,22,18,0.12);
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --mono: 'DM Mono', monospace;
+    --sans: 'Barlow', sans-serif;
+  }
+
+  body {
+    background: var(--warm-white);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.8;
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 3rem;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: var(--warm-white);
+    z-index: 100;
+  }
+  .logo {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    flex-wrap: wrap;
+  }
+  nav a {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    margin-left: 1.8rem;
+    transition: color 0.2s;
+    white-space: nowrap;
+  }
+  nav a:hover { color: var(--ink); }
+  nav a.active { color: var(--amber); }
+
+  /* hamburger */
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+  }
+  .menu-toggle span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: var(--ink);
+    transition: all 0.3s;
+  }
+  .mobile-nav {
+    display: none;
+    flex-direction: column;
+    background: var(--warm-white);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 3rem 1.5rem;
+  }
+  .mobile-nav a {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--border);
+    transition: color 0.2s;
+  }
+  .mobile-nav a:hover, .mobile-nav a.active { color: var(--amber); }
+  .mobile-nav.open { display: flex; }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 6rem 3rem 5rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--ink);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('https://images.unsplash.com/photo-1545579133-99bb5ad189be?w=1600&q=60') center/cover no-repeat;
+    opacity: 0.12;
+  }
+
+  .hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+    position: relative;
+  }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--amber-light);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .eyebrow::after { content: ''; width: 40px; height: 1px; background: var(--amber-light); opacity: 0.4; }
+
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--warm-white);
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 em { font-style: italic; color: var(--amber-light); }
+
+  .hero-desc {
+    font-size: 1rem;
+    line-height: 1.9;
+    color: rgba(245,240,232,0.65);
+    max-width: 44ch;
+  }
+
+  .hero-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .stat-row {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    padding: 1.4rem 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .stat-row:last-child { border-bottom: none; }
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: var(--amber-light);
+    line-height: 1;
+    min-width: 80px;
+  }
+  .stat-text { font-size: 0.88rem; font-weight: 300; color: rgba(245,240,232,0.6); line-height: 1.5; }
+  .stat-text strong { display: block; font-weight: 400; color: var(--warm-white); margin-bottom: 0.1rem; font-size: 0.92rem; }
+
+  /* ── SECTIONS ── */
+  .section { padding: 5rem 3rem; border-bottom: 1px solid var(--border); }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .section-label::after { content: ''; flex: 1; max-width: 60px; height: 1px; background: var(--amber); opacity: 0.4; }
+
+  .section-heading {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 0.6rem;
+  }
+  .section-heading em { font-style: italic; color: var(--amber); }
+
+  .section-sub {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--muted);
+    margin-bottom: 3rem;
+    max-width: 56ch;
+    line-height: 1.7;
+  }
+
+  /* ── FEATURED REVIEW ── */
+  .featured-review {
+    background: var(--ink);
+    padding: 3.5rem 4rem;
+    margin-bottom: 3px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .author-initials {
+    width: 64px;
+    height: 64px;
+    border: 1px solid rgba(232,168,74,0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    color: var(--amber-light);
+    margin-bottom: 1rem;
+  }
+  .author-name { font-family: var(--serif); font-size: 1.1rem; font-weight: 300; color: var(--warm-white); margin-bottom: 0.2rem; }
+  .author-origin { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(245,240,232,0.35); margin-bottom: 0.5rem; }
+  .author-tour { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber-light); opacity: 0.7; }
+  .featured-quote {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 300;
+    color: rgba(245,240,232,0.88);
+    line-height: 1.55;
+    border-left: 2px solid var(--amber);
+    padding-left: 2rem;
+  }
+
+  /* ── REVIEW GRID ── */
+  .reviews-grid, .reviews-grid-row2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid var(--border);
+  }
+  .reviews-grid-row2 { border-top: none; }
+
+  .review-card {
+    padding: 2.2rem 2rem;
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+  }
+  .review-card:last-child, .review-card-placeholder:last-child { border-right: none; }
+
+  .review-stars { display: flex; gap: 3px; margin-bottom: 1rem; }
+  .star {
+    width: 10px; height: 10px;
+    background: var(--amber);
+    clip-path: polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+  }
+  .review-quote { font-family: var(--serif); font-size: 1.1rem; font-style: italic; font-weight: 300; line-height: 1.6; color: var(--ink); flex: 1; margin-bottom: 1.5rem; }
+  .review-divider { width: 24px; height: 1px; background: var(--amber); opacity: 0.4; margin-bottom: 1rem; }
+  .review-author-name { font-size: 0.88rem; font-weight: 400; color: var(--ink); margin-bottom: 0.2rem; }
+  .review-author-meta { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+  .review-tour-tag {
+    display: inline-block;
+    margin-top: 0.6rem;
+    font-family: var(--mono);
+    font-size: 0.55rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    border: 1px solid rgba(196,122,42,0.25);
+    padding: 3px 8px;
+  }
+  .review-card-placeholder {
+    padding: 2.2rem 2rem;
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    min-height: 220px;
+    background: rgba(26,22,18,0.02);
+  }
+  .placeholder-text { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); text-align: center; line-height: 1.8; opacity: 0.5; }
+
+  /* ── VIDEO SECTION ── */
+  .video-section { background: var(--paper); }
+  .video-grid, .video-grid-row2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid var(--border);
+  }
+  .video-grid-row2 { border-top: none; }
+
+  .video-card { border-right: 1px solid var(--border); text-decoration: none; color: inherit; display: block; transition: background 0.2s; }
+  .video-card:hover { background: rgba(26,22,18,0.03); }
+  .video-card:last-child, .video-placeholder:last-child { border-right: none; }
+
+  .video-thumb {
+    aspect-ratio: 16/9;
+    background: #ccc8be;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .video-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.75); transition: filter 0.3s; }
+  .video-card:hover .video-thumb img { filter: brightness(0.9); }
+
+  .video-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .play-btn {
+    width: 52px;
+    height: 52px;
+    border: 1.5px solid rgba(245,240,232,0.7);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(26,22,18,0.45);
+    transition: transform 0.2s, background 0.2s;
+    backdrop-filter: blur(4px);
+  }
+  .video-card:hover .play-btn { transform: scale(1.1); background: rgba(196,122,42,0.7); }
+
+  .video-info { padding: 1.2rem 1.5rem 1.5rem; border-top: 1px solid var(--border); }
+  .video-reviewer { font-size: 0.88rem; font-weight: 400; color: var(--ink); margin-bottom: 0.2rem; }
+  .video-origin { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.6rem; }
+  .video-snippet { font-family: var(--serif); font-size: 0.95rem; font-style: italic; font-weight: 300; color: var(--muted); line-height: 1.55; }
+
+  .video-placeholder { border-right: 1px solid var(--border); }
+  .video-placeholder-thumb {
+    aspect-ratio: 16/9;
+    background: rgba(26,22,18,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .placeholder-label { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(122,112,96,0.5); margin-top: 8px; }
+
+  /* ── COLLABORATOR QUOTE ── */
+  .collab-quote-section { background: var(--ink); padding: 5rem 3rem; }
+  .collab-quote-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; align-items: center; }
+  .collab-label { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--amber-light); margin-bottom: 1.2rem; }
+  .collab-name { font-family: var(--serif); font-size: 1.5rem; font-weight: 300; font-style: italic; color: var(--warm-white); margin-bottom: 0.4rem; }
+  .collab-role { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,240,232,0.35); }
+  .collab-blockquote { font-family: var(--serif); font-size: 1.45rem; font-style: italic; font-weight: 300; color: rgba(245,240,232,0.82); line-height: 1.6; padding-left: 2.5rem; border-left: 2px solid var(--amber); }
+
+  /* ── GALLERY ── */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+  }
+  .gallery-cell { background: #2a2420; position: relative; overflow: hidden; aspect-ratio: 3/2; }
+  .gallery-cell img { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.88); transition: filter 0.35s, transform 0.35s; }
+  .gallery-cell:hover img { filter: brightness(1); transform: scale(1.03); }
+  .gc-tall { grid-row: span 2; aspect-ratio: unset; }
+  .gc-wide { grid-column: span 2; }
+
+  .gallery-caption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 10px 14px;
+    background: linear-gradient(transparent, rgba(26,22,18,0.65));
+    font-family: var(--mono);
+    font-size: 0.56rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.8);
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+  .gallery-cell:hover .gallery-caption { opacity: 1; }
+
+  .gallery-note {
+    margin-top: 1.5rem;
+    padding: 1.2rem 1.8rem;
+    border: 1px solid rgba(196,122,42,0.2);
+    background: rgba(196,122,42,0.04);
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .gallery-note-text { font-size: 0.85rem; font-weight: 300; color: var(--muted); line-height: 1.7; }
+  .gallery-note-text strong { font-weight: 400; color: var(--ink); }
+
+  /* ── CTA ── */
+  .cta-section { text-align: center; padding: 7rem 3rem; background: var(--paper); }
+  .cta-heading { font-family: var(--serif); font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 300; line-height: 1.15; margin-bottom: 1.2rem; }
+  .cta-heading em { font-style: italic; color: var(--amber); }
+  .cta-sub { font-size: 1rem; color: var(--muted); max-width: 48ch; margin: 0 auto 2.5rem; line-height: 1.7; }
+  .cta-buttons { display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap; }
+  .btn-primary { display: inline-block; background: var(--ink); color: var(--warm-white); font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; padding: 0.9rem 2rem; transition: background 0.2s; }
+  .btn-primary:hover { background: var(--amber); }
+  .btn-ghost { display: inline-block; color: var(--muted); font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; padding: 0.9rem 0; border-bottom: 1px solid var(--muted); transition: color 0.2s, border-color 0.2s; }
+  .btn-ghost:hover { color: var(--ink); border-color: var(--ink); }
+
+  /* ── FOOTER ── */
+  footer { background: var(--ink); color: rgba(245,240,232,0.5); padding: 2rem 3rem; display: flex; justify-content: space-between; align-items: center; font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; flex-wrap: wrap; gap: 1rem; }
+  footer a { color: inherit; text-decoration: none; }
+  footer a:hover { color: var(--amber-light); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 960px) {
+    .site-header { padding: 1.2rem 1.5rem; }
+    nav { display: none; }
+    .menu-toggle { display: flex; }
+    .mobile-nav { padding: 1rem 1.5rem 1.5rem; }
+    .hero { padding: 4rem 1.5rem 3.5rem; }
+    .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .section { padding: 3.5rem 1.5rem; }
+    .featured-review { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem 1.5rem; }
+    .reviews-grid, .reviews-grid-row2 { grid-template-columns: 1fr; }
+    .review-card, .review-card-placeholder { border-right: none; border-bottom: 1px solid var(--border); }
+    .review-card:last-child, .review-card-placeholder:last-child { border-bottom: none; }
+    .video-grid, .video-grid-row2 { grid-template-columns: 1fr 1fr; }
+    .video-card:nth-child(2n), .video-placeholder:nth-child(2n) { border-right: none; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .gc-tall, .gc-wide { grid-row: span 1; grid-column: span 1; aspect-ratio: 3/2; }
+    .collab-quote-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    footer { padding: 1.5rem; flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  }
+  @media (max-width: 560px) {
+    .video-grid, .video-grid-row2 { grid-template-columns: 1fr; }
+    .video-card, .video-placeholder { border-right: none; border-bottom: 1px solid var(--border); }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <a href="/" class="logo">Kolkata Photo Tour</a>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/tours/">Tours & Workshops</a>
+    <a href="/reviews/" class="active">Reviews</a>
+    <a href="/youtube.html" target="_blank" rel="noopener">YouTube</a>
+    <a href="https://kolkataphototours.substack.com/" target="_blank" rel="noopener">Substack</a>
+    <a href="https://www.shivamphotofarm.com/" target="_blank" rel="noopener">Gallery</a>
+    <a href="/about/">About Me</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button class="menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+<div class="mobile-nav">
+  <a href="/">Home</a>
+  <a href="/tours/">Tours & Workshops</a>
+  <a href="/reviews/" class="active">Reviews</a>
+  <a href="/youtube.html" target="_blank">YouTube</a>
+  <a href="https://kolkataphototours.substack.com/" target="_blank">Substack</a>
+  <a href="https://www.shivamphotofarm.com/" target="_blank">Gallery</a>
+  <a href="/about/">About Me</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <p class="eyebrow">Reviews & Testimonials</p>
+      <h1>What photographers<br>say after shooting<br><em>with Shivam</em></h1>
+      <p class="hero-desc">Over 500 photographers from around the world have joined me on the streets of India. These are their words, their images, and their experiences — unedited and unscripted.</p>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-row">
+        <div class="stat-num">500+</div>
+        <div class="stat-text"><strong>Photographers guided</strong>Across all skill levels, from 30+ countries</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-num">40+</div>
+        <div class="stat-text"><strong>Tours & workshops led</strong>Kolkata, Varanasi, Rajasthan, Ladakh, Delhi</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-num">10+</div>
+        <div class="stat-text"><strong>Years on these streets</strong>The experience that makes the difference</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-num" style="font-size:1.6rem;letter-spacing:2px;">★★★★★</div>
+        <div class="stat-text"><strong>Consistently 5-star rated</strong>Across Google, email, and direct feedback</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── WRITTEN REVIEWS ── -->
+<section class="section">
+  <div class="section-inner">
+    <p class="section-label">Written reviews</p>
+    <h2 class="section-heading">In their own <em>words.</em></h2>
+    <p class="section-sub">Reviews from photographers who joined private tours, 1-on-1 workshops, and group expeditions across India.</p>
+
+    <!-- FEATURED REVIEW -->
+    <div class="featured-review">
+      <div class="featured-author">
+        <div class="author-initials">JM</div>
+        <p class="author-name">James Mitchell</p>
+        <p class="author-origin">United Kingdom</p>
+        <p class="author-tour">Private Workshop · Kolkata</p>
+      </div>
+      <blockquote class="featured-quote">
+        "I've done photography workshops on four continents, and nothing has come close to this. Shivam doesn't just show you where to stand — he teaches you how to think. By day three I was seeing the streets completely differently. The images I brought home are the best I've ever made."
+      </blockquote>
+    </div>
+
+    <!-- ROW 1 -->
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+        <p class="review-quote">"Shivam has an extraordinary ability to make you feel at ease in situations that would otherwise feel overwhelming. By the end of the workshop I was approaching strangers with confidence I never thought I'd have."</p>
+        <div class="review-divider"></div>
+        <p class="review-author-name">Sarah O.</p>
+        <p class="review-author-meta">Australia · 2024</p>
+        <span class="review-tour-tag">Kolkata Workshop</span>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+        <p class="review-quote">"The level of access Shivam provides is unlike anything I've experienced. He knows every vendor, every corner, every golden hour spot. India felt intimate and navigable for the first time."</p>
+        <div class="review-divider"></div>
+        <p class="review-author-name">Marco B.</p>
+        <p class="review-author-meta">Italy · 2024</p>
+        <span class="review-tour-tag">Varanasi + Kolkata Tour</span>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+        <p class="review-quote">"I came as a beginner and left feeling like a photographer. The real-time feedback on the street was invaluable — not just what's working, but why. Shivam genuinely cares about your growth."</p>
+        <div class="review-divider"></div>
+        <p class="review-author-name">Linda K.</p>
+        <p class="review-author-meta">Canada · 2023</p>
+        <span class="review-tour-tag">Private 1-on-1</span>
+      </div>
+    </div>
+
+    <!-- ROW 2 -->
+    <div class="reviews-grid-row2">
+      <div class="review-card">
+        <div class="review-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+        <p class="review-quote">"What sets Shivam apart is the cultural understanding he brings. He helped me photograph people with respect and dignity — something I struggled with before. The images feel honest."</p>
+        <div class="review-divider"></div>
+        <p class="review-author-name">David R.</p>
+        <p class="review-author-meta">USA · 2024</p>
+        <span class="review-tour-tag">Kolkata Workshop</span>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+        <p class="review-quote">"Three days felt like three weeks — in the best possible way. Every morning was different, every walk revealed something new. I've already booked my return trip."</p>
+        <div class="review-divider"></div>
+        <p class="review-author-name">Yuki T.</p>
+        <p class="review-author-meta">Japan · 2024</p>
+        <span class="review-tour-tag">Private Tour · Kolkata</span>
+      </div>
+      <div class="review-card-placeholder">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7a7060" stroke-width="1.2" style="opacity:0.3;"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <p class="placeholder-text">Your review here<br>Add a 6th testimonial</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── VIDEO REVIEWS ── -->
+<section class="section video-section">
+  <div class="section-inner">
+    <p class="section-label">Video reviews</p>
+    <h2 class="section-heading">Hear it from <em>them directly.</em></h2>
+    <p class="section-sub">Short video testimonials from past participants — recorded after their tours and workshops.</p>
+
+    <div class="video-grid">
+      <a class="video-card" href="https://youtube.com" target="_blank" rel="noopener">
+        <div class="video-thumb">
+          <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=640&q=70" alt="Kolkata street scene">
+          <div class="video-overlay">
+            <div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="#f5f0e8"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+        </div>
+        <div class="video-info">
+          <p class="video-reviewer">Thomas W.</p>
+          <p class="video-origin">Germany · Kolkata Workshop 2024</p>
+          <p class="video-snippet">"I didn't expect to leave with both great images and a completely different way of seeing..."</p>
+        </div>
+      </a>
+
+      <a class="video-card" href="https://youtube.com" target="_blank" rel="noopener">
+        <div class="video-thumb">
+          <img src="https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=640&q=70" alt="Varanasi ghats photography">
+          <div class="video-overlay">
+            <div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="#f5f0e8"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+        </div>
+        <div class="video-info">
+          <p class="video-reviewer">Priya S.</p>
+          <p class="video-origin">Singapore · Private Tour 2024</p>
+          <p class="video-snippet">"Shivam has a rare gift — he makes India feel like home even on your first visit..."</p>
+        </div>
+      </a>
+
+      <a class="video-card" href="https://youtube.com" target="_blank" rel="noopener">
+        <div class="video-thumb">
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=640&q=70" alt="India landscape photography">
+          <div class="video-overlay">
+            <div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="#f5f0e8"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+        </div>
+        <div class="video-info">
+          <p class="video-reviewer">Paul G.</p>
+          <p class="video-origin">France · Varanasi Workshop 2023</p>
+          <p class="video-snippet">"Every morning I woke up excited. That almost never happens on a photography trip..."</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="video-grid-row2">
+      <a class="video-card" href="https://youtube.com" target="_blank" rel="noopener">
+        <div class="video-thumb">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=640&q=70" alt="Street photography India">
+          <div class="video-overlay">
+            <div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="#f5f0e8"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+        </div>
+        <div class="video-info">
+          <p class="video-reviewer">Anna L.</p>
+          <p class="video-origin">Netherlands · Kolkata Tour 2024</p>
+          <p class="video-snippet">"The editing session at the end was worth the trip alone — honest, specific, transformative..."</p>
+        </div>
+      </a>
+
+      <div class="video-placeholder">
+        <div class="video-placeholder-thumb">
+          <div style="text-align:center;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7a7060" stroke-width="1.2" style="opacity:0.4;"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+            <p class="placeholder-label">Add video review</p>
+          </div>
+        </div>
+        <div class="video-info">
+          <p class="video-reviewer" style="color:var(--muted);">Coming soon</p>
+          <p class="video-origin">Add your 5th video testimonial</p>
+        </div>
+      </div>
+
+      <div class="video-placeholder" style="border-right:none;">
+        <div class="video-placeholder-thumb">
+          <div style="text-align:center;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7a7060" stroke-width="1.2" style="opacity:0.4;"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+            <p class="placeholder-label">Add video review</p>
+          </div>
+        </div>
+        <div class="video-info">
+          <p class="video-reviewer" style="color:var(--muted);">Coming soon</p>
+          <p class="video-origin">Add your 6th video testimonial</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── COLLABORATOR QUOTE ── -->
+<div class="collab-quote-section">
+  <div class="collab-quote-inner">
+    <div>
+      <p class="collab-label">From a collaborator</p>
+      <p class="collab-name">Neal James</p>
+      <p class="collab-role">The Photowalk Podcast</p>
+    </div>
+    <blockquote class="collab-blockquote">
+      "Shivam is exactly the kind of local partner every international photography tour leader dreams of finding. His knowledge of Kolkata is encyclopedic, his access is extraordinary, and his ability to create the right conditions for photographers to do their best work is something I haven't seen anywhere else in India."
+    </blockquote>
+  </div>
+</div>
+
+<!-- ── GUEST GALLERY ── -->
+<section class="section">
+  <div class="section-inner">
+    <p class="section-label">Guest gallery</p>
+    <h2 class="section-heading">Shot by them,<br><em>on the streets with me.</em></h2>
+    <p class="section-sub">Images made by photographers during their time in Kolkata and across India — their vision, their moment, guided by a decade of local knowledge.</p>
+
+    <div class="gallery-grid">
+      <!-- Cell 1 — tall -->
+      <div class="gallery-cell gc-tall">
+        <img src="https://images.unsplash.com/photo-1545579133-99bb5ad189be?w=600&q=75" alt="Street portrait Kolkata">
+        <div class="gallery-caption">Photo by Sarah O. · Kolkata 2024</div>
+      </div>
+      <!-- Cell 2 -->
+      <div class="gallery-cell">
+        <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=600&q=75" alt="Street scene India">
+        <div class="gallery-caption">Photo by Marco B. · Varanasi 2024</div>
+      </div>
+      <!-- Cell 3 -->
+      <div class="gallery-cell">
+        <img src="https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=600&q=75" alt="Varanasi ghats">
+        <div class="gallery-caption">Photo by Linda K. · Kolkata 2023</div>
+      </div>
+      <!-- Cell 4 — wide -->
+      <div class="gallery-cell gc-wide">
+        <img src="https://images.unsplash.com/photo-1596008194705-2091cd6764d4?w=900&q=75" alt="Rajasthan landscape">
+        <div class="gallery-caption">Photo by David R. · Rajasthan 2024</div>
+      </div>
+      <!-- Cell 5 -->
+      <div class="gallery-cell">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75" alt="India street photography">
+        <div class="gallery-caption">Photo by Yuki T. · Kolkata 2024</div>
+      </div>
+      <!-- Cell 6 -->
+      <div class="gallery-cell">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=75" alt="Ladakh landscape">
+        <div class="gallery-caption">Photo by Anna L. · Ladakh 2024</div>
+      </div>
+      <!-- Cell 7 — tall -->
+      <div class="gallery-cell gc-tall">
+        <img src="https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=600&q=75" alt="Portrait India">
+        <div class="gallery-caption">Photo by Thomas W. · Kolkata 2024</div>
+      </div>
+      <!-- Cell 8 -->
+      <div class="gallery-cell">
+        <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=600&q=75" alt="Temple architecture India">
+        <div class="gallery-caption">Photo by Paul G. · Varanasi 2023</div>
+      </div>
+      <!-- Cell 9 -->
+      <div class="gallery-cell">
+        <img src="https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=600&q=75" alt="Market scene Kolkata">
+        <div class="gallery-caption">Photo by Priya S. · Kolkata 2024</div>
+      </div>
+    </div>
+
+    <div class="gallery-note">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c47a2a" stroke-width="1.4" style="flex-shrink:0;margin-top:2px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <p class="gallery-note-text">
+        <strong>All images in this gallery were made by past participants</strong> during their tours and workshops with Shivam. Each photo is credited to its maker. If you've shot with Shivam and would like your work featured here, get in touch.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2 class="cta-heading">Ready to write<br>your own <em>review?</em></h2>
+  <p class="cta-sub">Every photographer who has joined me has left with images they're proud of and a way of seeing they didn't have before. Book your tour or workshop and find out for yourself.</p>
+  <div class="cta-buttons">
+    <a href="/contact/" class="btn-primary">Book with Shivam</a>
+    <a href="/tours/" class="btn-ghost">See tours & workshops</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2025 Kolkata Photo Tour</span>
+  <span>Shivam Pandey — Kolkata, India</span>
+  <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+</footer>
+
+</body>
+</html>

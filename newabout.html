@@ -33,6 +33,7 @@
     min-height: 100vh;
   }
 
+  /* ─── HEADER / NAV ─────────────────────────────────────── */
   .site-header {
     display: flex;
     justify-content: space-between;
@@ -52,27 +53,104 @@
     text-transform: uppercase;
     color: var(--ink);
     text-decoration: none;
+    flex-shrink: 0;
   }
 
-  nav a {
+  .nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 0;
+  }
+  .nav-links a {
     font-family: var(--mono);
     font-size: 0.7rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--muted);
     text-decoration: none;
+    padding: 0.4rem 0;
     margin-left: 2rem;
-    transition: color 0.2s;
+    border-bottom: 1px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
   }
-  nav a:hover, nav a.active { color: var(--ink); }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-links a.active { color: var(--ink); border-bottom-color: var(--amber); }
 
+  /* Hamburger — hidden on desktop */
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 28px;
+    height: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+  }
+  .nav-toggle span {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: var(--ink);
+    transition: transform 0.25s, opacity 0.25s;
+    transform-origin: center;
+  }
+  .nav-toggle.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .nav-toggle.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+  /* Mobile drawer */
+  @media (max-width: 900px) {
+    .site-header { padding: 1.2rem 1.5rem; }
+    .nav-toggle { display: flex; }
+    .nav-links {
+      position: fixed;
+      top: 0; right: 0;
+      width: min(280px, 85vw);
+      height: 100vh;
+      background: var(--warm-white);
+      border-left: 1px solid var(--border);
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 5rem 2.5rem 2.5rem;
+      transform: translateX(100%);
+      transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+      z-index: 99;
+      box-shadow: -4px 0 24px rgba(26,22,18,0.06);
+    }
+    .nav-links.open { transform: translateX(0); }
+    .nav-links li { width: 100%; border-bottom: 1px solid var(--border); }
+    .nav-links li:last-child { border-bottom: none; }
+    .nav-links a {
+      display: block;
+      margin-left: 0;
+      padding: 1rem 0;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      border-bottom: none;
+    }
+    .nav-links a.active { color: var(--amber); border-bottom: none; }
+    .nav-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(26,22,18,0.25);
+      z-index: 98;
+    }
+    .nav-overlay.open { display: block; }
+  }
+
+  /* ─── PAGE STYLES ──────────────────────────────────────── */
   .hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
     min-height: 88vh;
     border-bottom: 1px solid var(--border);
   }
-
   .hero-text {
     padding: 6rem 4rem 6rem 3rem;
     display: flex;
@@ -80,7 +158,6 @@
     justify-content: center;
     border-right: 1px solid var(--border);
   }
-
   .eyebrow {
     font-family: var(--mono);
     font-size: 0.68rem;
@@ -89,7 +166,6 @@
     color: var(--amber);
     margin-bottom: 1.5rem;
   }
-
   .hero-name {
     font-family: var(--serif);
     font-size: clamp(3.5rem, 6vw, 5.5rem);
@@ -99,7 +175,6 @@
     margin-bottom: 0.4rem;
   }
   .hero-name em { font-style: italic; color: var(--amber); }
-
   .hero-title {
     font-family: var(--serif);
     font-size: clamp(1.1rem, 2vw, 1.4rem);
@@ -109,7 +184,6 @@
     margin-bottom: 2.5rem;
     letter-spacing: 0.02em;
   }
-
   .hero-intro {
     font-size: 1rem;
     line-height: 1.9;
@@ -117,9 +191,7 @@
     max-width: 42ch;
     margin-bottom: 3rem;
   }
-
   .cta-row { display: flex; gap: 1rem; align-items: center; }
-
   .btn-primary {
     display: inline-block;
     background: var(--ink);
@@ -133,7 +205,6 @@
     transition: background 0.2s;
   }
   .btn-primary:hover { background: var(--amber); }
-
   .btn-ghost {
     display: inline-block;
     color: var(--muted);
@@ -147,22 +218,18 @@
     transition: color 0.2s, border-color 0.2s;
   }
   .btn-ghost:hover { color: var(--ink); border-color: var(--ink); }
-
   .hero-visual {
     background: var(--paper);
     position: relative;
     overflow: hidden;
     min-height: 520px;
   }
-
   .hero-visual img {
-    width: 100%;
-    height: 100%;
+    width: 100%; height: 100%;
     object-fit: cover;
     object-position: top center;
     display: block;
   }
-
   .stat-strip {
     position: absolute;
     bottom: 0; left: 0; right: 0;
@@ -170,7 +237,6 @@
     color: var(--warm-white);
     display: flex;
   }
-
   .stat-item {
     flex: 1;
     padding: 1.2rem 1.5rem;
@@ -178,7 +244,6 @@
     text-align: center;
   }
   .stat-item:last-child { border-right: none; }
-
   .stat-num {
     font-family: var(--serif);
     font-size: 2rem;
@@ -187,7 +252,6 @@
     line-height: 1;
     display: block;
   }
-
   .stat-label {
     font-family: var(--mono);
     font-size: 0.6rem;
@@ -197,10 +261,8 @@
     margin-top: 0.3rem;
     display: block;
   }
-
   .section { padding: 6rem 3rem; border-bottom: 1px solid var(--border); }
   .section-inner { max-width: 1100px; margin: 0 auto; }
-
   .section-label {
     font-family: var(--mono);
     font-size: 0.65rem;
@@ -220,7 +282,6 @@
     background: var(--amber);
     opacity: 0.4;
   }
-
   .section-heading {
     font-family: var(--serif);
     font-size: clamp(2.2rem, 4vw, 3.2rem);
@@ -230,14 +291,12 @@
     letter-spacing: -0.01em;
   }
   .section-heading em { font-style: italic; color: var(--amber); }
-
   .story-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5rem;
     align-items: start;
   }
-
   .story-text p {
     font-size: 1rem;
     line-height: 1.95;
@@ -245,7 +304,6 @@
     margin-bottom: 1.5rem;
   }
   .story-text p:last-child { margin-bottom: 0; }
-
   .pull-quote {
     padding: 3rem;
     background: var(--paper);
@@ -258,7 +316,6 @@
     color: var(--ink);
     margin-top: 1rem;
   }
-
   .pull-quote cite {
     display: block;
     margin-top: 1rem;
@@ -269,7 +326,6 @@
     font-style: normal;
     color: var(--muted);
   }
-
   .story-photo-strip {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -277,7 +333,6 @@
     height: 280px;
     margin-top: 4rem;
   }
-
   .photo-block {
     background: #ccc8be;
     position: relative;
@@ -286,7 +341,6 @@
     align-items: center;
     justify-content: center;
   }
-
   .photo-block img {
     width: 100%; height: 100%;
     object-fit: cover;
@@ -295,7 +349,6 @@
     transition: transform 0.5s ease;
   }
   .photo-block:hover img { transform: scale(1.04); }
-
   .pb-caption {
     position: absolute;
     bottom: 0; left: 0; right: 0;
@@ -307,17 +360,14 @@
     text-transform: uppercase;
     color: rgba(245,240,232,0.85);
   }
-
   .offer-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 0;
     border: 1px solid var(--border);
   }
-
   .offer-card { padding: 2.5rem 2rem; border-right: 1px solid var(--border); }
   .offer-card:last-child { border-right: none; }
-
   .offer-photo-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -326,7 +376,6 @@
     border: 1px solid var(--border);
     border-top: none;
   }
-
   .offer-number {
     font-family: var(--mono);
     font-size: 0.65rem;
@@ -334,7 +383,6 @@
     color: var(--amber);
     margin-bottom: 1.2rem;
   }
-
   .offer-title {
     font-family: var(--serif);
     font-size: 1.5rem;
@@ -343,13 +391,11 @@
     margin-bottom: 1rem;
   }
   .offer-title em { font-style: italic; color: var(--amber); }
-
   .offer-desc {
     font-size: 0.9rem;
     line-height: 1.85;
     color: var(--muted);
   }
-
   .destinations-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -357,7 +403,6 @@
     border: 1px solid var(--border);
     margin-top: 3rem;
   }
-
   .destinations-photo-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -365,21 +410,18 @@
     height: 200px;
     margin-top: 4px;
   }
-
   .dest-item {
     padding: 2rem 1.5rem;
     border-right: 1px solid var(--border);
     text-align: center;
   }
   .dest-item:last-child { border-right: none; }
-
   .dest-name {
     font-family: var(--serif);
     font-size: 1.15rem;
     font-weight: 300;
     margin-bottom: 0.4rem;
   }
-
   .dest-tag {
     font-family: var(--mono);
     font-size: 0.58rem;
@@ -387,29 +429,24 @@
     text-transform: uppercase;
     color: var(--muted);
   }
-
   .collab-section { background: var(--ink); color: var(--warm-white); }
   .collab-section .section-label { color: var(--amber-light); }
   .collab-section .section-label::after { background: var(--amber-light); }
   .collab-section .section-heading { color: var(--warm-white); }
   .collab-section .section-heading em { color: var(--amber-light); }
-
   .collab-grid {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 5rem;
     align-items: start;
   }
-
   .collab-intro {
     font-size: 1rem;
     line-height: 1.9;
     color: rgba(245,240,232,0.75);
     margin-bottom: 2rem;
   }
-
   .collab-names { display: flex; flex-direction: column; gap: 0; }
-
   .collab-name-item {
     display: flex;
     align-items: center;
@@ -417,14 +454,12 @@
     padding: 1.2rem 0;
     border-bottom: 1px solid rgba(255,255,255,0.08);
   }
-
   .collab-dot {
     width: 6px; height: 6px;
     border-radius: 50%;
     background: var(--amber-light);
     flex-shrink: 0;
   }
-
   .collab-name {
     font-family: var(--serif);
     font-size: 1.2rem;
@@ -432,7 +467,6 @@
     color: var(--warm-white);
     font-weight: 300;
   }
-
   .collab-what {
     font-family: var(--mono);
     font-size: 0.62rem;
@@ -441,13 +475,11 @@
     color: rgba(245,240,232,0.4);
     margin-left: auto;
   }
-
   .personal-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5rem;
   }
-
   .gear-label {
     font-family: var(--mono);
     font-size: 0.65rem;
@@ -456,16 +488,13 @@
     color: var(--muted);
     margin-bottom: 0.5rem;
   }
-
   .gear-value {
     font-family: var(--serif);
     font-size: 1.4rem;
     font-weight: 300;
     margin-bottom: 1.5rem;
   }
-
   .personal-body { font-size: 1rem; line-height: 1.9; color: #3a3530; }
-
   .gear-photo {
     width: 100%;
     aspect-ratio: 3/2;
@@ -474,20 +503,17 @@
     overflow: hidden;
     margin-bottom: 2rem;
   }
-
   .gear-photo img {
     width: 100%; height: 100%;
     object-fit: cover;
     display: block;
     filter: brightness(0.88);
   }
-
   .cta-section {
     text-align: center;
     padding: 8rem 3rem;
     background: var(--paper);
   }
-
   .cta-heading {
     font-family: var(--serif);
     font-size: clamp(2.5rem, 5vw, 4rem);
@@ -496,7 +522,6 @@
     margin-bottom: 1.5rem;
   }
   .cta-heading em { font-style: italic; color: var(--amber); }
-
   .cta-sub {
     font-size: 1rem;
     color: var(--muted);
@@ -504,7 +529,6 @@
     margin: 0 auto 3rem;
     line-height: 1.7;
   }
-
   footer {
     background: var(--ink);
     color: rgba(245,240,232,0.5);
@@ -517,7 +541,6 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
   }
-
   footer a { color: inherit; text-decoration: none; }
   footer a:hover { color: var(--amber-light); }
 
@@ -532,8 +555,7 @@
     .story-photo-strip { grid-template-columns: 1fr 1fr; height: 200px; }
     .story-photo-strip .photo-block:last-child { display: none; }
     .section { padding: 4rem 1.5rem; }
-    .site-header { padding: 1.2rem 1.5rem; }
-    nav a { margin-left: 1rem; }
+    footer { flex-direction: column; gap: 0.75rem; text-align: center; }
   }
 </style>
 </head>
@@ -541,43 +563,30 @@
 
 <!-- HEADER -->
 <header class="site-header">
-  <a href="#" class="logo">Kolkata Photo Tour</a>
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="padding-top:10px;">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-          data-target=".navbar-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="../">Photo Tours & Workshops</a>
-      </div>
+  <a href="../" class="logo">Kolkata Photo Tour</a>
 
-      <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="../">Home</a></li>
-          
-          <li><a href="../tours/">Tours and Workshops</a></li>
-          <li><a href="../reviews/">Reviews</a></li>
-          <li> <a href="/youtube.html" target="_blank" rel="noopener noreferrer"> Youtube </a> </li>
-          <li>
-    <a href="https://kolkataphototours.substack.com/" 
-       target="_blank" 
-       rel="noopener noreferrer">
-       Substack
-    </a>
-</li>
-          <li><a href="https://www.shivamphotofarm.com/" target="_blank">Gallery</a></li>
-          <li><a href="#">About Me</a></li>
-          <li class="contact-nav"><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../">Home</a></li>
+    <li><a href="../tours/">Tours and Workshops</a></li>
+    <li><a href="../reviews/">Reviews</a></li>
+    <li><a href="/youtube.html" target="_blank" rel="noopener noreferrer">Youtube</a></li>
+    <li><a href="https://kolkataphototours.substack.com/" target="_blank" rel="noopener noreferrer">Substack</a></li>
+    <li><a href="https://www.shivamphotofarm.com/" target="_blank" rel="noopener noreferrer">Gallery</a></li>
+    <li><a href="#" class="active">About Me</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </header>
 
-<!-- ① HERO — Shivam portrait -->
+<!-- Mobile overlay -->
+<div class="nav-overlay" id="navOverlay"></div>
+
+<!-- ① HERO -->
 <section class="hero">
   <div class="hero-text">
     <p class="eyebrow">About your guide</p>
@@ -626,7 +635,6 @@
       </div>
     </div>
 
-    <!-- ② STORY PHOTO STRIP -->
     <div class="story-photo-strip">
       <div class="photo-block">
         <img src="https://shivamphotofarm.com/wp-content/uploads/2025/07/WhatsApp-Image-2025-06-14-at-6.03.08-PM-scaled.jpeg" alt="Varanasi ghats">
@@ -666,8 +674,6 @@
         <p class="offer-desc">Whether you're refining your eye or preparing a body of work for publication, I offer one-on-one mentorship focused on honest, purposeful storytelling — not technical tricks. Real feedback, real growth.</p>
       </div>
     </div>
-
-    <!-- ③ OFFER PHOTO ROW -->
     <div class="offer-photo-row">
       <div class="photo-block" style="border-right: 1px solid var(--border);">
         <img src="https://www.kolkataphototours.com/images/Kumartuli.jpeg" alt="Photo tour Kolkata">
@@ -697,8 +703,6 @@
       <div class="dest-item"><p class="dest-name">Ladakh</p><p class="dest-tag">High altitude</p></div>
       <div class="dest-item"><p class="dest-name">Delhi</p><p class="dest-tag">Urban layers</p></div>
     </div>
-
-    <!-- ④ DESTINATION PHOTO GRID -->
     <div class="destinations-photo-grid">
       <div class="photo-block">
         <img src="https://www.kolkataphototours.com/images/ghat.jpg" alt="Kolkata Ganga Ghat">
@@ -773,7 +777,6 @@
     <h2 class="section-heading">Presence over<br><em>equipment</em></h2>
     <div class="personal-grid">
       <div>
-        <!-- ⑤ GEAR PHOTO -->
         <div class="gear-photo">
           <img src="https://shivamphotofarm.com/wp-content/uploads/2025/07/IMG_1567-scaled.jpeg" alt="Leica M11-P — Shivam Pandey">
         </div>
@@ -815,6 +818,38 @@
   <span>Shivam Pandey — Kolkata, India</span>
   <a href="https://www.instagram.com/shivam_photofarm" target="_blank" rel="noopener noreferrer">Instagram</a>
 </footer>
+
+<script>
+  const toggle  = document.getElementById('navToggle');
+  const links   = document.getElementById('navLinks');
+  const overlay = document.getElementById('navOverlay');
+
+  function openNav() {
+    toggle.classList.add('open');
+    links.classList.add('open');
+    overlay.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeNav() {
+    toggle.classList.remove('open');
+    links.classList.remove('open');
+    overlay.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  toggle.addEventListener('click', () => {
+    links.classList.contains('open') ? closeNav() : openNav();
+  });
+  overlay.addEventListener('click', closeNav);
+
+  links.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      if (window.innerWidth <= 900) closeNav();
+    });
+  });
+</script>
 
 </body>
 </html>

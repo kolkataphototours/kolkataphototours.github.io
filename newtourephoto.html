@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photo Tours — Kolkata & India | Shivam Pandey</title>
+<meta name="description" content="Kolkata — a paradise for street photographers. Private photo tours with Shivam Pandey across Kolkata, Varanasi, Rajasthan and beyond. Customised around you.">
+<meta name="keywords" content="Kolkata photo tour, street photography Kolkata, photo tour India, Shivam Pandey, Howrah Bridge photography, Varanasi photo tour, Kolkata paradise street photography">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--ink:#1a1612;--warm-white:#f5f0e8;--paper:#ede8de;--amber:#c47a2a;--amber-light:#e8a84a;--muted:#7a7060;--border:rgba(26,22,18,0.12);--serif:'Cormorant Garamond',Georgia,serif;--mono:'DM Mono',monospace;--sans:'Barlow',sans-serif}
+  body{background:var(--warm-white);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.8}
+
+  /* ── HEADER ── */
+  .site-header{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 3rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--warm-white);z-index:100}
+  .logo{font-family:var(--mono);font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);text-decoration:none;white-space:nowrap}
+  .site-nav{display:flex;align-items:center;flex-wrap:wrap}
+  .site-nav a{font-family:var(--mono);font-size:.65rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);text-decoration:none;margin-left:1.6rem;transition:color .2s;white-space:nowrap}
+  .site-nav a:hover{color:var(--ink)}
+  .site-nav a.active{color:var(--amber)}
+  .site-nav a.nav-contact{background:var(--ink);color:var(--warm-white);padding:.45rem 1.1rem;transition:background .2s}
+  .site-nav a.nav-contact:hover{background:var(--amber)}
+  .nav-toggle{display:none;flex-direction:column;gap:4px;cursor:pointer;padding:4px;border:none;background:none}
+  .nav-toggle span{width:22px;height:1.5px;background:var(--ink);display:block}
+
+  /* ── HERO ── */
+  .hero{height:90vh;position:relative;overflow:hidden;display:flex;align-items:flex-end;border-bottom:1px solid var(--border)}
+  .hero-bg{position:absolute;inset:0;background:#2a2218}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.55}
+  .hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,22,18,.9) 0%,rgba(26,22,18,.3) 45%,transparent 100%)}
+  .hero-content{position:relative;z-index:1;padding:0 3rem 5rem;max-width:1100px;margin:0 auto;width:100%}
+  .hero-eyebrow{font-family:var(--mono);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--amber-light);margin-bottom:1rem}
+  .hero h1{font-family:var(--serif);font-size:clamp(3.5rem,7vw,6.5rem);font-weight:300;color:var(--warm-white);line-height:1.02;margin-bottom:.8rem;max-width:16ch}
+  .hero h1 em{font-style:italic;color:var(--amber-light)}
+  .hero-sub{font-family:var(--serif);font-size:1.3rem;font-style:italic;font-weight:300;color:rgba(245,240,232,.65);margin-bottom:2rem;max-width:44ch}
+  .hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
+  .btn-white{display:inline-block;background:var(--warm-white);color:var(--ink);font-family:var(--mono);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;padding:.9rem 2rem;transition:background .2s}
+  .btn-white:hover{background:var(--amber-light)}
+  .btn-outline-white{display:inline-block;border:1px solid rgba(245,240,232,.35);color:rgba(245,240,232,.75);font-family:var(--mono);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;padding:.9rem 1.8rem;transition:border-color .2s,color .2s}
+  .btn-outline-white:hover{border-color:var(--warm-white);color:var(--warm-white)}
+
+  /* ── KOLKATA STRIP ── */
+  .kolkata-strip{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;height:340px;gap:3px;border-bottom:1px solid var(--border)}
+  .kstrip-cell{background:#ccc8be;position:relative;overflow:hidden}
+  .kstrip-cell img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.85);transition:filter .3s}
+  .kstrip-cell:hover img{filter:brightness(1)}
+  .kstrip-label{position:absolute;bottom:0;left:0;right:0;padding:8px 12px;background:linear-gradient(transparent,rgba(26,22,18,.6));font-family:var(--mono);font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,240,232,.8)}
+
+  /* ── SHARED ── */
+  .section{padding:5rem 3rem;border-bottom:1px solid var(--border)}
+  .section-inner{max-width:1100px;margin:0 auto}
+  .sec-label{font-family:var(--mono);font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--amber);margin-bottom:1rem;display:flex;align-items:center;gap:.8rem}
+  .sec-label::after{content:'';flex:1;max-width:60px;height:1px;background:var(--amber);opacity:.4}
+  .sec-h{font-family:var(--serif);font-size:clamp(2rem,3.5vw,2.8rem);font-weight:300;line-height:1.2;margin-bottom:.8rem}
+  .sec-h em{font-style:italic;color:var(--amber)}
+  .sec-sub{font-size:.95rem;font-weight:300;color:var(--muted);margin-bottom:2.5rem;max-width:56ch;line-height:1.7}
+
+  /* ── KOLKATA INTRO ── */
+  .kolkata-intro{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border)}
+  .ki-text{padding:4rem;display:flex;flex-direction:column;justify-content:center}
+  .ki-tag{font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:1.2rem}
+  .ki-heading{font-family:var(--serif);font-size:clamp(2.2rem,4vw,3.2rem);font-weight:300;line-height:1.15;margin-bottom:1.5rem}
+  .ki-heading em{font-style:italic;color:var(--amber)}
+  .ki-body{font-size:1rem;font-weight:300;line-height:1.9;color:#3a3530;margin-bottom:1.2rem}
+  .ki-photo{background:#ccc8be;position:relative;overflow:hidden;min-height:500px;border-left:1px solid var(--border)}
+  .ki-photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+  /* ── LOCATION CARDS ── */
+  .kolkata-locs{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--border)}
+  .kolkata-locs-r2{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--border);border-top:none}
+  .kloc{border-right:1px solid var(--border);text-decoration:none;color:inherit;display:block;transition:background .18s}
+  .kloc:last-child{border-right:none}
+  .kloc:hover{background:var(--paper)}
+  .kloc-photo{height:160px;background:#ccc8be;position:relative;overflow:hidden;border-bottom:1px solid var(--border)}
+  .kloc-photo img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.85);transition:filter .2s}
+  .kloc:hover .kloc-photo img{filter:brightness(.95)}
+  .kloc-body{padding:1.2rem 1.4rem 1.5rem}
+  .kloc-name{font-family:var(--serif);font-size:1.1rem;font-weight:300;margin-bottom:.4rem}
+  .kloc-desc{font-size:.8rem;font-weight:300;color:var(--muted);line-height:1.65}
+
+  /* ── TESTIMONIALS ── */
+  .t-band{background:var(--ink);padding:5rem 3rem;border-bottom:1px solid rgba(255,255,255,.06)}
+  .t-band-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border:1px solid rgba(255,255,255,.07)}
+  .t-card{padding:2.5rem 2.2rem;border-right:1px solid rgba(255,255,255,.07);display:flex;flex-direction:column}
+  .t-card:last-child{border-right:none}
+  .t-quote{font-family:var(--serif);font-size:1.1rem;font-style:italic;font-weight:300;color:rgba(245,240,232,.82);line-height:1.65;margin-bottom:1.5rem;flex:1}
+  .t-divider{width:20px;height:1px;background:var(--amber);opacity:.5;margin-bottom:1rem}
+  .t-author-row{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .t-name{font-size:.9rem;font-weight:400;color:var(--warm-white);margin-bottom:.2rem}
+  .t-origin{font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,240,232,.3)}
+  .ig-link{display:flex;align-items:center;gap:5px;text-decoration:none;color:rgba(245,240,232,.3);transition:color .2s;flex-shrink:0}
+  .ig-link:hover{color:var(--amber-light)}
+  .ig-icon{width:16px;height:16px;flex-shrink:0}
+
+  /* ── INDIA SECTION ── */
+  .india-section{background:var(--paper)}
+  .india-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border:1px solid var(--border)}
+  .india-card{border-right:1px solid var(--border);text-decoration:none;color:inherit;display:block;transition:background .18s}
+  .india-card:last-child{border-right:none}
+  .india-card:hover{background:var(--warm-white)}
+  .ic-photo{height:220px;background:#ccc8be;position:relative;overflow:hidden;border-bottom:1px solid var(--border)}
+  .ic-photo img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.85);transition:filter .2s}
+  .india-card:hover .ic-photo img{filter:brightness(.95)}
+  .ic-body{padding:1.8rem 2rem 2.2rem}
+  .ic-tag{font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:.6rem}
+  .ic-name{font-family:var(--serif);font-size:1.4rem;font-weight:300;margin-bottom:.6rem}
+  .ic-desc{font-size:.85rem;font-weight:300;color:var(--muted);line-height:1.7}
+
+  /* ── GALLERY ── */
+  .gallery-section{background:var(--ink);padding:5rem 0 0;border-bottom:1px solid rgba(255,255,255,.06)}
+  .gallery-header{max-width:1100px;margin:0 auto;padding:0 3rem 3rem;display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+  .gallery-heading{font-family:var(--serif);font-size:clamp(2rem,3.5vw,2.8rem);font-weight:300;color:var(--warm-white);line-height:1.2}
+  .gallery-heading em{font-style:italic;color:var(--amber-light)}
+  .gallery-sub{font-size:.9rem;font-weight:300;color:rgba(245,240,232,.5);max-width:40ch;line-height:1.7}
+  .gal-row{display:grid;gap:3px;margin-bottom:3px}
+  .gal-row-3h{grid-template-columns:1fr 1fr 1fr;height:280px}
+  .gal-row-wide-v{grid-template-columns:2.5fr 1fr;height:320px}
+  .gal-row-v-wide{grid-template-columns:1fr 2.5fr;height:320px}
+  .gal-row-2w-n{grid-template-columns:1.5fr 1.5fr 1fr;height:260px}
+  .gal-row-pano{grid-template-columns:1fr;height:340px}
+  .g-cell{background:#1a1710;position:relative;overflow:hidden}
+  .g-cell img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.82);transition:filter .35s,transform .5s}
+  .g-cell:hover img{filter:brightness(1);transform:scale(1.02)}
+  .g-cap{position:absolute;bottom:0;left:0;right:0;padding:8px 14px;background:linear-gradient(transparent,rgba(26,22,18,.65));font-family:var(--mono);font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,240,232,.65);opacity:0;transition:opacity .25s}
+  .g-cell:hover .g-cap{opacity:1}
+
+  /* Gallery CTA */
+  .gallery-cta{background:var(--ink);padding:3.5rem 3rem;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+  .gallery-cta-text{font-family:var(--serif);font-size:1.5rem;font-weight:300;font-style:italic;color:rgba(245,240,232,.8);max-width:44ch}
+  .btn-amber{display:inline-block;background:var(--amber);color:var(--ink);font-family:var(--mono);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;padding:.9rem 2rem;transition:opacity .2s;font-weight:400;white-space:nowrap}
+  .btn-amber:hover{opacity:.88}
+
+  /* ── CTA ── */
+  .cta-s{text-align:center;padding:7rem 3rem;background:var(--paper)}
+  .cta-h{font-family:var(--serif);font-size:clamp(2.2rem,4vw,3.4rem);font-weight:300;line-height:1.15;margin-bottom:1.2rem}
+  .cta-h em{font-style:italic;color:var(--amber)}
+  .cta-sub{font-size:1rem;color:var(--muted);max-width:48ch;margin:0 auto 2.5rem;line-height:1.7}
+  .cta-btns{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap}
+  .btn-dark{display:inline-block;background:var(--ink);color:var(--warm-white);font-family:var(--mono);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;padding:.9rem 2rem;transition:background .2s}
+  .btn-dark:hover{background:var(--amber)}
+  .btn-ghost{display:inline-block;color:var(--muted);font-family:var(--mono);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;padding:.9rem 0;border-bottom:1px solid var(--muted);transition:color .2s}
+  .btn-ghost:hover{color:var(--ink);border-color:var(--ink)}
+
+  footer{background:var(--ink);color:rgba(245,240,232,.5);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;border-top:1px solid rgba(255,255,255,.06);flex-wrap:wrap;gap:.8rem}
+  footer a{color:inherit;text-decoration:none} footer a:hover{color:var(--amber-light)}
+
+  /* ── RESPONSIVE ── */
+  @media(max-width:900px){
+    .site-header{padding:1rem 1.5rem}
+    .nav-toggle{display:flex}
+    .site-nav{display:none;flex-direction:column;align-items:flex-start;position:absolute;top:100%;left:0;right:0;background:var(--warm-white);border-bottom:1px solid var(--border);padding:1rem 1.5rem 1.5rem;gap:.2rem}
+    .site-nav.open{display:flex}
+    .site-nav a{margin-left:0;padding:.5rem 0;border-bottom:1px solid var(--border);width:100%}
+    .site-nav a.nav-contact{margin-left:0;margin-top:.5rem;text-align:center}
+    .hero{height:60vh} .hero-content{padding:0 1.5rem 3rem}
+    .kolkata-strip{grid-template-columns:1fr 1fr;height:auto} .kstrip-cell{height:160px}
+    .kolkata-intro{grid-template-columns:1fr} .ki-photo{min-height:260px;border-left:none;border-top:1px solid var(--border)}
+    .kolkata-locs,.kolkata-locs-r2{grid-template-columns:1fr 1fr} .kloc:nth-child(2n){border-right:none} .kloc{border-bottom:1px solid var(--border)}
+    .t-band-inner{grid-template-columns:1fr} .t-card{border-right:none;border-bottom:1px solid rgba(255,255,255,.07)} .t-card:last-child{border-bottom:none}
+    .india-grid{grid-template-columns:1fr} .india-card{border-right:none;border-bottom:1px solid var(--border)}
+    .gal-row-3h,.gal-row-wide-v,.gal-row-v-wide,.gal-row-2w-n,.gal-row-pano{grid-template-columns:1fr 1fr;height:auto}
+    .g-cell{height:160px} .gal-row-pano .g-cell{height:220px}
+    .section,.t-band,.cta-s,.gallery-section,.gallery-cta{padding-left:1.5rem;padding-right:1.5rem}
+    .gallery-header{padding:0 1.5rem 2rem}
+    .site-header,footer{padding-left:1.5rem;padding-right:1.5rem}
+    footer{flex-direction:column;align-items:flex-start}
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <a href="/" class="logo">Kolkata Photo Tour</a>
+  <button class="nav-toggle" aria-label="Toggle navigation" onclick="this.nextElementSibling.classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="site-nav">
+    <a href="/" class="active">Home</a>
+    <a href="tours/">Tours & Workshops</a>
+    <a href="reviews/">Reviews</a>
+    <a href="/youtube.html" target="_blank" rel="noopener noreferrer">YouTube</a>
+    <a href="https://kolkataphototours.substack.com/" target="_blank" rel="noopener noreferrer">Substack</a>
+    <a href="https://www.shivamphotofarm.com/" target="_blank">Gallery</a>
+    <a href="about/">About Me</a>
+    <a href="#contact" class="nav-contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg">
+    <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1000222-2048x1360.jpg" alt="Kolkata streets with Shivam Pandey">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Private Photo Tours · Kolkata & India</p>
+    <h1>Kolkata.<br>The city that<br>teaches you <em>to see.</em></h1>
+    <p class="hero-sub">I've been on these streets for over a decade. Let me take you inside them.</p>
+    <div class="hero-ctas">
+      <a href="/contact/" class="btn-white">Book a Kolkata Photo Tour</a>
+      <a href="#india" class="btn-outline-white">Explore all of India</a>
+    </div>
+  </div>
+</div>
+
+<!-- KOLKATA STRIP -->
+<div class="kolkata-strip">
+  <div class="kstrip-cell">
+    <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1005731-2.jpg" alt="Mullick Ghat Flower Market">
+    <div class="kstrip-label">Mullick Ghat · Flower Market</div>
+  </div>
+  <div class="kstrip-cell">
+    <img src="https://shivamphotofarm.com/wp-content/uploads/2024/07/Day-1-IMG-1-2048x1367.jpg" alt="Kumartuli">
+    <div class="kstrip-label">Kumartuli</div>
+  </div>
+  <div class="kstrip-cell">
+    <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/Copy-of-L1003537-2048x1365.jpg" alt="Howrah Bridge">
+    <div class="kstrip-label">Howrah Bridge</div>
+  </div>
+  <div class="kstrip-cell">
+    <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1006872-2048x1360.jpg" alt="North Kolkata Streets">
+    <div class="kstrip-label">North Kolkata · Streets</div>
+  </div>
+</div>
+
+<!-- KOLKATA INTRO -->
+<section class="section">
+  <div class="section-inner">
+    <div class="kolkata-intro">
+      <div class="ki-text">
+        <p class="ki-tag">Kolkata · My home · My streets</p>
+        <h2 class="ki-heading">Kolkata — a <em>paradise</em><br>for street photographers.</h2>
+        <p class="ki-body">I was raised here. I've been photographing these streets for over a decade — not visiting them, living them. That difference shows in every tour I lead. I know not just where to go, but when the light hits the alley behind the metal market at exactly the right angle. I know which vendor at the flower market will let you in before sunrise. I know where the wrestlers train by the Howrah Bridge and how to approach them with respect.</p>
+        <p class="ki-body">Kolkata is layered, unpredictable, and endlessly alive. It rewards patience and presence — two things I'll help you develop from the first morning walk.</p>
+        <a href="/contact/" class="btn-dark" style="display:inline-block;margin-top:1.5rem;">Book a Kolkata Photo Tour</a>
+      </div>
+      <div class="ki-photo">
+        <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1550217-2-2048x1365.jpg" alt="Shivam on the streets of Kolkata">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KOLKATA LOCATIONS -->
+<section class="section" style="padding-top:0">
+  <div class="section-inner">
+    <p class="sec-label">Where I take you</p>
+    <h2 class="sec-h">Kolkata, <em>location by location.</em></h2>
+    <p class="sec-sub">Every tour is customised, but these are the spots I know most intimately — and return to again and again.</p>
+    <div class="kolkata-locs">
+      <div class="kloc">
+        <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1005731-2.jpg" alt="Mullick Ghat Flower Market"></div>
+        <div class="kloc-body"><p class="kloc-name">Mullick Ghat Flower Market</p><p class="kloc-desc">Pre-dawn colour and commerce. The largest wholesale flower market in Asia — best before the city wakes.</p></div>
+      </div>
+      <div class="kloc">
+        <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2024/07/Day-1-IMG-1-2048x1367.jpg" alt="Kumartuli"></div>
+        <div class="kloc-body"><p class="kloc-name">Kumartuli</p><p class="kloc-desc">The potters' quarter. Clay gods, dusty workshops, craftsmen shaping idols for generations.</p></div>
+      </div>
+      <div class="kloc">
+        <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1008459-2.jpg" alt="Wrestlers Howrah Bridge"></div>
+        <div class="kloc-body"><p class="kloc-name">Wrestlers · Howrah Bridge</p><p class="kloc-desc">Traditional pehelwans training in open-air akharas by the Ganges — with the bridge as backdrop.</p></div>
+      </div>
+      <div class="kloc">
+        <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/IMG_1948-2048x1365.jpg" alt="Koley Market"></div>
+        <div class="kloc-body"><p class="kloc-name">Koley Vegetable Market</p><p class="kloc-desc">Mountains of produce, relentless energy, and light that makes every frame worth keeping.</p></div>
+      </div>
+    </div>
+    <div class="kolkata-locs-r2">
+      <div class="kloc">
+        <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1005830-2048x1360.jpg" alt="Sealdah Station"></div>
+        <div class="kloc-body"><p class="kloc-name">Sealdah Train Station</p><p class="kloc-desc">One of India's busiest railway hubs — commuters, arriving trains, and moments of stillness amidst the rush.</p></div>
+      </div>
+      <div class="kloc">
+        <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1006562.jpg" alt="Local Train Kolkata"></div>
+        <div class="kloc-body"><p class="kloc-name">Local Train Ride</p><p class="kloc-desc">A 3-hour ride on Kolkata's local trains — the city's heartbeat, shared carriages, and intimate human moments in motion.</p></div>
+      </div>
+      <div class="kloc">
+        <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/DSC04035-2048x1365.jpg" alt="Kumartuli Detail"></div>
+        <div class="kloc-body"><p class="kloc-name">Meat & New Market</p><p class="kloc-desc">One of Kolkata's oldest commercial hubs — layers of trade, texture, and unpredictable encounters.</p></div>
+      </div>
+      <div class="kloc">
+        <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1006872-2048x1360.jpg" alt="North Kolkata Lanes"></div>
+        <div class="kloc-body"><p class="kloc-name">North Kolkata Lanes</p><p class="kloc-desc">Tram-lined boulevards, crumbling colonial architecture, and lanes that hold a century of stories in every doorway.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<div class="t-band">
+  <div class="t-band-inner">
+    <div class="t-card">
+      <p class="t-quote">"I personally spent 10 days with Shivam during my first visit to India. I had lost all drive and motivation after 17 years of photography. This changed in the first 3 days with this man. His drive, dedication, guidance and focus on me as an individual is of the highest level."</p>
+      <div class="t-divider"></div>
+      <div class="t-author-row">
+        <div><p class="t-name">John</p><p class="t-origin">Australia</p></div>
+        <a href="https://www.instagram.com/shivam_photofarm" target="_blank" class="ig-link" title="Instagram">
+          <svg class="ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="t-card">
+      <p class="t-quote">"I was with Shivam for 12 days and got some of the best photos of my life. He knew perfect locations with lots of activity to work with. The logistics were flawless — and he is a wonderful human being. I have just signed up to tour with him again in Varanasi."</p>
+      <div class="t-divider"></div>
+      <div class="t-author-row">
+        <div><p class="t-name">Bill</p><p class="t-origin">USA</p></div>
+        <a href="https://www.instagram.com/shivam_photofarm" target="_blank" class="ig-link" title="Instagram">
+          <svg class="ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="t-card">
+      <p class="t-quote">"Shivam put in an amazing effort to give us all an experience of a lifetime. I learnt so much — the photography technique and his philosophy, and the cultural experience. You truly are a great business partner and a lifelong friend."</p>
+      <div class="t-divider"></div>
+      <div class="t-author-row">
+        <div><p class="t-name">Steve Bowler</p><p class="t-origin">Australia</p></div>
+        <a href="https://www.instagram.com/shivam_photofarm" target="_blank" class="ig-link" title="Instagram">
+          <svg class="ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BEYOND KOLKATA — India -->
+<section class="section india-section" id="india">
+  <div class="section-inner">
+    <p class="sec-label">Beyond Kolkata</p>
+    <h2 class="sec-h">The rest of <em>India</em><br>is waiting too.</h2>
+    <p class="sec-sub">Once you've seen Kolkata, there's an entire country to explore. I lead private tours across India's most photographically extraordinary regions — each a different visual world.</p>
+    <div class="india-grid">
+      <div class="india-card">
+        <div class="ic-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1400369-2-2048x1365.jpg" alt="Varanasi"></div>
+        <div class="ic-body"><p class="ic-tag">Spiritual core · Oct–Mar best</p><p class="ic-name">Varanasi</p><p class="ic-desc">Morning boat rides on the Ganges, the blue-hour Aarti, ancient ghats and narrow back alleys full of sadhus, silk weavers, and centuries of daily ritual.</p></div>
+      </div>
+      <div class="india-card">
+        <div class="ic-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1006103-2048x1360.jpg" alt="Rajasthan"></div>
+        <div class="ic-body"><p class="ic-tag">Colour & light · Oct–Feb best</p><p class="ic-name">Rajasthan & Delhi</p><p class="ic-desc">Pushkar Camel Fair, Hawa Mahal, Jama Masjid, desert forts, and bazaars that glow golden at dusk. India's most visually saturated region.</p></div>
+      </div>
+      <div class="india-card">
+        <div class="ic-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/07/IMG_9975-scaled.jpg" alt="Ladakh"></div>
+        <div class="ic-body"><p class="ic-tag">High altitude · Jun–Sep best</p><p class="ic-name">Ladakh</p><p class="ic-desc">Monasteries at golden hour, monks in morning light, Pangong Tso and the Nubra Valley. A world unlike anywhere else in India.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO GALLERY -->
+<div class="gallery-section">
+  <div class="gallery-header">
+    <div>
+      <p style="font-family:var(--mono);font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--amber-light);margin-bottom:.8rem">From the streets · Kolkata & India</p>
+      <h2 class="gallery-heading">Photographs made<br>on <em>these very tours.</em></h2>
+    </div>
+    <p class="gallery-sub">Every image here was made on the same streets I will take you to. This is what's possible.</p>
+  </div>
+
+  <!-- Row 1 — 3 wide horizontals -->
+  <div class="gal-row gal-row-3h">
+    <div class="g-cell">
+      <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1000222-2048x1360.jpg" alt="">
+      <div class="g-cap">Kolkata · Street</div>
+    </div>
+    <div class="g-cell">
+      <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1005731-2.jpg" alt="">
+      <div class="g-cap">Mullick Ghat · Flower Market</div>
+    </div>
+    <div class="g-cell">
+      <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1008459-2.jpg" alt="">
+      <div class="g-cap">Howrah · Wrestlers</div>
+    </div>
+  </div>
+
+  <!-- Row 2 — very wide + vertical -->
+  <div class="gal-row gal-row-wide-v">
+    <div class="g-cell">
+      <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1006872-2048x1360.jpg" alt="">
+      <div class="g-cap">Kolkata · North Lanes</div>
+    </div>
+    <div class="g-cell">
+      <img src="https://shivamphotofarm.com/wp-content/uploads/2024/07/Day-1-IMG-4-1-1367x2048.jpg" alt="">
+      <div class="g-cap">Kolkata · Portrait</div>
+    </div>
+  </div>
+
+  <!-- Row 3 — 3 wide horizontals -->
+  <div class="gal-row gal-row-3h">
+    <div class="g-cell">
+      <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1400369-2-2048x1365.jpg" alt="">
+      <div class="g-cap">Varanasi · Aarti</div>
+    </div>
+    <div class="g-cell">
+      <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/IMG_1948-2048x1365.jpg" alt="">
+      <div class="g-cap">Koley Market · Dawn</div>
+    </div>
+    <div class="g-cell">
+      <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1006562.jpg" alt="">
+      <div class="g-cap">Kolkata · Local Train</div>
+    </div>
+  </div>
+
+  <!-- Row 4 — vertical + very wide -->
+  <div class="gal-row gal-row-v-wide">
+    <div class="g-cell">
+      <img src="https://shivamphotofarm.com/wp-content/uploads/2024/07/Day-1-IMG-5-1-1360x2048.jpg" alt="">
+      <div class="g-cap">Kumartuli · Craftsman</div>
+    </div>
+    <div class="g-cell">
+      <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1006103-2048x1360.jpg" alt="">
+      <div class="g-cap">Rajasthan · Pushkar Fair</div>
+    </div>
+  </div>
+
+  <!-- Row 5 — 2 wide + 1 narrower -->
+  <div class="gal-row gal-row-2w-n">
+    <div class="g-cell">
+      <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1005830-2048x1360.jpg" alt="">
+      <div class="g-cap">Varanasi · Ganges Sunrise</div>
+    </div>
+    <div class="g-cell">
+      <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1550217-2-2048x1365.jpg" alt="">
+      <div class="g-cap">Delhi · Old City</div>
+    </div>
+    <div class="g-cell">
+      <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/DSC04035-2048x1365.jpg" alt="">
+      <div class="g-cap">Kumartuli · Detail</div>
+    </div>
+  </div>
+
+  <!-- Row 6 — full-width panoramic -->
+  <div class="gal-row gal-row-pano">
+    <div class="g-cell">
+      <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/Copy-of-L1003537-2048x1365.jpg" alt="">
+      <div class="g-cap">Kolkata · Howrah Bridge</div>
+    </div>
+  </div>
+</div>
+
+<!-- GALLERY CTA -->
+<div class="gallery-cta">
+  <p class="gallery-cta-text">The same streets. Your images. Book a Kolkata Photo Tour with Shivam.</p>
+  <a href="/contact/" class="btn-amber">Book a Kolkata Photo Tour</a>
+</div>
+
+<!-- CTA -->
+<section class="cta-s" id="contact">
+  <h2 class="cta-h">Ready to photograph<br>Kolkata — and <em>beyond?</em></h2>
+  <p class="cta-sub">Tell me when you're travelling, what draws you to India, and what you want to make. I'll design a tour around you.</p>
+  <div class="cta-btns">
+    <a href="/contact/" class="btn-dark">Enquire with Shivam</a>
+    <a href="/workshops/" class="btn-ghost">See group workshops</a>
+  </div>
+</section>
+
+<footer>
+  <span>© 2025 Kolkata Photo Tour</span>
+  <span>Shivam Pandey — Kolkata, India</span>
+  <a href="https://www.instagram.com/shivam_photofarm" target="_blank" rel="noopener noreferrer">Instagram</a>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photography Workshops — Kolkata & India 2026 | Shivam Pandey</title>
+<meta name="description" content="Photography workshops with Shivam Pandey. Private 1-on-1 in Kolkata or join a small group expedition across Varanasi, Rajasthan, Ladakh and beyond. 2026 dates available.">
+<meta name="keywords" content="photography workshop Kolkata, private photography workshop India, Kolkata street photography workshop, Varanasi photo workshop 2026, Shivam Pandey workshop">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--ink:#1a1612;--warm-white:#f5f0e8;--paper:#ede8de;--amber:#c47a2a;--amber-light:#e8a84a;--muted:#7a7060;--border:rgba(26,22,18,0.12);--serif:'Cormorant Garamond',Georgia,serif;--mono:'DM Mono',monospace;--sans:'Barlow',sans-serif}
+  body{background:var(--warm-white);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.8}
+
+  /* ── HEADER ── */
+  .site-header{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 3rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--warm-white);z-index:100}
+  .logo{font-family:var(--mono);font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);text-decoration:none;white-space:nowrap}
+  .site-nav{display:flex;align-items:center;flex-wrap:wrap}
+  .site-nav a{font-family:var(--mono);font-size:.65rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);text-decoration:none;margin-left:1.6rem;transition:color .2s;white-space:nowrap}
+  .site-nav a:hover{color:var(--ink)}
+  .site-nav a.active{color:var(--amber)}
+  .site-nav a.nav-contact{background:var(--ink);color:var(--warm-white);padding:.45rem 1.1rem;transition:background .2s}
+  .site-nav a.nav-contact:hover{background:var(--amber)}
+  .nav-toggle{display:none;flex-direction:column;gap:4px;cursor:pointer;padding:4px;border:none;background:none}
+  .nav-toggle span{width:22px;height:1.5px;background:var(--ink);display:block}
+
+  /* ── HERO ── */
+  .hero{display:grid;grid-template-columns:1fr 1fr;min-height:82vh;border-bottom:1px solid var(--border)}
+  .hero-text{padding:6rem 4rem 6rem 3rem;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--border)}
+  .eyebrow{font-family:var(--mono);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:1.5rem;display:flex;align-items:center;gap:.8rem}
+  .eyebrow::after{content:'';width:40px;height:1px;background:var(--amber);opacity:.5}
+  .hero h1{font-family:var(--serif);font-size:clamp(3rem,5vw,4.8rem);font-weight:300;line-height:1.05;margin-bottom:1.5rem}
+  .hero h1 em{font-style:italic;color:var(--amber)}
+  .hero-desc{font-size:1rem;line-height:1.9;color:#3a3530;max-width:42ch;margin-bottom:2.5rem}
+  .hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
+  .btn-dark{display:inline-block;background:var(--ink);color:var(--warm-white);font-family:var(--mono);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;padding:.9rem 2rem;transition:background .2s}
+  .btn-dark:hover{background:var(--amber)}
+  .btn-ghost{display:inline-block;color:var(--muted);font-family:var(--mono);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;padding:.9rem 0;border-bottom:1px solid var(--muted);transition:color .2s}
+  .btn-ghost:hover{color:var(--ink);border-color:var(--ink)}
+  .hero-visual{position:relative;overflow:hidden;min-height:500px}
+  .hero-visual img{width:100%;height:100%;object-fit:cover;display:block}
+
+  /* ── HERO STRIP ── */
+  .hero-strip{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px;border-bottom:1px solid var(--border)}
+  .sc{background:#ccc8be;position:relative;overflow:hidden;aspect-ratio:3/2}
+  .sc img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.85);transition:filter .3s}
+  .sc:hover img{filter:brightness(1)}
+  .sc-cap{position:absolute;bottom:0;left:0;right:0;padding:7px 12px;background:linear-gradient(transparent,rgba(26,22,18,.58));font-family:var(--mono);font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,240,232,.75)}
+
+  /* ── SHARED ── */
+  .section{padding:5rem 3rem;border-bottom:1px solid var(--border)}
+  .section-inner{max-width:1100px;margin:0 auto}
+  .sec-label{font-family:var(--mono);font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--amber);margin-bottom:1rem;display:flex;align-items:center;gap:.8rem}
+  .sec-label::after{content:'';flex:1;max-width:60px;height:1px;background:var(--amber);opacity:.4}
+  .sec-h{font-family:var(--serif);font-size:clamp(2rem,3.5vw,2.8rem);font-weight:300;line-height:1.2;margin-bottom:.8rem}
+  .sec-h em{font-style:italic;color:var(--amber)}
+  .sec-sub{font-size:.95rem;font-weight:300;color:var(--muted);margin-bottom:2.5rem;max-width:56ch;line-height:1.7}
+
+  /* ── PRIVATE WORKSHOP ── */
+  .private-block{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border)}
+  .pb-text{padding:4rem;display:flex;flex-direction:column;justify-content:center}
+  .pb-tag{font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:1.2rem}
+  .pb-heading{font-family:var(--serif);font-size:clamp(2.2rem,4vw,3.2rem);font-weight:300;line-height:1.15;margin-bottom:1.5rem}
+  .pb-heading em{font-style:italic;color:var(--amber)}
+  .pb-body{font-size:1rem;font-weight:300;line-height:1.9;color:#3a3530;margin-bottom:1.2rem}
+  .pb-details{display:flex;gap:0;border:1px solid var(--border);margin-bottom:1.8rem}
+  .pd{flex:1;padding:1rem 1.2rem;border-right:1px solid var(--border);text-align:center}
+  .pd:last-child{border-right:none}
+  .pd-val{font-family:var(--serif);font-size:1.4rem;font-weight:300;color:var(--ink);display:block;margin-bottom:.2rem}
+  .pd-label{font-family:var(--mono);font-size:.55rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .pb-photo{background:#ccc8be;position:relative;overflow:hidden;min-height:580px;border-left:1px solid var(--border)}
+  .pb-photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+  /* ── PRINCIPLES ── */
+  .principles{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--border)}
+  .principle{padding:2rem 1.8rem;border-right:1px solid var(--border)}
+  .principle:last-child{border-right:none}
+  .prin-num{font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:.8rem}
+  .prin-title{font-family:var(--serif);font-size:1.15rem;font-weight:300;margin-bottom:.6rem;line-height:1.25}
+  .prin-desc{font-size:.82rem;font-weight:300;color:var(--muted);line-height:1.7}
+
+  /* ── WORKSHOP STRIP ── */
+  .ws-strip{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:3px}
+  .wc{background:#ccc8be;position:relative;overflow:hidden;aspect-ratio:3/2}
+  .wc img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.85);transition:filter .3s}
+  .wc:hover img{filter:brightness(1)}
+  .wc-cap{position:absolute;bottom:0;left:0;right:0;padding:7px 12px;background:linear-gradient(transparent,rgba(26,22,18,.55));font-family:var(--mono);font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,240,232,.7)}
+
+  /* ── TESTIMONIAL DARK ── */
+  .t-band{background:var(--ink);padding:5rem 3rem;border-bottom:1px solid rgba(255,255,255,.06)}
+  .t-band-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid rgba(255,255,255,.07)}
+  .t-card{padding:2.8rem 2.5rem;border-right:1px solid rgba(255,255,255,.07);display:flex;flex-direction:column}
+  .t-card:last-child{border-right:none}
+  .t-quote{font-family:var(--serif);font-size:1.15rem;font-style:italic;font-weight:300;color:rgba(245,240,232,.85);line-height:1.65;margin-bottom:1.5rem;flex:1}
+  .t-divider{width:20px;height:1px;background:var(--amber);opacity:.5;margin-bottom:1rem}
+  .t-author-row{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .t-name{font-size:.9rem;font-weight:400;color:var(--warm-white);margin-bottom:.2rem}
+  .t-origin{font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,240,232,.3)}
+  .ig-link{display:flex;align-items:center;gap:5px;text-decoration:none;color:rgba(245,240,232,.3);transition:color .2s;flex-shrink:0}
+  .ig-link:hover{color:var(--amber-light)}
+  .ig-icon{width:14px;height:14px;flex-shrink:0}
+  .ig-link-dark{display:flex;align-items:center;gap:5px;text-decoration:none;color:rgba(26,22,18,.3);transition:color .2s;flex-shrink:0}
+  .ig-link-dark:hover{color:var(--amber)}
+
+  /* ── GROUP DIVIDER ── */
+  .group-divider{background:var(--paper);padding:4rem 3rem;border-bottom:1px solid var(--border);text-align:center}
+  .gd-inner{max-width:1100px;margin:0 auto}
+  .gd-tag{font-family:var(--mono);font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--amber);margin-bottom:1rem}
+  .gd-heading{font-family:var(--serif);font-size:clamp(2rem,3.5vw,2.8rem);font-weight:300;line-height:1.2;margin-bottom:1rem}
+  .gd-heading em{font-style:italic;color:var(--amber)}
+  .gd-desc{font-size:1rem;font-weight:300;color:var(--muted);max-width:56ch;margin:0 auto;line-height:1.75}
+
+  /* ── WORKSHOP CARDS ── */
+  .workshop-cards{display:flex;flex-direction:column;gap:0}
+  .workshop-card{display:grid;grid-template-columns:380px 1fr;gap:0;border:1px solid var(--border);border-bottom:none}
+  .workshop-card:last-child{border-bottom:1px solid var(--border)}
+  .wcard-photo{background:#ccc8be;position:relative;overflow:hidden;aspect-ratio:3/2}
+  .wcard-photo img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.85);transition:filter .3s,transform .5s}
+  .workshop-card:hover .wcard-photo img{filter:brightness(.95);transform:scale(1.02)}
+  .wcard-body{padding:2.8rem 3rem;display:flex;flex-direction:column;justify-content:space-between;border-left:1px solid var(--border)}
+  .wcard-meta{display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:1.4rem}
+  .tag-amber{font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);border:1px solid rgba(196,122,42,.25);padding:3px 10px}
+  .tag-muted{font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);padding:3px 10px}
+  .tag-red{font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:#b03030;border:1px solid rgba(176,48,48,.2);padding:3px 10px}
+  .wcard-title{font-family:var(--serif);font-size:1.8rem;font-weight:300;line-height:1.2;margin-bottom:1rem}
+  .wcard-title em{font-style:italic;color:var(--amber)}
+  .wcard-desc{font-size:.92rem;font-weight:300;color:#3a3530;line-height:1.85;margin-bottom:1.6rem}
+  .wcard-highlights{display:grid;grid-template-columns:1fr 1fr;gap:.4rem 2rem;margin-bottom:2rem}
+  .whl{display:flex;gap:.6rem;align-items:flex-start;font-size:.82rem;font-weight:300;color:var(--muted)}
+  .whl-dot{width:4px;height:4px;background:var(--amber);border-radius:50%;flex-shrink:0;margin-top:8px}
+  .wcard-footer{display:flex;align-items:center;justify-content:space-between;padding-top:1.5rem;border-top:1px solid var(--border);gap:1.5rem;flex-wrap:wrap}
+  .wcard-ctas{display:flex;gap:.8rem;flex-wrap:wrap}
+  .wbtn{display:inline-block;background:var(--ink);color:var(--warm-white);font-family:var(--mono);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:.8rem 1.6rem;transition:background .2s;white-space:nowrap}
+  .wbtn:hover{background:var(--amber)}
+  .wbtn-ghost{display:inline-block;color:var(--muted);font-family:var(--mono);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:.8rem 0;border-bottom:1px solid var(--muted);transition:color .2s;white-space:nowrap}
+  .wbtn-ghost:hover{color:var(--ink);border-color:var(--ink)}
+
+  /* ── 4 TESTIMONIALS ── */
+  .t4-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border)}
+  .t4-card{padding:2.5rem;border-right:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;flex-direction:column}
+  .t4-card:nth-child(2n){border-right:none}
+  .t4-card:nth-child(3),.t4-card:nth-child(4){border-bottom:none}
+  .t4-quote{font-family:var(--serif);font-size:1.1rem;font-style:italic;font-weight:300;color:var(--ink);line-height:1.65;flex:1;margin-bottom:1.4rem}
+  .t4-divider{width:20px;height:1px;background:var(--amber);opacity:.4;margin-bottom:.9rem}
+  .t4-name{font-size:.88rem;font-weight:400;color:var(--ink);margin-bottom:.2rem}
+  .t4-origin{font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .t4-author-row{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+
+  /* ── FAQ ── */
+  .faq-list{display:flex;flex-direction:column;border:1px solid var(--border)}
+  .faq-item{border-bottom:1px solid var(--border)}
+  .faq-item:last-child{border-bottom:none}
+  .faq-q{padding:1.4rem 2rem;font-family:var(--serif);font-size:1.1rem;font-weight:300;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;user-select:none}
+  .faq-q:hover{background:var(--paper)}
+  .faq-icon{font-family:var(--mono);font-size:1.1rem;color:var(--amber);flex-shrink:0;transition:transform .2s}
+  .faq-a{padding:0 2rem 1.4rem;font-size:.9rem;font-weight:300;color:#3a3530;line-height:1.85;display:none}
+  .faq-item.open .faq-a{display:block}
+  .faq-item.open .faq-icon{transform:rotate(45deg)}
+
+  /* ── CTA ── */
+  .cta-s{text-align:center;padding:7rem 3rem;background:var(--ink)}
+  .cta-h{font-family:var(--serif);font-size:clamp(2.2rem,4vw,3.4rem);font-weight:300;line-height:1.15;margin-bottom:1.2rem;color:var(--warm-white)}
+  .cta-h em{font-style:italic;color:var(--amber-light)}
+  .cta-sub{font-size:1rem;color:rgba(245,240,232,.6);max-width:48ch;margin:0 auto 2.5rem;line-height:1.7}
+  .cta-btns{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap}
+  .btn-amber{display:inline-block;background:var(--amber);color:var(--ink);font-family:var(--mono);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;padding:.9rem 2rem;font-weight:400;transition:opacity .2s}
+  .btn-amber:hover{opacity:.88}
+  .btn-outline-light{display:inline-block;border:1px solid rgba(245,240,232,.35);color:rgba(245,240,232,.7);font-family:var(--mono);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;padding:.9rem 1.8rem;transition:border-color .2s,color .2s}
+  .btn-outline-light:hover{border-color:var(--warm-white);color:var(--warm-white)}
+
+  footer{background:var(--ink);color:rgba(245,240,232,.5);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;border-top:1px solid rgba(255,255,255,.06);flex-wrap:wrap;gap:.8rem}
+  footer a{color:inherit;text-decoration:none} footer a:hover{color:var(--amber-light)}
+
+  /* ── RESPONSIVE ── */
+  @media(max-width:900px){
+    .site-header{padding:1rem 1.5rem}
+    .nav-toggle{display:flex}
+    .site-nav{display:none;flex-direction:column;align-items:flex-start;position:absolute;top:100%;left:0;right:0;background:var(--warm-white);border-bottom:1px solid var(--border);padding:1rem 1.5rem 1.5rem;gap:.2rem}
+    .site-nav.open{display:flex}
+    .site-nav a{margin-left:0;padding:.5rem 0;border-bottom:1px solid var(--border);width:100%}
+    .site-nav a.nav-contact{margin-left:0;margin-top:.5rem;text-align:center}
+    .hero{grid-template-columns:1fr;min-height:auto} .hero-text{padding:3rem 1.5rem;border-right:none;border-bottom:1px solid var(--border)} .hero-visual{height:50vw;min-height:0}
+    .hero-strip{grid-template-columns:1fr}
+    .private-block{grid-template-columns:1fr} .pb-photo{min-height:280px;border-left:none;border-top:1px solid var(--border)}
+    .principles{grid-template-columns:1fr 1fr} .principle:nth-child(2n){border-right:none} .principle{border-bottom:1px solid var(--border)}
+    .ws-strip{grid-template-columns:1fr 1fr}
+    .t-band-inner{grid-template-columns:1fr} .t-card{border-right:none;border-bottom:1px solid rgba(255,255,255,.07)} .t-card:last-child{border-bottom:none}
+    .workshop-card{grid-template-columns:1fr} .wcard-body{border-left:none;border-top:1px solid var(--border);padding:2rem 1.5rem}
+    .wcard-highlights{grid-template-columns:1fr}
+    .t4-grid{grid-template-columns:1fr} .t4-card{border-right:none} .t4-card:nth-child(3){border-bottom:1px solid var(--border)}
+    .section,.t-band,.group-divider,.cta-s{padding-left:1.5rem;padding-right:1.5rem}
+    .site-header,footer{padding-left:1.5rem;padding-right:1.5rem}
+    footer{flex-direction:column;align-items:flex-start}
+    .pb-details{flex-wrap:wrap} .pd{min-width:50%;border-bottom:1px solid var(--border)}
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <a href="/" class="logo">Kolkata Photo Tour</a>
+  <button class="nav-toggle" aria-label="Toggle navigation" onclick="this.nextElementSibling.classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="site-nav">
+    <a href="/">Home</a>
+    <a href="tours/" class="active">Tours & Workshops</a>
+    <a href="reviews/">Reviews</a>
+    <a href="/youtube.html" target="_blank" rel="noopener noreferrer">YouTube</a>
+    <a href="https://kolkataphototours.substack.com/" target="_blank" rel="noopener noreferrer">Substack</a>
+    <a href="https://www.shivamphotofarm.com/" target="_blank">Gallery</a>
+    <a href="about/">About Me</a>
+    <a href="#contact" class="nav-contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <p class="eyebrow">Photography Workshops · Kolkata & India</p>
+    <h1>Learn to shoot<br>India the way it<br><em>deserves.</em></h1>
+    <p class="hero-desc">Start with Kolkata — the city I know best and have called home for over a decade. Then, if you're ready, take that same eye across the rest of India.</p>
+    <div class="hero-ctas">
+      <a href="#private" class="btn-dark">Private Kolkata workshop</a>
+      <a href="#group" class="btn-ghost">Group workshops India</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1001298.jpg" alt="Shivam Pandey teaching photography on the streets">
+  </div>
+</section>
+
+<!-- HERO STRIP -->
+<div class="hero-strip">
+  <div class="sc">
+    <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1550217-2-2048x1365.jpg" alt="Workshop moment Kolkata">
+    <div class="sc-cap">Kolkata · In the field</div>
+  </div>
+  <div class="sc">
+    <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/DSC04035-2048x1365.jpg" alt="Image review session">
+    <div class="sc-cap">Image review session</div>
+  </div>
+  <div class="sc">
+    <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1400369-2-2048x1365.jpg" alt="Varanasi workshop">
+    <div class="sc-cap">Varanasi · Group Workshop</div>
+  </div>
+</div>
+
+<!-- PRIVATE WORKSHOP — KOLKATA -->
+<section class="section" id="private">
+  <div class="section-inner">
+    <p class="sec-label">Most popular · Kolkata</p>
+    <div class="private-block">
+      <div class="pb-text">
+        <p class="pb-tag">Private · 1-on-1 · Kolkata · Available year-round</p>
+        <h2 class="pb-heading">Private 1-on-1<br>Workshop in <em>Kolkata</em></h2>
+        <p class="pb-body">The most direct way to grow as a photographer — just you, me, and the streets I know better than anywhere else in the world. No group pace. No compromises. Everything built entirely around you.</p>
+        <p class="pb-body">We spend 3.5 hours shooting together each morning and evening — with real-time feedback on every decision. By the end of each day we review your work together and plan the next session around what you need to develop most.</p>
+        <div class="pb-details">
+          <div class="pd"><span class="pd-val">3.5h</span><span class="pd-label">Per session</span></div>
+          <div class="pd"><span class="pd-val">2×</span><span class="pd-label">Daily walks</span></div>
+          <div class="pd"><span class="pd-val">All</span><span class="pd-label">Skill levels</span></div>
+          <div class="pd"><span class="pd-val">2+ days</span><span class="pd-label">Starting from</span></div>
+        </div>
+        <a href="/contact/" class="btn-dark" style="display:inline-block">Enquire about private workshop</a>
+      </div>
+      <div class="pb-photo">
+        <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1006471-scaled.jpg" alt="Private workshop Kolkata with Shivam Pandey">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU LEARN -->
+<section class="section" style="padding-top:0">
+  <div class="section-inner">
+    <p class="sec-label">What we work on</p>
+    <h2 class="sec-h">More than technique.<br><em>A way of seeing.</em></h2>
+    <p class="sec-sub">Every session is different, but these are the core things I help every photographer develop — regardless of skill level.</p>
+    <div class="principles">
+      <div class="principle">
+        <p class="prin-num">01</p>
+        <p class="prin-title">Reading the street</p>
+        <p class="prin-desc">Learning to observe before you raise the camera — light, movement, energy, and what's about to happen next.</p>
+      </div>
+      <div class="principle">
+        <p class="prin-num">02</p>
+        <p class="prin-title">Anticipating moments</p>
+        <p class="prin-desc">The difference between reacting and anticipating. How to be in the right place before the moment arrives.</p>
+      </div>
+      <div class="principle">
+        <p class="prin-num">03</p>
+        <p class="prin-title">Approaching people</p>
+        <p class="prin-desc">How to connect with strangers naturally and photograph them with respect, dignity, and genuine access.</p>
+      </div>
+      <div class="principle">
+        <p class="prin-num">04</p>
+        <p class="prin-title">Your own rhythm</p>
+        <p class="prin-desc">Not my style — yours. I help you find and develop your own photographic instinct, not recreate mine.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KOLKATA WORKSHOP PHOTO STRIP -->
+<div style="padding:3px;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="ws-strip">
+    <div class="wc">
+      <img src="https://shivamphotofarm.com/wp-content/uploads/2024/07/Day-1-IMG-1-2048x1367.jpg" alt="Kumartuli workshop">
+      <div class="wc-cap">Kumartuli</div>
+    </div>
+    <div class="wc">
+      <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1005731-2.jpg" alt="Flower Market dawn">
+      <div class="wc-cap">Mullick Ghat · Dawn</div>
+    </div>
+    <div class="wc">
+      <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1008459-2.jpg" alt="Wrestlers Howrah">
+      <div class="wc-cap">Howrah · Wrestlers</div>
+    </div>
+    <div class="wc">
+      <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/Copy-of-L1003537-2048x1365.jpg" alt="North Kolkata Lanes">
+      <div class="wc-cap">North Kolkata Lanes</div>
+    </div>
+  </div>
+</div>
+
+<!-- KOLKATA TESTIMONIALS -->
+<div class="t-band">
+  <div class="t-band-inner">
+    <div class="t-card">
+      <p class="t-quote">"Shivam knows both of these locations so well and is generous with his knowledge and teaching skills that you will come away with wonderful memories and images. His drive, dedication and focus on me as an individual is of the highest level."</p>
+      <div class="t-divider"></div>
+      <div class="t-author-row">
+        <div>
+          <p class="t-name">Melissa Haslam</p>
+          <p class="t-origin">Australia · Kolkata–Varanasi Workshop</p>
+        </div>
+        <a href="https://www.instagram.com/shivam_photofarm" target="_blank" class="ig-link" title="Instagram">
+          <svg class="ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="t-card">
+      <p class="t-quote">"I had lost all drive and motivation after 17 years of photography. This changed in the first 3 days with Shivam. Being a person of high integrity, professionalism and having true concern for those he guides — I cannot more highly recommend this unique, valuable and talented person that I can truly now call a friend."</p>
+      <div class="t-divider"></div>
+      <div class="t-author-row">
+        <div>
+          <p class="t-name">John</p>
+          <p class="t-origin">Australia</p>
+        </div>
+        <a href="https://www.instagram.com/shivam_photofarm" target="_blank" class="ig-link" title="Instagram">
+          <svg class="ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GROUP WORKSHOPS DIVIDER -->
+<div class="group-divider" id="group">
+  <div class="gd-inner">
+    <p class="gd-tag">Group workshops · India 2026</p>
+    <h2 class="gd-heading">Small groups. <em>Big experiences.</em></h2>
+    <p class="gd-desc">Ready to take what you've learned beyond Kolkata? My group workshops take you into some of India's most extraordinary destinations — capped at 6 participants, so every person gets real attention and real guidance.</p>
+  </div>
+</div>
+
+<!-- GROUP WORKSHOP CARDS -->
+<section class="section" style="padding-top:0">
+  <div class="section-inner">
+    <div class="workshop-cards">
+
+      <!-- KOLKATA–VARANASI -->
+      <div class="workshop-card">
+        <div class="wcard-photo">
+          <img src="https://shivamphotofarm.com/wp-content/uploads/2024/07/Day-0-Img-1-scaled.jpg" alt="Kolkata Varanasi Workshop">
+        </div>
+        <div class="wcard-body">
+          <div>
+            <div class="wcard-meta">
+              <span class="tag-amber">Group · Max 6</span>
+              <span class="tag-muted">Dec 10–18, 2026</span>
+              <span class="tag-red">Only 4 spots left</span>
+            </div>
+            <h3 class="wcard-title">Kolkata – Varanasi<br><em>Photography Workshop</em></h3>
+            <p class="wcard-desc">A 9-day expedition through two of India's most photogenic cities. Begin in Kolkata with its flower markets, wrestlers, and Kumartuli potters — then travel to Varanasi for the blue-hour Aarti, sunrise boat rides on the Ganges, ancient ghats, and the brickfields on the city's edge.</p>
+            <div class="wcard-highlights">
+              <div class="whl"><div class="whl-dot"></div>Mullick Ghat flower market at dawn</div>
+              <div class="whl"><div class="whl-dot"></div>Wrestlers by the Howrah Bridge</div>
+              <div class="whl"><div class="whl-dot"></div>Kumartuli potters' quarter</div>
+              <div class="whl"><div class="whl-dot"></div>Blue-hour Aarti at Varanasi ghats</div>
+              <div class="whl"><div class="whl-dot"></div>Sunrise boat ride on the Ganges</div>
+              <div class="whl"><div class="whl-dot"></div>Daily photo review & editing sessions</div>
+            </div>
+          </div>
+          <div class="wcard-footer">
+            <div class="wcard-ctas">
+              <a href="https://shivamphotofarm.com/portfolio/kolkata-varanasi-photography-workshop/" target="_blank" class="wbtn">Book this workshop</a>
+              <a href="https://shivamphotofarm.com/portfolio/kolkata-varanasi-photography-workshop/" target="_blank" class="wbtn-ghost">Full itinerary</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GOLDEN TRIANGLE & PUSHKAR -->
+      <div class="workshop-card">
+        <div class="wcard-photo">
+          <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1006103-2048x1360.jpg" alt="Golden Triangle Pushkar Workshop">
+        </div>
+        <div class="wcard-body">
+          <div>
+            <div class="wcard-meta">
+              <span class="tag-amber">Group · Max 5</span>
+              <span class="tag-muted">Nov 11–21, 2026</span>
+              <span class="tag-red">Only 3 spots left</span>
+            </div>
+            <h3 class="wcard-title">Golden Triangle &<br><em>Pushkar Camel Fair</em></h3>
+            <p class="wcard-desc">Delhi, Agra, Jaipur, and the extraordinary chaos of the Pushkar Camel Fair — one of the most photographically spectacular events in India. Wrestlers by the Yamuna at dawn, the Taj Mahal at sunrise, Hawa Mahal at golden hour, and two full days inside the Pushkar Fair.</p>
+            <div class="wcard-highlights">
+              <div class="whl"><div class="whl-dot"></div>Pushkar Camel Fair — full 2 days</div>
+              <div class="whl"><div class="whl-dot"></div>Taj Mahal at sunrise</div>
+              <div class="whl"><div class="whl-dot"></div>Old Delhi — Jama Masjid lanes</div>
+              <div class="whl"><div class="whl-dot"></div>Jaipur's Hawa Mahal & Jal Mahal</div>
+              <div class="whl"><div class="whl-dot"></div>Wrestlers by the Yamuna at dawn</div>
+              <div class="whl"><div class="whl-dot"></div>Group image review & editing sessions</div>
+            </div>
+          </div>
+          <div class="wcard-footer">
+            <div class="wcard-ctas">
+              <a href="https://shivamphotofarm.com/portfolio/golden-triangle-pushkar-camel-fair-workshop-2026/" target="_blank" class="wbtn">Book this workshop</a>
+              <a href="https://shivamphotofarm.com/portfolio/golden-triangle-pushkar-camel-fair-workshop-2026/" target="_blank" class="wbtn-ghost">Full itinerary</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LADAKH -->
+      <div class="workshop-card">
+        <div class="wcard-photo">
+          <img src="https://shivamphotofarm.com/wp-content/uploads/2025/07/IMG_9975-scaled.jpg" alt="Ladakh Workshop">
+        </div>
+        <div class="wcard-body">
+          <div>
+            <div class="wcard-meta">
+              <span class="tag-amber">Group · Max 6</span>
+              <span class="tag-muted">2026 · Enquire for dates</span>
+            </div>
+            <h3 class="wcard-title">Ladakh Photography<br><em>Workshop 2026</em></h3>
+            <p class="wcard-desc">High altitude, vast landscapes, and a world unlike anywhere else in India. Monasteries at golden hour, monks in morning light, Pangong Tso, Nubra Valley, and the Milky Way over the high Himalaya. Ladakh rewards the patient photographer — and I know exactly where to wait.</p>
+            <div class="wcard-highlights">
+              <div class="whl"><div class="whl-dot"></div>Ancient monasteries and monks</div>
+              <div class="whl"><div class="whl-dot"></div>Pangong Tso and mountain landscapes</div>
+              <div class="whl"><div class="whl-dot"></div>Nubra Valley and sand dunes</div>
+              <div class="whl"><div class="whl-dot"></div>Milky Way night photography</div>
+              <div class="whl"><div class="whl-dot"></div>Local village life and Ladakhi culture</div>
+              <div class="whl"><div class="whl-dot"></div>Daily field critique and review sessions</div>
+            </div>
+          </div>
+          <div class="wcard-footer">
+            <div class="wcard-ctas">
+              <a href="https://shivamphotofarm.com/portfolio/ladakh-photography-workshop/" target="_blank" class="wbtn">View full details</a>
+              <a href="/contact/" class="wbtn-ghost">Enquire</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HORNBILL FESTIVAL -->
+      <div class="workshop-card">
+        <div class="wcard-photo">
+          <img src="https://shivamphotofarm.com/wp-content/uploads/2025/12/IMG_0802.jpg" alt="Hornbill Festival Workshop">
+        </div>
+        <div class="wcard-body">
+          <div>
+            <div class="wcard-meta">
+              <span class="tag-amber">Group · Max 5</span>
+              <span class="tag-muted">Nov 29 – Dec 8, 2026</span>
+            </div>
+            <h3 class="wcard-title">Hornbill Festival<br><em>& Kolkata Workshop</em></h3>
+            <p class="wcard-desc">The Hornbill Festival in Nagaland is one of India's most extraordinary cultural events — ten days of tribal dance, music, and ceremony in the Naga Heritage Village. Combine it with Kolkata for a workshop that moves between two completely different worlds of Indian photography.</p>
+            <div class="wcard-highlights">
+              <div class="whl"><div class="whl-dot"></div>Hornbill Festival — tribal ceremony and colour</div>
+              <div class="whl"><div class="whl-dot"></div>Naga Heritage Village and culture</div>
+              <div class="whl"><div class="whl-dot"></div>Kolkata street photography</div>
+              <div class="whl"><div class="whl-dot"></div>Portrait and documentary storytelling</div>
+              <div class="whl"><div class="whl-dot"></div>Markets, people, and daily Kolkata life</div>
+              <div class="whl"><div class="whl-dot"></div>Full post-processing and editing guidance</div>
+            </div>
+          </div>
+          <div class="wcard-footer">
+            <div class="wcard-ctas">
+              <a href="https://shivamphotofarm.com/portfolio/hornbill-festival-kolkata-workshop/" target="_blank" class="wbtn">View full details</a>
+              <a href="/contact/" class="wbtn-ghost">Enquire</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 4 TESTIMONIALS -->
+<section class="section" style="background:var(--paper)">
+  <div class="section-inner">
+    <p class="sec-label">What past participants say</p>
+    <h2 class="sec-h">In their own <em>words.</em></h2>
+    <div class="t4-grid">
+      <div class="t4-card">
+        <p class="t4-quote">"This was an exceptionally well-organised trip — comfortable accommodation, delicious food, and a brilliant itinerary packed with inspiring locations. What made it truly special was Shivam's joy, passion, and pride in sharing his country. His energy was infectious and made the whole experience both fun and meaningful. I came home with unforgettable memories and photographs I'm really proud of."</p>
+        <div class="t4-divider"></div>
+        <div class="t4-author-row">
+          <div><p class="t4-name">Lynn</p><p class="t4-origin">U.K. · Kolkata–Varanasi Workshop</p></div>
+          <a href="https://www.instagram.com/shivam_photofarm" target="_blank" class="ig-link-dark" title="Instagram">
+            <svg class="ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="t4-card">
+        <p class="t4-quote">"I cannot recommend Shivam highly enough as our local tour leader in India. He was friendly, easy to chat to about life in India and the places we were visiting. He became an important part of our group whilst maintaining his position as teacher and organiser. When I was slightly struggling during the tour he made sure I was ok and was on hand to help if necessary."</p>
+        <div class="t4-divider"></div>
+        <div class="t4-author-row">
+          <div><p class="t4-name">Nicola Elliott</p><p class="t4-origin">U.K. · Kolkata–Varanasi Workshop</p></div>
+          <a href="https://www.instagram.com/shivam_photofarm" target="_blank" class="ig-link-dark" title="Instagram">
+            <svg class="ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="t4-card">
+        <p class="t4-quote">"I was with Shivam for 12 days and got some of the best photos of my life. He knew perfect locations with lots of activity to work with — in addition, he provided advice on both taking photos and editing. The logistics were flawless. And he even went out of his way to help me when I lost my suitcase halfway through the trip. He is a wonderful human being and I know we are friends for life."</p>
+        <div class="t4-divider"></div>
+        <div class="t4-author-row">
+          <div><p class="t4-name">Bill</p><p class="t4-origin">USA · Delhi & Jodhpur</p></div>
+          <a href="https://www.instagram.com/shivam_photofarm" target="_blank" class="ig-link-dark" title="Instagram">
+            <svg class="ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="t4-card">
+        <p class="t4-quote">"Seeing India through Shivam's perspective has filled me with inspiration, and I couldn't have asked for a better companion. If you ever need assistance in India, please reach out to him — you won't be disappointed. He's the best person to travel with. Thank you for your friendship; our time together will always hold a special place in my heart."</p>
+        <div class="t4-divider"></div>
+        <div class="t4-author-row">
+          <div><p class="t4-name">Monaris</p><p class="t4-origin">U.S.A. · Delhi · Varanasi · Rajasthan · Kumbh · Kolkata</p></div>
+          <a href="https://www.instagram.com/shivam_photofarm" target="_blank" class="ig-link-dark" title="Instagram">
+            <svg class="ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="section-inner">
+    <p class="sec-label">Common questions</p>
+    <h2 class="sec-h">Before you <em>book.</em></h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Do I need photography experience to join?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Not at all. Both private and group workshops welcome all skill levels — from first-time camera holders to working professionals. A mixed group makes the experience richer. If you're new, I'll help you understand the essentials before we head out on the first morning.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What camera should I bring?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Any camera works — what matters is how you see. Once you've booked, I'll share a gear checklist tailored to your level and the specific destinations. I shoot on a Leica M11-P, but the camera is the last thing that determines a strong image.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How physical is the workshop?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Most workshops are rated easy to moderate. We walk for extended periods — typically 3–4 hours per session — but at a relaxed, observation-focused pace. Ladakh involves high altitude with acclimatisation days built in. I always adjust to the group's needs.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What's the group size for group workshops?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Maximum 5–6 participants depending on the workshop. Small groups mean genuine individual attention on the street, and the ability to move quickly and quietly through the environments we're photographing — which matters a great deal for the kind of work I lead.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do I need a visa for India?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Most nationalities can apply for an Indian e-Visa online before arrival — straightforward and usually processed within a few days. Before any trip you'll receive a full briefing document with visa guidance. <a href="https://indianvisaonline.gov.in/evisa/tvoa.html" target="_blank" style="color:var(--amber)">Check requirements here →</a></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I cancel if my plans change?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Please read the full Terms & Conditions before booking. A deposit secures your place with clear terms around cancellations and transfers. Get in touch and I'm happy to walk you through the policy directly before you commit.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-s" id="contact">
+  <h2 class="cta-h">Start in Kolkata.<br><em>Go wherever India takes you.</em></h2>
+  <p class="cta-sub">Get in touch and tell me what you want to photograph, when you're travelling, and where you are as a photographer. I'll suggest the right experience for you.</p>
+  <div class="cta-btns">
+    <a href="/contact/" class="btn-amber">Enquire with Shivam</a>
+    <a href="/tours/" class="btn-outline-light">See photo tours instead</a>
+  </div>
+</section>
+
+<footer>
+  <span>© 2025 Kolkata Photo Tour</span>
+  <span>Shivam Pandey — Kolkata, India</span>
+  <a href="https://www.instagram.com/shivam_photofarm" target="_blank" rel="noopener noreferrer">Instagram</a>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+  });
+</script>
+</body>
+</html>

@@ -50,7 +50,6 @@
     background: var(--warm-white);
     z-index: 100;
   }
-
   .logo {
     font-family: var(--mono);
     font-size: 0.75rem;
@@ -60,12 +59,10 @@
     text-decoration: none;
     flex-shrink: 0;
   }
-
   .nav-links {
     display: flex;
     align-items: center;
     list-style: none;
-    gap: 0;
   }
   .nav-links a {
     font-family: var(--mono);
@@ -83,25 +80,18 @@
   .nav-links a:hover { color: var(--ink); }
   .nav-links a.active { color: var(--ink); border-bottom-color: var(--amber); }
 
-  /* Hamburger */
   .nav-toggle {
     display: none;
     flex-direction: column;
     justify-content: center;
     gap: 5px;
-    width: 28px;
-    height: 28px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    flex-shrink: 0;
-    z-index: 101;
+    width: 28px; height: 28px;
+    background: none; border: none;
+    cursor: pointer; padding: 0;
+    flex-shrink: 0; z-index: 101;
   }
   .nav-toggle span {
-    display: block;
-    width: 100%;
-    height: 1px;
+    display: block; width: 100%; height: 1px;
     background: var(--ink);
     transition: transform 0.25s, opacity 0.25s;
     transform-origin: center;
@@ -157,12 +147,7 @@
     max-width: 42ch;
     margin-bottom: 3rem;
   }
-  .cta-row {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    flex-wrap: wrap;
-  }
+  .cta-row { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
   .btn-primary {
     display: inline-block;
     background: var(--ink);
@@ -199,8 +184,7 @@
     min-height: 520px;
   }
   .hero-visual img {
-    width: 100%;
-    height: 100%;
+    width: 100%; height: 100%;
     object-fit: cover;
     object-position: top center;
     display: block;
@@ -238,14 +222,8 @@
   }
 
   /* ─── SECTION BASICS ────────────────────────────────────── */
-  .section {
-    padding: 6rem 3rem;
-    border-bottom: 1px solid var(--border);
-  }
-  .section-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
+  .section { padding: 6rem 3rem; border-bottom: 1px solid var(--border); }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
   .section-label {
     font-family: var(--mono);
     font-size: 0.65rem;
@@ -311,7 +289,6 @@
     font-style: normal;
     color: var(--muted);
   }
-
   .story-photo-strip {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -332,112 +309,9 @@
     transition: transform 0.5s ease;
   }
   .photo-block:hover img { transform: scale(1.04); }
-  .pb-caption {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    padding: 8px 12px;
-    background: linear-gradient(transparent, rgba(26,22,18,0.6));
-    font-family: var(--mono);
-    font-size: 0.56rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgba(245,240,232,0.85);
-  }
-
-  /* ─── KOLKATA LOCATIONS ─────────────────────────────────── */
-  .sec-label {
-    font-family: var(--mono);
-    font-size: 0.65rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--amber);
-    margin-bottom: 0.75rem;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-  }
-  .sec-label::after {
-    content: '';
-    flex: 1;
-    max-width: 60px;
-    height: 1px;
-    background: var(--amber);
-    opacity: 0.4;
-  }
-  .sec-h {
-    font-family: var(--serif);
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    font-weight: 300;
-    line-height: 1.15;
-    margin-bottom: 0.75rem;
-    letter-spacing: -0.01em;
-  }
-  .sec-h em { font-style: italic; color: var(--amber); }
-  .sec-sub {
-    font-size: 1rem;
-    color: var(--muted);
-    line-height: 1.7;
-    max-width: 60ch;
-    margin-bottom: 3rem;
-  }
-
-  /* Grid rows for Kolkata locations */
-  .kolkata-locs,
-  .kolkata-locs-r2 {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0;
-    border: 1px solid var(--border);
-    border-bottom: none;
-  }
-  .kolkata-locs-r2 {
-    border-top: none;
-    border-bottom: 1px solid var(--border);
-  }
-  .kloc {
-    border-right: 1px solid var(--border);
-    display: flex;
-    flex-direction: column;
-  }
-  .kloc:last-child { border-right: none; }
-  .kloc-photo {
-    width: 100%;
-    aspect-ratio: 4/3;
-    overflow: hidden;
-    background: var(--paper);
-    flex-shrink: 0;
-  }
-  .kloc-photo img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    display: block;
-    filter: brightness(0.9);
-    transition: transform 0.5s ease;
-  }
-  .kloc:hover .kloc-photo img { transform: scale(1.04); }
-  .kloc-body {
-    padding: 1.4rem 1.4rem 1.8rem;
-    flex: 1;
-  }
-  .kloc-name {
-    font-family: var(--serif);
-    font-size: 1.1rem;
-    font-weight: 400;
-    line-height: 1.25;
-    margin-bottom: 0.5rem;
-    color: var(--ink);
-  }
-  .kloc-desc {
-    font-size: 0.85rem;
-    line-height: 1.75;
-    color: var(--muted);
-  }
 
   /* ─── WHAT I OFFER ──────────────────────────────────────── */
-  .offer-section {
-    padding: 6rem 3rem;
-    border-bottom: 1px solid var(--border);
-  }
+  .offer-section { padding: 6rem 3rem; border-bottom: 1px solid var(--border); }
   .offer-section .section-inner { max-width: 1100px; margin: 0 auto; }
   .offer-heading-block { margin-bottom: 3rem; }
   .offer-main-heading {
@@ -448,7 +322,6 @@
     letter-spacing: -0.01em;
   }
   .offer-main-heading em { font-style: italic; color: var(--amber); }
-
   .offer-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -520,6 +393,89 @@
     color: rgba(245,240,232,0.9);
   }
 
+  /* ─── LOCATIONS — 3-column grid ─────────────────────────── */
+  .sec-label {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .sec-label::after {
+    content: '';
+    flex: 1;
+    max-width: 60px;
+    height: 1px;
+    background: var(--amber);
+    opacity: 0.4;
+  }
+  .sec-h {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+  }
+  .sec-h em { font-style: italic; color: var(--amber); }
+  .sec-sub {
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 60ch;
+    margin-bottom: 3rem;
+  }
+
+  /* The single grid — 3 columns desktop */
+  .locs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--border);
+    border-left: 1px solid var(--border);
+  }
+  .kloc {
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+  }
+  .kloc-photo {
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    background: var(--paper);
+    flex-shrink: 0;
+  }
+  .kloc-photo img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.9);
+    transition: transform 0.5s ease;
+  }
+  .kloc:hover .kloc-photo img { transform: scale(1.04); }
+  .kloc-body {
+    padding: 1.4rem 1.4rem 1.8rem;
+    flex: 1;
+  }
+  .kloc-name {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-bottom: 0.5rem;
+    color: var(--ink);
+  }
+  .kloc-desc {
+    font-size: 0.85rem;
+    line-height: 1.75;
+    color: var(--muted);
+  }
+
   /* ─── COLLABORATIONS ─────────────────────────────────────── */
   .collab-section { background: var(--ink); color: var(--warm-white); }
   .collab-section .section-label { color: var(--amber-light); }
@@ -538,7 +494,7 @@
     color: rgba(245,240,232,0.75);
     margin-bottom: 2rem;
   }
-  .collab-names { display: flex; flex-direction: column; gap: 0; }
+  .collab-names { display: flex; flex-direction: column; }
   .collab-name-item {
     display: flex;
     align-items: center;
@@ -594,7 +550,6 @@
     width: 100%;
     aspect-ratio: 3/2;
     background: #ccc8be;
-    position: relative;
     overflow: hidden;
     margin-bottom: 2rem;
   }
@@ -626,12 +581,7 @@
     margin: 0 auto 3rem;
     line-height: 1.7;
   }
-  .cta-btns {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+  .cta-btns { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
 
   /* ─── FOOTER ─────────────────────────────────────────────── */
   footer {
@@ -652,14 +602,11 @@
   footer a:hover { color: var(--amber-light); }
 
   /* ════════════════════════════════════════════════════════
-     RESPONSIVE — TABLET  (≤ 900px)
+     TABLET  ≤ 900px
   ════════════════════════════════════════════════════════ */
   @media (max-width: 900px) {
-
-    /* Header */
     .site-header { padding: 1.2rem 1.5rem; }
     .nav-toggle { display: flex; }
-
     .nav-links {
       position: fixed;
       top: 0; right: 0;
@@ -679,17 +626,8 @@
     .nav-links.open { transform: translateX(0); }
     .nav-links li { width: 100%; border-bottom: 1px solid var(--border); }
     .nav-links li:last-child { border-bottom: none; }
-    .nav-links a {
-      display: block;
-      margin-left: 0;
-      padding: 1rem 0;
-      font-size: 0.72rem;
-      letter-spacing: 0.16em;
-      border-bottom: none;
-    }
-    .nav-links a.active { color: var(--amber); border-bottom: none; }
-
-    /* Overlay */
+    .nav-links a { display: block; margin-left: 0; padding: 1rem 0; font-size: 0.72rem; border-bottom: none; }
+    .nav-links a.active { color: var(--amber); }
     .nav-overlay {
       display: none;
       position: fixed;
@@ -699,149 +637,58 @@
     }
     .nav-overlay.open { display: block; }
 
-    /* Hero */
-    .hero {
-      grid-template-columns: 1fr;
-      min-height: auto;
-    }
-    .hero-text {
-      padding: 3rem 1.5rem;
-      border-right: none;
-      border-bottom: 1px solid var(--border);
-      order: 1;
-    }
-    .hero-visual {
-      height: 65vw;
-      min-height: 300px;
-      order: 2;
-    }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-text { padding: 3rem 1.5rem; border-right: none; border-bottom: 1px solid var(--border); }
+    .hero-visual { height: 65vw; min-height: 300px; }
 
-    /* Sections */
     .section { padding: 4rem 1.5rem; }
     .offer-section { padding: 4rem 1.5rem; }
 
-    /* Story */
     .story-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-    .story-photo-strip {
-      grid-template-columns: 1fr 1fr;
-      height: 200px;
-    }
+    .story-photo-strip { grid-template-columns: 1fr 1fr; height: 200px; }
     .story-photo-strip .photo-block:last-child { display: none; }
 
-    /* Kolkata locs */
-    .kolkata-locs,
-    .kolkata-locs-r2 {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .kolkata-locs .kloc:nth-child(even),
-    .kolkata-locs-r2 .kloc:nth-child(even) {
-      border-right: none;
-    }
-    .kolkata-locs .kloc {
-      border-bottom: 1px solid var(--border);
-    }
-    .kolkata-locs { border-bottom: none; }
-    .kolkata-locs-r2 .kloc:nth-child(1),
-    .kolkata-locs-r2 .kloc:nth-child(2) {
-      border-bottom: 1px solid var(--border);
-    }
+    /* Locations — 2 columns on tablet */
+    .locs-grid { grid-template-columns: repeat(2, 1fr); }
 
-    /* Offer */
-    .offer-cards {
-      grid-template-columns: 1fr;
-      border-bottom: 1px solid var(--border);
-    }
-    .offer-card-item {
-      border-right: none;
-      border-bottom: 1px solid var(--border);
-    }
+    .offer-cards { grid-template-columns: 1fr; border-bottom: 1px solid var(--border); }
+    .offer-card-item { border-right: none; border-bottom: 1px solid var(--border); }
     .offer-card-item:last-child { border-bottom: none; }
-    .offer-photos {
-      grid-template-columns: 1fr;
-      height: auto;
-    }
+    .offer-photos { grid-template-columns: 1fr; height: auto; }
     .offer-photo-item { height: 220px; }
 
-    /* Collab */
     .collab-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-
-    /* Gear */
     .personal-grid { grid-template-columns: 1fr; gap: 2.5rem; }
 
-    /* CTA */
     .cta-section { padding: 5rem 1.5rem; }
-
-    /* Footer */
-    footer {
-      flex-direction: column;
-      text-align: center;
-      padding: 1.5rem;
-    }
+    footer { flex-direction: column; text-align: center; padding: 1.5rem; }
   }
 
   /* ════════════════════════════════════════════════════════
-     RESPONSIVE — MOBILE  (≤ 600px)
+     MOBILE  ≤ 600px
   ════════════════════════════════════════════════════════ */
   @media (max-width: 600px) {
-
-    /* Hero text tighter */
     .hero-text { padding: 2.5rem 1.2rem; }
     .hero-visual { height: 75vw; }
-    .hero-intro { font-size: 0.95rem; }
-
-    /* Stat strip */
     .stat-strip { position: static; }
     .stat-item { padding: 1rem 0.5rem; }
 
-    /* Story photo strip */
-    .story-photo-strip {
-      grid-template-columns: 1fr;
-      height: auto;
-    }
-    .story-photo-strip .photo-block {
-      height: 200px;
-    }
-    .story-photo-strip .photo-block:last-child { display: flex; }
+    .story-photo-strip { grid-template-columns: 1fr; height: auto; }
+    .story-photo-strip .photo-block { height: 200px; }
+    .story-photo-strip .photo-block:last-child { display: block; }
 
-    /* Pull quote */
+    /* Locations — 1 column on mobile */
+    .locs-grid { grid-template-columns: 1fr; }
+
     .pull-quote { padding: 2rem 1.5rem; }
-
-    /* Kolkata locs — single column */
-    .kolkata-locs,
-    .kolkata-locs-r2 {
-      grid-template-columns: 1fr;
-      border-bottom: none;
-    }
-    .kolkata-locs { border-bottom: none; }
-    .kolkata-locs-r2 { border-top: none; border-bottom: 1px solid var(--border); }
-    .kloc {
-      border-right: none !important;
-      border-bottom: 1px solid var(--border) !important;
-    }
-    .kloc:last-child { border-bottom: none !important; }
-
-    /* Offer photos single column */
-    .offer-photos { grid-template-columns: 1fr; height: auto; }
-    .offer-photo-item { height: 200px; }
-
-    /* Collab names */
-    .collab-what { margin-left: 0; width: 100%; }
-
-    /* CTA */
-    .cta-section { padding: 4rem 1.2rem; }
-    .cta-btns { flex-direction: column; align-items: center; }
-
-    /* Footer */
-    footer { padding: 1.5rem 1.2rem; gap: 0.5rem; }
-
-    /* Section padding */
     .section { padding: 3rem 1.2rem; }
     .offer-section { padding: 3rem 1.2rem; }
+    .cta-section { padding: 4rem 1.2rem; }
+    .cta-btns { flex-direction: column; align-items: center; }
+    footer { padding: 1.5rem 1.2rem; gap: 0.5rem; }
+    .collab-what { margin-left: 0; width: 100%; }
   }
 
-  /* ════════════════════════════════════════════════════════
-     RESPONSIVE — SMALL MOBILE  (≤ 400px)
-  ════════════════════════════════════════════════════════ */
   @media (max-width: 400px) {
     .site-header { padding: 1rem; }
     .logo { font-size: 0.65rem; }
@@ -857,7 +704,6 @@
 <!-- HEADER -->
 <header class="site-header">
   <a href="../" class="logo">Kolkata Photo Tour</a>
-
   <ul class="nav-links" id="navLinks">
     <li><a href="../">Home</a></li>
     <li><a href="../tours/">Tours and Workshops</a></li>
@@ -868,47 +714,30 @@
     <li><a href="#" class="active">About Me</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-
   <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
-    <span></span>
-    <span></span>
-    <span></span>
+    <span></span><span></span><span></span>
   </button>
 </header>
-
-<!-- Mobile overlay -->
 <div class="nav-overlay" id="navOverlay"></div>
 
-<!-- ① HERO -->
+<!-- HERO -->
 <section class="hero">
   <div class="hero-text">
     <p class="eyebrow">About your guide</p>
     <h1 class="hero-name">Shivam<br><em>Pandey</em></h1>
     <p class="hero-title">Street &amp; Documentary Photographer — Kolkata</p>
-    <p class="hero-intro">
-      Born in Varanasi, shaped by Kolkata — two cities that taught me how to read the streets before I ever held a camera. For over a decade, I've been photographing the pulse of India and helping others do the same.
-    </p>
+    <p class="hero-intro">Born in Varanasi, shaped by Kolkata — two cities that taught me how to read the streets before I ever held a camera. For over a decade, I've been photographing the pulse of India and helping others do the same.</p>
     <div class="cta-row">
       <a href="#" class="btn-primary">Book a tour</a>
       <a href="https://www.shivamphotofarm.com/" target="_blank" rel="noopener noreferrer" class="btn-ghost">View portfolio</a>
     </div>
   </div>
-
   <div class="hero-visual">
     <img src="images/Shivam - kolkata Photo Tour.JPG" alt="Shivam Pandey — Street Photographer Kolkata">
     <div class="stat-strip">
-      <div class="stat-item">
-        <span class="stat-num">10+</span>
-        <span class="stat-label">Years shooting</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">500+</span>
-        <span class="stat-label">Photographers mentored</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">40+</span>
-        <span class="stat-label">Tours &amp; workshops</span>
-      </div>
+      <div class="stat-item"><span class="stat-num">10+</span><span class="stat-label">Years shooting</span></div>
+      <div class="stat-item"><span class="stat-num">500+</span><span class="stat-label">Photographers mentored</span></div>
+      <div class="stat-item"><span class="stat-num">40+</span><span class="stat-label">Tours &amp; workshops</span></div>
     </div>
   </div>
 </section>
@@ -919,15 +748,9 @@
     <p class="section-label">My story</p>
     <div class="story-grid">
       <div class="story-text">
-        <p>
-          I grew up between two of India's most photogenic cities — Varanasi, where ritual and time blur along the ghats, and Kolkata, where every lane holds a century of stories. Those early years weren't spent in photography classes. They were spent watching, wandering, and learning to read the rhythm of a place.
-        </p>
-        <p>
-          When I picked up a camera, I already knew how to disappear into a crowd, how to anticipate the moment before it happens, and how to earn the kind of trust that lets a stranger forget you're there. That is still the foundation of everything I teach.
-        </p>
-        <p>
-          Over the past decade I've worked across India — from the rooftop dyes of Rajasthan to the monastery stillness of Ladakh, from the alleyways of Old Delhi to the tram-lined boulevards of North Kolkata. Every region has its own visual language, and learning to speak it is the real skill.
-        </p>
+        <p>I grew up between two of India's most photogenic cities — Varanasi, where ritual and time blur along the ghats, and Kolkata, where every lane holds a century of stories. Those early years weren't spent in photography classes. They were spent watching, wandering, and learning to read the rhythm of a place.</p>
+        <p>When I picked up a camera, I already knew how to disappear into a crowd, how to anticipate the moment before it happens, and how to earn the kind of trust that lets a stranger forget you're there. That is still the foundation of everything I teach.</p>
+        <p>Over the past decade I've worked across India — from the rooftop dyes of Rajasthan to the monastery stillness of Ladakh, from the alleyways of Old Delhi to the tram-lined boulevards of North Kolkata. Every region has its own visual language, and learning to speak it is the real skill.</p>
       </div>
       <div>
         <blockquote class="pull-quote">
@@ -936,17 +759,10 @@
         </blockquote>
       </div>
     </div>
-
     <div class="story-photo-strip">
-      <div class="photo-block">
-        <img src="images/1 (1).jpg" alt="Varanasi ghats">
-      </div>
-      <div class="photo-block">
-        <img src="images/2 (1).jpg" alt="Kolkata streets">
-      </div>
-      <div class="photo-block">
-        <img src="images/compressed_3.jpg" alt="Shivam at work">
-      </div>
+      <div class="photo-block"><img src="images/1 (1).jpg" alt="Varanasi ghats"></div>
+      <div class="photo-block"><img src="images/2 (1).jpg" alt="Kolkata streets"></div>
+      <div class="photo-block"><img src="images/compressed_3.jpg" alt="Shivam at work"></div>
     </div>
   </div>
 </section>
@@ -958,7 +774,6 @@
       <p class="section-label">What I offer</p>
       <h2 class="offer-main-heading">Three ways to<br>work <em>together</em></h2>
     </div>
-
     <div class="offer-cards">
       <div class="offer-card-item">
         <span class="offer-num">01</span>
@@ -979,7 +794,6 @@
         <p class="offer-card-desc">Whether you're refining your eye or preparing a body of work for publication, I offer one-on-one mentorship focused on honest, purposeful storytelling — not technical tricks. Real feedback, real growth.</p>
       </div>
     </div>
-
     <div class="offer-photos">
       <div class="offer-photo-item">
         <img src="https://shivamphotofarm.com/wp-content/uploads/2024/07/Day-1-IMG-1-2048x1367.jpg" alt="Tours and Workshops">
@@ -997,76 +811,96 @@
   </div>
 </section>
 
-<!-- KOLKATA LOCATIONS -->
+<!-- WHERE I TAKE YOU — 3 columns, 10 locations -->
 <section class="section" style="padding-top:0">
   <div class="section-inner">
     <p class="sec-label">Where I take you</p>
-    <h2 class="sec-h">Kolkata, <em>location by location.</em></h2>
-    <p class="sec-sub">Every tour is customised, but these are the spots I know most intimately — and return to again and again.</p>
+    <h2 class="sec-h">Across <em>India.</em></h2>
+    <p class="sec-sub">Every tour is customised, but these are the destinations I know most intimately — and return to again and again.</p>
 
-    <!-- Row 1 -->
-    <div class="kolkata-locs">
-      <div class="kloc">
-        <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1005731-2.jpg" alt="Mullick Ghat Flower Market"></div>
-        <div class="kloc-body">
-          <p class="kloc-name">Mullick Ghat Flower Market</p>
-          <p class="kloc-desc">Pre-dawn colour and commerce. The largest wholesale flower market in Asia — best before the city wakes.</p>
-        </div>
-      </div>
-      <div class="kloc">
-        <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2024/07/Day-1-IMG-1-2048x1367.jpg" alt="Kumartuli"></div>
-        <div class="kloc-body">
-          <p class="kloc-name">Kumartuli</p>
-          <p class="kloc-desc">The potters' quarter. Clay gods, dusty workshops, craftsmen shaping idols for generations.</p>
-        </div>
-      </div>
-      <div class="kloc">
-        <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1008459-2.jpg" alt="Wrestlers Howrah Bridge"></div>
-        <div class="kloc-body">
-          <p class="kloc-name">Wrestlers · Howrah Bridge</p>
-          <p class="kloc-desc">Traditional pehelwans training in open-air akharas by the Ganges — with the bridge as backdrop.</p>
-        </div>
-      </div>
-      <div class="kloc">
-        <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/IMG_1948-2048x1365.jpg" alt="Koley Market"></div>
-        <div class="kloc-body">
-          <p class="kloc-name">Koley Vegetable Market</p>
-          <p class="kloc-desc">Mountains of produce, relentless energy, and light that makes every frame worth keeping.</p>
-        </div>
-      </div>
-    </div>
+    <div class="locs-grid">
 
-    <!-- Row 2 -->
-    <div class="kolkata-locs-r2">
       <div class="kloc">
-        <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1005830-2048x1360.jpg" alt="Sealdah Station"></div>
+        <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1005731-2.jpg" alt="Kolkata"></div>
         <div class="kloc-body">
-          <p class="kloc-name">Sealdah Train Station</p>
-          <p class="kloc-desc">One of India's busiest railway hubs — commuters, arriving trains, and moments of stillness amidst the rush.</p>
+          <p class="kloc-name">Kolkata</p>
+          <p class="kloc-desc">A city that reveals itself in layers through light, texture, and human rhythm. Kolkata isn't about chasing moments, but noticing them.</p>
         </div>
       </div>
+
       <div class="kloc">
-        <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1006562.jpg" alt="Local Train Kolkata"></div>
+        <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2024/07/Day-1-IMG-1-2048x1367.jpg" alt="Varanasi"></div>
         <div class="kloc-body">
-          <p class="kloc-name">Local Train Ride</p>
-          <p class="kloc-desc">A 3-hour ride on Kolkata's local trains — the city's heartbeat, shared carriages, and intimate human moments in motion.</p>
+          <p class="kloc-name">Varanasi</p>
+          <p class="kloc-desc">Varanasi is timeless, where life, death, and devotion exist side by side. The ghats offer an ever-changing stage of rituals and quiet moments.</p>
         </div>
       </div>
+
       <div class="kloc">
-        <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/DSC04035-2048x1365.jpg" alt="Meat & New Market"></div>
+        <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1008459-2.jpg" alt="Delhi"></div>
         <div class="kloc-body">
-          <p class="kloc-name">Meat &amp; New Market</p>
-          <p class="kloc-desc">One of Kolkata's oldest commercial hubs — layers of trade, texture, and unpredictable encounters.</p>
+          <p class="kloc-name">Delhi</p>
+          <p class="kloc-desc">Delhi is a city of contrasts — historic and modern, chaotic and composed. From Old Delhi's dense streets to quieter urban corners, it constantly shifts.</p>
         </div>
       </div>
+
       <div class="kloc">
-        <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1006872-2048x1360.jpg" alt="North Kolkata Lanes"></div>
+        <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/IMG_1948-2048x1365.jpg" alt="Agra"></div>
         <div class="kloc-body">
-          <p class="kloc-name">North Kolkata Lanes</p>
-          <p class="kloc-desc">Tram-lined boulevards, crumbling colonial architecture, and lanes that hold a century of stories in every doorway.</p>
+          <p class="kloc-name">Agra</p>
+          <p class="kloc-desc">The Taj Mahal is all about light, symmetry, and subtle human presence. Beyond the monument, the city offers quieter stories waiting to be framed.</p>
         </div>
       </div>
-    </div>
+
+      <div class="kloc">
+        <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1005830-2048x1360.jpg" alt="Rajasthan"></div>
+        <div class="kloc-body">
+          <p class="kloc-name">Rajasthan</p>
+          <p class="kloc-desc">Jaipur, Jodhpur, Udaipur &amp; cultural villages — rich in colour, texture, and tradition. From royal architecture to village life, each location has a distinct visual language.</p>
+        </div>
+      </div>
+
+      <div class="kloc">
+        <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1006562.jpg" alt="Ladakh"></div>
+        <div class="kloc-body">
+          <p class="kloc-name">Ladakh</p>
+          <p class="kloc-desc">Vast, minimal, and deeply still. Light shifts quickly across mountains and monasteries, demanding patience and awareness. Photography here is about simplicity, space, and timing.</p>
+        </div>
+      </div>
+
+      <div class="kloc">
+        <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/DSC04035-2048x1365.jpg" alt="Mumbai"></div>
+        <div class="kloc-body">
+          <p class="kloc-name">Mumbai</p>
+          <p class="kloc-desc">Fast, dense, and full of energy — always in motion. From early mornings at the docks to crowded trains, stories unfold rapidly.</p>
+        </div>
+      </div>
+
+      <div class="kloc">
+        <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1006872-2048x1360.jpg" alt="Chennai"></div>
+        <div class="kloc-body">
+          <p class="kloc-name">Chennai</p>
+          <p class="kloc-desc">Chennai moves at its own pace, rooted in tradition yet quietly evolving. From temple rituals to coastal life, it offers a different rhythm of storytelling.</p>
+        </div>
+      </div>
+
+      <div class="kloc">
+        <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1006872-2048x1360.jpg" alt="Nagaland"></div>
+        <div class="kloc-body">
+          <p class="kloc-name">Nagaland</p>
+          <p class="kloc-desc">About identity, culture, and community. Villages, festivals, and daily life offer rare photographic access to a world few visitors see.</p>
+        </div>
+      </div>
+
+      <div class="kloc">
+        <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1006872-2048x1360.jpg" alt="Festivals of India"></div>
+        <div class="kloc-body">
+          <p class="kloc-name">Festivals of India</p>
+          <p class="kloc-desc">India's festivals are intense, colourful, and deeply emotional. From grand processions to fleeting human expressions, everything happens at once.</p>
+        </div>
+      </div>
+
+    </div><!-- /locs-grid -->
   </div>
 </section>
 
@@ -1077,12 +911,8 @@
     <div class="collab-grid">
       <div>
         <h2 class="section-heading">Who I've<br>worked <em>with</em></h2>
-        <p class="collab-intro">
-          I've been proud to support international photographers and organisations in bringing meaningful photo travel experiences to India. From full itinerary design to on-the-ground logistics and cultural facilitation — I'm the local knowledge behind successful tours.
-        </p>
-        <p class="collab-intro" style="font-size:0.85rem; margin-bottom:0;">
-          If you're a tour leader or photographer in search of a trusted ground partner in India, let's talk.
-        </p>
+        <p class="collab-intro">I've been proud to support international photographers and organisations in bringing meaningful photo travel experiences to India. From full itinerary design to on-the-ground logistics and cultural facilitation — I'm the local knowledge behind successful tours.</p>
+        <p class="collab-intro" style="font-size:0.85rem; margin-bottom:0;">If you're a tour leader or photographer in search of a trusted ground partner in India, let's talk.</p>
       </div>
       <div>
         <div class="collab-names">
@@ -1122,23 +952,17 @@
         <div class="gear-photo">
           <img src="https://shivamphotofarm.com/wp-content/uploads/2025/07/IMG_1567-scaled.jpeg" alt="Leica M11-P — Shivam Pandey">
         </div>
-        <div style="margin-bottom: 2rem;">
+        <div style="margin-bottom:2rem;">
           <p class="gear-label">Current camera</p>
           <p class="gear-value">Leica M11-P</p>
           <p class="gear-label">Previously</p>
           <p class="gear-value">Leica Q Series</p>
         </div>
-        <p class="personal-body" style="font-size:0.9rem; color:var(--muted);">
-          The tools matter less than the intention. A rangefinder forces you to slow down, commit, and be in the moment — which is exactly the approach I try to pass on.
-        </p>
+        <p class="personal-body" style="font-size:0.9rem; color:var(--muted);">The tools matter less than the intention. A rangefinder forces you to slow down, commit, and be in the moment — which is exactly the approach I try to pass on.</p>
       </div>
       <div class="personal-body">
-        <p>
-          Street photography cannot be faked. The light doesn't wait, the moment doesn't repeat, and people always know when they're being observed rather than seen. Everything I teach comes back to this: how to be genuinely present on a street so that the camera becomes almost incidental.
-        </p>
-        <p style="margin-top:1.2rem;">
-          That presence — cultural, emotional, physical — is what makes the difference between a photograph that documents and one that actually moves someone. It's what I found in Varanasi and Kolkata, and it's what I want to help you find, wherever in India we're shooting together.
-        </p>
+        <p>Street photography cannot be faked. The light doesn't wait, the moment doesn't repeat, and people always know when they're being observed rather than seen. Everything I teach comes back to this: how to be genuinely present on a street so that the camera becomes almost incidental.</p>
+        <p style="margin-top:1.2rem;">That presence — cultural, emotional, physical — is what makes the difference between a photograph that documents and one that actually moves someone. It's what I found in Varanasi and Kolkata, and it's what I want to help you find, wherever in India we're shooting together.</p>
       </div>
     </div>
   </div>
@@ -1185,13 +1009,9 @@
     links.classList.contains('open') ? closeNav() : openNav();
   });
   overlay.addEventListener('click', closeNav);
-
   links.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      if (window.innerWidth <= 900) closeNav();
-    });
+    a.addEventListener('click', () => { if (window.innerWidth <= 900) closeNav(); });
   });
 </script>
-
 </body>
 </html>

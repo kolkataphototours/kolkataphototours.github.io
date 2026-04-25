@@ -261,6 +261,8 @@
     margin-top: 0.3rem;
     display: block;
   }
+
+  /* ─── SECTION BASICS ────────────────────────────────────── */
   .section { padding: 6rem 3rem; border-bottom: 1px solid var(--border); }
   .section-inner { max-width: 1100px; margin: 0 auto; }
   .section-label {
@@ -291,6 +293,8 @@
     letter-spacing: -0.01em;
   }
   .section-heading em { font-style: italic; color: var(--amber); }
+
+  /* ─── STORY ─────────────────────────────────────────────── */
   .story-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -360,6 +364,101 @@
     text-transform: uppercase;
     color: rgba(245,240,232,0.85);
   }
+
+  /* ─── KOLKATA LOCATIONS ─────────────────────────────────── */
+  .sec-label {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .sec-label::after {
+    content: '';
+    flex: 1;
+    max-width: 60px;
+    height: 1px;
+    background: var(--amber);
+    opacity: 0.4;
+  }
+  .sec-h {
+    font-family: var(--serif);
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+  }
+  .sec-h em { font-style: italic; color: var(--amber); }
+  .sec-sub {
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 60ch;
+    margin-bottom: 3rem;
+  }
+
+  /* Grid rows for Kolkata locations */
+  .kolkata-locs,
+  .kolkata-locs-r2 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border: 1px solid var(--border);
+    border-bottom: none;
+  }
+  .kolkata-locs-r2 {
+    border-top: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .kloc {
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+  }
+  .kloc:last-child { border-right: none; }
+
+  .kloc-photo {
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    background: var(--paper);
+    flex-shrink: 0;
+  }
+  .kloc-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.9);
+    transition: transform 0.5s ease;
+  }
+  .kloc:hover .kloc-photo img { transform: scale(1.04); }
+
+  .kloc-body {
+    padding: 1.4rem 1.4rem 1.8rem;
+    flex: 1;
+  }
+  .kloc-name {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-bottom: 0.5rem;
+    color: var(--ink);
+  }
+  .kloc-desc {
+    font-size: 0.85rem;
+    line-height: 1.75;
+    color: var(--muted);
+  }
+
+  /* ─── OFFER GRID ─────────────────────────────────────────── */
   .offer-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -396,6 +495,8 @@
     line-height: 1.85;
     color: var(--muted);
   }
+
+  /* ─── DESTINATIONS ───────────────────────────────────────── */
   .destinations-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -429,6 +530,8 @@
     text-transform: uppercase;
     color: var(--muted);
   }
+
+  /* ─── COLLABORATIONS ─────────────────────────────────────── */
   .collab-section { background: var(--ink); color: var(--warm-white); }
   .collab-section .section-label { color: var(--amber-light); }
   .collab-section .section-label::after { background: var(--amber-light); }
@@ -475,6 +578,8 @@
     color: rgba(245,240,232,0.4);
     margin-left: auto;
   }
+
+  /* ─── GEAR & APPROACH ────────────────────────────────────── */
   .personal-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -509,6 +614,106 @@
     display: block;
     filter: brightness(0.88);
   }
+
+  /* ─── WHAT I OFFER ──────────────────────────────────────── */
+  .offer-section { padding: 6rem 3rem; border-bottom: 1px solid var(--border); }
+  .offer-section .section-inner { max-width: 1100px; margin: 0 auto; }
+
+  .offer-heading-block { margin-bottom: 3rem; }
+  .offer-main-heading {
+    font-family: var(--serif);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+  .offer-main-heading em { font-style: italic; color: var(--amber); }
+
+  /* Top cards row */
+  .offer-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid var(--border);
+    border-bottom: none;
+  }
+  .offer-card-item {
+    padding: 2.5rem 2rem 3rem;
+    border-right: 1px solid var(--border);
+  }
+  .offer-card-item:last-child { border-right: none; }
+
+  .offer-num {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+    color: var(--amber);
+    margin-bottom: 1.4rem;
+    display: block;
+  }
+  .offer-card-title {
+    font-family: var(--serif);
+    font-size: 1.55rem;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 0.2rem;
+    color: var(--ink);
+  }
+  .offer-card-subtitle {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--amber);
+    margin-bottom: 1.2rem;
+    display: block;
+  }
+  .offer-card-desc {
+    font-size: 0.88rem;
+    line-height: 1.85;
+    color: var(--muted);
+  }
+
+  /* Bottom photo row */
+  .offer-photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    height: 240px;
+  }
+  .offer-photo-item {
+    position: relative;
+    overflow: hidden;
+    background: var(--paper);
+  }
+  .offer-photo-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.82);
+    transition: transform 0.5s ease;
+  }
+  .offer-photo-item:hover img { transform: scale(1.04); }
+  .offer-photo-caption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 8px 14px;
+    background: linear-gradient(transparent, rgba(26,22,18,0.65));
+    font-family: var(--mono);
+    font-size: 0.56rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.9);
+  }
+
+  @media (max-width: 900px) {
+    .offer-section { padding: 4rem 1.5rem; }
+    .offer-cards { grid-template-columns: 1fr; border-bottom: 1px solid var(--border); }
+    .offer-card-item { border-right: none; border-bottom: 1px solid var(--border); }
+    .offer-card-item:last-child { border-bottom: none; }
+    .offer-photos { grid-template-columns: 1fr; height: auto; }
+    .offer-photo-item { height: 220px; }
+  }
+
+  /* ─── CTA ────────────────────────────────────────────────── */
   .cta-section {
     text-align: center;
     padding: 8rem 3rem;
@@ -529,6 +734,8 @@
     margin: 0 auto 3rem;
     line-height: 1.7;
   }
+
+  /* ─── FOOTER ─────────────────────────────────────────────── */
   footer {
     background: var(--ink);
     color: rgba(245,240,232,0.5);
@@ -544,6 +751,7 @@
   footer a { color: inherit; text-decoration: none; }
   footer a:hover { color: var(--amber-light); }
 
+  /* ─── RESPONSIVE ─────────────────────────────────────────── */
   @media (max-width: 900px) {
     .hero { grid-template-columns: 1fr; min-height: auto; }
     .hero-visual { height: 60vw; min-height: 320px; }
@@ -556,6 +764,42 @@
     .story-photo-strip .photo-block:last-child { display: none; }
     .section { padding: 4rem 1.5rem; }
     footer { flex-direction: column; gap: 0.75rem; text-align: center; }
+
+    /* Kolkata locs: 2 columns on tablet */
+    .kolkata-locs,
+    .kolkata-locs-r2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .kloc:nth-child(2) { border-right: none; }
+    .kolkata-locs .kloc:nth-child(1),
+    .kolkata-locs .kloc:nth-child(2) {
+      border-bottom: 1px solid var(--border);
+    }
+    .kolkata-locs-r2 .kloc:nth-child(1),
+    .kolkata-locs-r2 .kloc:nth-child(2) {
+      border-bottom: 1px solid var(--border);
+    }
+    .kolkata-locs-r2 .kloc:nth-child(4) { border-right: none; }
+  }
+
+  @media (max-width: 600px) {
+    /* Kolkata locs: single column on mobile */
+    .kolkata-locs,
+    .kolkata-locs-r2 {
+      grid-template-columns: 1fr;
+    }
+    .kloc {
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+    }
+    .kloc:last-child { border-bottom: none; }
+    .kolkata-locs { border-bottom: none; }
+    .kolkata-locs-r2 { border-top: 1px solid var(--border); }
+
+    .destinations-grid { grid-template-columns: repeat(2, 1fr); }
+    .destinations-photo-grid { grid-template-columns: repeat(2, 1fr); height: auto; }
+    .destinations-photo-grid .photo-block { height: 120px; }
+    .destinations-grid .dest-item:nth-child(2n) { border-right: none; }
   }
 </style>
 </head>
@@ -638,56 +882,137 @@
     <div class="story-photo-strip">
       <div class="photo-block">
         <img src="images/1 (1).jpg" alt="Varanasi ghats">
-        
       </div>
       <div class="photo-block">
         <img src="images/2 (1).jpg" alt="Kolkata streets">
-        
       </div>
       <div class="photo-block">
         <img src="images/compressed_3.jpg" alt="Shivam at work">
-        
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHAT I OFFER -->
-<section class="section" style="padding-top:0;">
+<!-- KOLKATA LOCATIONS -->
+<section class="section" style="padding-top:0">
   <div class="section-inner">
-    <p class="section-label">What I offer</p>
-    <h2 class="section-heading">Three ways to<br>work <em>together</em></h2>
-    <div class="offer-grid">
-      <div class="offer-card">
-        <p class="offer-number">01</p>
-        <h3 class="offer-title">Photo Tours<br><em>&amp; Workshops</em></h3>
-        <p class="offer-desc">Immersive, on-the-ground experiences in Kolkata and across India. We shoot in real time — I help you read the streets, anticipate moments, and build a body of work that actually says something. Suitable for all experience levels.</p>
+    <p class="sec-label">Where I take you</p>
+    <h2 class="sec-h">Kolkata, <em>location by location.</em></h2>
+    <p class="sec-sub">Every tour is customised, but these are the spots I know most intimately — and return to again and again.</p>
+
+    <!-- Row 1 -->
+    <div class="kolkata-locs">
+      <div class="kloc">
+        <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1005731-2.jpg" alt="Mullick Ghat Flower Market"></div>
+        <div class="kloc-body">
+          <p class="kloc-name">Mullick Ghat Flower Market</p>
+          <p class="kloc-desc">Pre-dawn colour and commerce. The largest wholesale flower market in Asia — best before the city wakes.</p>
+        </div>
       </div>
-      <div class="offer-card">
-        <p class="offer-number">02</p>
-        <h3 class="offer-title">Group Tour<br><em>Design &amp; Support</em></h3>
-        <p class="offer-desc">Planning to bring a photography group to India? I design itineraries built around the best light, the most photographically alive locations, and the cultural access that only comes from local knowledge. I handle scouting, logistics, and on-ground support.</p>
+      <div class="kloc">
+        <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2024/07/Day-1-IMG-1-2048x1367.jpg" alt="Kumartuli"></div>
+        <div class="kloc-body">
+          <p class="kloc-name">Kumartuli</p>
+          <p class="kloc-desc">The potters' quarter. Clay gods, dusty workshops, craftsmen shaping idols for generations.</p>
+        </div>
       </div>
-      <div class="offer-card">
-        <p class="offer-number">03</p>
-        <h3 class="offer-title">Mentorship &amp;<br><em>Portfolio Review</em></h3>
-        <p class="offer-desc">Whether you're refining your eye or preparing a body of work for publication, I offer one-on-one mentorship focused on honest, purposeful storytelling — not technical tricks. Real feedback, real growth.</p>
+      <div class="kloc">
+        <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1008459-2.jpg" alt="Wrestlers Howrah Bridge"></div>
+        <div class="kloc-body">
+          <p class="kloc-name">Wrestlers · Howrah Bridge</p>
+          <p class="kloc-desc">Traditional pehelwans training in open-air akharas by the Ganges — with the bridge as backdrop.</p>
+        </div>
+      </div>
+      <div class="kloc">
+        <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/IMG_1948-2048x1365.jpg" alt="Koley Market"></div>
+        <div class="kloc-body">
+          <p class="kloc-name">Koley Vegetable Market</p>
+          <p class="kloc-desc">Mountains of produce, relentless energy, and light that makes every frame worth keeping.</p>
+        </div>
       </div>
     </div>
-    <div class="offer-photo-row">
-      <div class="photo-block" style="border-right: 1px solid var(--border);">
-        <img src="https://www.kolkataphototours.com/images/Kumartuli.jpeg" alt="Photo tour Kolkata">
-        <div class="pb-caption">Tours &amp; Workshops</div>
+
+    <!-- Row 2 -->
+    <div class="kolkata-locs-r2">
+      <div class="kloc">
+        <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1005830-2048x1360.jpg" alt="Sealdah Station"></div>
+        <div class="kloc-body">
+          <p class="kloc-name">Sealdah Train Station</p>
+          <p class="kloc-desc">One of India's busiest railway hubs — commuters, arriving trains, and moments of stillness amidst the rush.</p>
+        </div>
       </div>
-      <div class="photo-block" style="border-right: 1px solid var(--border);">
-        <img src="https://www.kolkataphototours.com/images/Markets.jpeg" alt="Group photo tour India">
-        <div class="pb-caption">Group Tours</div>
+      <div class="kloc">
+        <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1006562.jpg" alt="Local Train Kolkata"></div>
+        <div class="kloc-body">
+          <p class="kloc-name">Local Train Ride</p>
+          <p class="kloc-desc">A 3-hour ride on Kolkata's local trains — the city's heartbeat, shared carriages, and intimate human moments in motion.</p>
+        </div>
       </div>
-      <div class="photo-block">
-        <img src="https://shivamphotofarm.com/wp-content/uploads/2025/07/IMG_1567-scaled.jpeg" alt="Photography mentorship">
-        <div class="pb-caption">Mentorship</div>
+      <div class="kloc">
+        <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/DSC04035-2048x1365.jpg" alt="Meat & New Market"></div>
+        <div class="kloc-body">
+          <p class="kloc-name">Meat &amp; New Market</p>
+          <p class="kloc-desc">One of Kolkata's oldest commercial hubs — layers of trade, texture, and unpredictable encounters.</p>
+        </div>
+      </div>
+      <div class="kloc">
+        <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1006872-2048x1360.jpg" alt="North Kolkata Lanes"></div>
+        <div class="kloc-body">
+          <p class="kloc-name">North Kolkata Lanes</p>
+          <p class="kloc-desc">Tram-lined boulevards, crumbling colonial architecture, and lanes that hold a century of stories in every doorway.</p>
+        </div>
       </div>
     </div>
+
+  </div>
+</section>
+
+<!-- WHAT I OFFER -->
+<section class="offer-section">
+  <div class="section-inner">
+    <div class="offer-heading-block">
+      <p class="section-label">What I offer</p>
+      <h2 class="offer-main-heading">Three ways to<br>work <em>together</em></h2>
+    </div>
+
+    <!-- Cards -->
+    <div class="offer-cards">
+      <div class="offer-card-item">
+        <span class="offer-num">01</span>
+        <p class="offer-card-title">Photo Tours</p>
+        <span class="offer-card-subtitle">&amp; Workshops</span>
+        <p class="offer-card-desc">Immersive, on-the-ground experiences in Kolkata and across India. We shoot in real time — I help you read the streets, anticipate moments, and build a body of work that actually says something. Suitable for all experience levels.</p>
+      </div>
+      <div class="offer-card-item">
+        <span class="offer-num">02</span>
+        <p class="offer-card-title">Group Tour</p>
+        <span class="offer-card-subtitle">Design &amp; Support</span>
+        <p class="offer-card-desc">Planning to bring a photography group to India? I design itineraries built around the best light, the most photographically alive locations, and the cultural access that only comes from local knowledge. I handle scouting, logistics, and on-ground support.</p>
+      </div>
+      <div class="offer-card-item">
+        <span class="offer-num">03</span>
+        <p class="offer-card-title">Mentorship &amp;</p>
+        <span class="offer-card-subtitle">Portfolio Review</span>
+        <p class="offer-card-desc">Whether you're refining your eye or preparing a body of work for publication, I offer one-on-one mentorship focused on honest, purposeful storytelling — not technical tricks. Real feedback, real growth.</p>
+      </div>
+    </div>
+
+    <!-- Photos -->
+    <div class="offer-photos">
+      <div class="offer-photo-item">
+        <img src="https://shivamphotofarm.com/wp-content/uploads/2024/07/Day-1-IMG-1-2048x1367.jpg" alt="Tours and Workshops">
+        <div class="offer-photo-caption">Tours &amp; Workshops</div>
+      </div>
+      <div class="offer-photo-item">
+        <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/IMG_1948-2048x1365.jpg" alt="Group Tours">
+        <div class="offer-photo-caption">Group Tours</div>
+      </div>
+      <div class="offer-photo-item">
+        <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1008459-2.jpg" alt="Mentorship">
+        <div class="offer-photo-caption">Mentorship</div>
+      </div>
+    </div>
+
   </div>
 </section>
 

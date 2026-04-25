@@ -186,7 +186,7 @@
   .hero-visual img {
     width: 100%; height: 100%;
     object-fit: cover;
-    object-position: top center;
+    object-position: center center;
     display: block;
   }
   .stat-strip {
@@ -430,7 +430,6 @@
     margin-bottom: 3rem;
   }
 
-  /* The single grid — 3 columns desktop */
   .locs-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -639,7 +638,8 @@
 
     .hero { grid-template-columns: 1fr; min-height: auto; }
     .hero-text { padding: 3rem 1.5rem; border-right: none; border-bottom: 1px solid var(--border); }
-    .hero-visual { height: 65vw; min-height: 300px; }
+    /* FIXED: Tablet hero image height increased */
+    .hero-visual { height: 80vw; min-height: 340px; }
 
     .section { padding: 4rem 1.5rem; }
     .offer-section { padding: 4rem 1.5rem; }
@@ -648,7 +648,6 @@
     .story-photo-strip { grid-template-columns: 1fr 1fr; height: 200px; }
     .story-photo-strip .photo-block:last-child { display: none; }
 
-    /* Locations — 2 columns on tablet */
     .locs-grid { grid-template-columns: repeat(2, 1fr); }
 
     .offer-cards { grid-template-columns: 1fr; border-bottom: 1px solid var(--border); }
@@ -669,7 +668,19 @@
   ════════════════════════════════════════════════════════ */
   @media (max-width: 600px) {
     .hero-text { padding: 2.5rem 1.2rem; }
-    .hero-visual { height: 75vw; }
+
+    /* ── MAIN FIX: Mobile hero image ── */
+    .hero-visual {
+      height: auto;          /* height auto so image dictates size */
+      min-height: unset;
+    }
+    .hero-visual img {
+      width: 100%;
+      height: auto;          /* natural height — no cropping */
+      object-fit: unset;     /* disable cover crop */
+      object-position: unset;
+    }
+    /* stat-strip back to normal flow */
     .stat-strip { position: static; }
     .stat-item { padding: 1rem 0.5rem; }
 
@@ -677,7 +688,6 @@
     .story-photo-strip .photo-block { height: 200px; }
     .story-photo-strip .photo-block:last-child { display: block; }
 
-    /* Locations — 1 column on mobile */
     .locs-grid { grid-template-columns: 1fr; }
 
     .pull-quote { padding: 2rem 1.5rem; }
@@ -811,7 +821,7 @@
   </div>
 </section>
 
-<!-- WHERE I TAKE YOU — 3 columns, 10 locations -->
+<!-- WHERE I TAKE YOU -->
 <section class="section" style="padding-top:0">
   <div class="section-inner">
     <p class="sec-label">Where I take you</p>
@@ -819,7 +829,6 @@
     <p class="sec-sub">Every tour is customised, but these are the destinations I know most intimately — and return to again and again.</p>
 
     <div class="locs-grid">
-
       <div class="kloc">
         <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1005731-2.jpg" alt="Kolkata"></div>
         <div class="kloc-body">
@@ -827,7 +836,6 @@
           <p class="kloc-desc">A city that reveals itself in layers through light, texture, and human rhythm. Kolkata isn't about chasing moments, but noticing them.</p>
         </div>
       </div>
-
       <div class="kloc">
         <div class="kloc-photo"><img src="images/compressed_Varanasi.jpg" alt="Varanasi"></div>
         <div class="kloc-body">
@@ -835,7 +843,6 @@
           <p class="kloc-desc">Varanasi is timeless, where life, death, and devotion exist side by side. The ghats offer an ever-changing stage of rituals and quiet moments.</p>
         </div>
       </div>
-
       <div class="kloc">
         <div class="kloc-photo"><img src="images/compressed_Delhi .jpg" alt="Delhi"></div>
         <div class="kloc-body">
@@ -843,7 +850,6 @@
           <p class="kloc-desc">Delhi is a city of contrasts — historic and modern, chaotic and composed. From Old Delhi's dense streets to quieter urban corners, it constantly shifts.</p>
         </div>
       </div>
-
       <div class="kloc">
         <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/IMG_1948-2048x1365.jpg" alt="Agra"></div>
         <div class="kloc-body">
@@ -851,7 +857,6 @@
           <p class="kloc-desc">The Taj Mahal is all about light, symmetry, and subtle human presence. Beyond the monument, the city offers quieter stories waiting to be framed.</p>
         </div>
       </div>
-
       <div class="kloc">
         <div class="kloc-photo"><img src="images/Rajasthan (1).jpg" alt="Rajasthan"></div>
         <div class="kloc-body">
@@ -859,7 +864,6 @@
           <p class="kloc-desc">Jaipur, Jodhpur, Udaipur &amp; cultural villages — rich in colour, texture, and tradition. From royal architecture to village life, each location has a distinct visual language.</p>
         </div>
       </div>
-
       <div class="kloc">
         <div class="kloc-photo"><img src="images/compressed_Ladakh .JPG" alt="Ladakh"></div>
         <div class="kloc-body">
@@ -867,7 +871,6 @@
           <p class="kloc-desc">Vast, minimal, and deeply still. Light shifts quickly across mountains and monasteries, demanding patience and awareness. Photography here is about simplicity, space, and timing.</p>
         </div>
       </div>
-
       <div class="kloc">
         <div class="kloc-photo"><img src="images/compressed_Mumbai - Chor Bazar.jpg" alt="Mumbai"></div>
         <div class="kloc-body">
@@ -875,7 +878,6 @@
           <p class="kloc-desc">Fast, dense, and full of energy — always in motion. From early mornings at the docks to crowded trains, stories unfold rapidly.</p>
         </div>
       </div>
-
       <div class="kloc">
         <div class="kloc-photo"><img src="images/compressed_Chennai.jpg" alt="Chennai"></div>
         <div class="kloc-body">
@@ -883,7 +885,6 @@
           <p class="kloc-desc">Chennai moves at its own pace, rooted in tradition yet quietly evolving. From temple rituals to coastal life, it offers a different rhythm of storytelling.</p>
         </div>
       </div>
-
       <div class="kloc">
         <div class="kloc-photo"><img src="images/Nagaland (1).jpg" alt="Nagaland"></div>
         <div class="kloc-body">
@@ -891,7 +892,6 @@
           <p class="kloc-desc">About identity, culture, and community. Villages, festivals, and daily life offer rare photographic access to a world few visitors see.</p>
         </div>
       </div>
-
       <div class="kloc">
         <div class="kloc-photo"><img src="images/Festivals  (1).jpg" alt="Festivals of India"></div>
         <div class="kloc-body">
@@ -899,8 +899,7 @@
           <p class="kloc-desc">India's festivals are intense, colourful, and deeply emotional. From grand processions to fleeting human expressions, everything happens at once.</p>
         </div>
       </div>
-
-    </div><!-- /locs-grid -->
+    </div>
   </div>
 </section>
 

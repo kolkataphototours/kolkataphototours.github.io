@@ -77,7 +77,6 @@
   .nav-links a:hover { color: var(--ink); }
   .nav-links a.active { color: var(--ink); border-bottom-color: var(--amber); }
 
-  /* Hamburger — hidden on desktop */
   .nav-toggle {
     display: none;
     flex-direction: column;
@@ -103,7 +102,6 @@
   .nav-toggle.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
   .nav-toggle.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
-  /* Mobile drawer */
   @media (max-width: 900px) {
     .site-header { padding: 1.2rem 1.5rem; }
     .nav-toggle { display: flex; }
@@ -144,7 +142,7 @@
     .nav-overlay.open { display: block; }
   }
 
-  /* ─── PAGE STYLES ──────────────────────────────────────── */
+  /* ─── HERO ─────────────────────────────────────────────── */
   .hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -365,7 +363,7 @@
     color: rgba(245,240,232,0.85);
   }
 
-  /* ─── KOLKATA LOCATIONS ─────────────────────────────────── */
+  /* ─── KOLKATA LOCATIONS — 3×2 GRID ─────────────────────── */
   .sec-label {
     font-family: var(--mono);
     font-size: 0.65rem;
@@ -402,16 +400,20 @@
     margin-bottom: 3rem;
   }
 
-  /* Grid rows for Kolkata locations */
-  .kolkata-locs,
-  .kolkata-locs-r2 {
+  /* Row 1 — 3 columns */
+  .kolkata-locs {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 0;
     border: 1px solid var(--border);
     border-bottom: none;
   }
+  /* Row 2 — 3 columns */
   .kolkata-locs-r2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 1px solid var(--border);
     border-top: none;
     border-bottom: 1px solid var(--border);
   }
@@ -458,77 +460,91 @@
     color: var(--muted);
   }
 
-  /* ─── OFFER GRID ─────────────────────────────────────────── */
-  .offer-grid {
+  /* ─── WHAT I OFFER ──────────────────────────────────────── */
+  .offer-section { padding: 6rem 3rem; border-bottom: 1px solid var(--border); }
+  .offer-section .section-inner { max-width: 1100px; margin: 0 auto; }
+
+  .offer-heading-block { margin-bottom: 3rem; }
+  .offer-main-heading {
+    font-family: var(--serif);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+  .offer-main-heading em { font-style: italic; color: var(--amber); }
+
+  .offer-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0;
     border: 1px solid var(--border);
+    border-bottom: none;
   }
-  .offer-card { padding: 2.5rem 2rem; border-right: 1px solid var(--border); }
-  .offer-card:last-child { border-right: none; }
-  .offer-photo-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 4px;
-    height: 220px;
-    border: 1px solid var(--border);
-    border-top: none;
+  .offer-card-item {
+    padding: 2.5rem 2rem 3rem;
+    border-right: 1px solid var(--border);
   }
-  .offer-number {
+  .offer-card-item:last-child { border-right: none; }
+
+  .offer-num {
     font-family: var(--mono);
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+    color: var(--amber);
+    margin-bottom: 1.4rem;
+    display: block;
+  }
+  .offer-card-title {
+    font-family: var(--serif);
+    font-size: 1.55rem;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 0.2rem;
+    color: var(--ink);
+  }
+  .offer-card-subtitle {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-style: italic;
     color: var(--amber);
     margin-bottom: 1.2rem;
+    display: block;
   }
-  .offer-title {
-    font-family: var(--serif);
-    font-size: 1.5rem;
-    font-weight: 300;
-    line-height: 1.25;
-    margin-bottom: 1rem;
-  }
-  .offer-title em { font-style: italic; color: var(--amber); }
-  .offer-desc {
-    font-size: 0.9rem;
+  .offer-card-desc {
+    font-size: 0.88rem;
     line-height: 1.85;
     color: var(--muted);
   }
 
-  /* ─── DESTINATIONS ───────────────────────────────────────── */
-  .destinations-grid {
+  .offer-photos {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 0;
-    border: 1px solid var(--border);
-    margin-top: 3rem;
-  }
-  .destinations-photo-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 4px;
-    height: 200px;
-    margin-top: 4px;
+    height: 240px;
   }
-  .dest-item {
-    padding: 2rem 1.5rem;
-    border-right: 1px solid var(--border);
-    text-align: center;
+  .offer-photo-item {
+    position: relative;
+    overflow: hidden;
+    background: var(--paper);
   }
-  .dest-item:last-child { border-right: none; }
-  .dest-name {
-    font-family: var(--serif);
-    font-size: 1.15rem;
-    font-weight: 300;
-    margin-bottom: 0.4rem;
+  .offer-photo-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.82);
+    transition: transform 0.5s ease;
   }
-  .dest-tag {
+  .offer-photo-item:hover img { transform: scale(1.04); }
+  .offer-photo-caption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 8px 14px;
+    background: linear-gradient(transparent, rgba(26,22,18,0.65));
     font-family: var(--mono);
-    font-size: 0.58rem;
-    letter-spacing: 0.13em;
+    font-size: 0.56rem;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--muted);
+    color: rgba(245,240,232,0.9);
   }
 
   /* ─── COLLABORATIONS ─────────────────────────────────────── */
@@ -615,104 +631,6 @@
     filter: brightness(0.88);
   }
 
-  /* ─── WHAT I OFFER ──────────────────────────────────────── */
-  .offer-section { padding: 6rem 3rem; border-bottom: 1px solid var(--border); }
-  .offer-section .section-inner { max-width: 1100px; margin: 0 auto; }
-
-  .offer-heading-block { margin-bottom: 3rem; }
-  .offer-main-heading {
-    font-family: var(--serif);
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 300;
-    line-height: 1.15;
-    letter-spacing: -0.01em;
-  }
-  .offer-main-heading em { font-style: italic; color: var(--amber); }
-
-  /* Top cards row */
-  .offer-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    border: 1px solid var(--border);
-    border-bottom: none;
-  }
-  .offer-card-item {
-    padding: 2.5rem 2rem 3rem;
-    border-right: 1px solid var(--border);
-  }
-  .offer-card-item:last-child { border-right: none; }
-
-  .offer-num {
-    font-family: var(--mono);
-    font-size: 0.62rem;
-    letter-spacing: 0.16em;
-    color: var(--amber);
-    margin-bottom: 1.4rem;
-    display: block;
-  }
-  .offer-card-title {
-    font-family: var(--serif);
-    font-size: 1.55rem;
-    font-weight: 300;
-    line-height: 1.2;
-    margin-bottom: 0.2rem;
-    color: var(--ink);
-  }
-  .offer-card-subtitle {
-    font-family: var(--serif);
-    font-size: 1.2rem;
-    font-style: italic;
-    color: var(--amber);
-    margin-bottom: 1.2rem;
-    display: block;
-  }
-  .offer-card-desc {
-    font-size: 0.88rem;
-    line-height: 1.85;
-    color: var(--muted);
-  }
-
-  /* Bottom photo row */
-  .offer-photos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 4px;
-    height: 240px;
-  }
-  .offer-photo-item {
-    position: relative;
-    overflow: hidden;
-    background: var(--paper);
-  }
-  .offer-photo-item img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    display: block;
-    filter: brightness(0.82);
-    transition: transform 0.5s ease;
-  }
-  .offer-photo-item:hover img { transform: scale(1.04); }
-  .offer-photo-caption {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    padding: 8px 14px;
-    background: linear-gradient(transparent, rgba(26,22,18,0.65));
-    font-family: var(--mono);
-    font-size: 0.56rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: rgba(245,240,232,0.9);
-  }
-
-  @media (max-width: 900px) {
-    .offer-section { padding: 4rem 1.5rem; }
-    .offer-cards { grid-template-columns: 1fr; border-bottom: 1px solid var(--border); }
-    .offer-card-item { border-right: none; border-bottom: 1px solid var(--border); }
-    .offer-card-item:last-child { border-bottom: none; }
-    .offer-photos { grid-template-columns: 1fr; height: auto; }
-    .offer-photo-item { height: 220px; }
-  }
-
   /* ─── CTA ────────────────────────────────────────────────── */
   .cta-section {
     text-align: center;
@@ -757,29 +675,27 @@
     .hero-visual { height: 60vw; min-height: 320px; }
     .hero-text { padding: 3rem 1.5rem; border-right: none; border-bottom: 1px solid var(--border); }
     .story-grid, .collab-grid, .personal-grid { grid-template-columns: 1fr; gap: 3rem; }
-    .offer-grid, .offer-photo-row { grid-template-columns: 1fr; }
-    .offer-card { border-right: none; border-bottom: 1px solid var(--border); }
-    .destinations-grid, .destinations-photo-grid { grid-template-columns: repeat(3, 1fr); }
     .story-photo-strip { grid-template-columns: 1fr 1fr; height: 200px; }
     .story-photo-strip .photo-block:last-child { display: none; }
     .section { padding: 4rem 1.5rem; }
     footer { flex-direction: column; gap: 0.75rem; text-align: center; }
+
+    .offer-section { padding: 4rem 1.5rem; }
+    .offer-cards { grid-template-columns: 1fr; border-bottom: 1px solid var(--border); }
+    .offer-card-item { border-right: none; border-bottom: 1px solid var(--border); }
+    .offer-card-item:last-child { border-bottom: none; }
+    .offer-photos { grid-template-columns: 1fr; height: auto; }
+    .offer-photo-item { height: 220px; }
 
     /* Kolkata locs: 2 columns on tablet */
     .kolkata-locs,
     .kolkata-locs-r2 {
       grid-template-columns: repeat(2, 1fr);
     }
-    .kloc:nth-child(2) { border-right: none; }
-    .kolkata-locs .kloc:nth-child(1),
-    .kolkata-locs .kloc:nth-child(2) {
-      border-bottom: 1px solid var(--border);
-    }
-    .kolkata-locs-r2 .kloc:nth-child(1),
-    .kolkata-locs-r2 .kloc:nth-child(2) {
-      border-bottom: 1px solid var(--border);
-    }
-    .kolkata-locs-r2 .kloc:nth-child(4) { border-right: none; }
+    .kolkata-locs .kloc:nth-child(2),
+    .kolkata-locs-r2 .kloc:nth-child(2) { border-right: none; }
+    .kolkata-locs .kloc { border-bottom: 1px solid var(--border); }
+    .kolkata-locs .kloc:nth-child(3) { border-bottom: none; }
   }
 
   @media (max-width: 600px) {
@@ -795,11 +711,6 @@
     .kloc:last-child { border-bottom: none; }
     .kolkata-locs { border-bottom: none; }
     .kolkata-locs-r2 { border-top: 1px solid var(--border); }
-
-    .destinations-grid { grid-template-columns: repeat(2, 1fr); }
-    .destinations-photo-grid { grid-template-columns: repeat(2, 1fr); height: auto; }
-    .destinations-photo-grid .photo-block { height: 120px; }
-    .destinations-grid .dest-item:nth-child(2n) { border-right: none; }
   }
 </style>
 </head>
@@ -893,9 +804,6 @@
   </div>
 </section>
 
-<!-- KOLKATA LOCATIONS -->
-
-
 <!-- WHAT I OFFER -->
 <section class="offer-section">
   <div class="section-inner">
@@ -904,7 +812,6 @@
       <h2 class="offer-main-heading">Three ways to<br>work <em>together</em></h2>
     </div>
 
-    <!-- Cards -->
     <div class="offer-cards">
       <div class="offer-card-item">
         <span class="offer-num">01</span>
@@ -926,7 +833,6 @@
       </div>
     </div>
 
-    <!-- Photos -->
     <div class="offer-photos">
       <div class="offer-photo-item">
         <img src="https://shivamphotofarm.com/wp-content/uploads/2024/07/Day-1-IMG-1-2048x1367.jpg" alt="Tours and Workshops">
@@ -945,15 +851,14 @@
   </div>
 </section>
 
-
-
+<!-- WHERE I TAKE YOU — 3×2 GRID -->
 <section class="section" style="padding-top:0">
   <div class="section-inner">
     <p class="sec-label">Where I take you</p>
     <h2 class="sec-h">Kolkata, <em>location by location.</em></h2>
     <p class="sec-sub">Every tour is customised, but these are the spots I know most intimately — and return to again and again.</p>
 
-    <!-- Row 1 -->
+    <!-- Row 1 — 3 cards -->
     <div class="kolkata-locs">
       <div class="kloc">
         <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1005731-2.jpg" alt="Mullick Ghat Flower Market"></div>
@@ -976,6 +881,10 @@
           <p class="kloc-desc">Traditional pehelwans training in open-air akharas by the Ganges — with the bridge as backdrop.</p>
         </div>
       </div>
+    </div>
+
+    <!-- Row 2 — 3 cards -->
+    <div class="kolkata-locs-r2">
       <div class="kloc">
         <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/IMG_1948-2048x1365.jpg" alt="Koley Market"></div>
         <div class="kloc-body">
@@ -983,10 +892,6 @@
           <p class="kloc-desc">Mountains of produce, relentless energy, and light that makes every frame worth keeping.</p>
         </div>
       </div>
-    </div>
-
-    <!-- Row 2 -->
-    <div class="kolkata-locs-r2">
       <div class="kloc">
         <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1005830-2048x1360.jpg" alt="Sealdah Station"></div>
         <div class="kloc-body">
@@ -999,20 +904,6 @@
         <div class="kloc-body">
           <p class="kloc-name">Local Train Ride</p>
           <p class="kloc-desc">A 3-hour ride on Kolkata's local trains — the city's heartbeat, shared carriages, and intimate human moments in motion.</p>
-        </div>
-      </div>
-      <div class="kloc">
-        <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/DSC04035-2048x1365.jpg" alt="Meat & New Market"></div>
-        <div class="kloc-body">
-          <p class="kloc-name">Meat &amp; New Market</p>
-          <p class="kloc-desc">One of Kolkata's oldest commercial hubs — layers of trade, texture, and unpredictable encounters.</p>
-        </div>
-      </div>
-      <div class="kloc">
-        <div class="kloc-photo"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1006872-2048x1360.jpg" alt="North Kolkata Lanes"></div>
-        <div class="kloc-body">
-          <p class="kloc-name">North Kolkata Lanes</p>
-          <p class="kloc-desc">Tram-lined boulevards, crumbling colonial architecture, and lanes that hold a century of stories in every doorway.</p>
         </div>
       </div>
     </div>

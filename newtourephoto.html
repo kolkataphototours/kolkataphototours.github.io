@@ -29,7 +29,7 @@
   /* ── HERO ── */
   .hero{height:90vh;position:relative;overflow:hidden;display:flex;align-items:flex-end;border-bottom:1px solid var(--border)}
   .hero-bg{position:absolute;inset:0;background:#2a2218}
-  .hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.55}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center;opacity:.55}
   .hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,22,18,.9) 0%,rgba(26,22,18,.3) 45%,transparent 100%)}
   .hero-content{position:relative;z-index:1;padding:0 3rem 5rem;max-width:1100px;margin:0 auto;width:100%}
   .hero-eyebrow{font-family:var(--mono);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--amber-light);margin-bottom:1rem}
@@ -45,7 +45,15 @@
   /* ── KOLKATA STRIP ── */
   .kolkata-strip{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;height:340px;gap:3px;border-bottom:1px solid var(--border)}
   .kstrip-cell{background:#ccc8be;position:relative;overflow:hidden}
-  .kstrip-cell img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.85);transition:filter .3s}
+  .kstrip-cell img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center center;
+    display:block;
+    filter:brightness(.85);
+    transition:filter .3s;
+  }
   .kstrip-cell:hover img{filter:brightness(1)}
   .kstrip-label{position:absolute;bottom:0;left:0;right:0;padding:8px 12px;background:linear-gradient(transparent,rgba(26,22,18,.6));font-family:var(--mono);font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,240,232,.8)}
 
@@ -66,7 +74,7 @@
   .ki-heading em{font-style:italic;color:var(--amber)}
   .ki-body{font-size:1rem;font-weight:300;line-height:1.9;color:#3a3530;margin-bottom:1.2rem}
   .ki-photo{background:#ccc8be;position:relative;overflow:hidden;min-height:500px;border-left:1px solid var(--border)}
-  .ki-photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .ki-photo img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
 
   /* ── LOCATION CARDS ── */
   .kolkata-locs{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--border)}
@@ -75,7 +83,7 @@
   .kloc:last-child{border-right:none}
   .kloc:hover{background:var(--paper)}
   .kloc-photo{height:160px;background:#ccc8be;position:relative;overflow:hidden;border-bottom:1px solid var(--border)}
-  .kloc-photo img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.85);transition:filter .2s}
+  .kloc-photo img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;filter:brightness(.85);transition:filter .2s}
   .kloc:hover .kloc-photo img{filter:brightness(.95)}
   .kloc-body{padding:1.2rem 1.4rem 1.5rem}
   .kloc-name{font-family:var(--serif);font-size:1.1rem;font-weight:300;margin-bottom:.4rem}
@@ -102,7 +110,7 @@
   .india-card:last-child{border-right:none}
   .india-card:hover{background:var(--warm-white)}
   .ic-photo{height:220px;background:#ccc8be;position:relative;overflow:hidden;border-bottom:1px solid var(--border)}
-  .ic-photo img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.85);transition:filter .2s}
+  .ic-photo img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;filter:brightness(.85);transition:filter .2s}
   .india-card:hover .ic-photo img{filter:brightness(.95)}
   .ic-body{padding:1.8rem 2rem 2.2rem}
   .ic-tag{font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:.6rem}
@@ -122,7 +130,7 @@
   .gal-row-2w-n{grid-template-columns:1.5fr 1.5fr 1fr;height:260px}
   .gal-row-pano{grid-template-columns:1fr;height:340px}
   .g-cell{background:#1a1710;position:relative;overflow:hidden}
-  .g-cell img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.82);transition:filter .35s,transform .5s}
+  .g-cell img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;filter:brightness(.82);transition:filter .35s,transform .5s}
   .g-cell:hover img{filter:brightness(1);transform:scale(1.02)}
   .g-cap{position:absolute;bottom:0;left:0;right:0;padding:8px 14px;background:linear-gradient(transparent,rgba(26,22,18,.65));font-family:var(--mono);font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,240,232,.65);opacity:0;transition:opacity .25s}
   .g-cell:hover .g-cap{opacity:1}
@@ -207,11 +215,10 @@
   </div>
 </div>
 
-<!-- KOLKATA STRIP -->
-<!-- KOLKATA STRIP -->
+<!-- KOLKATA STRIP — 4 unique images, all centered -->
 <div class="kolkata-strip">
   <div class="kstrip-cell">
-    <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1000222-2048x1360.jpg" alt="Kolkata Street">
+    <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1000222-2048x1360.jpg" alt="Kolkata Street Life">
     <div class="kstrip-label">Kolkata · Street Life</div>
   </div>
   <div class="kstrip-cell">
@@ -221,6 +228,10 @@
   <div class="kstrip-cell">
     <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1008459-2.jpg" alt="Wrestlers Howrah Bridge">
     <div class="kstrip-label">Howrah · Wrestlers</div>
+  </div>
+  <div class="kstrip-cell">
+    <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/IMG_1948-2048x1365.jpg" alt="Koley Vegetable Market">
+    <div class="kstrip-label">Koley · Vegetable Market</div>
   </div>
 </div>
 
@@ -356,84 +367,36 @@
     <p class="gallery-sub">Every image here was made on the same streets I will take you to. This is what's possible.</p>
   </div>
 
-  <!-- Row 1 — 3 wide horizontals -->
   <div class="gal-row gal-row-3h">
-    <div class="g-cell">
-      <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1000222-2048x1360.jpg" alt="">
-      <div class="g-cap">Kolkata · Street</div>
-    </div>
-    <div class="g-cell">
-      <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1005731-2.jpg" alt="">
-      <div class="g-cap">Mullick Ghat · Flower Market</div>
-    </div>
-    <div class="g-cell">
-      <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1008459-2.jpg" alt="">
-      <div class="g-cap">Howrah · Wrestlers</div>
-    </div>
+    <div class="g-cell"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1000222-2048x1360.jpg" alt=""><div class="g-cap">Kolkata · Street</div></div>
+    <div class="g-cell"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1005731-2.jpg" alt=""><div class="g-cap">Mullick Ghat · Flower Market</div></div>
+    <div class="g-cell"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1008459-2.jpg" alt=""><div class="g-cap">Howrah · Wrestlers</div></div>
   </div>
 
-  <!-- Row 2 — very wide + vertical -->
   <div class="gal-row gal-row-wide-v">
-    <div class="g-cell">
-      <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1006872-2048x1360.jpg" alt="">
-      <div class="g-cap">Kolkata · North Lanes</div>
-    </div>
-    <div class="g-cell">
-      <img src="https://shivamphotofarm.com/wp-content/uploads/2024/07/Day-1-IMG-4-1-1367x2048.jpg" alt="">
-      <div class="g-cap">Kolkata · Portrait</div>
-    </div>
+    <div class="g-cell"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1006872-2048x1360.jpg" alt=""><div class="g-cap">Kolkata · North Lanes</div></div>
+    <div class="g-cell"><img src="https://shivamphotofarm.com/wp-content/uploads/2024/07/Day-1-IMG-4-1-1367x2048.jpg" alt=""><div class="g-cap">Kolkata · Portrait</div></div>
   </div>
 
-  <!-- Row 3 — 3 wide horizontals -->
   <div class="gal-row gal-row-3h">
-    <div class="g-cell">
-      <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1400369-2-2048x1365.jpg" alt="">
-      <div class="g-cap">Varanasi · Aarti</div>
-    </div>
-    <div class="g-cell">
-      <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/IMG_1948-2048x1365.jpg" alt="">
-      <div class="g-cap">Koley Market · Dawn</div>
-    </div>
-    <div class="g-cell">
-      <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1006562.jpg" alt="">
-      <div class="g-cap">Kolkata · Local Train</div>
-    </div>
+    <div class="g-cell"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1400369-2-2048x1365.jpg" alt=""><div class="g-cap">Varanasi · Aarti</div></div>
+    <div class="g-cell"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/IMG_1948-2048x1365.jpg" alt=""><div class="g-cap">Koley Market · Dawn</div></div>
+    <div class="g-cell"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1006562.jpg" alt=""><div class="g-cap">Kolkata · Local Train</div></div>
   </div>
 
-  <!-- Row 4 — vertical + very wide -->
   <div class="gal-row gal-row-v-wide">
-    <div class="g-cell">
-      <img src="https://shivamphotofarm.com/wp-content/uploads/2024/07/Day-1-IMG-5-1-1360x2048.jpg" alt="">
-      <div class="g-cap">Kumartuli · Craftsman</div>
-    </div>
-    <div class="g-cell">
-      <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1006103-2048x1360.jpg" alt="">
-      <div class="g-cap">Rajasthan · Pushkar Fair</div>
-    </div>
+    <div class="g-cell"><img src="https://shivamphotofarm.com/wp-content/uploads/2024/07/Day-1-IMG-5-1-1360x2048.jpg" alt=""><div class="g-cap">Kumartuli · Craftsman</div></div>
+    <div class="g-cell"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1006103-2048x1360.jpg" alt=""><div class="g-cap">Rajasthan · Pushkar Fair</div></div>
   </div>
 
-  <!-- Row 5 — 2 wide + 1 narrower -->
   <div class="gal-row gal-row-2w-n">
-    <div class="g-cell">
-      <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1005830-2048x1360.jpg" alt="">
-      <div class="g-cap">Varanasi · Ganges Sunrise</div>
-    </div>
-    <div class="g-cell">
-      <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1550217-2-2048x1365.jpg" alt="">
-      <div class="g-cap">Delhi · Old City</div>
-    </div>
-    <div class="g-cell">
-      <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/DSC04035-2048x1365.jpg" alt="">
-      <div class="g-cap">Kumartuli · Detail</div>
-    </div>
+    <div class="g-cell"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1005830-2048x1360.jpg" alt=""><div class="g-cap">Varanasi · Ganges Sunrise</div></div>
+    <div class="g-cell"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1550217-2-2048x1365.jpg" alt=""><div class="g-cap">Delhi · Old City</div></div>
+    <div class="g-cell"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/DSC04035-2048x1365.jpg" alt=""><div class="g-cap">Kumartuli · Detail</div></div>
   </div>
 
-  <!-- Row 6 — full-width panoramic -->
   <div class="gal-row gal-row-pano">
-    <div class="g-cell">
-      <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/Copy-of-L1003537-2048x1365.jpg" alt="">
-      <div class="g-cap">Kolkata · Howrah Bridge</div>
-    </div>
+    <div class="g-cell"><img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/Copy-of-L1003537-2048x1365.jpg" alt=""><div class="g-cap">Kolkata · Howrah Bridge</div></div>
   </div>
 </div>
 

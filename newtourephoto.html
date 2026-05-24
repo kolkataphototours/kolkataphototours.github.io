@@ -77,12 +77,12 @@
   .ki-photo img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
 
   /* ── LOCATION CARDS ── */
-  .kolkata-locs{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--border)}
+  .kolkata-locs{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--border);border-bottom:none}
   .kolkata-locs-r2{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--border);border-top:none}
-  .kloc{border-right:1px solid var(--border);text-decoration:none;color:inherit;display:block;transition:background .18s;border-bottom:1px solid var(--border)}
+  .kloc{border-right:1px solid var(--border);border-bottom:1px solid var(--border);text-decoration:none;color:inherit;display:block;transition:background .18s}
   .kloc:nth-child(3n){border-right:none}
   .kloc:hover{background:var(--paper)}
-  .kloc-photo{height:180px;background:#ccc8be;position:relative;overflow:hidden;border-bottom:1px solid var(--border)}
+  .kloc-photo{height:200px;background:#ccc8be;position:relative;overflow:hidden;border-bottom:1px solid var(--border)}
   .kloc-photo img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;filter:brightness(.85);transition:filter .2s}
   .kloc:hover .kloc-photo img{filter:brightness(.95)}
   .kloc-body{padding:1.2rem 1.4rem 1.5rem}

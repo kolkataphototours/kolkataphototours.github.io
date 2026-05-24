@@ -45,7 +45,15 @@
   /* ── KOLKATA STRIP ── */
   .kolkata-strip{display:grid;grid-template-columns:repeat(3,1fr);height:340px;gap:3px;border-bottom:1px solid var(--border)}
   .kstrip-cell{background:#ccc8be;position:relative;overflow:hidden}
-  .kstrip-cell img{width:100%;height:100%;object-fit:cover;object-position:center center;display:block;filter:brightness(.85);transition:filter .3s}
+  .kstrip-cell img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center center;
+    display:block;
+    filter:brightness(.85);
+    transition:filter .3s;
+  }
   .kstrip-cell:hover img{filter:brightness(1)}
   .kstrip-label{position:absolute;bottom:0;left:0;right:0;padding:8px 12px;background:linear-gradient(transparent,rgba(26,22,18,.6));font-family:var(--mono);font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,240,232,.8)}
 
@@ -103,6 +111,7 @@
   .v-author{display:flex;align-items:center;justify-content:space-between}
   .v-name{font-size:.9rem;font-weight:400;color:var(--warm-white);margin-bottom:.18rem}
   .v-origin{font-family:var(--mono);font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,240,232,.3)}
+  /* modal */
   .v-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:1000;align-items:center;justify-content:center}
   .v-modal.open{display:flex}
   .v-modal-inner{position:relative;width:90%;max-width:900px}
@@ -110,7 +119,7 @@
   .v-modal-close{position:absolute;top:-2.5rem;right:0;background:none;border:none;color:rgba(245,240,232,.6);font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:color .2s}
   .v-modal-close:hover{color:var(--warm-white)}
 
-  /* ── INDIA SECTION (existing 3-card) ── */
+  /* ── INDIA SECTION ── */
   .india-section{background:var(--paper)}
   .india-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border:1px solid var(--border)}
   .india-card{border-right:1px solid var(--border);text-decoration:none;color:inherit;display:block;transition:background .18s}
@@ -123,65 +132,6 @@
   .ic-tag{font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:.6rem}
   .ic-name{font-family:var(--serif);font-size:1.4rem;font-weight:300;margin-bottom:.6rem}
   .ic-desc{font-size:.85rem;font-weight:300;color:var(--muted);line-height:1.7}
-
-  /* ══════════════════════════════════════════
-     ── ACROSS INDIA — NEW SECTION ──
-  ══════════════════════════════════════════ */
-  .across-india{background:var(--warm-white);padding:5rem 3rem;border-bottom:1px solid var(--border)}
-  .across-india .section-inner{max-width:1100px;margin:0 auto}
-
-  /* Intro row: label + heading on left, body text on right */
-  .ai-intro{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-bottom:3.5rem;align-items:end}
-  .ai-intro-left{}
-  .ai-intro-right{padding-bottom:.4rem}
-  .ai-intro-body{font-size:.95rem;font-weight:300;color:var(--muted);line-height:1.8}
-
-  /* Featured row: big card left + 2 stacked right */
-  .ai-featured{display:grid;grid-template-columns:1.4fr 1fr;gap:0;border:1px solid var(--border);margin-bottom:0}
-  .ai-feat-main{position:relative;overflow:hidden;min-height:460px;border-right:1px solid var(--border);display:flex;flex-direction:column;justify-content:flex-end;background:#2a2218}
-  .ai-feat-main img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.65);transition:filter .4s}
-  .ai-feat-main:hover img{filter:brightness(.8)}
-  .ai-feat-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,22,18,.88) 0%,transparent 55%)}
-  .ai-feat-body{position:relative;z-index:1;padding:2rem 2.2rem}
-  .ai-feat-tag{font-family:var(--mono);font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--amber-light);margin-bottom:.6rem}
-  .ai-feat-name{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:300;color:var(--warm-white);line-height:1.1;margin-bottom:.7rem}
-  .ai-feat-name em{font-style:italic;color:var(--amber-light)}
-  .ai-feat-desc{font-size:.85rem;font-weight:300;color:rgba(245,240,232,.65);line-height:1.7;max-width:38ch}
-
-  .ai-side{display:flex;flex-direction:column}
-  .ai-side-card{flex:1;position:relative;overflow:hidden;min-height:230px;border-bottom:1px solid var(--border);display:flex;flex-direction:column;justify-content:flex-end;background:#2a2218;text-decoration:none;color:inherit}
-  .ai-side-card:last-child{border-bottom:none}
-  .ai-side-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.6);transition:filter .4s}
-  .ai-side-card:hover img{filter:brightness(.78)}
-  .ai-side-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,22,18,.85) 0%,transparent 60%)}
-  .ai-side-body{position:relative;z-index:1;padding:1.4rem 1.6rem}
-  .ai-side-tag{font-family:var(--mono);font-size:.54rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber-light);margin-bottom:.4rem}
-  .ai-side-name{font-family:var(--serif);font-size:1.3rem;font-weight:300;color:var(--warm-white);line-height:1.15;margin-bottom:.4rem}
-  .ai-side-desc{font-size:.78rem;font-weight:300;color:rgba(245,240,232,.55);line-height:1.6}
-
-  /* 3-col secondary grid below */
-  .ai-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--border);border-top:none}
-  .ai-card3{border-right:1px solid var(--border);text-decoration:none;color:inherit;display:block;transition:background .18s}
-  .ai-card3:last-child{border-right:none}
-  .ai-card3:hover{background:var(--paper)}
-  .ai-c3-photo{height:200px;background:#ccc8be;position:relative;overflow:hidden;border-bottom:1px solid var(--border)}
-  .ai-c3-photo img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;filter:brightness(.82);transition:filter .25s}
-  .ai-card3:hover .ai-c3-photo img{filter:brightness(.96)}
-  .ai-c3-body{padding:1.3rem 1.5rem 1.6rem}
-  .ai-c3-tag{font-family:var(--mono);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:.5rem}
-  .ai-c3-name{font-family:var(--serif);font-size:1.1rem;font-weight:300;margin-bottom:.4rem}
-  .ai-c3-desc{font-size:.8rem;font-weight:300;color:var(--muted);line-height:1.65}
-
-  /* Last solo wide card */
-  .ai-solo{border:1px solid var(--border);border-top:none;display:grid;grid-template-columns:1fr 2.2fr;text-decoration:none;color:inherit;transition:background .18s;min-height:200px}
-  .ai-solo:hover{background:var(--paper)}
-  .ai-solo-photo{background:#ccc8be;position:relative;overflow:hidden;border-right:1px solid var(--border)}
-  .ai-solo-photo img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;filter:brightness(.84);transition:filter .25s}
-  .ai-solo:hover .ai-solo-photo img{filter:brightness(.97)}
-  .ai-solo-body{padding:2rem 2.5rem;display:flex;flex-direction:column;justify-content:center}
-  .ai-solo-tag{font-family:var(--mono);font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin-bottom:.6rem}
-  .ai-solo-name{font-family:var(--serif);font-size:clamp(1.5rem,2.5vw,2rem);font-weight:300;line-height:1.15;margin-bottom:.7rem}
-  .ai-solo-desc{font-size:.88rem;font-weight:300;color:var(--muted);line-height:1.75;max-width:52ch}
 
   /* ── GALLERY ── */
   .gallery-section{background:#0d0d0d;padding:5rem 2.5rem;border-bottom:1px solid rgba(255,255,255,.06)}
@@ -196,6 +146,7 @@
   .g-cap{position:absolute;bottom:0;left:0;right:0;padding:8px 12px;background:linear-gradient(transparent,rgba(0,0,0,.75));font-family:var(--mono);font-size:.5rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,240,232,.7);opacity:0;transition:opacity .25s}
   .g-cell:hover .g-cap{opacity:1}
 
+  /* Gallery CTA */
   .gallery-cta{background:var(--ink);padding:3.5rem 3rem;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
   .gallery-cta-text{font-family:var(--serif);font-size:1.5rem;font-weight:300;font-style:italic;color:rgba(245,240,232,.8);max-width:44ch}
   .btn-amber{display:inline-block;background:var(--amber);color:var(--ink);font-family:var(--mono);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;padding:.9rem 2rem;transition:opacity .2s;font-weight:400;white-space:nowrap}
@@ -213,8 +164,7 @@
   .btn-ghost:hover{color:var(--ink);border-color:var(--ink)}
 
   footer{background:var(--ink);color:rgba(245,240,232,.5);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;border-top:1px solid rgba(255,255,255,.06);flex-wrap:wrap;gap:.8rem}
-  footer a{color:inherit;text-decoration:none}
-  footer a:hover{color:var(--amber-light)}
+  footer a{color:inherit;text-decoration:none} footer a:hover{color:var(--amber-light)}
 
   /* ── RESPONSIVE ── */
   @media(max-width:900px){
@@ -224,37 +174,18 @@
     .site-nav.open{display:flex}
     .site-nav a{margin-left:0;padding:.5rem 0;border-bottom:1px solid var(--border);width:100%}
     .site-nav a.nav-contact{margin-left:0;margin-top:.5rem;text-align:center}
-    .hero{height:60vh}.hero-content{padding:0 1.5rem 3rem}
-    .kolkata-strip{grid-template-columns:1fr 1fr;height:auto}.kstrip-cell{height:160px}
-    .kolkata-intro{grid-template-columns:1fr}.ki-photo{min-height:260px;border-left:none;border-top:1px solid var(--border)}
-    .kolkata-locs,.kolkata-locs-r2{grid-template-columns:1fr 1fr}.kloc:nth-child(3n){border-right:1px solid var(--border)}.kloc:nth-child(2n){border-right:none}
+    .hero{height:60vh} .hero-content{padding:0 1.5rem 3rem}
+    .kolkata-strip{grid-template-columns:1fr 1fr;height:auto} .kstrip-cell{height:160px}
+    .kolkata-intro{grid-template-columns:1fr} .ki-photo{min-height:260px;border-left:none;border-top:1px solid var(--border)}
+    .kolkata-locs,.kolkata-locs-r2{grid-template-columns:1fr 1fr} .kloc:nth-child(3n){border-right:1px solid var(--border)} .kloc:nth-child(2n){border-right:none}
     .v-grid{grid-template-columns:1fr}
-    .india-grid{grid-template-columns:1fr}.india-card{border-right:none;border-bottom:1px solid var(--border)}
+    .t-band-inner{grid-template-columns:1fr}
+    .india-grid{grid-template-columns:1fr} .india-card{border-right:none;border-bottom:1px solid var(--border)}
     .gal-grid{grid-template-columns:repeat(2,1fr)}
-    .section,.t-band,.cta-s,.gallery-section,.gallery-cta,.across-india{padding-left:1.5rem;padding-right:1.5rem}
+    .section,.t-band,.cta-s,.gallery-section,.gallery-cta{padding-left:1.5rem;padding-right:1.5rem}
     .gallery-header{padding:0 1.5rem 2rem}
     .site-header,footer{padding-left:1.5rem;padding-right:1.5rem}
     footer{flex-direction:column;align-items:flex-start}
-
-    /* Across India mobile */
-    .ai-intro{grid-template-columns:1fr;gap:1.2rem;margin-bottom:2rem}
-    .ai-featured{grid-template-columns:1fr}
-    .ai-feat-main{min-height:320px;border-right:none;border-bottom:1px solid var(--border)}
-    .ai-side{flex-direction:column}
-    .ai-side-card{min-height:200px}
-    .ai-grid3{grid-template-columns:1fr}
-    .ai-card3{border-right:none;border-bottom:1px solid var(--border)}
-    .ai-card3:last-child{border-bottom:none}
-    .ai-solo{grid-template-columns:1fr;min-height:auto}
-    .ai-solo-photo{height:220px;border-right:none;border-bottom:1px solid var(--border)}
-    .ai-solo-body{padding:1.5rem 1.5rem}
-  }
-
-  @media(max-width:600px){
-    .kolkata-strip{grid-template-columns:1fr}.kstrip-cell{height:200px}
-    .ki-text{padding:2rem 1.5rem}
-    .gal-grid{grid-template-columns:1fr 1fr}
-    .ai-side{flex-direction:column}
   }
 </style>
 </head>
@@ -290,12 +221,12 @@
     <p class="hero-sub">I've been on these streets for over a decade. Let me take you inside them.</p>
     <div class="hero-ctas">
       <a href="/contact/" class="btn-white">Book a Kolkata Photo Tour</a>
-      <a href="#across-india" class="btn-outline-white">Explore all of India</a>
+      <a href="#india" class="btn-outline-white">Explore all of India</a>
     </div>
   </div>
 </div>
 
-<!-- KOLKATA STRIP -->
+<!-- KOLKATA STRIP — 3 images, equal columns -->
 <div class="kolkata-strip">
   <div class="kstrip-cell">
     <img src="images/1 - Kolkata Photo Tour .jpg" alt="Kolkata Street Life">
@@ -323,7 +254,7 @@
         <a href="/contact/" class="btn-dark" style="display:inline-block;margin-top:1.5rem;">Book a Kolkata Photo Tour</a>
       </div>
       <div class="ki-photo">
-        <img src="images/4 - Kolkata Photo Tours  (2).jpg" alt="Kolkata">
+        <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1550217-2-2048x1365.jpg" alt="Shivam on the streets of Kolkata">
       </div>
     </div>
   </div>
@@ -394,6 +325,8 @@
     <p class="t-band-label">What clients say</p>
     <h2 class="t-band-heading">Hear it from the<br>photographers <em>themselves.</em></h2>
     <div class="v-grid">
+
+      <!-- Card 1 -->
       <div class="v-card">
         <div class="v-thumb" onclick="openVideo('VIDEO_ID_1')">
           <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1000222-2048x1360.jpg" alt="John testimonial">
@@ -402,9 +335,13 @@
         <div class="v-body">
           <p class="v-quote">"I had lost all drive after 17 years of photography. This changed in the first 3 days with Shivam. His dedication and focus on me as an individual is of the highest level."</p>
           <div class="v-divider"></div>
-          <div class="v-author"><div><p class="v-name">John</p><p class="v-origin">Australia</p></div></div>
+          <div class="v-author">
+            <div><p class="v-name">John</p><p class="v-origin">Australia</p></div>
+          </div>
         </div>
       </div>
+
+      <!-- Card 2 -->
       <div class="v-card">
         <div class="v-thumb" onclick="openVideo('VIDEO_ID_2')">
           <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1550217-2-2048x1365.jpg" alt="Bill testimonial">
@@ -413,9 +350,13 @@
         <div class="v-body">
           <p class="v-quote">"I was with Shivam for 12 days and got some of the best photos of my life. The logistics were flawless — and he is a wonderful human being."</p>
           <div class="v-divider"></div>
-          <div class="v-author"><div><p class="v-name">Bill</p><p class="v-origin">USA</p></div></div>
+          <div class="v-author">
+            <div><p class="v-name">Bill</p><p class="v-origin">USA</p></div>
+          </div>
         </div>
       </div>
+
+      <!-- Card 3 -->
       <div class="v-card">
         <div class="v-thumb" onclick="openVideo('VIDEO_ID_3')">
           <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1006872-2048x1360.jpg" alt="Steve testimonial">
@@ -424,9 +365,12 @@
         <div class="v-body">
           <p class="v-quote">"Shivam put in an amazing effort to give us all an experience of a lifetime. You truly are a great business partner and a lifelong friend."</p>
           <div class="v-divider"></div>
-          <div class="v-author"><div><p class="v-name">Steve Bowler</p><p class="v-origin">Australia</p></div></div>
+          <div class="v-author">
+            <div><p class="v-name">Steve Bowler</p><p class="v-origin">Australia</p></div>
+          </div>
         </div>
       </div>
+
     </div>
   </div>
 </div>
@@ -439,7 +383,21 @@
   </div>
 </div>
 
-<!-- INDIA SECTION (existing 3-card) -->
+<script>
+function openVideo(id) {
+  document.getElementById('vFrame').src = 'https://www.youtube.com/embed/' + id + '?autoplay=1';
+  document.getElementById('vModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeVideo(e) {
+  if (e && e.target !== document.getElementById('vModal') && !e.target.classList.contains('v-modal-close')) return;
+  document.getElementById('vFrame').src = '';
+  document.getElementById('vModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+</script>
+
+<!-- BEYOND KOLKATA — India -->
 <section class="section india-section" id="india">
   <div class="section-inner">
     <p class="sec-label">Beyond Kolkata</p>
@@ -459,140 +417,6 @@
         <div class="ic-body"><p class="ic-tag">High altitude · Jun–Sep best</p><p class="ic-name">Ladakh</p><p class="ic-desc">Monasteries at golden hour, monks in morning light, Pangong Tso and the Nubra Valley. A world unlike anywhere else in India.</p></div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════
-     ACROSS INDIA — NEW SECTION
-══════════════════════════════════════════ -->
-<section class="across-india" id="across-india">
-  <div class="section-inner">
-
-    <!-- Intro -->
-    <div class="ai-intro">
-      <div class="ai-intro-left">
-        <p class="sec-label">Where I take you · Across India</p>
-        <h2 class="sec-h">Every frame, a<br>different <em>India.</em></h2>
-      </div>
-      <div class="ai-intro-right">
-        <p class="ai-intro-body">Every location is customised, but these are the real ones I know most intimately — and return to again and again. From the spiritual ghats of Varanasi to the high-altitude monasteries of Ladakh, each destination offers a completely different visual world.</p>
-      </div>
-    </div>
-
-    <!-- Featured: Kolkata large + Varanasi & Rajasthan stacked -->
-    <div class="ai-featured">
-      <div class="ai-feat-main">
-        <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1000222-2048x1360.jpg" alt="Kolkata">
-        <div class="ai-feat-overlay"></div>
-        <div class="ai-feat-body">
-          <p class="ai-feat-tag">Home base · Year-round</p>
-          <h3 class="ai-feat-name">Kolkata —<br><em>my streets.</em></h3>
-          <p class="ai-feat-desc">A city that reveals itself in layers through light, texture, and human rhythm. Kolkata isn't about creating memories, but noticing them.</p>
-        </div>
-      </div>
-      <div class="ai-side">
-        <a href="#" class="ai-side-card">
-          <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1400369-2-2048x1365.jpg" alt="Varanasi">
-          <div class="ai-side-overlay"></div>
-          <div class="ai-side-body">
-            <p class="ai-side-tag">Spiritual core · Oct–Mar best</p>
-            <p class="ai-side-name">Varanasi</p>
-            <p class="ai-side-desc">Where life and death coexist on the ghats of the Ganges. The blue hour Aarti, ancient rituals, and narrow lanes full of sadhus.</p>
-          </div>
-        </a>
-        <a href="#" class="ai-side-card">
-          <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1006103-2048x1360.jpg" alt="Rajasthan">
-          <div class="ai-side-overlay"></div>
-          <div class="ai-side-body">
-            <p class="ai-side-tag">Colour & light · Oct–Feb best</p>
-            <p class="ai-side-name">Rajasthan</p>
-            <p class="ai-side-desc">Pushkar Camel Fair, desert forts, and bazaars that glow golden at dusk. India's most visually saturated region.</p>
-          </div>
-        </a>
-      </div>
-    </div>
-
-    <!-- 3-col grid: Agra, Delhi, Ladakh -->
-    <div class="ai-grid3">
-      <a href="#" class="ai-card3">
-        <div class="ai-c3-photo">
-          <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1005831-2048x1360.jpg" alt="Agra"
-               onerror="this.src='https://shivamphotofarm.com/wp-content/uploads/2025/08/L1005830-2048x1360.jpg'">
-        </div>
-        <div class="ai-c3-body">
-          <p class="ai-c3-tag">Monuments · Oct–Mar best</p>
-          <p class="ai-c3-name">Agra</p>
-          <p class="ai-c3-desc">The Taj Mahal at sunrise, the Fort at golden hour. Beyond the monuments, the city of Agra is full of symmetry, light and raw human presence.</p>
-        </div>
-      </a>
-      <a href="#" class="ai-card3">
-        <div class="ai-c3-photo">
-          <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1550217-2-2048x1365.jpg" alt="Delhi">
-        </div>
-        <div class="ai-c3-body">
-          <p class="ai-c3-tag">Historic & Modern · Year-round</p>
-          <p class="ai-c3-name">Delhi</p>
-          <p class="ai-c3-desc">Delhi is a city of contrasts — historic and modern, chaotic and composed. From Old Delhi's dense streets to quieter corners, it's endlessly surprising.</p>
-        </div>
-      </a>
-      <a href="#" class="ai-card3">
-        <div class="ai-c3-photo">
-          <img src="https://shivamphotofarm.com/wp-content/uploads/2025/07/IMG_9975-scaled.jpg" alt="Ladakh">
-        </div>
-        <div class="ai-c3-body">
-          <p class="ai-c3-tag">High altitude · Jun–Sep best</p>
-          <p class="ai-c3-name">Ladakh</p>
-          <p class="ai-c3-desc">Vast, minimal, and deeply still. Light and Ladakh's remote mountains and monasteries demand patience and awareness — photography here is about simplicity, space, and timing.</p>
-        </div>
-      </a>
-    </div>
-
-    <!-- 3-col grid row 2: Mumbai, Chennai, Nagaland -->
-    <div class="ai-grid3" style="border-top:none">
-      <a href="#" class="ai-card3">
-        <div class="ai-c3-photo">
-          <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/DSC04035-2048x1365.jpg" alt="Mumbai">
-        </div>
-        <div class="ai-c3-body">
-          <p class="ai-c3-tag">Maximum city · Year-round</p>
-          <p class="ai-c3-name">Mumbai</p>
-          <p class="ai-c3-desc">The city of Dharavi, Dhobi Ghat, and all of energy — always in motion. From early mornings at the docks to crowded trains, stories fold infinitely.</p>
-        </div>
-      </a>
-      <a href="#" class="ai-card3">
-        <div class="ai-c3-photo">
-          <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/IMG_1948-2048x1365.jpg" alt="Chennai">
-        </div>
-        <div class="ai-c3-body">
-          <p class="ai-c3-tag">South India · Oct–Feb best</p>
-          <p class="ai-c3-name">Chennai</p>
-          <p class="ai-c3-desc">Logical, analogue at its own pace, rooted in tradition yet absorbing everything. From temple rituals to street life, Chennai has a distinctive visual language.</p>
-        </div>
-      </a>
-      <a href="#" class="ai-card3">
-        <div class="ai-c3-photo">
-          <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1006872-2048x1360.jpg" alt="Nagaland">
-        </div>
-        <div class="ai-c3-body">
-          <p class="ai-c3-tag">Northeast India · Nov–Mar best</p>
-          <p class="ai-c3-name">Nagaland</p>
-          <p class="ai-c3-desc">Ancient identity, culture, and community. Villages, traditions, and daily life for rare photographic access to a world still little known.</p>
-        </div>
-      </a>
-    </div>
-
-    <!-- Solo wide: Festivals of India -->
-    <a href="#" class="ai-solo">
-      <div class="ai-solo-photo">
-        <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/Copy-of-L1003537-2048x1365.jpg" alt="Festivals of India">
-      </div>
-      <div class="ai-solo-body">
-        <p class="ai-solo-tag">Seasonal · Across India</p>
-        <p class="ai-solo-name">Festivals of India</p>
-        <p class="ai-solo-desc">India's festivals are intense, colourful, deeply emotional. From grand processions to fleeting human expressions — everything happens at once. Holi, Durga Puja, Diwali, Pushkar Fair — I plan around them.</p>
-      </div>
-    </a>
-
   </div>
 </section>
 
@@ -645,20 +469,6 @@
   <span>Shivam Pandey — Kolkata, India</span>
   <a href="https://www.instagram.com/shivam_photofarm" target="_blank" rel="noopener noreferrer">Instagram</a>
 </footer>
-
-<script>
-function openVideo(id) {
-  document.getElementById('vFrame').src = 'https://www.youtube.com/embed/' + id + '?autoplay=1';
-  document.getElementById('vModal').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeVideo(e) {
-  if (e && e.target !== document.getElementById('vModal') && !e.target.classList.contains('v-modal-close')) return;
-  document.getElementById('vFrame').src = '';
-  document.getElementById('vModal').classList.remove('open');
-  document.body.style.overflow = '';
-}
-</script>
 
 </body>
 </html>

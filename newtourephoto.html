@@ -89,19 +89,35 @@
   .kloc-name{font-family:var(--serif);font-size:1.1rem;font-weight:300;margin-bottom:.4rem}
   .kloc-desc{font-size:.8rem;font-weight:300;color:var(--muted);line-height:1.65}
 
-  /* ── TESTIMONIALS ── */
-  .t-band{background:var(--ink);padding:5rem 3rem;border-bottom:1px solid rgba(255,255,255,.06)}
-  .t-band-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border:1px solid rgba(255,255,255,.07)}
-  .t-card{padding:2.5rem 2.2rem;border-right:1px solid rgba(255,255,255,.07);display:flex;flex-direction:column}
-  .t-card:last-child{border-right:none}
-  .t-quote{font-family:var(--serif);font-size:1.1rem;font-style:italic;font-weight:300;color:rgba(245,240,232,.82);line-height:1.65;margin-bottom:1.5rem;flex:1}
-  .t-divider{width:20px;height:1px;background:var(--amber);opacity:.5;margin-bottom:1rem}
-  .t-author-row{display:flex;align-items:center;justify-content:space-between;gap:1rem}
-  .t-name{font-size:.9rem;font-weight:400;color:var(--warm-white);margin-bottom:.2rem}
-  .t-origin{font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,240,232,.3)}
-  .ig-link{display:flex;align-items:center;gap:5px;text-decoration:none;color:rgba(245,240,232,.3);transition:color .2s;flex-shrink:0}
-  .ig-link:hover{color:var(--amber-light)}
-  .ig-icon{width:16px;height:16px;flex-shrink:0}
+  /* ── VIDEO TESTIMONIALS ── */
+  .t-band{background:#111;padding:5rem 3rem;border-bottom:1px solid rgba(255,255,255,.06)}
+  .t-band-inner{max-width:1100px;margin:0 auto}
+  .t-band-label{font-family:var(--mono);font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--amber);margin-bottom:.8rem;display:flex;align-items:center;gap:.8rem}
+  .t-band-label::after{content:'';flex:1;max-width:60px;height:1px;background:var(--amber);opacity:.4}
+  .t-band-heading{font-family:var(--serif);font-size:clamp(2rem,3.5vw,2.6rem);font-weight:300;color:var(--warm-white);line-height:1.2;margin-bottom:3rem}
+  .t-band-heading em{font-style:italic;color:var(--amber-light)}
+  .v-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .v-card{background:#1a1814;border:1px solid rgba(255,255,255,.07);overflow:hidden;display:flex;flex-direction:column}
+  .v-thumb{position:relative;aspect-ratio:16/9;background:#0d0d0d;overflow:hidden;cursor:pointer}
+  .v-thumb img{width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.7);transition:filter .3s}
+  .v-thumb:hover img{filter:brightness(.9)}
+  .v-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+  .v-play-btn{width:52px;height:52px;background:rgba(196,122,42,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .2s,background .2s}
+  .v-thumb:hover .v-play-btn{transform:scale(1.1);background:var(--amber)}
+  .v-play-icon{width:0;height:0;border-style:solid;border-width:10px 0 10px 18px;border-color:transparent transparent transparent #fff;margin-left:4px}
+  .v-body{padding:1.5rem 1.6rem 1.8rem;display:flex;flex-direction:column;flex:1}
+  .v-quote{font-family:var(--serif);font-size:1rem;font-style:italic;font-weight:300;color:rgba(245,240,232,.78);line-height:1.7;margin-bottom:1.2rem;flex:1}
+  .v-divider{width:20px;height:1px;background:var(--amber);opacity:.5;margin-bottom:.9rem}
+  .v-author{display:flex;align-items:center;justify-content:space-between}
+  .v-name{font-size:.9rem;font-weight:400;color:var(--warm-white);margin-bottom:.18rem}
+  .v-origin{font-family:var(--mono);font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,240,232,.3)}
+  /* modal */
+  .v-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:1000;align-items:center;justify-content:center}
+  .v-modal.open{display:flex}
+  .v-modal-inner{position:relative;width:90%;max-width:900px}
+  .v-modal-inner iframe{width:100%;aspect-ratio:16/9;border:none;display:block}
+  .v-modal-close{position:absolute;top:-2.5rem;right:0;background:none;border:none;color:rgba(245,240,232,.6);font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:color .2s}
+  .v-modal-close:hover{color:var(--warm-white)}
 
   /* ── INDIA SECTION ── */
   .india-section{background:var(--paper)}
@@ -162,7 +178,8 @@
     .kolkata-strip{grid-template-columns:1fr 1fr;height:auto} .kstrip-cell{height:160px}
     .kolkata-intro{grid-template-columns:1fr} .ki-photo{min-height:260px;border-left:none;border-top:1px solid var(--border)}
     .kolkata-locs,.kolkata-locs-r2{grid-template-columns:1fr 1fr} .kloc:nth-child(3n){border-right:1px solid var(--border)} .kloc:nth-child(2n){border-right:none}
-    .t-band-inner{grid-template-columns:1fr} .t-card{border-right:none;border-bottom:1px solid rgba(255,255,255,.07)} .t-card:last-child{border-bottom:none}
+    .v-grid{grid-template-columns:1fr}
+    .t-band-inner{grid-template-columns:1fr}
     .india-grid{grid-template-columns:1fr} .india-card{border-right:none;border-bottom:1px solid var(--border)}
     .gal-grid{grid-template-columns:repeat(2,1fr)}
     .section,.t-band,.cta-s,.gallery-section,.gallery-cta{padding-left:1.5rem;padding-right:1.5rem}
@@ -306,41 +323,83 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
+<!-- VIDEO TESTIMONIALS -->
 <div class="t-band">
   <div class="t-band-inner">
-    <div class="t-card">
-      <p class="t-quote">"I personally spent 10 days with Shivam during my first visit to India. I had lost all drive and motivation after 17 years of photography. This changed in the first 3 days with this man. His drive, dedication, guidance and focus on me as an individual is of the highest level."</p>
-      <div class="t-divider"></div>
-      <div class="t-author-row">
-        <div><p class="t-name">John</p><p class="t-origin">Australia</p></div>
-        <a href="https://www.instagram.com/shivam_photofarm" target="_blank" class="ig-link" title="Instagram">
-          <svg class="ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        </a>
+    <p class="t-band-label">What clients say</p>
+    <h2 class="t-band-heading">Hear it from the<br>photographers <em>themselves.</em></h2>
+    <div class="v-grid">
+
+      <!-- Card 1 -->
+      <div class="v-card">
+        <div class="v-thumb" onclick="openVideo('VIDEO_ID_1')">
+          <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1000222-2048x1360.jpg" alt="John testimonial">
+          <div class="v-play"><div class="v-play-btn"><div class="v-play-icon"></div></div></div>
+        </div>
+        <div class="v-body">
+          <p class="v-quote">"I had lost all drive after 17 years of photography. This changed in the first 3 days with Shivam. His dedication and focus on me as an individual is of the highest level."</p>
+          <div class="v-divider"></div>
+          <div class="v-author">
+            <div><p class="v-name">John</p><p class="v-origin">Australia</p></div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="t-card">
-      <p class="t-quote">"I was with Shivam for 12 days and got some of the best photos of my life. He knew perfect locations with lots of activity to work with. The logistics were flawless — and he is a wonderful human being. I have just signed up to tour with him again in Varanasi."</p>
-      <div class="t-divider"></div>
-      <div class="t-author-row">
-        <div><p class="t-name">Bill</p><p class="t-origin">USA</p></div>
-        <a href="https://www.instagram.com/shivam_photofarm" target="_blank" class="ig-link" title="Instagram">
-          <svg class="ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        </a>
+
+      <!-- Card 2 -->
+      <div class="v-card">
+        <div class="v-thumb" onclick="openVideo('VIDEO_ID_2')">
+          <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1550217-2-2048x1365.jpg" alt="Bill testimonial">
+          <div class="v-play"><div class="v-play-btn"><div class="v-play-icon"></div></div></div>
+        </div>
+        <div class="v-body">
+          <p class="v-quote">"I was with Shivam for 12 days and got some of the best photos of my life. The logistics were flawless — and he is a wonderful human being."</p>
+          <div class="v-divider"></div>
+          <div class="v-author">
+            <div><p class="v-name">Bill</p><p class="v-origin">USA</p></div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="t-card">
-      <p class="t-quote">"Shivam put in an amazing effort to give us all an experience of a lifetime. I learnt so much — the photography technique and his philosophy, and the cultural experience. You truly are a great business partner and a lifelong friend."</p>
-      <div class="t-divider"></div>
-      <div class="t-author-row">
-        <div><p class="t-name">Steve Bowler</p><p class="t-origin">Australia</p></div>
-        <a href="https://www.instagram.com/shivam_photofarm" target="_blank" class="ig-link" title="Instagram">
-          <svg class="ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        </a>
+
+      <!-- Card 3 -->
+      <div class="v-card">
+        <div class="v-thumb" onclick="openVideo('VIDEO_ID_3')">
+          <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1006872-2048x1360.jpg" alt="Steve testimonial">
+          <div class="v-play"><div class="v-play-btn"><div class="v-play-icon"></div></div></div>
+        </div>
+        <div class="v-body">
+          <p class="v-quote">"Shivam put in an amazing effort to give us all an experience of a lifetime. You truly are a great business partner and a lifelong friend."</p>
+          <div class="v-divider"></div>
+          <div class="v-author">
+            <div><p class="v-name">Steve Bowler</p><p class="v-origin">Australia</p></div>
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
 </div>
+
+<!-- VIDEO MODAL -->
+<div class="v-modal" id="vModal" onclick="closeVideo(event)">
+  <div class="v-modal-inner">
+    <button class="v-modal-close" onclick="closeVideo()">✕ Close</button>
+    <iframe id="vFrame" src="" allowfullscreen allow="autoplay"></iframe>
+  </div>
+</div>
+
+<script>
+function openVideo(id) {
+  document.getElementById('vFrame').src = 'https://www.youtube.com/embed/' + id + '?autoplay=1';
+  document.getElementById('vModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeVideo(e) {
+  if (e && e.target !== document.getElementById('vModal') && !e.target.classList.contains('v-modal-close')) return;
+  document.getElementById('vFrame').src = '';
+  document.getElementById('vModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+</script>
 
 <!-- BEYOND KOLKATA — India -->
 <section class="section india-section" id="india">

@@ -77,12 +77,12 @@
   .ki-photo img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
 
   /* ── LOCATION CARDS ── */
-  .kolkata-locs{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--border)}
-  .kolkata-locs-r2{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--border);border-top:none}
-  .kloc{border-right:1px solid var(--border);text-decoration:none;color:inherit;display:block;transition:background .18s}
-  .kloc:last-child{border-right:none}
+  .kolkata-locs{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--border)}
+  .kolkata-locs-r2{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--border);border-top:none}
+  .kloc{border-right:1px solid var(--border);text-decoration:none;color:inherit;display:block;transition:background .18s;border-bottom:1px solid var(--border)}
+  .kloc:nth-child(3n){border-right:none}
   .kloc:hover{background:var(--paper)}
-  .kloc-photo{height:160px;background:#ccc8be;position:relative;overflow:hidden;border-bottom:1px solid var(--border)}
+  .kloc-photo{height:180px;background:#ccc8be;position:relative;overflow:hidden;border-bottom:1px solid var(--border)}
   .kloc-photo img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;filter:brightness(.85);transition:filter .2s}
   .kloc:hover .kloc-photo img{filter:brightness(.95)}
   .kloc-body{padding:1.2rem 1.4rem 1.5rem}
@@ -166,7 +166,7 @@
     .hero{height:60vh} .hero-content{padding:0 1.5rem 3rem}
     .kolkata-strip{grid-template-columns:1fr 1fr;height:auto} .kstrip-cell{height:160px}
     .kolkata-intro{grid-template-columns:1fr} .ki-photo{min-height:260px;border-left:none;border-top:1px solid var(--border)}
-    .kolkata-locs,.kolkata-locs-r2{grid-template-columns:1fr 1fr} .kloc:nth-child(2n){border-right:none} .kloc{border-bottom:1px solid var(--border)}
+    .kolkata-locs,.kolkata-locs-r2{grid-template-columns:1fr 1fr} .kloc:nth-child(3n){border-right:1px solid var(--border)} .kloc:nth-child(2n){border-right:none}
     .t-band-inner{grid-template-columns:1fr} .t-card{border-right:none;border-bottom:1px solid rgba(255,255,255,.07)} .t-card:last-child{border-bottom:none}
     .india-grid{grid-template-columns:1fr} .india-card{border-right:none;border-bottom:1px solid var(--border)}
     .gal-row-3h,.gal-row-wide-v,.gal-row-v-wide,.gal-row-2w-n,.gal-row-pano{grid-template-columns:1fr 1fr;height:auto}
@@ -216,19 +216,22 @@
 </div>
 
 <!-- KOLKATA STRIP — 4 unique images, all centered -->
-<!-- KOLKATA STRIP — 3 images, 3-column grid -->
-<div class="kolkata-strip" style="grid-template-columns: 1fr 1fr 1fr;">
+<div class="kolkata-strip">
   <div class="kstrip-cell">
-    <img src="images/1 - Kolkata Photo Tour .jpg" alt="Kolkata">
+    <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1000222-2048x1360.jpg" alt="Kolkata Street Life">
     <div class="kstrip-label">Kolkata · Street Life</div>
   </div>
   <div class="kstrip-cell">
-    <img src="images/2 - Kolkata Photo Tour.jpg" alt="Kolkata">
+    <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1005731-2.jpg" alt="Mullick Ghat Flower Market">
     <div class="kstrip-label">Mullick Ghat · Flower Market</div>
   </div>
   <div class="kstrip-cell">
-    <img src="images/3 - Kolkata Photo Tour.jpg" alt="Kolkata">
+    <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/L1008459-2.jpg" alt="Wrestlers Howrah Bridge">
     <div class="kstrip-label">Howrah · Wrestlers</div>
+  </div>
+  <div class="kstrip-cell">
+    <img src="https://shivamphotofarm.com/wp-content/uploads/2025/08/IMG_1948-2048x1365.jpg" alt="Koley Vegetable Market">
+    <div class="kstrip-label">Koley · Vegetable Market</div>
   </div>
 </div>
 
@@ -258,7 +261,7 @@
     <p class="sec-sub">Every tour is customised, but these are the spots I know most intimately — and return to again and again.</p>
     <div class="kolkata-locs">
       <div class="kloc">
-        <div class="kloc-photo"><img src="images/Kumaartuli .JPG" alt="Kumaartuli"></div>
+        <div class="kloc-photo"><img src="images/Kumaartuli .JPG" alt="Kumartuli"></div>
         <div class="kloc-body"><p class="kloc-name">Kumartuli</p><p class="kloc-desc">At Kumartuli, clay transforms into divinity. Narrow lanes filled with artisans, textures, and unfinished expressions make this a deeply intimate storytelling space before the festival begins.</p></div>
       </div>
       <div class="kloc">
@@ -267,48 +270,43 @@
       </div>
       <div class="kloc">
         <div class="kloc-photo"><img src="images/Local Kolkata Train ride.jpg" alt="Kolkata"></div>
-        <div class="kloc-body"><p class="kloc-name">Local Train Ride</p><p class="kloc-desc"> The Kolkata local trains are more than transport—they are moving narratives. From fleeting gestures at station stops to layered compositions inside compartments, every second demands awareness.</p></div>
+        <div class="kloc-body"><p class="kloc-name">Local Train Ride</p><p class="kloc-desc">The Kolkata local trains are more than transport—they are moving narratives. From fleeting gestures at station stops to layered compositions inside compartments, every second demands awareness.</p></div>
       </div>
       <div class="kloc">
         <div class="kloc-photo"><img src="images/Colonial Kolkata (1).jpg" alt="Kolkata"></div>
         <div class="kloc-body"><p class="kloc-name">Colonial Calcutta Streets</p><p class="kloc-desc">In the old quarters of Kolkata, time lingers in fading facades and colonial architecture. Light, shadow, and solitary figures create frames that feel both cinematic and timeless.</p></div>
       </div>
-    </div>
-    <div class="kolkata-locs-r2">
       <div class="kloc">
         <div class="kloc-photo"><img src="images/Ghats of Kolkata (1).jpg" alt="Kolkata"></div>
-        <div class="kloc-body"><p class="kloc-name">Ganga Ghat</p><p class="kloc-desc"> Along the banks of the Hooghly River Ghats, life flows quietly. Rituals, reflections, and soft morning light offer moments of stillness within the city’s chaos</p></div>
+        <div class="kloc-body"><p class="kloc-name">Ganga Ghat</p><p class="kloc-desc">Along the banks of the Hooghly River Ghats, life flows quietly. Rituals, reflections, and soft morning light offer moments of stillness within the city's chaos.</p></div>
       </div>
       <div class="kloc">
         <div class="kloc-photo"><img src="images/North Kolkata Lanes.jpg" alt="Kolkata"></div>
-        <div class="kloc-body"><p class="kloc-name">North Kolkata Lanes</p><p class="kloc-desc"> North Kolkata is where stories live in layers—crumbling mansions, intimate alleys, and everyday life unfolding slowly. It’s about patience, observation, and discovering poetry in the ordinary.
-</p></div>
+        <div class="kloc-body"><p class="kloc-name">North Kolkata Lanes</p><p class="kloc-desc">North Kolkata is where stories live in layers—crumbling mansions, intimate alleys, and everyday life unfolding slowly. It's about patience, observation, and discovering poetry in the ordinary.</p></div>
       </div>
       <div class="kloc">
         <div class="kloc-photo"><img src="images/Howrah Bridge .jpg" alt="Kolkata"></div>
-        <div class="kloc-body"><p class="kloc-name">Howrah Bridge</p><p class="kloc-desc"> At Howrah Bridge, the city pulses at full intensity. Endless human movement, shifting light, and scale come together to challenge both timing and composition.</p></div>
+        <div class="kloc-body"><p class="kloc-name">Howrah Bridge</p><p class="kloc-desc">At Howrah Bridge, the city pulses at full intensity. Endless human movement, shifting light, and scale come together to challenge both timing and composition.</p></div>
       </div>
       <div class="kloc">
         <div class="kloc-photo"><img src="images/Wrestlers of Kolkata .jpg" alt="Kolkata"></div>
-        <div class="kloc-body"><p class="kloc-name">Wrestlers of Kolkata</p><p class="kloc-desc"> In traditional akharas, the wrestlers embody discipline and heritage. The interplay of sweat, light, and raw emotion offers powerful, intimate storytelling opportunities.</p></div>
+        <div class="kloc-body"><p class="kloc-name">Wrestlers of Kolkata</p><p class="kloc-desc">In traditional akharas, the wrestlers embody discipline and heritage. The interplay of sweat, light, and raw emotion offers powerful, intimate storytelling opportunities.</p></div>
       </div>
       <div class="kloc">
         <div class="kloc-photo"><img src="images/Fish and Meat Market (1).jpg" alt="Kolkata"></div>
-        <div class="kloc-body"><p class="kloc-name">Fish and Meat Market</p><p class="kloc-desc">  This is where Kolkata’s raw energy is most unfiltered. Texture, movement, and human interaction collide—pushing you to work instinctively and embrace discomfort in your frames.</p></div>
+        <div class="kloc-body"><p class="kloc-name">Fish and Meat Market</p><p class="kloc-desc">This is where Kolkata's raw energy is most unfiltered. Texture, movement, and human interaction collide—pushing you to work instinctively and embrace discomfort in your frames.</p></div>
       </div>
       <div class="kloc">
         <div class="kloc-photo"><img src="images/Flower Market (1).jpg" alt="Kolkata"></div>
-        <div class="kloc-body"><p class="kloc-name">Flower Market</p><p class="kloc-desc"> Beneath the bridge, the Mullick Ghat Flower Market bursts with colour and energy. It’s a playground for layers, repetition, and decisive moments in tight spaces.</p></div>
+        <div class="kloc-body"><p class="kloc-name">Flower Market</p><p class="kloc-desc">Beneath the bridge, the Mullick Ghat Flower Market bursts with colour and energy. It's a playground for layers, repetition, and decisive moments in tight spaces.</p></div>
       </div>
-
-       <div class="kloc">
+      <div class="kloc">
         <div class="kloc-photo"><img src="images/College Street.jpg" alt="Kolkata"></div>
-        <div class="kloc-body"><p class="kloc-name">College Street</p><p class="kloc-desc"> At College Street, knowledge and nostalgia coexist. Bookstalls, students, and quiet conversations create layered scenes rich with character and depth.</p></div>
+        <div class="kloc-body"><p class="kloc-name">College Street</p><p class="kloc-desc">At College Street, knowledge and nostalgia coexist. Bookstalls, students, and quiet conversations create layered scenes rich with character and depth.</p></div>
       </div>
-
-       <div class="kloc">
+      <div class="kloc">
         <div class="kloc-photo"><img src="images/Durga Puja (1).jpg" alt="Kolkata"></div>
-        <div class="kloc-body"><p class="kloc-name">Durga Puja</p><p class="kloc-desc"> During Durga Puja, the city transforms into a living canvas. Emotion, devotion, and spectacle come together offering endless moments that demand both sensitivity and timing.</p></div>
+        <div class="kloc-body"><p class="kloc-name">Durga Puja</p><p class="kloc-desc">During Durga Puja, the city transforms into a living canvas. Emotion, devotion, and spectacle come together offering endless moments that demand both sensitivity and timing.</p></div>
       </div>
     </div>
   </div>

@@ -101,6 +101,16 @@
   .video-origin { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.6rem; }
   .video-snippet { font-family: var(--serif); font-size: 0.95rem; font-style: italic; font-weight: 300; color: var(--muted); line-height: 1.55; }
 
+  /* VIDEO MODAL */
+  .video-modal-overlay { display: none; position: fixed; inset: 0; background: rgba(10,8,6,0.92); z-index: 1000; align-items: center; justify-content: center; padding: 2rem; }
+  .video-modal-overlay.open { display: flex; animation: fadeIn 0.2s ease; }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .video-modal-box { position: relative; width: 100%; max-width: 860px; background: var(--ink); box-shadow: 0 40px 80px rgba(0,0,0,0.6); }
+  .video-modal-box iframe { display: block; width: 100%; aspect-ratio: 16/9; border: none; }
+  .modal-close { position: absolute; top: -2.4rem; right: 0; background: none; border: none; cursor: pointer; font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(245,240,232,0.5); display: flex; align-items: center; gap: 0.5rem; transition: color 0.2s; }
+  .modal-close:hover { color: var(--amber-light); }
+  .modal-close svg { width: 14px; height: 14px; }
+
   .collab-quote-section { background: var(--ink); padding: 5rem 3rem; }
   .collab-quote-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; align-items: center; }
   .collab-label { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--amber-light); margin-bottom: 1.2rem; }
@@ -226,7 +236,7 @@
 
     <div class="video-grid" style="grid-template-columns: repeat(2, 1fr);">
       <!-- Video 1: Thomas W. -->
-      <a class="video-card" href="https://www.youtube.com/watch?v=qa7WpNI8p6M" target="_blank" rel="noopener">
+      <div class="video-card" data-video-id="qa7WpNI8p6M" onclick="openVideoModal(this)">
         <div class="video-thumb">
           <img src="https://img.youtube.com/vi/qa7WpNI8p6M/maxresdefault.jpg" alt="Thomas W. Review">
           <div class="video-overlay"><div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="#f5f0e8"><path d="M8 5v14l11-7z"/></svg></div></div>
@@ -236,9 +246,9 @@
           <p class="video-origin">Germany · Kolkata Workshop 2024</p>
           <p class="video-snippet">"I didn't expect to leave with both great images and a completely different way of seeing..."</p>
         </div>
-      </a>
+      </div>
       <!-- Video 2: Priya S. -->
-      <a class="video-card" href="https://www.youtube.com/watch?v=yJXpGTBYKXs" target="_blank" rel="noopener" style="border-right: none;">
+      <div class="video-card" data-video-id="yJXpGTBYKXs" onclick="openVideoModal(this)" style="border-right: none;">
         <div class="video-thumb">
           <img src="https://img.youtube.com/vi/yJXpGTBYKXs/maxresdefault.jpg" alt="Priya S. Review">
           <div class="video-overlay"><div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="#f5f0e8"><path d="M8 5v14l11-7z"/></svg></div></div>
@@ -248,12 +258,12 @@
           <p class="video-origin">Singapore · Private Tour 2024</p>
           <p class="video-snippet">"Shivam has a rare gift — he makes India feel like home even on your first visit..."</p>
         </div>
-      </a>
+      </div>
     </div>
 
     <div class="video-grid-row2" style="grid-template-columns: repeat(2, 1fr);">
       <!-- Video 3: Paul G. -->
-      <a class="video-card" href="https://www.youtube.com/watch?v=npNfn5wOa7w&list=PLSMrYtaOv1-qX4XrHXA23bLK7wp3KIcyV&index=7" target="_blank" rel="noopener">
+      <div class="video-card" data-video-id="npNfn5wOa7w" onclick="openVideoModal(this)">
         <div class="video-thumb">
           <img src="https://img.youtube.com/vi/npNfn5wOa7w/maxresdefault.jpg" alt="Paul G. Review">
           <div class="video-overlay"><div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="#f5f0e8"><path d="M8 5v14l11-7z"/></svg></div></div>
@@ -263,9 +273,9 @@
           <p class="video-origin">France · Varanasi Workshop 2023</p>
           <p class="video-snippet">"Every morning I woke up excited. That almost never happens on a photography trip..."</p>
         </div>
-      </a>
+      </div>
       <!-- Video 4: Anna L. -->
-      <a class="video-card" href="https://www.youtube.com/watch?v=QL9rqX02xkU&list=PLSMrYtaOv1-qX4XrHXA23bLK7wp3KIcyV&index=5" target="_blank" rel="noopener" style="border-right: none;">
+      <div class="video-card" data-video-id="QL9rqX02xkU" onclick="openVideoModal(this)" style="border-right: none;">
         <div class="video-thumb">
           <img src="https://img.youtube.com/vi/QL9rqX02xkU/maxresdefault.jpg" alt="Anna L. Review">
           <div class="video-overlay"><div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="#f5f0e8"><path d="M8 5v14l11-7z"/></svg></div></div>
@@ -275,7 +285,7 @@
           <p class="video-origin">Netherlands · Kolkata Tour 2024</p>
           <p class="video-snippet">"The editing session at the end was worth the trip alone — honest, specific, transformative..."</p>
         </div>
-      </a>
+      </div>
     </div>
   </div>
 </section>
@@ -374,7 +384,7 @@
 
     <div class="video-grid" style="grid-template-columns: repeat(2, 1fr);">
       <!-- Marcus H. -->
-      <a class="video-card" href="https://www.youtube.com/watch?v=5jiSX-V0Kek&list=PLSMrYtaOv1-qX4XrHXA23bLK7wp3KIcyV&index=11" target="_blank" rel="noopener">
+      <div class="video-card" data-video-id="5jiSX-V0Kek" onclick="openVideoModal(this)">
         <div class="video-thumb">
           <img src="https://img.youtube.com/vi/5jiSX-V0Kek/maxresdefault.jpg" alt="Marcus H. Review">
           <div class="video-overlay"><div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="#f5f0e8"><path d="M8 5v14l11-7z"/></svg></div></div>
@@ -384,9 +394,9 @@
           <p class="video-origin">USA · Varanasi Workshop 2024</p>
           <p class="video-snippet">"Shivam's knowledge of light and timing is extraordinary. He knew exactly where to be..."</p>
         </div>
-      </a>
+      </div>
       <!-- Sophie R. -->
-      <a class="video-card" href="https://www.youtube.com/watch?v=if66Fk1MaMk&list=PLSMrYtaOv1-qX4XrHXA23bLK7wp3KIcyV&index=10" target="_blank" rel="noopener" style="border-right: none;">
+      <div class="video-card" data-video-id="if66Fk1MaMk" onclick="openVideoModal(this)" style="border-right: none;">
         <div class="video-thumb">
           <img src="https://img.youtube.com/vi/if66Fk1MaMk/maxresdefault.jpg" alt="Sophie R. Review">
           <div class="video-overlay"><div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="#f5f0e8"><path d="M8 5v14l11-7z"/></svg></div></div>
@@ -396,7 +406,7 @@
           <p class="video-origin">UK · Kolkata Private Tour 2024</p>
           <p class="video-snippet">"The access Shivam provides is unmatched. Streets I'd never have found on my own..."</p>
         </div>
-      </a>
+      </div>
     </div>
   </div>
 </section>
@@ -472,6 +482,37 @@
   <span>Shivam Pandey — Kolkata, India</span>
   <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
 </footer>
+
+<!-- VIDEO MODAL -->
+<div class="video-modal-overlay" id="videoModal" onclick="closeVideoModal(event)">
+  <div class="video-modal-box">
+    <button class="modal-close" onclick="closeVideoModal()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      Close
+    </button>
+    <iframe id="modalIframe" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+</div>
+
+<script>
+  function openVideoModal(el) {
+    const videoId = el.getAttribute('data-video-id');
+    document.getElementById('modalIframe').src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
+    document.getElementById('videoModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeVideoModal(e) {
+    if (e && e.target !== document.getElementById('videoModal') && !e.target.closest('.modal-close')) return;
+    document.getElementById('modalIframe').src = '';
+    document.getElementById('videoModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeVideoModal();
+  });
+</script>
 
 </body>
 </html>

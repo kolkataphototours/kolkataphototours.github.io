@@ -27,6 +27,7 @@
 
   body { background: var(--warm-white); color: var(--ink); font-family: var(--sans); font-weight: 300; line-height: 1.8; min-height: 100vh; }
 
+  /* ── HEADER ── */
   .site-header { display: flex; justify-content: space-between; align-items: center; padding: 1.4rem 3rem; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--warm-white); z-index: 100; }
   .logo { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); text-decoration: none; white-space: nowrap; }
   nav { display: flex; align-items: center; flex-wrap: wrap; }
@@ -40,6 +41,7 @@
   .mobile-nav a:hover, .mobile-nav a.active { color: var(--amber); }
   .mobile-nav.open { display: flex; }
 
+  /* ── HERO ── */
   .hero { padding: 6rem 3rem 5rem; border-bottom: 1px solid var(--border); background: var(--ink); position: relative; overflow: hidden; }
   .hero::before { content: ''; position: absolute; inset: 0; background: url('https://www.kolkataphototours.com/images/streets.jpg') center/cover no-repeat; opacity: 0.2; }
   .hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; position: relative; }
@@ -55,6 +57,7 @@
   .stat-text { font-size: 0.88rem; font-weight: 300; color: rgba(245,240,232,0.6); line-height: 1.5; }
   .stat-text strong { display: block; font-weight: 400; color: var(--warm-white); margin-bottom: 0.1rem; font-size: 0.92rem; }
 
+  /* ── SECTIONS ── */
   .section { padding: 5rem 3rem; border-bottom: 1px solid var(--border); }
   .section-inner { max-width: 1100px; margin: 0 auto; }
   .section-label { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--amber); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem; }
@@ -63,6 +66,7 @@
   .section-heading em { font-style: italic; color: var(--amber); }
   .section-sub { font-size: 0.95rem; font-weight: 300; color: var(--muted); margin-bottom: 3rem; max-width: 56ch; line-height: 1.7; }
 
+  /* ── FEATURED REVIEW ── */
   .featured-review { background: var(--ink); padding: 3.5rem 4rem; margin-bottom: 3px; display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: center; }
   .author-initials { width: 64px; height: 64px; border: 1px solid rgba(232,168,74,0.35); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1.4rem; color: var(--amber-light); margin-bottom: 1rem; }
   .author-name { font-family: var(--serif); font-size: 1.1rem; font-weight: 300; color: var(--warm-white); margin-bottom: 0.2rem; }
@@ -70,10 +74,11 @@
   .author-tour { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber-light); opacity: 0.7; }
   .featured-quote { font-family: var(--serif); font-size: 1.5rem; font-style: italic; font-weight: 300; color: rgba(245,240,232,0.88); line-height: 1.55; border-left: 2px solid var(--amber); padding-left: 2rem; }
 
-  .reviews-grid, .reviews-grid-row2 { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--border); }
-  .reviews-grid-row2 { border-top: none; }
+  /* ── REVIEW CARDS ── */
+  .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--border); }
+  .reviews-grid-row2 { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--border); border-top: none; }
   .review-card { padding: 2.2rem 2rem; border-right: 1px solid var(--border); display: flex; flex-direction: column; }
-  .review-card:last-child, .review-card-placeholder:last-child { border-right: none; }
+  .review-card:nth-child(3n) { border-right: none; }
   .review-stars { display: flex; gap: 3px; margin-bottom: 1rem; }
   .star { width: 10px; height: 10px; background: var(--amber); clip-path: polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%); }
   .review-quote { font-family: var(--serif); font-size: 1.1rem; font-style: italic; font-weight: 300; line-height: 1.6; color: var(--ink); flex: 1; margin-bottom: 1.5rem; }
@@ -81,15 +86,23 @@
   .review-author-name { font-size: 0.88rem; font-weight: 400; color: var(--ink); margin-bottom: 0.2rem; }
   .review-author-meta { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
   .review-tour-tag { display: inline-block; margin-top: 0.6rem; font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber); border: 1px solid rgba(196,122,42,0.25); padding: 3px 8px; }
-  .review-card-placeholder { padding: 2.2rem 2rem; border-right: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.8rem; min-height: 220px; background: rgba(26,22,18,0.02); }
-  .placeholder-text { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); text-align: center; line-height: 1.8; opacity: 0.5; }
 
+  /* ── VIDEO SECTION ── */
   .video-section { background: var(--paper); }
-  .video-grid, .video-grid-row2 { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--border); }
-  .video-grid-row2 { border-top: none; }
+
+  /* 2-column video grid */
+  .video-grid-2col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border: 1px solid var(--border);
+  }
+  .video-grid-2col + .video-grid-2col { border-top: none; }
+
   .video-card { border-right: 1px solid var(--border); text-decoration: none; color: inherit; display: block; transition: background 0.2s; cursor: pointer; }
   .video-card:hover { background: rgba(26,22,18,0.03); }
-  .video-card:last-child, .video-placeholder:last-child { border-right: none; }
+  /* Remove right border from last card in each row */
+  .video-grid-2col .video-card:nth-child(2n) { border-right: none; }
+
   .video-thumb { aspect-ratio: 16/9; background: #2a2420; position: relative; overflow: hidden; }
   .video-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.7); transition: filter 0.3s; }
   .video-card:hover .video-thumb img { filter: brightness(0.88); }
@@ -101,7 +114,7 @@
   .video-origin { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.6rem; }
   .video-snippet { font-family: var(--serif); font-size: 0.95rem; font-style: italic; font-weight: 300; color: var(--muted); line-height: 1.55; }
 
-  /* VIDEO MODAL */
+  /* ── VIDEO MODAL ── */
   .video-modal-overlay { display: none; position: fixed; inset: 0; background: rgba(10,8,6,0.92); z-index: 1000; align-items: center; justify-content: center; padding: 2rem; }
   .video-modal-overlay.open { display: flex; animation: fadeIn 0.2s ease; }
   @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -111,6 +124,7 @@
   .modal-close:hover { color: var(--amber-light); }
   .modal-close svg { width: 14px; height: 14px; }
 
+  /* ── COLLABORATOR QUOTE ── */
   .collab-quote-section { background: var(--ink); padding: 5rem 3rem; }
   .collab-quote-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; align-items: center; }
   .collab-label { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--amber-light); margin-bottom: 1.2rem; }
@@ -118,18 +132,7 @@
   .collab-role { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,240,232,0.35); }
   .collab-blockquote { font-family: var(--serif); font-size: 1.45rem; font-style: italic; font-weight: 300; color: rgba(245,240,232,0.82); line-height: 1.6; padding-left: 2.5rem; border-left: 2px solid var(--amber); }
 
-  .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
-  .gallery-cell { background: #2a2420; position: relative; overflow: hidden; aspect-ratio: 3/2; }
-  .gallery-cell img { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.85); transition: filter 0.35s, transform 0.35s; }
-  .gallery-cell:hover img { filter: brightness(1.02); transform: scale(1.04); }
-  .gc-tall { grid-row: span 2; aspect-ratio: unset; }
-  .gc-wide { grid-column: span 2; }
-  .gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 10px 14px; background: linear-gradient(transparent, rgba(26,22,18,0.72)); font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,240,232,0.85); opacity: 0; transition: opacity 0.25s; }
-  .gallery-cell:hover .gallery-caption { opacity: 1; }
-  .gallery-note { margin-top: 1.5rem; padding: 1.2rem 1.8rem; border: 1px solid rgba(196,122,42,0.2); background: rgba(196,122,42,0.04); display: flex; align-items: flex-start; gap: 1rem; }
-  .gallery-note-text { font-size: 0.85rem; font-weight: 300; color: var(--muted); line-height: 1.7; }
-  .gallery-note-text strong { font-weight: 400; color: var(--ink); }
-
+  /* ── CTA ── */
   .cta-section { text-align: center; padding: 7rem 3rem; background: var(--paper); }
   .cta-heading { font-family: var(--serif); font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 300; line-height: 1.15; margin-bottom: 1.2rem; }
   .cta-heading em { font-style: italic; color: var(--amber); }
@@ -140,10 +143,12 @@
   .btn-ghost { display: inline-block; color: var(--muted); font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; padding: 0.9rem 0; border-bottom: 1px solid var(--muted); transition: color 0.2s, border-color 0.2s; }
   .btn-ghost:hover { color: var(--ink); border-color: var(--ink); }
 
+  /* ── FOOTER ── */
   footer { background: var(--ink); color: rgba(245,240,232,0.5); padding: 2rem 3rem; display: flex; justify-content: space-between; align-items: center; font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; flex-wrap: wrap; gap: 1rem; }
   footer a { color: inherit; text-decoration: none; }
   footer a:hover { color: var(--amber-light); }
 
+  /* ── RESPONSIVE ── */
   @media (max-width: 960px) {
     .site-header { padding: 1.2rem 1.5rem; }
     nav { display: none; }
@@ -153,24 +158,19 @@
     .section { padding: 3.5rem 1.5rem; }
     .featured-review { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem 1.5rem; }
     .reviews-grid, .reviews-grid-row2 { grid-template-columns: 1fr; }
-    .review-card, .review-card-placeholder { border-right: none; border-bottom: 1px solid var(--border); }
-    .review-card:last-child, .review-card-placeholder:last-child { border-bottom: none; }
-    .video-grid, .video-grid-row2 { grid-template-columns: 1fr 1fr; }
-    .video-card:nth-child(2n), .video-placeholder:nth-child(2n) { border-right: none; }
-    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-    .gc-tall, .gc-wide { grid-row: span 1; grid-column: span 1; aspect-ratio: 3/2; }
+    .review-card { border-right: none; border-bottom: 1px solid var(--border); }
+    .review-card:last-child { border-bottom: none; }
+    .video-grid-2col { grid-template-columns: 1fr; }
+    .video-grid-2col .video-card { border-right: none; border-bottom: 1px solid var(--border); }
+    .video-grid-2col .video-card:last-child { border-bottom: none; }
     .collab-quote-inner { grid-template-columns: 1fr; gap: 2.5rem; }
     footer { padding: 1.5rem; flex-direction: column; align-items: flex-start; gap: 0.5rem; }
-  }
-  @media (max-width: 560px) {
-    .video-grid, .video-grid-row2 { grid-template-columns: 1fr; }
-    .video-card, .video-placeholder { border-right: none; border-bottom: 1px solid var(--border); }
-    .gallery-grid { grid-template-columns: 1fr 1fr; }
   }
 </style>
 </head>
 <body>
 
+<!-- ══ HEADER ══ -->
 <header class="site-header">
   <a href="https://www.kolkataphototours.com/" class="logo">Kolkata Photo Tour</a>
   <nav>
@@ -198,7 +198,7 @@
   <a href="#contact">Contact</a>
 </div>
 
-<!-- HERO -->
+<!-- ══ HERO ══ -->
 <div class="hero">
   <div class="hero-inner">
     <div>
@@ -227,15 +227,15 @@
   </div>
 </div>
 
-<!-- VIDEO REVIEWS -->
+<!-- ══ VIDEO REVIEWS ══ -->
 <section class="section video-section">
   <div class="section-inner">
     <p class="section-label">Video reviews</p>
     <h2 class="section-heading">Hear it from <em>them directly.</em></h2>
     <p class="section-sub">Short video testimonials from past participants — recorded after their tours and workshops.</p>
 
-    <div class="video-grid" style="grid-template-columns: repeat(2, 1fr);">
-      <!-- Video 1: Andrew Hong Teoh -->
+    <!-- Row 1: Andrew + John -->
+    <div class="video-grid-2col">
       <div class="video-card" data-video-id="qa7WpNI8p6M" onclick="openVideoModal(this)">
         <div class="video-thumb">
           <img src="https://img.youtube.com/vi/qa7WpNI8p6M/maxresdefault.jpg" alt="Andrew Hong Teoh Review">
@@ -247,8 +247,7 @@
           <p class="video-snippet">"Kolkata x Varanasi Private Workshop for 6 days"</p>
         </div>
       </div>
-      <!-- Video 2: John Kardys -->
-      <div class="video-card" data-video-id="yJXpGTBYKXs" onclick="openVideoModal(this)" style="border-right: none;">
+      <div class="video-card" data-video-id="yJXpGTBYKXs" onclick="openVideoModal(this)">
         <div class="video-thumb">
           <img src="https://img.youtube.com/vi/yJXpGTBYKXs/maxresdefault.jpg" alt="John Kardys Review">
           <div class="video-overlay"><div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="#f5f0e8"><path d="M8 5v14l11-7z"/></svg></div></div>
@@ -261,8 +260,8 @@
       </div>
     </div>
 
-    <div class="video-grid-row2" style="grid-template-columns: repeat(2, 1fr);">
-      <!-- Video 3: Tom Pitts -->
+    <!-- Row 2: Tom + Murray -->
+    <div class="video-grid-2col">
       <div class="video-card" data-video-id="npNfn5wOa7w" onclick="openVideoModal(this)">
         <div class="video-thumb">
           <img src="https://img.youtube.com/vi/npNfn5wOa7w/maxresdefault.jpg" alt="Tom Pitts Review">
@@ -271,11 +270,10 @@
         <div class="video-info">
           <p class="video-reviewer">Tom Pitts</p>
           <p class="video-origin">UK</p>
-          <p class="video-snippet">"Kolkata &amp; Varanasi. Photo Tour"</p>
+          <p class="video-snippet">"Kolkata &amp; Varanasi Photo Tour"</p>
         </div>
       </div>
-      <!-- Video 4: Murray Sye — FIXED -->
-      <div class="video-card" data-video-id="7ns0YYpi8_c" onclick="openVideoModal(this)" style="border-right: none;">
+      <div class="video-card" data-video-id="7ns0YYpi8_c" onclick="openVideoModal(this)">
         <div class="video-thumb">
           <img src="https://img.youtube.com/vi/7ns0YYpi8_c/maxresdefault.jpg" alt="Murray Sye Review">
           <div class="video-overlay"><div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="#f5f0e8"><path d="M8 5v14l11-7z"/></svg></div></div>
@@ -286,39 +284,50 @@
           <p class="video-snippet">"Kolkata Photography Tour for 6 days"</p>
         </div>
       </div>
-       <div class="video-card" data-video-id="7ns0YYpi8_c" onclick="openVideoModal(this)" style="border-right: none;">
+    </div>
+
+    <!-- Row 3: Arjo + Sawyer -->
+    <!-- 
+      NOTE: Arjo (81Siv-zvWcc) aur Sawyer (qgaeBnHDyjI) ke liye 
+      aapne src mein watch URL diya tha — thumbnail URL fix kiya gaya hai.
+      Agar ye video IDs galat hain toh sahi IDs se replace kar dena.
+    -->
+    <div class="video-grid-2col">
+      <div class="video-card" data-video-id="81Siv-zvWcc" onclick="openVideoModal(this)">
         <div class="video-thumb">
-          <img src="https://www.youtube.com/watch?v=81Siv-zvWcc" alt="Murray Sye Review">
+          <img src="https://img.youtube.com/vi/81Siv-zvWcc/maxresdefault.jpg" alt="Arjo Sinha Review">
           <div class="video-overlay"><div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="#f5f0e8"><path d="M8 5v14l11-7z"/></svg></div></div>
         </div>
         <div class="video-info">
           <p class="video-reviewer">Arjo Sinha</p>
           <p class="video-origin">USA</p>
-          <p class="video-snippet">"Kolkata & Varanasi Photography workshop In collaboration with Laurin Strele"</p>
+          <p class="video-snippet">"Kolkata &amp; Varanasi Photography Workshop in collaboration with Laurin Strele"</p>
         </div>
       </div>
-       <div class="video-card" data-video-id="7ns0YYpi8_c" onclick="openVideoModal(this)" style="border-right: none;">
+      <div class="video-card" data-video-id="qgaeBnHDyjI" onclick="openVideoModal(this)">
         <div class="video-thumb">
-          <img src="https://www.youtube.com/watch?v=qgaeBnHDyjI" alt="Murray Sye Review">
+          <img src="https://img.youtube.com/vi/qgaeBnHDyjI/maxresdefault.jpg" alt="Sawyer Alcázar-Hagen Review">
           <div class="video-overlay"><div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="#f5f0e8"><path d="M8 5v14l11-7z"/></svg></div></div>
         </div>
         <div class="video-info">
-          <p class="video-reviewer">Sawyer Alcázar-Hagen</p>
+          <p class="video-reviewer">Sawyer Alcázar-Hagen</p>
           <p class="video-origin">USA</p>
-          <p class="video-snippet">"Kolkata & Varanasi Photography workshop In collaboration with Laurin Strele"</p>
+          <p class="video-snippet">"Kolkata &amp; Varanasi Photography Workshop in collaboration with Laurin Strele"</p>
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
-<!-- WRITTEN REVIEWS -->
+<!-- ══ WRITTEN REVIEWS ══ -->
 <section class="section">
   <div class="section-inner">
     <p class="section-label">Written reviews</p>
     <h2 class="section-heading">In their own <em>words.</em></h2>
     <p class="section-sub">Reviews from photographers who joined private tours, 1-on-1 workshops, and group expeditions across India.</p>
 
+    <!-- Featured -->
     <div class="featured-review">
       <div class="featured-author">
         <div class="author-initials">JM</div>
@@ -331,6 +340,7 @@
       </blockquote>
     </div>
 
+    <!-- Row 1 — 3 cards -->
     <div class="reviews-grid">
       <div class="review-card">
         <div class="review-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
@@ -358,6 +368,7 @@
       </div>
     </div>
 
+    <!-- Row 2 — 3 cards -->
     <div class="reviews-grid-row2">
       <div class="review-card">
         <div class="review-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
@@ -375,61 +386,63 @@
         <p class="review-author-meta">Japan · 2024</p>
         <span class="review-tour-tag">Private Tour · Kolkata</span>
       </div>
-
-       <div class="review-card">
+      <div class="review-card">
         <div class="review-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-        <p class="review-quote">"I've had an incredible time with this wonderful human by my side, who has served as my protector, guiding me through this beautiful country. Seeing India through his perspective has filled me with inspiration, and I couldn't have asked for a better companion. If you ever need assistance in India, please reach out to him - you won't be disappointed. He's the best person to travel with. Thank you for your friendship; our time together will always hold a special place in my heart"</p>
+        <p class="review-quote">"I've had an incredible time with this wonderful human by my side, who has served as my protector, guiding me through this beautiful country. Seeing India through his perspective has filled me with inspiration, and I couldn't have asked for a better companion. If you ever need assistance in India, please reach out to him — you won't be disappointed."</p>
         <div class="review-divider"></div>
         <p class="review-author-name">Monaris</p>
         <p class="review-author-meta">USA</p>
-        <span class="review-tour-tag">Delhi, Rajasthan, Varanasi, Kolkata & Kumbh Mela Tour</span>
+        <span class="review-tour-tag">Delhi, Rajasthan, Varanasi, Kolkata &amp; Kumbh Mela</span>
       </div>
+    </div>
 
-       <div class="review-card">
+    <!-- Row 3 — 3 cards -->
+    <div class="reviews-grid-row2">
+      <div class="review-card">
         <div class="review-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-        <p class="review-quote">"This was an exceptionally well-organised trip—comfortable accommodation, delicious food, and a brilliant itinerary packed with inspiring locations. The photography guidance was great, with support and insight when needed. What made it truly special was Shivam’s joy, passion, and pride in sharing his country. His energy was infectious and made the whole experience both fun and meaningful. I came home with unforgettable memories and a collection of photographs I’m really proud of."</p>
+        <p class="review-quote">"This was an exceptionally well-organised trip — comfortable accommodation, delicious food, and a brilliant itinerary packed with inspiring locations. What made it truly special was Shivam's joy, passion, and pride in sharing his country. I came home with unforgettable memories and a collection of photographs I'm really proud of."</p>
         <div class="review-divider"></div>
         <p class="review-author-name">Lynn</p>
         <p class="review-author-meta">UK</p>
-        <span class="review-tour-tag">Delhi, Jodhpur, Kolkata & Varanasi Tour </span>
+        <span class="review-tour-tag">Delhi, Jodhpur, Kolkata &amp; Varanasi</span>
       </div>
-
-       <div class="review-card">
+      <div class="review-card">
         <div class="review-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-        <p class="review-quote">"From initial contacts through messaging service prior to arrival to meeting and being part of the group, I was very impressed with Shivam Pandey’s attention to detail and care that we were all ok. He regularly checked to see if we needed anything and was always on hand to assist. He was friendly and easy to chat to about life in India and the places we were visiting. Shivam was particularly caring, and when I was slightly struggling during the tour made sure I was ok and was on hand to help if necessary. He became an important part of our group whilst maintaining his position as teacher and organiser. I cannot recommend Shivam highly enough as our local tour leader in India"</p>
+        <p class="review-quote">"From initial contacts through messaging service prior to arrival to meeting and being part of the group, I was very impressed with Shivam Pandey's attention to detail and care. He became an important part of our group whilst maintaining his position as teacher and organiser. I cannot recommend Shivam highly enough as our local tour leader in India."</p>
         <div class="review-divider"></div>
         <p class="review-author-name">Nicola Elliott</p>
-        <p class="review-author-meta">U.K.</p>
-        <span class="review-tour-tag">Rajasthan & Kolkata Workshop</span>
+        <p class="review-author-meta">UK</p>
+        <span class="review-tour-tag">Rajasthan &amp; Kolkata Workshop</span>
       </div>
-
-       <div class="review-card">
+      <div class="review-card">
         <div class="review-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-        <p class="review-quote">"I had lost all drive and motivation after 17 years of photography for a variety of reasons. This changed in the first 3 days with this man. His drive, dedication, guidance, leadership, and focus on me as an individual with the knowledge, experience, and personal accountability to each aspect of myself is of the highest level. Being a person of high integrity, professionalism (Leica ambassador of India) and having true concern (he helped when an acute medical episode occurred halfway into the trip) of those he guides - I cannot more highly recommend this unique, valuable and talented person that I can truly now call a friend."</p>
+        <p class="review-quote">"I had lost all drive and motivation after 17 years of photography. This changed in the first 3 days with this man. His drive, dedication, guidance, leadership, and focus on me as an individual is of the highest level. Being a person of high integrity, professionalism (Leica Ambassador of India) — I cannot more highly recommend this unique, valuable and talented person."</p>
         <div class="review-divider"></div>
         <p class="review-author-name">John</p>
-        <p class="review-author-meta">U.K.</p>
-        <span class="review-tour-tag">Delhi & Jodhpur Workshop</span>
+        <p class="review-author-meta">UK</p>
+        <span class="review-tour-tag">Delhi &amp; Jodhpur Workshop</span>
       </div>
+    </div>
 
-         <div class="review-card">
+    <!-- Row 4 — 1 card (left-aligned) -->
+    <div class="reviews-grid-row2">
+      <div class="review-card">
         <div class="review-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-        <p class="review-quote">"Shivam put in an amazing effort to give us all an experience of a lifetime. You truly are a great business partner and a lifelong friend. I learnt a lot from you. The photography technique and your philosophy. The cultural experience and how colourful chaos seems to work. An attribute of an elite team is that when someone is in trouble, the whole team rallies around and gives the best support possible."</p>
+        <p class="review-quote">"Shivam put in an amazing effort to give us all an experience of a lifetime. You truly are a great business partner and a lifelong friend. I learnt a lot from you — the photography technique and your philosophy, the cultural experience and how colourful chaos seems to work."</p>
         <div class="review-divider"></div>
         <p class="review-author-name">Steve Bowler</p>
         <p class="review-author-meta">Australia</p>
-        <span class="review-tour-tag">Kolkata & Varanasi Workshop</span>
+        <span class="review-tour-tag">Kolkata &amp; Varanasi Workshop</span>
       </div>
-
-     
-
-     
-      
+      <!-- Two empty placeholder cells to maintain 3-col grid alignment -->
+      <div class="review-card" style="background: rgba(26,22,18,0.02); border-right: 1px solid var(--border);"></div>
+      <div class="review-card" style="background: rgba(26,22,18,0.02); border-right: none;"></div>
     </div>
+
   </div>
 </section>
 
-<!-- COLLABORATOR QUOTE -->
+<!-- ══ COLLABORATOR QUOTE ══ -->
 <div class="collab-quote-section">
   <div class="collab-quote-inner">
     <div>
@@ -443,12 +456,7 @@
   </div>
 </div>
 
-
-
-
-
-
-<!-- CTA -->
+<!-- ══ CTA ══ -->
 <section class="cta-section">
   <h2 class="cta-heading">Ready to write<br>your own <em>review?</em></h2>
   <p class="cta-sub">Every photographer who has joined me has left with images they're proud of and a way of seeing they didn't have before. Book your tour or workshop and find out for yourself.</p>
@@ -458,15 +466,15 @@
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ══ FOOTER ══ -->
 <footer>
   <span>© 2025 Kolkata Photo Tour</span>
   <span>Shivam Pandey — Kolkata, India</span>
   <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
 </footer>
 
-<!-- VIDEO MODAL -->
-<div class="video-modal-overlay" id="videoModal" onclick="closeVideoModal(event)">
+<!-- ══ VIDEO MODAL ══ -->
+<div class="video-modal-overlay" id="videoModal">
   <div class="video-modal-box">
     <button class="modal-close" onclick="closeVideoModal()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
@@ -479,17 +487,22 @@
 <script>
   function openVideoModal(el) {
     const videoId = el.getAttribute('data-video-id');
-    document.getElementById('modalIframe').src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
+    document.getElementById('modalIframe').src =
+      'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
     document.getElementById('videoModal').classList.add('open');
     document.body.style.overflow = 'hidden';
   }
 
-  function closeVideoModal(e) {
-    if (e && e.target !== document.getElementById('videoModal') && !e.target.closest('.modal-close')) return;
+  function closeVideoModal() {
     document.getElementById('modalIframe').src = '';
     document.getElementById('videoModal').classList.remove('open');
     document.body.style.overflow = '';
   }
+
+  // Overlay click to close (but not modal-box click)
+  document.getElementById('videoModal').addEventListener('click', function(e) {
+    if (e.target === this) closeVideoModal();
+  });
 
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') closeVideoModal();

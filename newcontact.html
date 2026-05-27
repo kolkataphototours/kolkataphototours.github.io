@@ -1,68 +1,278 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Kolkata Photo Tours and Photo Walks</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:#0e0c0a;color:#f0ebe3;}
 
-    <link href="css/main.css" rel="stylesheet" type="text/css"/>
+/* ── HEADER ── */
+.site-header{
+  position:sticky;top:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 2rem;height:62px;
+  background:rgba(14,12,10,0.92);
+  border-bottom:0.5px solid rgba(184,138,58,0.18);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+}
+.logo{
+  font-family:'Playfair Display',serif;
+  font-size:1.05rem;font-style:italic;
+  color:#c9953f;text-decoration:none;
+  letter-spacing:0.01em;white-space:nowrap;
+  transition:color 0.2s;
+}
+.logo:hover{color:#e0b060;}
+.site-header nav{display:flex;align-items:center;gap:0.15rem;}
+.site-header nav a{
+  font-size:12px;font-weight:400;
+  letter-spacing:0.08em;text-transform:uppercase;
+  color:#7a6f60;text-decoration:none;
+  padding:6px 10px;border-radius:3px;
+  transition:color 0.2s,background 0.2s;white-space:nowrap;
+}
+.site-header nav a:hover{color:#c9953f;background:rgba(184,138,58,0.08);}
+.site-header nav a.active{color:#c9953f;}
+.site-header nav a.cta-link{
+  color:#0e0c0a;background:#b88a3a;
+  padding:6px 14px;border-radius:3px;
+  margin-left:6px;
+}
+.site-header nav a.cta-link:hover{background:#d4a44a;color:#0e0c0a;}
 
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  </head>
-  <body>
-    <!--Contact form-->
-    <div id="contact">
-      <div class="inner contact container">
-        <h1 class="contact-header header-h1">Drop me a message </h1>
-        <br>
-        <div class="contact-form">
-          <form id="contact-us" method="post" action="https://formspree.io/kolkataphototours@gmail.com">
-            <div class="col-md-6 wow animated slideInLeft" data-wow-delay=".5s">
-              <input type="text" name="name" id="name" required="required" class="form" placeholder="Name" />
-              <!-- Email -->
-              <input type="email" name="mail" id="mail" required="required" class="form" placeholder="Email" />
-              <!-- Subject -->
-              <input type="text" name="subject" id="subject" required="required" class="form" placeholder="Subject" />
-            </div>
-            <div class="col-md-6 wow animated slideInRight" data-wow-delay=".5s">
-              <!-- Message -->
-              <textarea name="message" id="message" class="form textarea"  placeholder="Message"></textarea>
-              <button type="submit" id="submit" name="submit" class="form-btn semibold">Send Message</button>
-            </div><!-- End Right Inputs -->
-          </form>
+/* hamburger */
+.menu-toggle{
+  display:none;flex-direction:column;gap:5px;
+  background:none;border:none;cursor:pointer;padding:6px;
+}
+.menu-toggle span{
+  display:block;width:22px;height:1.5px;
+  background:#c9953f;border-radius:2px;
+  transition:transform 0.3s,opacity 0.3s;
+}
+
+/* mobile nav */
+.mobile-nav{
+  display:none;flex-direction:column;
+  background:#141210;
+  border-bottom:0.5px solid rgba(184,138,58,0.15);
+  overflow:hidden;max-height:0;
+  transition:max-height 0.35s ease;
+}
+.mobile-nav.open{max-height:400px;}
+.mobile-nav a{
+  padding:13px 2rem;font-size:13px;
+  letter-spacing:0.08em;text-transform:uppercase;
+  color:#7a6f60;text-decoration:none;
+  border-bottom:0.5px solid rgba(184,138,58,0.08);
+  transition:color 0.2s,padding-left 0.2s;
+}
+.mobile-nav a:hover{color:#c9953f;padding-left:2.5rem;}
+.mobile-nav a.active{color:#c9953f;}
+
+@media(max-width:780px){
+  .site-header nav{display:none;}
+  .menu-toggle{display:flex;}
+  .mobile-nav{display:flex;}
+}
+
+/* ── PAGE BODY ── */
+.kpt-wrap{
+  background:#0e0c0a;min-height:100vh;
+  position:relative;overflow:hidden;
+}
+.kpt-bg-pattern{
+  position:absolute;inset:0;
+  background-image:
+    radial-gradient(ellipse 60% 40% at 80% 20%,rgba(180,130,60,0.12) 0%,transparent 60%),
+    radial-gradient(ellipse 40% 60% at 10% 80%,rgba(120,80,30,0.1) 0%,transparent 50%);
+  pointer-events:none;
+}
+.kpt-inner{
+  position:relative;z-index:1;
+  max-width:680px;margin:0 auto;
+  padding:3rem 1.5rem 2.5rem;
+}
+.kpt-eyebrow{
+  font-size:11px;letter-spacing:0.18em;text-transform:uppercase;
+  color:#b88a3a;margin-bottom:0.75rem;font-weight:500;
+}
+.kpt-title{
+  font-family:'Playfair Display',serif;
+  font-size:2.4rem;font-weight:400;line-height:1.2;
+  color:#f5eedf;margin-bottom:0.4rem;
+}
+.kpt-title em{font-style:italic;color:#c9953f;}
+.kpt-subtitle{
+  font-size:14px;color:#8a7f6e;
+  margin-bottom:2.5rem;font-weight:300;letter-spacing:0.02em;
+}
+.kpt-divider{
+  width:48px;height:1px;
+  background:linear-gradient(90deg,#b88a3a,transparent);
+  margin-bottom:2.5rem;
+}
+.kpt-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.kpt-field{display:flex;flex-direction:column;gap:6px;}
+.kpt-field.full{grid-column:1/-1;}
+.kpt-label{
+  font-size:10px;letter-spacing:0.14em;text-transform:uppercase;
+  color:#6e6456;font-weight:500;
+}
+.kpt-input{
+  background:rgba(255,255,255,0.04) !important;
+  border:0.5px solid rgba(184,138,58,0.25) !important;
+  border-radius:4px !important;padding:10px 14px !important;
+  color:#f0ebe3 !important;
+  font-family:'DM Sans',sans-serif !important;
+  font-size:14px !important;font-weight:300 !important;
+  transition:border-color 0.2s,background 0.2s !important;
+  outline:none !important;width:100% !important;
+}
+.kpt-input::placeholder{color:#4a4035 !important;}
+.kpt-input:focus{
+  border-color:rgba(184,138,58,0.6) !important;
+  background:rgba(255,255,255,0.06) !important;
+}
+.kpt-textarea{resize:none !important;height:120px !important;line-height:1.6 !important;}
+.kpt-btn{
+  margin-top:1.25rem;
+  display:inline-flex;align-items:center;gap:10px;
+  background:#b88a3a;color:#0e0c0a;
+  border:none;border-radius:3px;padding:12px 28px;
+  font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;
+  letter-spacing:0.1em;text-transform:uppercase;
+  cursor:pointer;transition:background 0.2s,transform 0.15s;
+}
+.kpt-btn:hover{background:#d4a44a;transform:translateY(-1px);}
+.kpt-btn:active{transform:translateY(0);}
+.kpt-arrow{
+  width:16px;height:1px;background:#0e0c0a;
+  position:relative;transition:width 0.2s;
+}
+.kpt-arrow::after{
+  content:'';position:absolute;right:0;top:-3px;
+  border:4px solid transparent;border-left:5px solid #0e0c0a;
+}
+.kpt-btn:hover .kpt-arrow{width:22px;}
+.kpt-or{
+  text-align:center;font-size:11px;
+  letter-spacing:0.16em;text-transform:uppercase;
+  color:#4a4035;margin:2.5rem 0 1.5rem;position:relative;
+}
+.kpt-or::before,.kpt-or::after{
+  content:'';position:absolute;top:50%;width:42%;
+  height:0.5px;background:rgba(184,138,58,0.15);
+}
+.kpt-or::before{left:0;}.kpt-or::after{right:0;}
+.kpt-socials{display:flex;justify-content:center;gap:20px;align-items:center;}
+.kpt-social-link{
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  text-decoration:none;color:#5a5048;
+  transition:color 0.2s,transform 0.2s;
+  font-size:10px;letter-spacing:0.1em;text-transform:uppercase;
+}
+.kpt-social-link:hover{color:#b88a3a;transform:translateY(-2px);}
+.kpt-social-icon{
+  width:40px;height:40px;border-radius:50%;
+  border:0.5px solid rgba(184,138,58,0.2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;transition:border-color 0.2s,background 0.2s;
+}
+.kpt-social-link:hover .kpt-social-icon{
+  border-color:rgba(184,138,58,0.5);
+  background:rgba(184,138,58,0.08);
+}
+.kpt-footer{
+  margin-top:2.5rem;padding-top:1.5rem;
+  border-top:0.5px solid rgba(184,138,58,0.1);
+  text-align:center;font-size:11px;
+  color:#3a342c;letter-spacing:0.08em;
+}
+</style>
+
+<h2 class="sr-only">Kolkata Photo Tours — Contact page</h2>
+
+<!-- HEADER -->
+<header class="site-header">
+  <a href="https://www.kolkataphototours.com/" class="logo">Kolkata Photo Tours</a>
+  <nav>
+    <a href="https://www.kolkataphototours.com/">Home</a>
+    <a href="https://www.kolkataphototours.com/tours/">Tours &amp; Workshops</a>
+    <a href="https://www.kolkataphototours.com/reviews/" class="active">Reviews</a>
+    <a href="https://www.kolkataphototours.com/youtube.html" target="_blank" rel="noopener">YouTube</a>
+    <a href="https://kolkataphototours.substack.com/" target="_blank" rel="noopener">Substack</a>
+    <a href="https://www.shivamphotofarm.com/" target="_blank" rel="noopener">Gallery</a>
+    <a href="https://www.kolkataphototours.com/about/">About Me</a>
+    <a href="#contact" class="cta-link">Contact</a>
+  </nav>
+  <button class="menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+<div class="mobile-nav">
+  <a href="https://www.kolkataphototours.com/">Home</a>
+  <a href="https://www.kolkataphototours.com/tours/">Tours &amp; Workshops</a>
+  <a href="https://www.kolkataphototours.com/reviews/" class="active">Reviews</a>
+  <a href="https://www.kolkataphototours.com/youtube.html" target="_blank">YouTube</a>
+  <a href="https://kolkataphototours.substack.com/" target="_blank">Substack</a>
+  <a href="https://www.shivamphotofarm.com/" target="_blank">Gallery</a>
+  <a href="https://www.kolkataphototours.com/about/">About Me</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- CONTACT SECTION -->
+<div class="kpt-wrap" id="contact">
+  <div class="kpt-bg-pattern"></div>
+  <div class="kpt-inner">
+    <p class="kpt-eyebrow">Kolkata Photo Tours</p>
+    <h1 class="kpt-title">Let's make <em>something</em><br>beautiful together</h1>
+    <p class="kpt-subtitle">Photo walks · Private tours · Collaborations</p>
+    <div class="kpt-divider"></div>
+
+    <form id="contact-us" method="post" action="https://formspree.io/kolkataphototours@gmail.com">
+      <div class="kpt-grid">
+        <div class="kpt-field">
+          <label class="kpt-label" for="name">Your Name</label>
+          <input class="kpt-input" type="text" name="name" id="name" required placeholder="e.g. Priya Sharma"/>
+        </div>
+        <div class="kpt-field">
+          <label class="kpt-label" for="mail">Email</label>
+          <input class="kpt-input" type="email" name="mail" id="mail" required placeholder="you@example.com"/>
+        </div>
+        <div class="kpt-field full">
+          <label class="kpt-label" for="subject">Subject</label>
+          <input class="kpt-input" type="text" name="subject" id="subject" required placeholder="Photo walk inquiry, collaboration..."/>
+        </div>
+        <div class="kpt-field full">
+          <label class="kpt-label" for="message">Message</label>
+          <textarea class="kpt-input kpt-textarea" name="message" id="message" placeholder="Tell me about your vision, preferred dates, or anything you'd like to explore..."></textarea>
         </div>
       </div>
-      <br>
-      <h2 class="orelse" style="text-align: center;">Or else I'm quite active on</h2>
-      <br>
-      <div id="social" style="display: flex; justify-content: center; gap: 15px; align-items: center;">
+      <button type="submit" class="kpt-btn">
+        Send Message
+        <span class="kpt-arrow"></span>
+      </button>
+    </form>
 
-    <!-- Instagram -->
-    <a href="https://www.instagram.com/shivam_photofarm/" target="_blank">
-        <img src="images/insta-icon.png" width="35">
-    </a>
-
-    <!-- Facebook -->
-    <a href="https://www.facebook.com/shivam.pandey.75286" target="_blank">
-        <img src="images/fb-icon.jpg" width="35">
-    </a>
-
-    <!-- YouTube -->
-    <a href="https://www.youtube.com/@Shivamphotofarm" target="_blank">
-        <img src="images/youtube-icon.png" width="35">
-    </a>
-
-    <!-- Substack -->
-    <a href="https://kolkataphototours.substack.com/" target="_blank">
-        <img src="images/substack-icon.png" width="35">
-    </a>
-
-</div>
-      <hr>
+    <div class="kpt-or">or find me on</div>
+    <div class="kpt-socials">
+      <a class="kpt-social-link" href="https://www.instagram.com/shivam_photofarm/" target="_blank">
+        <span class="kpt-social-icon"><i class="ti ti-brand-instagram" aria-hidden="true"></i></span>
+        Instagram
+      </a>
+      <a class="kpt-social-link" href="https://www.facebook.com/shivam.pandey.75286" target="_blank">
+        <span class="kpt-social-icon"><i class="ti ti-brand-facebook" aria-hidden="true"></i></span>
+        Facebook
+      </a>
+      <a class="kpt-social-link" href="https://www.youtube.com/@Shivamphotofarm" target="_blank">
+        <span class="kpt-social-icon"><i class="ti ti-brand-youtube" aria-hidden="true"></i></span>
+        YouTube
+      </a>
+      <a class="kpt-social-link" href="https://kolkataphototours.substack.com/" target="_blank">
+        <span class="kpt-social-icon"><i class="ti ti-news" aria-hidden="true"></i></span>
+        Substack
+      </a>
     </div>
-
-  </body>
-</html>
+    <div class="kpt-footer">kolkataphototours@gmail.com &nbsp;·&nbsp; Kolkata, West Bengal</div>
+  </div>
+</div>

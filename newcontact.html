@@ -1,209 +1,147 @@
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap');
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'DM Sans',sans-serif;background:#0e0c0a;color:#f0ebe3;}
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400&family=Barlow:wght@300;400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --ink:#1a1612;--warm-white:#f5f0e8;--paper:#ede8de;
+  --amber:#c47a2a;--amber-light:#e8a84a;--muted:#7a7060;
+  --border:rgba(26,22,18,0.12);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --mono:'DM Mono',monospace;--sans:'Barlow',sans-serif;
+}
+body{background:var(--warm-white);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.8;}
 
-/* ── HEADER ── */
-.site-header{
-  position:sticky;top:0;z-index:100;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 2rem;height:62px;
-  background:rgba(14,12,10,0.92);
-  border-bottom:0.5px solid rgba(184,138,58,0.18);
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
-}
-.logo{
-  font-family:'Playfair Display',serif;
-  font-size:1.05rem;font-style:italic;
-  color:#c9953f;text-decoration:none;
-  letter-spacing:0.01em;white-space:nowrap;
-  transition:color 0.2s;
-}
-.logo:hover{color:#e0b060;}
-.site-header nav{display:flex;align-items:center;gap:0.15rem;}
-.site-header nav a{
-  font-size:12px;font-weight:400;
-  letter-spacing:0.08em;text-transform:uppercase;
-  color:#7a6f60;text-decoration:none;
-  padding:6px 10px;border-radius:3px;
-  transition:color 0.2s,background 0.2s;white-space:nowrap;
-}
-.site-header nav a:hover{color:#c9953f;background:rgba(184,138,58,0.08);}
-.site-header nav a.active{color:#c9953f;}
-.site-header nav a.cta-link{
-  color:#0e0c0a;background:#b88a3a;
-  padding:6px 14px;border-radius:3px;
-  margin-left:6px;
-}
-.site-header nav a.cta-link:hover{background:#d4a44a;color:#0e0c0a;}
+/* HEADER */
+.site-header{display:flex;justify-content:space-between;align-items:center;padding:1.4rem 3rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--warm-white);z-index:100;}
+.logo{font-family:var(--mono);font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink);text-decoration:none;white-space:nowrap;}
+nav{display:flex;align-items:center;flex-wrap:wrap;}
+nav a{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;margin-left:1.8rem;transition:color 0.2s;white-space:nowrap;}
+nav a:hover{color:var(--ink);}
+nav a.active{color:var(--amber);}
+.menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
+.menu-toggle span{display:block;width:22px;height:1.5px;background:var(--ink);}
+.mobile-nav{display:none;flex-direction:column;background:var(--warm-white);border-bottom:1px solid var(--border);padding:1rem 1.5rem 1.5rem;}
+.mobile-nav a{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:0.6rem 0;border-bottom:1px solid var(--border);transition:color 0.2s;}
+.mobile-nav a:hover,.mobile-nav a.active{color:var(--amber);}
+.mobile-nav.open{display:flex;}
 
-/* hamburger */
-.menu-toggle{
-  display:none;flex-direction:column;gap:5px;
-  background:none;border:none;cursor:pointer;padding:6px;
-}
-.menu-toggle span{
-  display:block;width:22px;height:1.5px;
-  background:#c9953f;border-radius:2px;
-  transition:transform 0.3s,opacity 0.3s;
-}
+/* HERO */
+.hero{padding:6rem 3rem 5rem;border-bottom:1px solid var(--border);background:var(--ink);position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:url('https://www.kolkataphototours.com/images/streets.jpg') center/cover no-repeat;opacity:0.2;}
+.hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;position:relative;}
+.eyebrow{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--amber-light);margin-bottom:1.5rem;display:flex;align-items:center;gap:0.8rem;}
+.eyebrow::after{content:'';width:40px;height:1px;background:var(--amber-light);opacity:0.4;}
+.hero h1{font-family:var(--serif);font-size:clamp(2.8rem,5vw,4.5rem);font-weight:300;line-height:1.05;color:var(--warm-white);margin-bottom:1.5rem;}
+.hero h1 em{font-style:italic;color:var(--amber-light);}
+.hero-desc{font-size:1rem;line-height:1.9;color:rgba(245,240,232,0.65);max-width:44ch;}
 
-/* mobile nav */
-.mobile-nav{
-  display:none;flex-direction:column;
-  background:#141210;
-  border-bottom:0.5px solid rgba(184,138,58,0.15);
-  overflow:hidden;max-height:0;
-  transition:max-height 0.35s ease;
-}
-.mobile-nav.open{max-height:400px;}
-.mobile-nav a{
-  padding:13px 2rem;font-size:13px;
-  letter-spacing:0.08em;text-transform:uppercase;
-  color:#7a6f60;text-decoration:none;
-  border-bottom:0.5px solid rgba(184,138,58,0.08);
-  transition:color 0.2s,padding-left 0.2s;
-}
-.mobile-nav a:hover{color:#c9953f;padding-left:2.5rem;}
-.mobile-nav a.active{color:#c9953f;}
+/* CONTACT CARD PANEL */
+.contact-panel{border:1px solid rgba(255,255,255,0.08);padding:0;}
+.contact-info-row{display:flex;align-items:flex-start;gap:1rem;padding:1.4rem 2rem;border-bottom:1px solid rgba(255,255,255,0.07);}
+.contact-info-row:last-child{border-bottom:none;}
+.ci-icon{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber-light);min-width:70px;padding-top:3px;}
+.ci-text{font-size:0.9rem;font-weight:300;color:rgba(245,240,232,0.7);line-height:1.6;}
+.ci-text strong{display:block;font-weight:400;color:var(--warm-white);font-size:0.95rem;margin-bottom:0.1rem;}
+.ci-text a{color:var(--amber-light);text-decoration:none;}
+.ci-text a:hover{color:var(--warm-white);}
 
-@media(max-width:780px){
-  .site-header nav{display:none;}
+/* FORM SECTION */
+.section{padding:5rem 3rem;border-bottom:1px solid var(--border);}
+.section-inner{max-width:1100px;margin:0 auto;}
+.section-label{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--amber);margin-bottom:1rem;display:flex;align-items:center;gap:0.8rem;}
+.section-label::after{content:'';flex:1;max-width:60px;height:1px;background:var(--amber);opacity:0.4;}
+.section-heading{font-family:var(--serif);font-size:clamp(2rem,3.5vw,2.8rem);font-weight:300;line-height:1.2;margin-bottom:0.6rem;}
+.section-heading em{font-style:italic;color:var(--amber);}
+.section-sub{font-size:0.95rem;font-weight:300;color:var(--muted);margin-bottom:3rem;max-width:56ch;line-height:1.7;}
+
+/* FORM LAYOUT */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border);}
+.form-col{padding:2.5rem;}
+.form-col:first-child{border-right:1px solid var(--border);}
+.form-col-title{font-family:var(--mono);font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--amber);margin-bottom:2rem;display:flex;align-items:center;gap:0.6rem;}
+.form-col-title::after{content:'';flex:1;height:1px;background:var(--amber);opacity:0.25;}
+
+.field{margin-bottom:1.6rem;}
+.field label{display:block;font-family:var(--mono);font-size:0.6rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem;}
+.field input,.field textarea{
+  width:100%;background:transparent;
+  border:none;border-bottom:1px solid var(--border);
+  padding:0.5rem 0;font-family:var(--sans);font-size:0.95rem;font-weight:300;
+  color:var(--ink);transition:border-color 0.2s;outline:none;
+}
+.field input::placeholder,.field textarea::placeholder{color:rgba(122,112,96,0.5);}
+.field input:focus,.field textarea:focus{border-bottom-color:var(--amber);}
+.field textarea{resize:none;height:110px;line-height:1.7;}
+
+.btn-submit{
+  display:inline-flex;align-items:center;gap:0.8rem;
+  background:var(--ink);color:var(--warm-white);
+  font-family:var(--mono);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;
+  border:none;padding:0.9rem 2rem;cursor:pointer;transition:background 0.2s;margin-top:0.5rem;
+}
+.btn-submit:hover{background:var(--amber);}
+.btn-arrow{display:inline-block;margin-left:0.3rem;transition:transform 0.2s;}
+.btn-submit:hover .btn-arrow{transform:translateX(4px);}
+
+/* SOCIAL STRIP */
+.social-strip{background:var(--paper);padding:3rem;border-bottom:1px solid var(--border);}
+.social-strip-inner{max-width:1100px;margin:0 auto;}
+.social-or{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:2rem;display:flex;align-items:center;gap:1rem;}
+.social-or::after{content:'';flex:1;height:1px;background:var(--border);}
+.social-links{display:flex;gap:0;border:1px solid var(--border);}
+.social-link{
+  flex:1;display:flex;align-items:center;gap:1rem;
+  padding:1.3rem 1.5rem;text-decoration:none;color:var(--ink);
+  border-right:1px solid var(--border);
+  transition:background 0.2s,color 0.2s;
+}
+.social-link:last-child{border-right:none;}
+.social-link:hover{background:var(--ink);color:var(--warm-white);}
+.social-link:hover .sl-label{color:rgba(245,240,232,0.5);}
+.sl-name{font-size:0.9rem;font-weight:400;display:block;margin-bottom:0.1rem;}
+.sl-label{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);display:block;transition:color 0.2s;}
+.sl-icon{width:32px;height:32px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+
+/* CTA / FOOTER */
+.cta-section{text-align:center;padding:5rem 3rem;background:var(--paper);}
+.cta-heading{font-family:var(--serif);font-size:clamp(2.2rem,4vw,3.2rem);font-weight:300;line-height:1.15;margin-bottom:1rem;}
+.cta-heading em{font-style:italic;color:var(--amber);}
+.cta-sub{font-size:0.95rem;color:var(--muted);max-width:44ch;margin:0 auto;line-height:1.7;}
+
+footer{background:var(--ink);color:rgba(245,240,232,0.5);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;flex-wrap:wrap;gap:1rem;}
+footer a{color:inherit;text-decoration:none;}
+footer a:hover{color:var(--amber-light);}
+
+@media(max-width:960px){
+  .site-header{padding:1.2rem 1.5rem;}
+  nav{display:none;}
   .menu-toggle{display:flex;}
-  .mobile-nav{display:flex;}
-}
-
-/* ── PAGE BODY ── */
-.kpt-wrap{
-  background:#0e0c0a;min-height:100vh;
-  position:relative;overflow:hidden;
-}
-.kpt-bg-pattern{
-  position:absolute;inset:0;
-  background-image:
-    radial-gradient(ellipse 60% 40% at 80% 20%,rgba(180,130,60,0.12) 0%,transparent 60%),
-    radial-gradient(ellipse 40% 60% at 10% 80%,rgba(120,80,30,0.1) 0%,transparent 50%);
-  pointer-events:none;
-}
-.kpt-inner{
-  position:relative;z-index:1;
-  max-width:680px;margin:0 auto;
-  padding:3rem 1.5rem 2.5rem;
-}
-.kpt-eyebrow{
-  font-size:11px;letter-spacing:0.18em;text-transform:uppercase;
-  color:#b88a3a;margin-bottom:0.75rem;font-weight:500;
-}
-.kpt-title{
-  font-family:'Playfair Display',serif;
-  font-size:2.4rem;font-weight:400;line-height:1.2;
-  color:#f5eedf;margin-bottom:0.4rem;
-}
-.kpt-title em{font-style:italic;color:#c9953f;}
-.kpt-subtitle{
-  font-size:14px;color:#8a7f6e;
-  margin-bottom:2.5rem;font-weight:300;letter-spacing:0.02em;
-}
-.kpt-divider{
-  width:48px;height:1px;
-  background:linear-gradient(90deg,#b88a3a,transparent);
-  margin-bottom:2.5rem;
-}
-.kpt-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-.kpt-field{display:flex;flex-direction:column;gap:6px;}
-.kpt-field.full{grid-column:1/-1;}
-.kpt-label{
-  font-size:10px;letter-spacing:0.14em;text-transform:uppercase;
-  color:#6e6456;font-weight:500;
-}
-.kpt-input{
-  background:rgba(255,255,255,0.04) !important;
-  border:0.5px solid rgba(184,138,58,0.25) !important;
-  border-radius:4px !important;padding:10px 14px !important;
-  color:#f0ebe3 !important;
-  font-family:'DM Sans',sans-serif !important;
-  font-size:14px !important;font-weight:300 !important;
-  transition:border-color 0.2s,background 0.2s !important;
-  outline:none !important;width:100% !important;
-}
-.kpt-input::placeholder{color:#4a4035 !important;}
-.kpt-input:focus{
-  border-color:rgba(184,138,58,0.6) !important;
-  background:rgba(255,255,255,0.06) !important;
-}
-.kpt-textarea{resize:none !important;height:120px !important;line-height:1.6 !important;}
-.kpt-btn{
-  margin-top:1.25rem;
-  display:inline-flex;align-items:center;gap:10px;
-  background:#b88a3a;color:#0e0c0a;
-  border:none;border-radius:3px;padding:12px 28px;
-  font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;
-  letter-spacing:0.1em;text-transform:uppercase;
-  cursor:pointer;transition:background 0.2s,transform 0.15s;
-}
-.kpt-btn:hover{background:#d4a44a;transform:translateY(-1px);}
-.kpt-btn:active{transform:translateY(0);}
-.kpt-arrow{
-  width:16px;height:1px;background:#0e0c0a;
-  position:relative;transition:width 0.2s;
-}
-.kpt-arrow::after{
-  content:'';position:absolute;right:0;top:-3px;
-  border:4px solid transparent;border-left:5px solid #0e0c0a;
-}
-.kpt-btn:hover .kpt-arrow{width:22px;}
-.kpt-or{
-  text-align:center;font-size:11px;
-  letter-spacing:0.16em;text-transform:uppercase;
-  color:#4a4035;margin:2.5rem 0 1.5rem;position:relative;
-}
-.kpt-or::before,.kpt-or::after{
-  content:'';position:absolute;top:50%;width:42%;
-  height:0.5px;background:rgba(184,138,58,0.15);
-}
-.kpt-or::before{left:0;}.kpt-or::after{right:0;}
-.kpt-socials{display:flex;justify-content:center;gap:20px;align-items:center;}
-.kpt-social-link{
-  display:flex;flex-direction:column;align-items:center;gap:6px;
-  text-decoration:none;color:#5a5048;
-  transition:color 0.2s,transform 0.2s;
-  font-size:10px;letter-spacing:0.1em;text-transform:uppercase;
-}
-.kpt-social-link:hover{color:#b88a3a;transform:translateY(-2px);}
-.kpt-social-icon{
-  width:40px;height:40px;border-radius:50%;
-  border:0.5px solid rgba(184,138,58,0.2);
-  display:flex;align-items:center;justify-content:center;
-  font-size:18px;transition:border-color 0.2s,background 0.2s;
-}
-.kpt-social-link:hover .kpt-social-icon{
-  border-color:rgba(184,138,58,0.5);
-  background:rgba(184,138,58,0.08);
-}
-.kpt-footer{
-  margin-top:2.5rem;padding-top:1.5rem;
-  border-top:0.5px solid rgba(184,138,58,0.1);
-  text-align:center;font-size:11px;
-  color:#3a342c;letter-spacing:0.08em;
+  .hero{padding:4rem 1.5rem 3.5rem;}
+  .hero-inner{grid-template-columns:1fr;gap:3rem;}
+  .section{padding:3.5rem 1.5rem;}
+  .form-grid{grid-template-columns:1fr;}
+  .form-col:first-child{border-right:none;border-bottom:1px solid var(--border);}
+  .social-links{flex-direction:column;}
+  .social-link{border-right:none;border-bottom:1px solid var(--border);}
+  .social-strip{padding:2rem 1.5rem;}
+  footer{padding:1.5rem;flex-direction:column;align-items:flex-start;gap:0.5rem;}
 }
 </style>
 
-<h2 class="sr-only">Kolkata Photo Tours — Contact page</h2>
+<h2 class="sr-only">Contact — Kolkata Photo Tours</h2>
 
 <!-- HEADER -->
 <header class="site-header">
-  <a href="https://www.kolkataphototours.com/" class="logo">Kolkata Photo Tours</a>
+  <a href="https://www.kolkataphototours.com/" class="logo">Kolkata Photo Tour</a>
   <nav>
     <a href="https://www.kolkataphototours.com/">Home</a>
     <a href="https://www.kolkataphototours.com/tours/">Tours &amp; Workshops</a>
-    <a href="https://www.kolkataphototours.com/reviews/" class="active">Reviews</a>
+    <a href="https://www.kolkataphototours.com/reviews/">Reviews</a>
     <a href="https://www.kolkataphototours.com/youtube.html" target="_blank" rel="noopener">YouTube</a>
     <a href="https://kolkataphototours.substack.com/" target="_blank" rel="noopener">Substack</a>
     <a href="https://www.shivamphotofarm.com/" target="_blank" rel="noopener">Gallery</a>
     <a href="https://www.kolkataphototours.com/about/">About Me</a>
-    <a href="#contact" class="cta-link">Contact</a>
+    <a href="#contact" class="active">Contact</a>
   </nav>
   <button class="menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Toggle menu">
     <span></span><span></span><span></span>
@@ -212,67 +150,108 @@ body{font-family:'DM Sans',sans-serif;background:#0e0c0a;color:#f0ebe3;}
 <div class="mobile-nav">
   <a href="https://www.kolkataphototours.com/">Home</a>
   <a href="https://www.kolkataphototours.com/tours/">Tours &amp; Workshops</a>
-  <a href="https://www.kolkataphototours.com/reviews/" class="active">Reviews</a>
+  <a href="https://www.kolkataphototours.com/reviews/">Reviews</a>
   <a href="https://www.kolkataphototours.com/youtube.html" target="_blank">YouTube</a>
   <a href="https://kolkataphototours.substack.com/" target="_blank">Substack</a>
   <a href="https://www.shivamphotofarm.com/" target="_blank">Gallery</a>
   <a href="https://www.kolkataphototours.com/about/">About Me</a>
-  <a href="#contact">Contact</a>
+  <a href="#contact" class="active">Contact</a>
 </div>
 
-<!-- CONTACT SECTION -->
-<div class="kpt-wrap" id="contact">
-  <div class="kpt-bg-pattern"></div>
-  <div class="kpt-inner">
-    <p class="kpt-eyebrow">Kolkata Photo Tours</p>
-    <h1 class="kpt-title">Let's make <em>something</em><br>beautiful together</h1>
-    <p class="kpt-subtitle">Photo walks · Private tours · Collaborations</p>
-    <div class="kpt-divider"></div>
-
-    <form id="contact-us" method="post" action="https://formspree.io/kolkataphototours@gmail.com">
-      <div class="kpt-grid">
-        <div class="kpt-field">
-          <label class="kpt-label" for="name">Your Name</label>
-          <input class="kpt-input" type="text" name="name" id="name" required placeholder="e.g. Priya Sharma"/>
-        </div>
-        <div class="kpt-field">
-          <label class="kpt-label" for="mail">Email</label>
-          <input class="kpt-input" type="email" name="mail" id="mail" required placeholder="you@example.com"/>
-        </div>
-        <div class="kpt-field full">
-          <label class="kpt-label" for="subject">Subject</label>
-          <input class="kpt-input" type="text" name="subject" id="subject" required placeholder="Photo walk inquiry, collaboration..."/>
-        </div>
-        <div class="kpt-field full">
-          <label class="kpt-label" for="message">Message</label>
-          <textarea class="kpt-input kpt-textarea" name="message" id="message" placeholder="Tell me about your vision, preferred dates, or anything you'd like to explore..."></textarea>
-        </div>
-      </div>
-      <button type="submit" class="kpt-btn">
-        Send Message
-        <span class="kpt-arrow"></span>
-      </button>
-    </form>
-
-    <div class="kpt-or">or find me on</div>
-    <div class="kpt-socials">
-      <a class="kpt-social-link" href="https://www.instagram.com/shivam_photofarm/" target="_blank">
-        <span class="kpt-social-icon"><i class="ti ti-brand-instagram" aria-hidden="true"></i></span>
-        Instagram
-      </a>
-      <a class="kpt-social-link" href="https://www.facebook.com/shivam.pandey.75286" target="_blank">
-        <span class="kpt-social-icon"><i class="ti ti-brand-facebook" aria-hidden="true"></i></span>
-        Facebook
-      </a>
-      <a class="kpt-social-link" href="https://www.youtube.com/@Shivamphotofarm" target="_blank">
-        <span class="kpt-social-icon"><i class="ti ti-brand-youtube" aria-hidden="true"></i></span>
-        YouTube
-      </a>
-      <a class="kpt-social-link" href="https://kolkataphototours.substack.com/" target="_blank">
-        <span class="kpt-social-icon"><i class="ti ti-news" aria-hidden="true"></i></span>
-        Substack
-      </a>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <p class="eyebrow">Get in touch</p>
+      <h1>Let's plan your<br>next <em>photo journey</em><br>together</h1>
+      <p class="hero-desc">Whether you're a seasoned photographer or picking up a camera for the first time — every great trip starts with a conversation. Drop me a message and I'll get back to you within 24 hours.</p>
     </div>
-    <div class="kpt-footer">kolkataphototours@gmail.com &nbsp;·&nbsp; Kolkata, West Bengal</div>
+    <div class="contact-panel">
+      <div class="contact-info-row">
+        <span class="ci-icon">Email</span>
+        <div class="ci-text"><strong>Direct mail</strong><a href="mailto:kolkataphototours@gmail.com">kolkataphototours@gmail.com</a></div>
+      </div>
+      <div class="contact-info-row">
+        <span class="ci-icon">Location</span>
+        <div class="ci-text"><strong>Based in</strong>Kolkata, West Bengal, India</div>
+      </div>
+      <div class="contact-info-row">
+        <span class="ci-icon">Tours</span>
+        <div class="ci-text"><strong>Destinations covered</strong>Kolkata · Varanasi · Rajasthan · Ladakh · Delhi</div>
+      </div>
+      <div class="contact-info-row">
+        <span class="ci-icon">Response</span>
+        <div class="ci-text"><strong>Reply time</strong>Usually within 24 hours</div>
+      </div>
+    </div>
   </div>
 </div>
+
+<!-- CONTACT FORM -->
+<section class="section" id="contact">
+  <div class="section-inner">
+    <p class="section-label">Send a message</p>
+    <h2 class="section-heading">Tell me about your <em>vision.</em></h2>
+    <p class="section-sub">Photo walk, private workshop, group tour — or just a question. Fill in the form and I'll respond personally.</p>
+
+    <form id="contact-us" method="post" action="https://formspree.io/kolkataphototours@gmail.com">
+      <div class="form-grid">
+        <div class="form-col">
+          <p class="form-col-title">Your details</p>
+          <div class="field">
+            <label for="name">Full name</label>
+            <input type="text" name="name" id="name" required placeholder="e.g. Priya Sharma">
+          </div>
+          <div class="field">
+            <label for="mail">Email address</label>
+            <input type="email" name="mail" id="mail" required placeholder="you@example.com">
+          </div>
+          <div class="field">
+            <label for="subject">Subject</label>
+            <input type="text" name="subject" id="subject" required placeholder="Tour inquiry, workshop, collaboration...">
+          </div>
+        </div>
+        <div class="form-col">
+          <p class="form-col-title">Your message</p>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea name="message" id="message" placeholder="Tell me about your photography goals, preferred dates, experience level, or anything you'd like to explore in India..."></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Send message <span class="btn-arrow">→</span></button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- SOCIAL STRIP -->
+<div class="social-strip">
+  <div class="social-strip-inner">
+    <p class="social-or">Or find me on</p>
+    <div class="social-links">
+      <a class="social-link" href="https://www.instagram.com/shivam_photofarm/" target="_blank">
+        <div class="sl-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></div>
+        <div><span class="sl-name">Instagram</span><span class="sl-label">@shivam_photofarm</span></div>
+      </a>
+      <a class="social-link" href="https://www.facebook.com/shivam.pandey.75286" target="_blank">
+        <div class="sl-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></div>
+        <div><span class="sl-name">Facebook</span><span class="sl-label">Shivam Pandey</span></div>
+      </a>
+      <a class="social-link" href="https://www.youtube.com/@Shivamphotofarm" target="_blank">
+        <div class="sl-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22.54 6.42A2.78 2.78 0 0 0 20.6 4.47C18.88 4 12 4 12 4s-6.88 0-8.6.47A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.4 19.53C5.12 20 12 20 12 20s6.88 0 8.6-.47a2.78 2.78 0 0 0 1.94-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg></div>
+        <div><span class="sl-name">YouTube</span><span class="sl-label">@Shivamphotofarm</span></div>
+      </a>
+      <a class="social-link" href="https://kolkataphototours.substack.com/" target="_blank">
+        <div class="sl-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></div>
+        <div><span class="sl-name">Substack</span><span class="sl-label">kolkataphototours</span></div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2025 Kolkata Photo Tour</span>
+  <span>Shivam Pandey — Kolkata, India</span>
+  <a href="https://www.instagram.com/shivam_photofarm/" target="_blank" rel="noopener">Instagram</a>
+</footer>
